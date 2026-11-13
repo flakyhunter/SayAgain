@@ -45,6 +45,10 @@ final class SessionUITests: SayAgainUITestCase {
         let session = SessionScreen(app: app).waitUntilShown()
         session.playButton.tap()
         XCTAssertEqual(session.playButton.value as? String, "Played 2 times")
+
+        session.slowToggle.tap()
+        XCTAssertTrue(session.isSlowOn)
+        XCTAssertEqual(session.playButton.value as? String, "Played 3 times", "Slower replays right away")
     }
 
     /// The fixture question currently on screen, found by its choices.

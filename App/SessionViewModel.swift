@@ -50,6 +50,12 @@ final class SessionViewModel {
         playCount += 1
     }
 
+    /// Switching speed replays the question right away, so the user hears the difference.
+    func setSlow(_ isOn: Bool) {
+        slow = isOn
+        play()
+    }
+
     /// Plays the question once when it first appears.
     func playIfNotPlayedYet() {
         if playCount == 0 { play() }

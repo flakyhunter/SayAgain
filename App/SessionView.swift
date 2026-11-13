@@ -157,7 +157,7 @@ private struct ListenCard: View {
                 Text(model.isRevealed ? "Listen again with the text below." : "Listen. The text is hidden on purpose.")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
-                Toggle(isOn: $model.slow) {
+                Toggle(isOn: Binding(get: { model.slow }, set: { model.setSlow($0) })) {
                     Label("Slower", systemImage: "tortoise.fill")
                         .font(.subheadline.weight(.semibold))
                 }

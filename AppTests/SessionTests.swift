@@ -33,6 +33,15 @@ struct SessionViewModelTests {
         #expect(speech.utterances.last?.slow == true)
     }
 
+    @Test func switchingSpeedReplaysImmediately() {
+        let model = model()
+        model.setSlow(true)
+        #expect(speech.utterances.last?.slow == true)
+        model.setSlow(false)
+        #expect(speech.utterances.last?.slow == false)
+        #expect(model.playCount == 2)
+    }
+
     @Test func autoplayHappensOnlyOncePerQuestion() {
         let model = model()
         model.playIfNotPlayedYet()
