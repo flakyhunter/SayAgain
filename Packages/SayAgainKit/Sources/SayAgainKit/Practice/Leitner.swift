@@ -94,3 +94,10 @@ public final class UserDefaultsProgressStore: ProgressStore {
         defaults.removeObject(forKey: Self.key)
     }
 }
+
+public extension QuestionBank {
+    /// Questions the user has answered right at least once since they last missed them.
+    func learnedCount(in category: QuestionCategory, store: ProgressStore) -> Int {
+        questions(in: category).count { store.box(for: $0.id) > LeitnerScheduler.firstBox }
+    }
+}

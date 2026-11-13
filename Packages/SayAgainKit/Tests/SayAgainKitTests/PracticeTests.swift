@@ -56,6 +56,22 @@ struct ProgressStoreTests {
     }
 }
 
+@Suite("Learned count")
+struct LearnedCountTests {
+    @Test func countsQuestionsAboveTheFirstBoxPerCategory() {
+        let store = InMemoryProgressStore(boxes: ["fixture-behavioural-1": 2, "fixture-behavioural-2": 1, "fixture-intro-1": 5])
+        #expect(QuestionBank.fixture.learnedCount(in: .behavioural, store: store) == 1)
+        #expect(QuestionBank.fixture.learnedCount(in: .intro, store: store) == 1)
+        #expect(QuestionBank.fixture.learnedCount(in: .school, store: store) == 0)
+    }
+
+    @Test func missingAgainUnlearnsTheQuestion() {
+        let store = InMemoryProgressStore(boxes: ["fixture-intro-1": 3])
+        store.setBox(LeitnerScheduler.nextBox(current: 3, rating: .missed), for: "fixture-intro-1")
+        #expect(QuestionBank.fixture.learnedCount(in: .intro, store: store) == 0)
+    }
+}
+
 @Suite("Practice session")
 struct PracticeSessionTests {
     private func session(seed: UInt64 = 42) -> PracticeSession {

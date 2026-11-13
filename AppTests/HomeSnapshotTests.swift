@@ -27,6 +27,12 @@ struct HomeSnapshotTests {
         assertSnapshot(of: Snapshot.host(HomeView(environment: .testing()), style: .dark), as: Snapshot.strategy)
     }
 
+    @Test func withProgress() {
+        let environment = AppEnvironment.testing()
+        environment.store.setBox(3, for: "fixture-behavioural-1")
+        assertSnapshot(of: Snapshot.host(HomeView(environment: environment)), as: Snapshot.strategy)
+    }
+
     @Test func emptyState() {
         let environment = AppEnvironment.testing(bank: QuestionBank(questions: []))
         assertSnapshot(of: Snapshot.host(HomeView(environment: environment)), as: Snapshot.strategy)

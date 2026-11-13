@@ -70,18 +70,40 @@ struct HomeView: View {
                     .accessibilityIdentifier(A11yID.Home.emptyState)
             }
 
-            LazyVGrid(columns: [GridItem(.flexible(), spacing: 12), GridItem(.flexible(), spacing: 12)], spacing: 12) {
+            LazyVStack(spacing: 12) {
                 ForEach(Array(bank.categorySummaries.enumerated()), id: \.element.id) { index, summary in
+                    let learned = bank.learnedCount(in: summary.category, store: environment.store)
                     NavigationLink(value: SessionRoute(category: summary.category)) {
-                        CategoryCard(summary: summary, index: index, animated: motion)
+                        CategoryCard(summary: summary, learned: learned, index: index, animated: motion)
                     }
-                    .buttonStyle(.plain)
+                    .buttonStyle(PressableCardStyle(animated: motion))
                     .accessibilityLabel("\(summary.category.title), \(CategoryCard.countText(summary.count))")
+                    .accessibilityValue("\(learned) of \(summary.count) learned")
                     .accessibilityHint("Starts practice in this category")
                     .accessibilityIdentifier(A11yID.Home.categoryRow(summary.category))
+                    .scrollTransition(.interactive, axis: .vertical) { content, phase in
+                        // Rows shrink and fade a little as they reach the screen edges.
+                        let edge = motion && !phase.isIdentity
+                        return content
+                            .scaleEffect(edge ? 0.93 : 1)
+                            .opacity(edge ? 0.55 : 1)
+                            .blur(radius: edge ? 1.5 : 0)
+                    }
                 }
             }
         }
+    }
+}
+
+/// Cards sink a little under the finger.
+private struct PressableCardStyle: ButtonStyle {
+    let animated: Bool
+
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .scaleEffect(animated && configuration.isPressed ? 0.97 : 1)
+            .brightness(configuration.isPressed ? -0.03 : 0)
+            .animation(.spring(duration: 0.25, bounce: 0.4), value: configuration.isPressed)
     }
 }
 
@@ -210,36 +232,53 @@ private struct Waveform: View {
 
 private struct CategoryCard: View {
     let summary: CategorySummary
+    let learned: Int
     let index: Int
     let animated: Bool
 
     @State private var appeared = false
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 14) {
+        HStack(spacing: 16) {
             Image(systemName: summary.category.symbol)
                 .font(.title2.weight(.semibold))
                 .foregroundStyle(.white)
-                .frame(width: 46, height: 46)
-                .background(summary.category.tint.gradient, in: .rect(cornerRadius: 14))
+                .symbolEffect(.bounce, options: .speed(0.8), value: appeared && animated)
+                .frame(width: 54, height: 54)
+                .background(summary.category.tint.gradient, in: .rect(cornerRadius: 16))
+                .shadow(color: summary.category.tint.opacity(0.35), radius: 8, y: 4)
 
-            VStack(alignment: .leading, spacing: 2) {
+            VStack(alignment: .leading, spacing: 6) {
                 Text(summary.category.title)
                     .font(.headline)
-                    .lineLimit(2, reservesSpace: true)
-                Text(Self.countText(summary.count))
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(.primary)
+                HStack(spacing: 6) {
+                    Text(Self.countText(summary.count))
+                    if learned > 0 {
+                        Text("\u{00B7}")
+                        Text("\(learned) learned")
+                    }
+                }
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+                ProgressView(value: Double(learned), total: Double(max(summary.count, 1)))
+                    .tint(summary.category.tint)
+                    .scaleEffect(y: 0.8, anchor: .center)
             }
+
+            Image(systemName: "chevron.right")
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(.tertiary)
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
         .padding(16)
+        .frame(maxWidth: .infinity, alignment: .leading)
         .background(Color(.secondarySystemGroupedBackground), in: .rect(cornerRadius: 22))
+        .contentShape(.rect(cornerRadius: 22))
         .opacity(appeared ? 1 : 0)
-        .offset(y: appeared ? 0 : 16)
+        .offset(x: appeared ? 0 : 60)
         .onAppear {
             guard animated else { appeared = true; return }
-            withAnimation(.spring(duration: 0.55).delay(0.08 * Double(index))) { appeared = true }
+            withAnimation(.spring(duration: 0.6, bounce: 0.3).delay(0.06 * Double(index))) { appeared = true }
         }
     }
 
