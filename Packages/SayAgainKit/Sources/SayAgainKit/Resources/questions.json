@@ -3,11 +3,11 @@
     "id": "intro-001",
     "category": "intro",
     "locale": "en-AU",
-    "text": "So, just to kick things off, could you walk me through your background, and what's brought you over to Perth?",
-    "rephrase": "Tell me about yourself. What is your experience, and why did you move to Perth?",
-    "gist": "Tell me about your background and why you moved to Perth.",
+    "text": "So, just to kick things off, could you walk me through your background, and what's brought you over to Australia?",
+    "rephrase": "Tell me about yourself. What is your experience, and why did you come to Australia?",
+    "gist": "Tell me about your background and why you came to Australia.",
     "distractors": [
-      "Tell me about your plans for the next five years in Perth.",
+      "Tell me about your plans for the next five years in Australia.",
       "Explain why you left your last job."
     ],
     "phrases": [
