@@ -6,6 +6,8 @@ public enum QuestionCategory: String, Codable, CaseIterable, Sendable {
     case behavioural
     case logistics
     case qaIT = "qa-it"
+    case volunteering
+    case agedCare = "aged-care"
 
     public var title: String {
         switch self {
@@ -13,6 +15,8 @@ public enum QuestionCategory: String, Codable, CaseIterable, Sendable {
         case .behavioural: "Behavioural"
         case .logistics: "Salary and logistics"
         case .qaIT: "QA and IT"
+        case .volunteering: "Volunteering"
+        case .agedCare: "Aged care"
         }
     }
 }

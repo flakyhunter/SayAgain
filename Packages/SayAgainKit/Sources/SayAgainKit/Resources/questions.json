@@ -1334,5 +1334,617 @@
         "meaning": "in your opinion"
       }
     ]
+  },
+  {
+    "id": "volunteering-001",
+    "category": "volunteering",
+    "locale": "en-AU",
+    "text": "So what's got you keen on volunteering with us?",
+    "rephrase": "Why do you want to volunteer with our organisation?",
+    "gist": "Why do you want to volunteer with us?",
+    "distractors": [
+      "How many hours did you volunteer last year?",
+      "Do you want a paid job with us?"
+    ],
+    "phrases": [
+      {
+        "phrase": "keen",
+        "meaning": "interested, eager (Australian)"
+      }
+    ]
+  },
+  {
+    "id": "volunteering-002",
+    "category": "volunteering",
+    "locale": "en-AU",
+    "text": "Have you done any volunteering before, back home or here?",
+    "rephrase": "Do you have any volunteer experience, in your country or in Australia?",
+    "gist": "Have you volunteered before?",
+    "distractors": [
+      "Where is your home country?",
+      "Do you know other volunteers here?"
+    ],
+    "phrases": [
+      {
+        "phrase": "back home",
+        "meaning": "in the country you come from"
+      }
+    ]
+  },
+  {
+    "id": "volunteering-003",
+    "category": "volunteering",
+    "locale": "en-AU",
+    "text": "How many hours a week could you realistically give us?",
+    "rephrase": "How many hours a week can you volunteer?",
+    "gist": "How many hours a week can you volunteer?",
+    "distractors": [
+      "How many hours a week do you work?",
+      "When is the best time to call you?"
+    ],
+    "phrases": [
+      {
+        "phrase": "realistically",
+        "meaning": "honestly, in real life"
+      },
+      {
+        "phrase": "give us",
+        "meaning": "spend with us"
+      }
+    ]
+  },
+  {
+    "id": "volunteering-004",
+    "category": "volunteering",
+    "locale": "en-AU",
+    "text": "Are you right to do weekends, or are you more of a weekday person?",
+    "rephrase": "Can you volunteer on weekends, or only on weekdays?",
+    "gist": "Can you volunteer on weekends or only on weekdays?",
+    "distractors": [
+      "What do you usually do on weekends?",
+      "Which day do you start work?"
+    ],
+    "phrases": [
+      {
+        "phrase": "are you right to",
+        "meaning": "are you able to, is it okay for you (Australian)"
+      },
+      {
+        "phrase": "a weekday person",
+        "meaning": "someone who prefers Monday to Friday"
+      }
+    ]
+  },
+  {
+    "id": "volunteering-005",
+    "category": "volunteering",
+    "locale": "en-AU",
+    "text": "Do you have a current police check, or would you be happy to get one?",
+    "rephrase": "Do you have a police certificate? If not, can you get one?",
+    "gist": "Do you have a police check, or can you get one?",
+    "distractors": [
+      "Have you ever called the police?",
+      "Do you want to work with the police?"
+    ],
+    "phrases": [
+      {
+        "phrase": "police check",
+        "meaning": "a certificate about your criminal record"
+      },
+      {
+        "phrase": "happy to",
+        "meaning": "willing to"
+      }
+    ]
+  },
+  {
+    "id": "volunteering-006",
+    "category": "volunteering",
+    "locale": "en-AU",
+    "text": "Some of our roles need a Working With Children Check. Is that something you've got sorted?",
+    "rephrase": "Some roles need a Working With Children Check. Do you have one?",
+    "gist": "Do you have a Working With Children Check?",
+    "distractors": [
+      "Do you have children?",
+      "Have you worked in a school?"
+    ],
+    "phrases": [
+      {
+        "phrase": "Working With Children Check",
+        "meaning": "a state clearance to work with kids"
+      },
+      {
+        "phrase": "sorted",
+        "meaning": "done, arranged"
+      }
+    ]
+  },
+  {
+    "id": "volunteering-007",
+    "category": "volunteering",
+    "locale": "en-AU",
+    "text": "How would you handle someone who's really upset or a bit aggro?",
+    "rephrase": "What would you do if a person is very upset or aggressive?",
+    "gist": "How do you deal with an upset or aggressive person?",
+    "distractors": [
+      "What makes you upset at work?",
+      "How do you handle a lot of work?"
+    ],
+    "phrases": [
+      {
+        "phrase": "aggro",
+        "meaning": "aggressive, angry (Australian slang)"
+      }
+    ]
+  },
+  {
+    "id": "volunteering-008",
+    "category": "volunteering",
+    "locale": "en-AU",
+    "text": "You might hear some pretty personal stuff. How do you go with keeping things confidential?",
+    "rephrase": "People may tell you private things. Can you keep information private?",
+    "gist": "Can you keep private information confidential?",
+    "distractors": [
+      "Do you like to share personal stories?",
+      "How do you store documents?"
+    ],
+    "phrases": [
+      {
+        "phrase": "how do you go with",
+        "meaning": "how good are you at"
+      },
+      {
+        "phrase": "confidential",
+        "meaning": "private, not shared"
+      }
+    ]
+  },
+  {
+    "id": "volunteering-009",
+    "category": "volunteering",
+    "locale": "en-AU",
+    "text": "Tell me about a time you worked as part of a team to help someone out.",
+    "rephrase": "Give an example of teamwork to help another person.",
+    "gist": "Describe helping someone as part of a team.",
+    "distractors": [
+      "How big was your last team?",
+      "Who helped you when you arrived?"
+    ],
+    "phrases": [
+      {
+        "phrase": "help someone out",
+        "meaning": "help someone"
+      }
+    ]
+  },
+  {
+    "id": "volunteering-010",
+    "category": "volunteering",
+    "locale": "en-AU",
+    "text": "What skills from your background do you reckon you'd bring to this role?",
+    "rephrase": "Which of your skills would be useful in this volunteer role?",
+    "gist": "What skills would you bring to this role?",
+    "distractors": [
+      "What new skills do you want to learn?",
+      "What is your educational background?"
+    ],
+    "phrases": [
+      {
+        "phrase": "reckon",
+        "meaning": "think"
+      },
+      {
+        "phrase": "bring to",
+        "meaning": "offer, contribute"
+      }
+    ]
+  },
+  {
+    "id": "volunteering-011",
+    "category": "volunteering",
+    "locale": "en-AU",
+    "text": "Our volunteers come from all walks of life. How do you go working with people from different cultures?",
+    "rephrase": "Our volunteers are very different people. Are you comfortable working with other cultures?",
+    "gist": "How do you work with people from different cultures?",
+    "distractors": [
+      "Which countries have you visited?",
+      "How many languages do you speak?"
+    ],
+    "phrases": [
+      {
+        "phrase": "all walks of life",
+        "meaning": "all kinds of backgrounds"
+      }
+    ]
+  },
+  {
+    "id": "volunteering-012",
+    "category": "volunteering",
+    "locale": "en-AU",
+    "text": "Do you speak any other languages? That can be a real help with some of our clients.",
+    "rephrase": "Do you speak other languages? It helps with some clients.",
+    "gist": "Do you speak any other languages?",
+    "distractors": [
+      "Would you like to learn English?",
+      "Which language do our clients speak?"
+    ],
+    "phrases": [
+      {
+        "phrase": "a real help",
+        "meaning": "very useful"
+      }
+    ]
+  },
+  {
+    "id": "volunteering-013",
+    "category": "volunteering",
+    "locale": "en-AU",
+    "text": "Volunteering can be pretty full on at times. How do you look after yourself?",
+    "rephrase": "Volunteering can be stressful. How do you take care of yourself?",
+    "gist": "How do you manage stress and look after yourself?",
+    "distractors": [
+      "How do you look after your family?",
+      "How long is a full shift?"
+    ],
+    "phrases": [
+      {
+        "phrase": "full on",
+        "meaning": "intense, very demanding (Australian)"
+      },
+      {
+        "phrase": "look after yourself",
+        "meaning": "take care of yourself"
+      }
+    ]
+  },
+  {
+    "id": "volunteering-014",
+    "category": "volunteering",
+    "locale": "en-AU",
+    "text": "What would you do if a client asked you for something that's outside your role?",
+    "rephrase": "What if a client asks you to do something that is not your job?",
+    "gist": "What do you do when a client asks for something outside your role?",
+    "distractors": [
+      "What would you ask a client first?",
+      "Which roles do you want to try?"
+    ],
+    "phrases": [
+      {
+        "phrase": "outside your role",
+        "meaning": "not part of your duties"
+      }
+    ]
+  },
+  {
+    "id": "volunteering-015",
+    "category": "volunteering",
+    "locale": "en-AU",
+    "text": "And how are you getting here? Have you got your own transport?",
+    "rephrase": "How will you travel here? Do you have a car?",
+    "gist": "How will you get here? Do you have transport?",
+    "distractors": [
+      "Where are you going next?",
+      "Can you drive our clients?"
+    ],
+    "phrases": [
+      {
+        "phrase": "own transport",
+        "meaning": "your own car"
+      }
+    ]
+  },
+  {
+    "id": "aged-care-001",
+    "category": "aged-care",
+    "locale": "en-AU",
+    "text": "What made you want to get into aged care?",
+    "rephrase": "Why did you choose aged care work?",
+    "gist": "Why do you want to work in aged care?",
+    "distractors": [
+      "How old are you?",
+      "Do you have older relatives here?"
+    ],
+    "phrases": [
+      {
+        "phrase": "get into",
+        "meaning": "start working in"
+      },
+      {
+        "phrase": "aged care",
+        "meaning": "care for elderly people"
+      }
+    ]
+  },
+  {
+    "id": "aged-care-002",
+    "category": "aged-care",
+    "locale": "en-AU",
+    "text": "Have you done your Cert III in Individual Support, or are you working towards it?",
+    "rephrase": "Do you have the Certificate III in Individual Support, or are you studying for it?",
+    "gist": "Do you have a Cert III in Individual Support?",
+    "distractors": [
+      "Which certificate do you want to get next?",
+      "Can you support other students?"
+    ],
+    "phrases": [
+      {
+        "phrase": "Cert III",
+        "meaning": "Certificate III, the basic aged care qualification"
+      },
+      {
+        "phrase": "working towards",
+        "meaning": "studying for"
+      }
+    ]
+  },
+  {
+    "id": "aged-care-003",
+    "category": "aged-care",
+    "locale": "en-AU",
+    "text": "Talk me through how you'd help a resident with a shower while keeping their dignity.",
+    "rephrase": "How would you help a resident shower and respect their privacy?",
+    "gist": "How do you help a resident shower with dignity?",
+    "distractors": [
+      "How often should residents shower?",
+      "Who cleans the bathrooms?"
+    ],
+    "phrases": [
+      {
+        "phrase": "resident",
+        "meaning": "a person living in an aged care home"
+      },
+      {
+        "phrase": "dignity",
+        "meaning": "self-respect, privacy"
+      }
+    ]
+  },
+  {
+    "id": "aged-care-004",
+    "category": "aged-care",
+    "locale": "en-AU",
+    "text": "How would you go with a resident with dementia who's getting agitated and wants to go home?",
+    "rephrase": "A resident with dementia is upset and wants to go home. What do you do?",
+    "gist": "How do you calm a resident with dementia who wants to go home?",
+    "distractors": [
+      "Have you studied dementia?",
+      "When can residents go home?"
+    ],
+    "phrases": [
+      {
+        "phrase": "how would you go with",
+        "meaning": "how would you deal with"
+      },
+      {
+        "phrase": "dementia",
+        "meaning": "an illness that causes memory loss"
+      },
+      {
+        "phrase": "agitated",
+        "meaning": "nervous, upset"
+      }
+    ]
+  },
+  {
+    "id": "aged-care-005",
+    "category": "aged-care",
+    "locale": "en-AU",
+    "text": "What would you do if you found a resident on the floor?",
+    "rephrase": "What would you do if a resident has fallen?",
+    "gist": "What do you do if a resident has fallen?",
+    "distractors": [
+      "How do you clean the floor safely?",
+      "Where do residents sit?"
+    ],
+    "phrases": [
+      {
+        "phrase": "found on the floor",
+        "meaning": "they have fallen"
+      }
+    ]
+  },
+  {
+    "id": "aged-care-006",
+    "category": "aged-care",
+    "locale": "en-AU",
+    "text": "How do you go about manual handling? Have you used a hoist before?",
+    "rephrase": "How do you lift and move people safely? Have you used a lifting machine?",
+    "gist": "How do you move residents safely, and have you used a hoist?",
+    "distractors": [
+      "How much can you lift?",
+      "Have you done physical work before?"
+    ],
+    "phrases": [
+      {
+        "phrase": "manual handling",
+        "meaning": "lifting and moving people safely"
+      },
+      {
+        "phrase": "hoist",
+        "meaning": "a lifting machine for people"
+      }
+    ]
+  },
+  {
+    "id": "aged-care-007",
+    "category": "aged-care",
+    "locale": "en-AU",
+    "text": "If you noticed a resident had a new bruise, what would you do?",
+    "rephrase": "You see a new bruise on a resident. What do you do?",
+    "gist": "What do you do if you notice a new bruise on a resident?",
+    "distractors": [
+      "How do you treat a bruise?",
+      "Have you ever had a bad bruise?"
+    ],
+    "phrases": [
+      {
+        "phrase": "bruise",
+        "meaning": "a dark mark on the skin after a hit"
+      },
+      {
+        "phrase": "noticed",
+        "meaning": "saw"
+      }
+    ]
+  },
+  {
+    "id": "aged-care-008",
+    "category": "aged-care",
+    "locale": "en-AU",
+    "text": "What does person-centred care mean to you?",
+    "rephrase": "What is your understanding of person-centred care?",
+    "gist": "What is person-centred care?",
+    "distractors": [
+      "Who is the centre of your team?",
+      "Why do you care about people?"
+    ],
+    "phrases": [
+      {
+        "phrase": "person-centred care",
+        "meaning": "care built around the person's own wishes"
+      }
+    ]
+  },
+  {
+    "id": "aged-care-009",
+    "category": "aged-care",
+    "locale": "en-AU",
+    "text": "We work on a rotating roster, including nights and weekends. Are you right with that?",
+    "rephrase": "Shifts change, including nights and weekends. Is that okay?",
+    "gist": "Can you work rotating shifts, including nights and weekends?",
+    "distractors": [
+      "Can you make the roster for the team?",
+      "Do you sleep well at night?"
+    ],
+    "phrases": [
+      {
+        "phrase": "rotating roster",
+        "meaning": "a shift schedule that keeps changing"
+      },
+      {
+        "phrase": "are you right with that",
+        "meaning": "is that okay for you (Australian)"
+      }
+    ]
+  },
+  {
+    "id": "aged-care-010",
+    "category": "aged-care",
+    "locale": "en-AU",
+    "text": "A family member is unhappy with the care their mum's getting and starts having a go at you. How do you handle it?",
+    "rephrase": "A relative is angry about their mother's care and shouts at you. What do you do?",
+    "gist": "How do you handle an angry family member?",
+    "distractors": [
+      "How do you talk to your own mother?",
+      "When can families visit?"
+    ],
+    "phrases": [
+      {
+        "phrase": "having a go at you",
+        "meaning": "criticising or yelling at you (Australian)"
+      },
+      {
+        "phrase": "mum",
+        "meaning": "mother"
+      }
+    ]
+  },
+  {
+    "id": "aged-care-011",
+    "category": "aged-care",
+    "locale": "en-AU",
+    "text": "What would you do if a resident refuses their medication or doesn't want to eat?",
+    "rephrase": "A resident won't take medicine or won't eat. What do you do?",
+    "gist": "What do you do when a resident refuses medicine or food?",
+    "distractors": [
+      "Which medicine is the most common?",
+      "What do residents like to eat?"
+    ],
+    "phrases": [
+      {
+        "phrase": "refuses",
+        "meaning": "says no to"
+      }
+    ]
+  },
+  {
+    "id": "aged-care-012",
+    "category": "aged-care",
+    "locale": "en-AU",
+    "text": "Can you tell me about a time you supported someone at the end of their life?",
+    "rephrase": "Have you cared for someone who was dying?",
+    "gist": "Describe supporting someone at the end of their life.",
+    "distractors": [
+      "What are your plans for later life?",
+      "How long do residents usually stay?"
+    ],
+    "phrases": [
+      {
+        "phrase": "end of life",
+        "meaning": "the last days before death, palliative care"
+      }
+    ]
+  },
+  {
+    "id": "aged-care-013",
+    "category": "aged-care",
+    "locale": "en-AU",
+    "text": "How do you make sure your notes and handover are up to scratch?",
+    "rephrase": "How do you keep good records and pass information to the next shift?",
+    "gist": "How do you write good notes and do a clear handover?",
+    "distractors": [
+      "How do you take notes at school?",
+      "Who checks your handwriting?"
+    ],
+    "phrases": [
+      {
+        "phrase": "handover",
+        "meaning": "passing information to the next shift"
+      },
+      {
+        "phrase": "up to scratch",
+        "meaning": "good enough (Australian)"
+      }
+    ]
+  },
+  {
+    "id": "aged-care-014",
+    "category": "aged-care",
+    "locale": "en-AU",
+    "text": "Have you got your NDIS Worker Screening and a current police clearance?",
+    "rephrase": "Do you have NDIS Worker Screening and a police check?",
+    "gist": "Do you have the required screening and police checks?",
+    "distractors": [
+      "Do you work for the NDIS?",
+      "Have you screened other workers?"
+    ],
+    "phrases": [
+      {
+        "phrase": "NDIS Worker Screening",
+        "meaning": "a clearance to work with people with disability"
+      },
+      {
+        "phrase": "police clearance",
+        "meaning": "police check"
+      }
+    ]
+  },
+  {
+    "id": "aged-care-015",
+    "category": "aged-care",
+    "locale": "en-AU",
+    "text": "What's your understanding of duty of care?",
+    "rephrase": "What does duty of care mean?",
+    "gist": "What is duty of care?",
+    "distractors": [
+      "Who pays for care?",
+      "What duties did you have at home?"
+    ],
+    "phrases": [
+      {
+        "phrase": "duty of care",
+        "meaning": "the legal duty to keep people safe"
+      }
+    ]
   }
 ]

@@ -255,6 +255,8 @@ extension QuestionCategory {
         case .behavioural: "person.2.fill"
         case .logistics: "dollarsign.circle.fill"
         case .qaIT: "ladybug.fill"
+        case .volunteering: "hands.and.sparkles.fill"
+        case .agedCare: "heart.text.square.fill"
         }
     }
 
@@ -264,6 +266,8 @@ extension QuestionCategory {
         case .behavioural: Color(red: 0.42, green: 0.36, blue: 0.80)
         case .logistics: Color(red: 0.20, green: 0.62, blue: 0.36)
         case .qaIT: Theme.sunset
+        case .volunteering: Color(red: 0.84, green: 0.33, blue: 0.52)
+        case .agedCare: Color(red: 0.20, green: 0.45, blue: 0.82)
         }
     }
 }
