@@ -186,3 +186,32 @@ struct VoiceRosterTests {
         #expect(VoiceRoster.voice(forTurn: 0, from: []) == nil)
     }
 }
+
+@Suite("Slow mode phrases")
+struct SpeechChunkerTests {
+    @Test func splitsAtCommasQuestionMarksAndSentenceEnds() {
+        let text = "Righto, last one from me. If a developer pushes back, how do you handle that?"
+        #expect(SpeechChunker.chunks(text) == [
+            "Righto,", "last one from me.", "If a developer pushes back,", "how do you handle that?"
+        ])
+    }
+
+    @Test func keepsAbbreviationsWhole() {
+        let text = "Have you had a crack at testing anything A.I. driven, like L.L.M. features?"
+        #expect(SpeechChunker.chunks(text) == [
+            "Have you had a crack at testing anything A.I. driven,", "like L.L.M. features?"
+        ])
+    }
+
+    @Test func textWithoutPunctuationIsOneChunk() {
+        #expect(SpeechChunker.chunks("G'day mate") == ["G'day mate"])
+    }
+
+    @Test func everyQuestionIsSplitIntoNonEmptyChunksThatRejoinToTheOriginal() throws {
+        for question in try QuestionBank.bundled().questions {
+            let chunks = SpeechChunker.chunks(question.text)
+            #expect(chunks.allSatisfy { !$0.isEmpty })
+            #expect(chunks.joined(separator: " ") == question.text, "\(question.id)")
+        }
+    }
+}

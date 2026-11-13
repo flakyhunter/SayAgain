@@ -5,7 +5,10 @@ import SayAgainKit
 @MainActor
 final class SystemSpeechService: SpeechService {
     static let normalRate = AVSpeechUtteranceDefaultSpeechRate
-    static let slowRate = AVSpeechUtteranceDefaultSpeechRate * 0.75
+    /// The rate scale is not linear: 0.3 is only about 20% slower than the default 0.5.
+    /// Pauses between phrases do most of the slowing down.
+    static let slowRate: Float = 0.3
+    static let slowPause: TimeInterval = 0.7
 
     private let synthesizer = AVSpeechSynthesizer()
 
@@ -22,11 +25,16 @@ final class SystemSpeechService: SpeechService {
 
     func speak(_ text: String, voice: VoiceOption?, locale: String, slow: Bool) {
         synthesizer.stopSpeaking(at: .immediate)
-        let utterance = AVSpeechUtterance(string: text)
-        utterance.voice = voice.flatMap { AVSpeechSynthesisVoice(identifier: $0.id) }
+        let systemVoice = voice.flatMap { AVSpeechSynthesisVoice(identifier: $0.id) }
             ?? AVSpeechSynthesisVoice(language: locale)
-        utterance.rate = slow ? Self.slowRate : Self.normalRate
-        synthesizer.speak(utterance)
+        let phrases = slow ? SpeechChunker.chunks(text) : [text]
+        for phrase in phrases {
+            let utterance = AVSpeechUtterance(string: phrase)
+            utterance.voice = systemVoice
+            utterance.rate = slow ? Self.slowRate : Self.normalRate
+            utterance.postUtteranceDelay = slow ? Self.slowPause : 0
+            synthesizer.speak(utterance)
+        }
     }
 
     func stop() {
