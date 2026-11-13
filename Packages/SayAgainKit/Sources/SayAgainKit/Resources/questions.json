@@ -11,9 +11,314 @@
       "Explain why you left your last job."
     ],
     "phrases": [
-      { "phrase": "to kick things off", "meaning": "to start" },
-      { "phrase": "walk me through", "meaning": "explain step by step" },
-      { "phrase": "what's brought you over", "meaning": "why you came here" }
+      {
+        "phrase": "to kick things off",
+        "meaning": "to start"
+      },
+      {
+        "phrase": "walk me through",
+        "meaning": "explain step by step"
+      },
+      {
+        "phrase": "what's brought you over",
+        "meaning": "why you came here"
+      }
+    ]
+  },
+  {
+    "id": "intro-002",
+    "category": "intro",
+    "locale": "en-AU",
+    "text": "Tell us a bit about yourself. What's your story?",
+    "rephrase": "Tell me about yourself.",
+    "gist": "Tell me about yourself.",
+    "distractors": [
+      "Tell me a story about your last project.",
+      "What do you do in your free time?"
+    ],
+    "phrases": [
+      {
+        "phrase": "a bit about",
+        "meaning": "a little about"
+      },
+      {
+        "phrase": "what's your story",
+        "meaning": "tell me about your life and career"
+      }
+    ]
+  },
+  {
+    "id": "intro-003",
+    "category": "intro",
+    "locale": "en-AU",
+    "text": "So what's got you interested in this role, out of all the ones going around at the moment?",
+    "rephrase": "Why are you interested in this job, when there are many other jobs available?",
+    "gist": "Why do you want this particular job?",
+    "distractors": [
+      "Which other jobs have you applied for?",
+      "What do you know about our company?"
+    ],
+    "phrases": [
+      {
+        "phrase": "what's got you interested",
+        "meaning": "why are you interested"
+      },
+      {
+        "phrase": "going around",
+        "meaning": "available right now"
+      }
+    ]
+  },
+  {
+    "id": "intro-004",
+    "category": "intro",
+    "locale": "en-AU",
+    "text": "What do you know about us as a company, if anything?",
+    "rephrase": "What do you know about our company?",
+    "gist": "What do you know about our company?",
+    "distractors": [
+      "Have you used our product before?",
+      "Do you know anyone who works here?"
+    ],
+    "phrases": [
+      {
+        "phrase": "if anything",
+        "meaning": "it's okay if you know nothing"
+      }
+    ]
+  },
+  {
+    "id": "intro-005",
+    "category": "intro",
+    "locale": "en-AU",
+    "text": "How'd you go settling in? Have you been here long?",
+    "rephrase": "How is life in Australia so far? How long have you been here?",
+    "gist": "How long have you been in Australia, and how is it going?",
+    "distractors": [
+      "Where do you plan to live?",
+      "Do you have family here?"
+    ],
+    "phrases": [
+      {
+        "phrase": "how'd you go",
+        "meaning": "how did it go (very Australian)"
+      },
+      {
+        "phrase": "settling in",
+        "meaning": "getting used to a new place"
+      }
+    ]
+  },
+  {
+    "id": "intro-006",
+    "category": "intro",
+    "locale": "en-AU",
+    "text": "Where do you see yourself in, say, three to five years' time?",
+    "rephrase": "What are your career goals for the next three to five years?",
+    "gist": "What are your career goals for the next few years?",
+    "distractors": [
+      "How long did you stay in your last three jobs?",
+      "When will you be ready to start?"
+    ],
+    "phrases": [
+      {
+        "phrase": "say",
+        "meaning": "for example"
+      },
+      {
+        "phrase": "in ... years' time",
+        "meaning": "after ... years"
+      }
+    ]
+  },
+  {
+    "id": "intro-007",
+    "category": "intro",
+    "locale": "en-AU",
+    "text": "Give us the quick rundown of your current role. What does a typical day look like?",
+    "rephrase": "Briefly describe your current job. What do you do on a normal day?",
+    "gist": "Describe your current job and a normal workday.",
+    "distractors": [
+      "How many hours do you work each day?",
+      "What would your ideal job look like?"
+    ],
+    "phrases": [
+      {
+        "phrase": "give us",
+        "meaning": "give me (Australians often say us for me)"
+      },
+      {
+        "phrase": "rundown",
+        "meaning": "short summary"
+      }
+    ]
+  },
+  {
+    "id": "intro-008",
+    "category": "intro",
+    "locale": "en-AU",
+    "text": "What would your old manager say is your biggest strength?",
+    "rephrase": "What would your previous boss say you are best at?",
+    "gist": "What would your last manager say you do best?",
+    "distractors": [
+      "Why did you leave your old manager?",
+      "What is your manager's biggest strength?"
+    ],
+    "phrases": [
+      {
+        "phrase": "old manager",
+        "meaning": "previous boss"
+      }
+    ]
+  },
+  {
+    "id": "intro-009",
+    "category": "intro",
+    "locale": "en-AU",
+    "text": "And what's something you're still working on, professionally speaking?",
+    "rephrase": "What is a weakness you are trying to improve at work?",
+    "gist": "What work skill are you still trying to improve?",
+    "distractors": [
+      "What project are you working on right now?",
+      "What do you do outside work?"
+    ],
+    "phrases": [
+      {
+        "phrase": "still working on",
+        "meaning": "still trying to improve"
+      },
+      {
+        "phrase": "professionally speaking",
+        "meaning": "talking about work"
+      }
+    ]
+  },
+  {
+    "id": "intro-010",
+    "category": "intro",
+    "locale": "en-AU",
+    "text": "What made you want to get into this line of work in the first place?",
+    "rephrase": "Why did you choose this career?",
+    "gist": "Why did you choose this career?",
+    "distractors": [
+      "When did you first start working?",
+      "Would you like to change careers?"
+    ],
+    "phrases": [
+      {
+        "phrase": "this line of work",
+        "meaning": "this type of career"
+      },
+      {
+        "phrase": "in the first place",
+        "meaning": "originally, at the very start"
+      }
+    ]
+  },
+  {
+    "id": "intro-011",
+    "category": "intro",
+    "locale": "en-AU",
+    "text": "Is there anything on your resume you reckon we should dig into a bit more?",
+    "rephrase": "Is there something on your CV you want to talk about in more detail?",
+    "gist": "What part of your CV should we discuss in more detail?",
+    "distractors": [
+      "Can you send us your resume again?",
+      "Is there a mistake on your resume?"
+    ],
+    "phrases": [
+      {
+        "phrase": "reckon",
+        "meaning": "think"
+      },
+      {
+        "phrase": "dig into",
+        "meaning": "look at in detail"
+      },
+      {
+        "phrase": "resume",
+        "meaning": "CV"
+      }
+    ]
+  },
+  {
+    "id": "intro-012",
+    "category": "intro",
+    "locale": "en-AU",
+    "text": "How do you like to unwind outside of work?",
+    "rephrase": "What do you do to relax after work?",
+    "gist": "What do you do to relax outside work?",
+    "distractors": [
+      "Do you often work late?",
+      "How do you get to work?"
+    ],
+    "phrases": [
+      {
+        "phrase": "unwind",
+        "meaning": "relax"
+      }
+    ]
+  },
+  {
+    "id": "intro-013",
+    "category": "intro",
+    "locale": "en-AU",
+    "text": "What sort of team do you work best in? Big, small, a bit of both?",
+    "rephrase": "What kind of team do you prefer?",
+    "gist": "What size and type of team suits you best?",
+    "distractors": [
+      "How many people did you manage?",
+      "Who was the best person in your team?"
+    ],
+    "phrases": [
+      {
+        "phrase": "what sort of",
+        "meaning": "what kind of"
+      },
+      {
+        "phrase": "a bit of both",
+        "meaning": "some of each"
+      }
+    ]
+  },
+  {
+    "id": "intro-014",
+    "category": "intro",
+    "locale": "en-AU",
+    "text": "Have you had any experience working with Aussie companies before, or would this be your first?",
+    "rephrase": "Have you worked for an Australian company before?",
+    "gist": "Have you worked for an Australian company before?",
+    "distractors": [
+      "Is this your first job?",
+      "Have you visited Australia before?"
+    ],
+    "phrases": [
+      {
+        "phrase": "Aussie",
+        "meaning": "Australian"
+      }
+    ]
+  },
+  {
+    "id": "intro-015",
+    "category": "intro",
+    "locale": "en-AU",
+    "text": "Before we get stuck into it, how's your day been so far?",
+    "rephrase": "Before we start, how is your day going?",
+    "gist": "Small talk: how is your day going?",
+    "distractors": [
+      "Are you ready to start work today?",
+      "Did you find our office easily?"
+    ],
+    "phrases": [
+      {
+        "phrase": "get stuck into",
+        "meaning": "start doing something seriously (Australian)"
+      },
+      {
+        "phrase": "how's your day been",
+        "meaning": "how is your day going"
+      }
     ]
   },
   {
@@ -28,10 +333,22 @@
       "Explain how you would train new developers."
     ],
     "phrases": [
-      { "phrase": "a time you...", "meaning": "a real situation when you..." },
-      { "phrase": "tracked down", "meaning": "found after a long search" },
-      { "phrase": "tricky", "meaning": "difficult, not obvious" },
-      { "phrase": "go about raising it", "meaning": "how exactly you reported it" }
+      {
+        "phrase": "a time you...",
+        "meaning": "a real situation when you..."
+      },
+      {
+        "phrase": "tracked down",
+        "meaning": "found after a long search"
+      },
+      {
+        "phrase": "tricky",
+        "meaning": "difficult, not obvious"
+      },
+      {
+        "phrase": "go about raising it",
+        "meaning": "how exactly you reported it"
+      }
     ]
   },
   {
@@ -46,9 +363,18 @@
       "What was the last bug you reported?"
     ],
     "phrases": [
-      { "phrase": "righto", "meaning": "okay (Australian)" },
-      { "phrase": "pushes back", "meaning": "disagrees, resists" },
-      { "phrase": "reckons", "meaning": "thinks (very common in Australia)" }
+      {
+        "phrase": "righto",
+        "meaning": "okay (Australian)"
+      },
+      {
+        "phrase": "pushes back",
+        "meaning": "disagrees, resists"
+      },
+      {
+        "phrase": "reckons",
+        "meaning": "thinks (very common in Australia)"
+      }
     ]
   },
   {
@@ -63,10 +389,274 @@
       "How many people were in your last team?"
     ],
     "phrases": [
-      { "phrase": "spread across", "meaning": "located in different places" },
-      { "phrase": "a heap of", "meaning": "a lot of (Australian)" },
-      { "phrase": "overlap", "meaning": "hours when everyone is working" },
-      { "phrase": "on the same page", "meaning": "having the same information" }
+      {
+        "phrase": "spread across",
+        "meaning": "located in different places"
+      },
+      {
+        "phrase": "a heap of",
+        "meaning": "a lot of (Australian)"
+      },
+      {
+        "phrase": "overlap",
+        "meaning": "hours when everyone is working"
+      },
+      {
+        "phrase": "on the same page",
+        "meaning": "having the same information"
+      }
+    ]
+  },
+  {
+    "id": "behavioural-004",
+    "category": "behavioural",
+    "locale": "en-AU",
+    "text": "Tell me about a time you had to work to a really tight deadline. How'd you go?",
+    "rephrase": "Describe a time you had very little time to finish work. How did it go?",
+    "gist": "Tell me about working to a very short deadline and the result.",
+    "distractors": [
+      "How do you plan your work for the week?",
+      "Have you ever missed a deadline on purpose?"
+    ],
+    "phrases": [
+      {
+        "phrase": "tight deadline",
+        "meaning": "very little time"
+      },
+      {
+        "phrase": "how'd you go",
+        "meaning": "how did it go"
+      }
+    ]
+  },
+  {
+    "id": "behavioural-005",
+    "category": "behavioural",
+    "locale": "en-AU",
+    "text": "Can you think of a time you stuffed something up at work? What happened, and what did you learn?",
+    "rephrase": "Tell me about a mistake you made at work and what you learned.",
+    "gist": "Describe a mistake you made at work and what you learned.",
+    "distractors": [
+      "Tell me about a mistake your colleague made.",
+      "How do you check your work for mistakes?"
+    ],
+    "phrases": [
+      {
+        "phrase": "stuffed something up",
+        "meaning": "made a mistake (Australian, informal)"
+      },
+      {
+        "phrase": "can you think of a time",
+        "meaning": "give a real example"
+      }
+    ]
+  },
+  {
+    "id": "behavioural-006",
+    "category": "behavioural",
+    "locale": "en-AU",
+    "text": "Walk me through a time you had to deal with a difficult stakeholder.",
+    "rephrase": "Tell me step by step about a time you worked with a difficult person, like a manager or client.",
+    "gist": "Describe working with a difficult manager or client.",
+    "distractors": [
+      "Who are the stakeholders in your current project?",
+      "How do you deal with stress?"
+    ],
+    "phrases": [
+      {
+        "phrase": "walk me through",
+        "meaning": "explain step by step"
+      },
+      {
+        "phrase": "stakeholder",
+        "meaning": "a person who cares about the result: client, manager, product owner"
+      }
+    ]
+  },
+  {
+    "id": "behavioural-007",
+    "category": "behavioural",
+    "locale": "en-AU",
+    "text": "Have you ever had to juggle a few competing priorities? How did you decide what to tackle first?",
+    "rephrase": "Have you had many important tasks at once? How did you choose what to do first?",
+    "gist": "How do you choose what to do first when several tasks are urgent?",
+    "distractors": [
+      "Do you like to work on many projects at once?",
+      "Which task do you enjoy the most?"
+    ],
+    "phrases": [
+      {
+        "phrase": "juggle",
+        "meaning": "handle many things at once"
+      },
+      {
+        "phrase": "competing priorities",
+        "meaning": "tasks that are all important"
+      },
+      {
+        "phrase": "tackle",
+        "meaning": "deal with"
+      }
+    ]
+  },
+  {
+    "id": "behavioural-008",
+    "category": "behavioural",
+    "locale": "en-AU",
+    "text": "Tell me about a time you went above and beyond for a customer or your team.",
+    "rephrase": "Tell me about a time you did more than you had to.",
+    "gist": "Describe a time you did more than was expected.",
+    "distractors": [
+      "How many hours a week do you usually work?",
+      "Tell me about your best customer."
+    ],
+    "phrases": [
+      {
+        "phrase": "went above and beyond",
+        "meaning": "did more than expected"
+      }
+    ]
+  },
+  {
+    "id": "behavioural-009",
+    "category": "behavioural",
+    "locale": "en-AU",
+    "text": "Give me an example of when you disagreed with your manager. How did you handle it?",
+    "rephrase": "Tell me about a disagreement with your manager. What did you do?",
+    "gist": "Describe a disagreement with your manager and how you handled it.",
+    "distractors": [
+      "Why did you change managers?",
+      "What do you like about your manager?"
+    ],
+    "phrases": [
+      {
+        "phrase": "give me an example",
+        "meaning": "tell me a real situation"
+      },
+      {
+        "phrase": "handle",
+        "meaning": "deal with"
+      }
+    ]
+  },
+  {
+    "id": "behavioural-010",
+    "category": "behavioural",
+    "locale": "en-AU",
+    "text": "How do you go about getting up to speed on something you know nothing about?",
+    "rephrase": "How do you learn something completely new?",
+    "gist": "How do you learn a new topic quickly?",
+    "distractors": [
+      "How do you explain something new to others?",
+      "What new technology do you want to learn?"
+    ],
+    "phrases": [
+      {
+        "phrase": "how do you go about",
+        "meaning": "how do you do it"
+      },
+      {
+        "phrase": "get up to speed",
+        "meaning": "learn enough to work well"
+      }
+    ]
+  },
+  {
+    "id": "behavioural-011",
+    "category": "behavioural",
+    "locale": "en-AU",
+    "text": "Tell me about a time things didn't go to plan on a project. What did you do?",
+    "rephrase": "Tell me about a project problem and how you reacted.",
+    "gist": "Describe a project that went wrong and what you did.",
+    "distractors": [
+      "How do you plan a new project?",
+      "Tell me about your favourite project."
+    ],
+    "phrases": [
+      {
+        "phrase": "didn't go to plan",
+        "meaning": "went wrong"
+      }
+    ]
+  },
+  {
+    "id": "behavioural-012",
+    "category": "behavioural",
+    "locale": "en-AU",
+    "text": "Have you ever had to give a colleague some tough feedback? How'd you approach that?",
+    "rephrase": "Did you ever have to tell a coworker something negative about their work? How did you do it?",
+    "gist": "How did you give difficult feedback to a colleague?",
+    "distractors": [
+      "How do you react to negative feedback?",
+      "How often do you have team meetings?"
+    ],
+    "phrases": [
+      {
+        "phrase": "tough feedback",
+        "meaning": "negative, difficult comments"
+      },
+      {
+        "phrase": "approach",
+        "meaning": "start dealing with"
+      }
+    ]
+  },
+  {
+    "id": "behavioural-013",
+    "category": "behavioural",
+    "locale": "en-AU",
+    "text": "What's an achievement you're really proud of, and why does it stand out for you?",
+    "rephrase": "What is your proudest achievement, and why is it special for you?",
+    "gist": "What achievement are you most proud of, and why?",
+    "distractors": [
+      "What award did your company win?",
+      "Why do you want to stand out in the team?"
+    ],
+    "phrases": [
+      {
+        "phrase": "stand out",
+        "meaning": "be special, different from the rest"
+      }
+    ]
+  },
+  {
+    "id": "behavioural-014",
+    "category": "behavioural",
+    "locale": "en-AU",
+    "text": "Say you've got a heap on your plate and your manager drops another urgent task on you. What do you do?",
+    "rephrase": "You are already very busy and your manager gives you another urgent task. What do you do?",
+    "gist": "What do you do when you are very busy and get another urgent task?",
+    "distractors": [
+      "How do you ask your manager for more work?",
+      "What do you do when there's no work?"
+    ],
+    "phrases": [
+      {
+        "phrase": "a heap on your plate",
+        "meaning": "a lot of work (Australian)"
+      },
+      {
+        "phrase": "drops something on you",
+        "meaning": "gives it to you suddenly"
+      }
+    ]
+  },
+  {
+    "id": "behavioural-015",
+    "category": "behavioural",
+    "locale": "en-AU",
+    "text": "Tell me about a time you had to explain something technical to someone who wasn't across the details.",
+    "rephrase": "Tell me about explaining a technical topic to a non-technical person.",
+    "gist": "Describe explaining something technical to a non-technical person.",
+    "distractors": [
+      "Tell me about a technical course you took.",
+      "How do you write technical documentation?"
+    ],
+    "phrases": [
+      {
+        "phrase": "across the details",
+        "meaning": "knows the details (Australian)"
+      }
     ]
   },
   {
@@ -81,10 +671,22 @@
       "Do you need visa sponsorship?"
     ],
     "phrases": [
-      { "phrase": "salary wise", "meaning": "about salary" },
-      { "phrase": "base", "meaning": "salary without super" },
-      { "phrase": "package", "meaning": "salary plus super and other benefits" },
-      { "phrase": "super", "meaning": "superannuation, the employer's retirement contribution" }
+      {
+        "phrase": "salary wise",
+        "meaning": "about salary"
+      },
+      {
+        "phrase": "base",
+        "meaning": "salary without super"
+      },
+      {
+        "phrase": "package",
+        "meaning": "salary plus super and other benefits"
+      },
+      {
+        "phrase": "super",
+        "meaning": "superannuation, the employer's retirement contribution"
+      }
     ]
   },
   {
@@ -99,9 +701,304 @@
       "How long did you stay in your last job?"
     ],
     "phrases": [
-      { "phrase": "availability", "meaning": "when you are free to start" },
-      { "phrase": "notice period", "meaning": "time you must work after you resign" },
-      { "phrase": "what sort of... are we looking at", "meaning": "what kind of... is it" }
+      {
+        "phrase": "availability",
+        "meaning": "when you are free to start"
+      },
+      {
+        "phrase": "notice period",
+        "meaning": "time you must work after you resign"
+      },
+      {
+        "phrase": "what sort of... are we looking at",
+        "meaning": "what kind of... is it"
+      }
+    ]
+  },
+  {
+    "id": "logistics-003",
+    "category": "logistics",
+    "locale": "en-AU",
+    "text": "Are you after full-time, part-time, or are you open to contract work?",
+    "rephrase": "Do you want full-time, part-time, or contract work?",
+    "gist": "What type of employment do you want?",
+    "distractors": [
+      "How many hours did you work last week?",
+      "Do you have a contract with your current employer?"
+    ],
+    "phrases": [
+      {
+        "phrase": "are you after",
+        "meaning": "do you want (Australian)"
+      },
+      {
+        "phrase": "open to",
+        "meaning": "willing to consider"
+      }
+    ]
+  },
+  {
+    "id": "logistics-004",
+    "category": "logistics",
+    "locale": "en-AU",
+    "text": "Do you have full working rights in Australia?",
+    "rephrase": "Are you allowed to work in Australia without limits?",
+    "gist": "Are you legally allowed to work in Australia?",
+    "distractors": [
+      "Do you have a driver's licence?",
+      "Have you worked in Australia before?"
+    ],
+    "phrases": [
+      {
+        "phrase": "working rights",
+        "meaning": "legal permission to work"
+      }
+    ]
+  },
+  {
+    "id": "logistics-005",
+    "category": "logistics",
+    "locale": "en-AU",
+    "text": "How would you feel about coming into the office a couple of days a week?",
+    "rephrase": "Are you okay working in the office two days a week?",
+    "gist": "Are you okay with working in the office two days a week?",
+    "distractors": [
+      "How long does it take you to get to the office?",
+      "Would you like to work from home full-time?"
+    ],
+    "phrases": [
+      {
+        "phrase": "a couple of",
+        "meaning": "two, or a few"
+      },
+      {
+        "phrase": "coming into the office",
+        "meaning": "working on site"
+      }
+    ]
+  },
+  {
+    "id": "logistics-006",
+    "category": "logistics",
+    "locale": "en-AU",
+    "text": "Are you okay with the occasional bit of after-hours work around releases?",
+    "rephrase": "Can you sometimes work in the evening when there is a release?",
+    "gist": "Can you sometimes work after hours during releases?",
+    "distractors": [
+      "How often do you release software?",
+      "Do you want overtime pay?"
+    ],
+    "phrases": [
+      {
+        "phrase": "occasional",
+        "meaning": "sometimes, not often"
+      },
+      {
+        "phrase": "after-hours",
+        "meaning": "outside normal working hours"
+      }
+    ]
+  },
+  {
+    "id": "logistics-007",
+    "category": "logistics",
+    "locale": "en-AU",
+    "text": "We'd be looking at a probation period of six months. Is that alright with you?",
+    "rephrase": "The first six months are a trial period. Is that okay?",
+    "gist": "Do you accept a six-month probation period?",
+    "distractors": [
+      "Can you start in six months?",
+      "Did you have probation in your last job?"
+    ],
+    "phrases": [
+      {
+        "phrase": "probation period",
+        "meaning": "trial period at the start of a job"
+      },
+      {
+        "phrase": "we'd be looking at",
+        "meaning": "it would be"
+      }
+    ]
+  },
+  {
+    "id": "logistics-008",
+    "category": "logistics",
+    "locale": "en-AU",
+    "text": "Have you got any holidays booked in the next few months that we should know about?",
+    "rephrase": "Do you have any planned holidays soon?",
+    "gist": "Do you have any planned holidays soon?",
+    "distractors": [
+      "How many holidays do you want per year?",
+      "Where did you go on your last holiday?"
+    ],
+    "phrases": [
+      {
+        "phrase": "booked",
+        "meaning": "planned and paid for"
+      }
+    ]
+  },
+  {
+    "id": "logistics-009",
+    "category": "logistics",
+    "locale": "en-AU",
+    "text": "Just so you know, the budget for this role sits around ninety to a hundred K plus super. Does that work for you?",
+    "rephrase": "The salary is about 90 to 100 thousand dollars plus super. Is that okay?",
+    "gist": "Is a salary of 90 to 100 thousand plus super okay for you?",
+    "distractors": [
+      "How much super did you get in your last job?",
+      "Can you work for 90 to 100 days?"
+    ],
+    "phrases": [
+      {
+        "phrase": "sits around",
+        "meaning": "is about"
+      },
+      {
+        "phrase": "K",
+        "meaning": "thousand"
+      },
+      {
+        "phrase": "does that work for you",
+        "meaning": "is that okay for you"
+      }
+    ]
+  },
+  {
+    "id": "logistics-010",
+    "category": "logistics",
+    "locale": "en-AU",
+    "text": "Would you need any sponsorship, now or down the track?",
+    "rephrase": "Will you need visa sponsorship now or in the future?",
+    "gist": "Will you need visa sponsorship now or later?",
+    "distractors": [
+      "Do you need help moving to a new city?",
+      "Who will sponsor this project?"
+    ],
+    "phrases": [
+      {
+        "phrase": "sponsorship",
+        "meaning": "employer support for your visa"
+      },
+      {
+        "phrase": "down the track",
+        "meaning": "in the future (Australian)"
+      }
+    ]
+  },
+  {
+    "id": "logistics-011",
+    "category": "logistics",
+    "locale": "en-AU",
+    "text": "Are you currently interviewing anywhere else?",
+    "rephrase": "Do you have interviews with other companies now?",
+    "gist": "Are you interviewing with other companies?",
+    "distractors": [
+      "Have you interviewed people before?",
+      "Where else have you worked?"
+    ],
+    "phrases": [
+      {
+        "phrase": "anywhere else",
+        "meaning": "at other companies"
+      }
+    ]
+  },
+  {
+    "id": "logistics-012",
+    "category": "logistics",
+    "locale": "en-AU",
+    "text": "If we made you an offer, how soon could you kick off?",
+    "rephrase": "If we offer you the job, when can you start?",
+    "gist": "How soon can you start if you get an offer?",
+    "distractors": [
+      "What offer would you accept?",
+      "How soon can you finish this interview?"
+    ],
+    "phrases": [
+      {
+        "phrase": "kick off",
+        "meaning": "start"
+      },
+      {
+        "phrase": "made you an offer",
+        "meaning": "offered you the job"
+      }
+    ]
+  },
+  {
+    "id": "logistics-013",
+    "category": "logistics",
+    "locale": "en-AU",
+    "text": "Are you happy for us to reach out to a couple of your referees?",
+    "rephrase": "Can we contact some of your references?",
+    "gist": "Can we contact your references?",
+    "distractors": [
+      "Can you send us a few work examples?",
+      "Can you refer a friend for this job?"
+    ],
+    "phrases": [
+      {
+        "phrase": "reach out to",
+        "meaning": "contact"
+      },
+      {
+        "phrase": "referees",
+        "meaning": "people who give you a reference"
+      }
+    ]
+  },
+  {
+    "id": "logistics-014",
+    "category": "logistics",
+    "locale": "en-AU",
+    "text": "Whereabouts are you based? Is the commute going to be a problem?",
+    "rephrase": "Where do you live? Will travelling to the office be difficult?",
+    "gist": "Where do you live, and is travel to the office a problem?",
+    "distractors": [
+      "Where were you born?",
+      "Do you have a car?"
+    ],
+    "phrases": [
+      {
+        "phrase": "whereabouts",
+        "meaning": "where, roughly"
+      },
+      {
+        "phrase": "based",
+        "meaning": "living"
+      },
+      {
+        "phrase": "commute",
+        "meaning": "the trip to work and back"
+      }
+    ]
+  },
+  {
+    "id": "logistics-015",
+    "category": "logistics",
+    "locale": "en-AU",
+    "text": "Just to manage expectations, the next step would be a technical chat with the team. That suit you?",
+    "rephrase": "The next stage is a technical interview with the team. Is that okay?",
+    "gist": "Are you okay with a technical interview as the next step?",
+    "distractors": [
+      "Can you manage the team's expectations?",
+      "Would you like to chat with the team at lunch?"
+    ],
+    "phrases": [
+      {
+        "phrase": "manage expectations",
+        "meaning": "make clear what will happen"
+      },
+      {
+        "phrase": "a chat",
+        "meaning": "an informal talk, often an interview"
+      },
+      {
+        "phrase": "that suit you?",
+        "meaning": "is that okay for you?"
+      }
     ]
   },
   {
@@ -116,9 +1013,18 @@
       "Which test framework do you like the most?"
     ],
     "phrases": [
-      { "phrase": "had much exposure to", "meaning": "had much experience with" },
-      { "phrase": "test setup", "meaning": "test infrastructure" },
-      { "phrase": "flaky", "meaning": "sometimes passes, sometimes fails" }
+      {
+        "phrase": "had much exposure to",
+        "meaning": "had much experience with"
+      },
+      {
+        "phrase": "test setup",
+        "meaning": "test infrastructure"
+      },
+      {
+        "phrase": "flaky",
+        "meaning": "sometimes passes, sometimes fails"
+      }
     ]
   },
   {
@@ -133,9 +1039,300 @@
       "What do you think about AI replacing testers?"
     ],
     "phrases": [
-      { "phrase": "fair enough", "meaning": "okay, that makes sense" },
-      { "phrase": "had a crack at", "meaning": "tried (Australian)" },
-      { "phrase": "no worries if not", "meaning": "it's fine if you haven't" }
+      {
+        "phrase": "fair enough",
+        "meaning": "okay, that makes sense"
+      },
+      {
+        "phrase": "had a crack at",
+        "meaning": "tried (Australian)"
+      },
+      {
+        "phrase": "no worries if not",
+        "meaning": "it's fine if you haven't"
+      }
+    ]
+  },
+  {
+    "id": "qa-it-003",
+    "category": "qa-it",
+    "locale": "en-AU",
+    "text": "How would you go about testing a login screen if we gave you, say, twenty minutes?",
+    "rephrase": "How would you test a login screen in twenty minutes?",
+    "gist": "How would you test a login screen in a short time?",
+    "distractors": [
+      "How long does it take you to log in?",
+      "Have you ever designed a login screen?"
+    ],
+    "phrases": [
+      {
+        "phrase": "go about",
+        "meaning": "do it, approach it"
+      },
+      {
+        "phrase": "say",
+        "meaning": "for example"
+      }
+    ]
+  },
+  {
+    "id": "qa-it-004",
+    "category": "qa-it",
+    "locale": "en-AU",
+    "text": "Where do you sit on the whole manual versus automation debate?",
+    "rephrase": "What is your opinion about manual testing compared to automation?",
+    "gist": "What do you think about manual versus automated testing?",
+    "distractors": [
+      "How many manual testers were in your last team?",
+      "Which automation tool is the most popular?"
+    ],
+    "phrases": [
+      {
+        "phrase": "where do you sit on",
+        "meaning": "what is your opinion on"
+      },
+      {
+        "phrase": "the whole ... debate",
+        "meaning": "the well-known argument about"
+      }
+    ]
+  },
+  {
+    "id": "qa-it-005",
+    "category": "qa-it",
+    "locale": "en-AU",
+    "text": "How do you decide what's worth automating and what's not?",
+    "rephrase": "How do you choose which tests to automate?",
+    "gist": "How do you choose which tests to automate?",
+    "distractors": [
+      "How long does it take to automate a test?",
+      "Which tests have you deleted?"
+    ],
+    "phrases": [
+      {
+        "phrase": "worth",
+        "meaning": "useful enough"
+      }
+    ]
+  },
+  {
+    "id": "qa-it-006",
+    "category": "qa-it",
+    "locale": "en-AU",
+    "text": "Talk me through how you'd write up a bug so a dev can pick it up straight away.",
+    "rephrase": "How do you write a bug report so a developer understands it immediately?",
+    "gist": "How do you write a clear bug report?",
+    "distractors": [
+      "How do you pick which bugs to fix first?",
+      "How fast do developers fix your bugs?"
+    ],
+    "phrases": [
+      {
+        "phrase": "write up",
+        "meaning": "write a report"
+      },
+      {
+        "phrase": "pick it up",
+        "meaning": "start working on it"
+      },
+      {
+        "phrase": "straight away",
+        "meaning": "immediately"
+      }
+    ]
+  },
+  {
+    "id": "qa-it-007",
+    "category": "qa-it",
+    "locale": "en-AU",
+    "text": "What's your take on testing in production? Ever done it?",
+    "rephrase": "What do you think about testing on the live system? Have you done it?",
+    "gist": "What do you think about testing in production?",
+    "distractors": [
+      "Have you ever caused a production incident?",
+      "How often do you release to production?"
+    ],
+    "phrases": [
+      {
+        "phrase": "your take on",
+        "meaning": "your opinion about"
+      },
+      {
+        "phrase": "in production",
+        "meaning": "on the live system real users use"
+      }
+    ]
+  },
+  {
+    "id": "qa-it-008",
+    "category": "qa-it",
+    "locale": "en-AU",
+    "text": "How do you get your head around a new codebase or product quickly?",
+    "rephrase": "How do you understand a new product or code quickly?",
+    "gist": "How do you learn a new product or codebase quickly?",
+    "distractors": [
+      "How do you write code faster?",
+      "Which products do you use every day?"
+    ],
+    "phrases": [
+      {
+        "phrase": "get your head around",
+        "meaning": "understand something difficult"
+      }
+    ]
+  },
+  {
+    "id": "qa-it-009",
+    "category": "qa-it",
+    "locale": "en-AU",
+    "text": "Have you worked much with APIs? What tools do you reach for?",
+    "rephrase": "Do you have experience testing APIs? Which tools do you use?",
+    "gist": "What is your API testing experience, and which tools do you use?",
+    "distractors": [
+      "Have you designed an API yourself?",
+      "Which tools does your team need?"
+    ],
+    "phrases": [
+      {
+        "phrase": "reach for",
+        "meaning": "usually choose to use"
+      }
+    ]
+  },
+  {
+    "id": "qa-it-010",
+    "category": "qa-it",
+    "locale": "en-AU",
+    "text": "How do you fit into a CI pipeline? Like, where do your tests actually run?",
+    "rephrase": "How do your tests work in CI? Where are they executed?",
+    "gist": "Where and how do your automated tests run in CI?",
+    "distractors": [
+      "How do you build the pipeline for developers?",
+      "How long have you used CI?"
+    ],
+    "phrases": [
+      {
+        "phrase": "CI pipeline",
+        "meaning": "automatic build and test process"
+      },
+      {
+        "phrase": "like",
+        "meaning": "I mean (filler word)"
+      }
+    ]
+  },
+  {
+    "id": "qa-it-011",
+    "category": "qa-it",
+    "locale": "en-AU",
+    "text": "If you only had half a day for regression before a release, what would you focus on?",
+    "rephrase": "You have four hours for regression testing before release. What do you test?",
+    "gist": "What would you test with very little regression time?",
+    "distractors": [
+      "How long does your regression usually take?",
+      "Would you delay the release by half a day?"
+    ],
+    "phrases": [
+      {
+        "phrase": "half a day",
+        "meaning": "about four hours"
+      },
+      {
+        "phrase": "regression",
+        "meaning": "re-testing features that already worked"
+      }
+    ]
+  },
+  {
+    "id": "qa-it-012",
+    "category": "qa-it",
+    "locale": "en-AU",
+    "text": "How do you deal with a test that passes on your machine but keeps falling over in the pipeline?",
+    "rephrase": "A test passes locally but fails in CI. What do you do?",
+    "gist": "What do you do when a test passes locally but fails in CI?",
+    "distractors": [
+      "How do you set up your local machine?",
+      "How do you deal with a broken laptop?"
+    ],
+    "phrases": [
+      {
+        "phrase": "keeps falling over",
+        "meaning": "keeps failing (informal)"
+      },
+      {
+        "phrase": "on your machine",
+        "meaning": "on your own computer"
+      }
+    ]
+  },
+  {
+    "id": "qa-it-013",
+    "category": "qa-it",
+    "locale": "en-AU",
+    "text": "Have you had a go at performance or load testing at all?",
+    "rephrase": "Have you tried performance or load testing?",
+    "gist": "Do you have performance or load testing experience?",
+    "distractors": [
+      "How do you improve your own performance at work?",
+      "How much load can you handle at work?"
+    ],
+    "phrases": [
+      {
+        "phrase": "had a go at",
+        "meaning": "tried"
+      },
+      {
+        "phrase": "at all",
+        "meaning": "even a little"
+      }
+    ]
+  },
+  {
+    "id": "qa-it-014",
+    "category": "qa-it",
+    "locale": "en-AU",
+    "text": "How do you work out the acceptance criteria when the ticket's a bit thin?",
+    "rephrase": "How do you find the requirements when a task has little detail?",
+    "gist": "How do you clarify requirements when a ticket has few details?",
+    "distractors": [
+      "How do you write a ticket for developers?",
+      "How do you close tickets faster?"
+    ],
+    "phrases": [
+      {
+        "phrase": "work out",
+        "meaning": "figure out"
+      },
+      {
+        "phrase": "acceptance criteria",
+        "meaning": "conditions that show a task is done"
+      },
+      {
+        "phrase": "a bit thin",
+        "meaning": "has too little detail"
+      }
+    ]
+  },
+  {
+    "id": "qa-it-015",
+    "category": "qa-it",
+    "locale": "en-AU",
+    "text": "What does a good test strategy look like to you, in a nutshell?",
+    "rephrase": "Briefly, what is a good test strategy?",
+    "gist": "Briefly describe a good test strategy.",
+    "distractors": [
+      "Who writes the test strategy in your team?",
+      "What does your test environment look like?"
+    ],
+    "phrases": [
+      {
+        "phrase": "in a nutshell",
+        "meaning": "briefly"
+      },
+      {
+        "phrase": "look like to you",
+        "meaning": "in your opinion"
+      }
     ]
   }
 ]

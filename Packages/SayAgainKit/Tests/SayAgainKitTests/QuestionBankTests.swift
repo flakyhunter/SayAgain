@@ -17,6 +17,25 @@ struct ShippedContentTests {
         #expect(bank.categorySummaries.map(\.category) == QuestionCategory.allCases)
     }
 
+    @Test("Release needs at least 60 questions, 15 per category")
+    func enoughContentForRelease() throws {
+        let bank = try QuestionBank.bundled()
+        #expect(bank.questions.count >= 60)
+        for summary in bank.categorySummaries {
+            #expect(summary.count >= 15, "\(summary.category) has only \(summary.count)")
+        }
+    }
+
+    @Test("Content is not tied to one city")
+    func noCitySpecificContent() throws {
+        let cities = ["Perth", "Sydney", "Melbourne", "Brisbane", "Adelaide", "Canberra", "Hobart", "Darwin"]
+        let bank = try QuestionBank.bundled()
+        for question in bank.questions {
+            let text = ([question.text, question.rephrase, question.gist] + question.distractors).joined(separator: " ")
+            #expect(!cities.contains { text.contains($0) }, "\(question.id) mentions a city")
+        }
+    }
+
     @Test("Fixture content used by UI tests is valid too")
     func fixtureIsValid() {
         #expect(QuestionBank.fixture.validate() == [])
