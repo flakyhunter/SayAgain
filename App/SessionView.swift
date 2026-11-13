@@ -26,7 +26,7 @@ struct SessionView: View {
                 VStack(alignment: .leading, spacing: 24) {
                     progress.id("top")
                     ListenCard(model: model)
-                    choices(for: question)
+                    choices(for: question, proxy: proxy)
                     if model.isRevealed {
                         RevealCard(question: question, correct: model.choiceCorrect == true)
                             .id("reveal")
@@ -39,18 +39,10 @@ struct SessionView: View {
                 if model.isRevealed { rateBar }
             }
             .onChange(of: model.isRevealed) { _, revealed in
-                // Wait one layout pass: the reveal card does not exist yet when the choice is tapped.
+                guard !revealed else { return }
                 Task { @MainActor in
                     try? await Task.sleep(for: .milliseconds(120))
-                    withAnimation(.easeInOut(duration: 0.35)) {
-                        // Bottom anchor: the whole explanation sits above the rating bar
-                        // and the chosen answer stays visible above it.
-                        if revealed {
-                            proxy.scrollTo("reveal", anchor: .bottom)
-                        } else {
-                            proxy.scrollTo("top", anchor: .top)
-                        }
-                    }
+                    withAnimation(.easeInOut(duration: 0.35)) { proxy.scrollTo("top", anchor: .top) }
                 }
             }
         }
@@ -76,7 +68,7 @@ struct SessionView: View {
         .accessibilityIdentifier(A11yID.Session.progress)
     }
 
-    private func choices(for question: Question) -> some View {
+    private func choices(for question: Question, proxy: ScrollViewProxy) -> some View {
         VStack(alignment: .leading, spacing: 10) {
             Text("What did they ask?")
                 .font(.title3.bold())
@@ -86,7 +78,14 @@ struct SessionView: View {
                     text: choice,
                     state: choiceState(choice, gist: question.gist)
                 ) {
-                    withAnimation(.spring(duration: 0.4)) { model.choose(choice) }
+                    withAnimation(.spring(duration: 0.4)) {
+                        model.choose(choice)
+                    } completion: {
+                        // Scroll only after the explanation has finished appearing, whatever it took.
+                        // Bottom anchor: the whole explanation sits above the bottom bar
+                        // and the chosen answer stays visible above it.
+                        withAnimation(.easeInOut(duration: 0.35)) { proxy.scrollTo("reveal", anchor: .bottom) }
+                    }
                 }
                 // Not .disabled: it would fade the green and red answers.
                 .allowsHitTesting(!model.isRevealed)
