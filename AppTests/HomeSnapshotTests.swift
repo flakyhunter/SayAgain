@@ -54,3 +54,20 @@ struct AppEnvironmentTests {
         #expect(environment.store is UserDefaultsProgressStore)
     }
 }
+
+@Suite("App bundle")
+struct AppBundleTests {
+    /// Regression: the icon set once lost its Contents.json and the app shipped without an icon.
+    @Test func appIconIsCompiledIntoTheBundle() throws {
+        let icons = try #require(Bundle.main.infoDictionary?["CFBundleIcons"] as? [String: Any])
+        let primary = try #require(icons["CFBundlePrimaryIcon"] as? [String: Any])
+        #expect(primary["CFBundleIconName"] as? String == "AppIcon")
+        #expect(Bundle.main.url(forResource: "Assets", withExtension: "car") != nil)
+    }
+
+    @Test func displayNameAndVersionComeFromBuildSettings() {
+        let info = Bundle.main.infoDictionary ?? [:]
+        #expect(info["CFBundleDisplayName"] as? String == "Say Again")
+        #expect((info["CFBundleShortVersionString"] as? String)?.isEmpty == false)
+    }
+}
