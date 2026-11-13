@@ -67,6 +67,7 @@ public struct QuestionBank: Sendable {
                 ("text", question.text),
                 ("rephrase", question.rephrase),
                 ("gist", question.gist),
+                ("sampleAnswer", question.sampleAnswer),
                 ("locale", question.locale)
             ]
             for (name, value) in fields where value.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
@@ -83,7 +84,7 @@ public struct QuestionBank: Sendable {
                 issues.append(.distractorMatchesGist(id: question.id))
             }
 
-            let allText = [question.text, question.rephrase, question.gist]
+            let allText = [question.text, question.rephrase, question.gist, question.sampleAnswer]
                 + question.distractors
                 + question.phrases.flatMap { [$0.phrase, $0.meaning] }
             for character in Self.forbiddenCharacters where allText.contains(where: { $0.contains(character) }) {

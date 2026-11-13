@@ -93,6 +93,29 @@ struct SessionViewModelTests {
         #expect(model.speaker?.name == "Karen")
     }
 
+    @Test func nextCountsRightChoiceAsUnderstoodAndWrongAsMissed() throws {
+        let model = model()
+        let first = try #require(model.session.current)
+        model.choose(first.gist)
+        model.next()
+        let second = try #require(model.session.current)
+        model.choose(second.distractors[0])
+        model.next()
+        #expect(model.session.summary == .init(gotIt: 1, partly: 0, missed: 1))
+        #expect(store.box(for: first.id) == 2)
+        #expect(store.box(for: second.id) == 1)
+    }
+
+    @Test func sampleAnswerIsReadWithoutBracketsByTheSameVoice() throws {
+        let model = model()
+        let question = try #require(model.session.current)
+        model.playSampleAnswer()
+        let utterance = try #require(speech.utterances.last)
+        #expect(utterance.text == AnswerTemplate.spoken(question.sampleAnswer))
+        #expect(!utterance.text.contains("["))
+        #expect(utterance.voiceName == model.speaker?.name)
+    }
+
     @Test func leavingStopsSpeech() {
         model().leave()
         #expect(speech.stopCount == 1)
@@ -141,8 +164,13 @@ struct SessionSnapshotTests {
         assertSnapshot(of: Snapshot.host(screen(model)), as: Snapshot.strategy)
     }
 
+    @Test func sampleAnswerSheet() {
+        let question = QuestionBank.fixture.questions[0]
+        assertSnapshot(of: Snapshot.host(SampleAnswerView(question: question, onListen: {})), as: Snapshot.strategy)
+    }
+
     @Test func summary() {
-        let view = SummaryView(summary: .init(gotIt: 5, partly: 3, missed: 2), onDone: {})
+        let view = SummaryView(summary: .init(gotIt: 8, partly: 0, missed: 2), onDone: {})
         assertSnapshot(of: Snapshot.host(view), as: Snapshot.strategy)
     }
 }

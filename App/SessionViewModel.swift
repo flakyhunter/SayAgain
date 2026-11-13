@@ -56,6 +56,17 @@ final class SessionViewModel {
         play()
     }
 
+    /// Reads the sample answer for the current question with the same interviewer voice.
+    func playSampleAnswer() {
+        guard let question = session.current else { return }
+        speech.speak(AnswerTemplate.spoken(question.sampleAnswer), voice: speaker, locale: question.locale, slow: slow)
+    }
+
+    /// Moves on. A right choice counts as understood, a wrong one comes back sooner.
+    func next() {
+        rate(choiceCorrect == true ? .gotIt : .missed)
+    }
+
     /// Plays the question once when it first appears.
     func playIfNotPlayedYet() {
         if playCount == 0 { play() }

@@ -15,13 +15,12 @@ final class FastAnswerUITests: SayAgainUITestCase {
             let labels = Set(session.choices.map { $0.label })
             let question = try XCTUnwrap(bank.questions.first { labels.contains($0.gist) }, "Question \(step)")
             session.choose(question.gist)
-            XCTAssertTrue(session.gotItButton.waitForExistence(timeout: 3),
-                          "Question \(step): right answer \"\(question.gist)\" was not accepted")
-            session.gotItButton.tap()
+            XCTAssertTrue(session.nextButton.waitForExistence(timeout: 3), "Question \(step): no Next button")
+            session.nextButton.tap()
         }
 
         XCTAssertTrue(session.summary.waitForExistence(timeout: 5))
-        XCTAssertEqual(session.summaryGotIt.value as? String, "10")
+        XCTAssertEqual(session.summaryUnderstood.value as? String, "10")
         XCTAssertEqual(session.summaryMissed.value as? String, "0")
     }
 }

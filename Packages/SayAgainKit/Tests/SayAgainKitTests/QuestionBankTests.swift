@@ -52,7 +52,7 @@ struct ValidationTests {
         phrases: [Phrase] = [Phrase(phrase: "p", meaning: "m")]
     ) -> Question {
         Question(id: id, category: .intro, text: text, rephrase: "Rephrase",
-                 gist: gist, distractors: distractors, phrases: phrases)
+                 gist: gist, distractors: distractors, phrases: phrases, sampleAnswer: "Answer")
     }
 
     @Test func duplicateIDs() {
@@ -87,6 +87,32 @@ struct ValidationTests {
     func forbiddenCharacter(character: String) {
         let bank = QuestionBank(questions: [question(text: "Before \(character) after")])
         #expect(bank.validate() == [.forbiddenCharacter(id: "q1", character: character)])
+    }
+}
+
+@Suite("Sample answers")
+struct SampleAnswerTests {
+    @Test func everyShippedQuestionHasAnAnswerWithBalancedBrackets() throws {
+        for question in try QuestionBank.bundled().questions {
+            let answer = question.sampleAnswer
+            #expect(answer.count >= 20, "\(question.id) answer is too short")
+            #expect(answer.filter { $0 == "[" }.count == answer.filter { $0 == "]" }.count, "\(question.id)")
+        }
+    }
+
+    @Test func segmentsSplitPlaceholders() {
+        #expect(AnswerTemplate.segments("I'm a [your role] here.") == [
+            .init(text: "I'm a ", isPlaceholder: false),
+            .init(text: "[your role]", isPlaceholder: true),
+            .init(text: " here.", isPlaceholder: false)
+        ])
+        #expect(AnswerTemplate.segments("No placeholders.") == [.init(text: "No placeholders.", isPlaceholder: false)])
+    }
+
+    @Test func spokenTextHasNoBrackets() {
+        #expect(AnswerTemplate.spoken("I'm a [your role].") == "I'm a your role.")
+        #expect(AnswerTemplate.hasPlaceholders("I'm a [your role]."))
+        #expect(!AnswerTemplate.hasPlaceholders("Yes, of course."))
     }
 }
 

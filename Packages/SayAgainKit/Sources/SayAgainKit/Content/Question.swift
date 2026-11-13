@@ -45,6 +45,8 @@ public struct Question: Codable, Hashable, Identifiable, Sendable {
     /// Plausible but wrong summaries for the multiple-choice step.
     public let distractors: [String]
     public let phrases: [Phrase]
+    /// What a good candidate could say. Parts in [brackets] are for the user's own details.
+    public let sampleAnswer: String
     /// BCP 47 voice locale, for example "en-AU".
     public let locale: String
 
@@ -56,6 +58,7 @@ public struct Question: Codable, Hashable, Identifiable, Sendable {
         gist: String,
         distractors: [String],
         phrases: [Phrase],
+        sampleAnswer: String,
         locale: String = "en-AU"
     ) {
         self.id = id
@@ -65,6 +68,7 @@ public struct Question: Codable, Hashable, Identifiable, Sendable {
         self.gist = gist
         self.distractors = distractors
         self.phrases = phrases
+        self.sampleAnswer = sampleAnswer
         self.locale = locale
     }
 }

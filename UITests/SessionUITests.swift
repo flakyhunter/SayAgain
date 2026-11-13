@@ -21,18 +21,24 @@ final class SessionUITests: SayAgainUITestCase {
         XCTAssertTrue(session.reveal.waitForExistence(timeout: 5))
         XCTAssertEqual(session.originalText.label, "\u{201C}\(first.text)\u{201D}")
         session.assertOriginalTextIsOnScreen()
-        session.gotItButton.tap()
+
+        session.sampleAnswerButton.tap()
+        XCTAssertTrue(session.sampleAnswerText.waitForExistence(timeout: 5))
+        XCTAssertEqual(session.sampleAnswerText.label, first.sampleAnswer)
+        session.sampleAnswerListenButton.tap()
+        session.sampleAnswerCloseButton.tap()
+        XCTAssertTrue(session.nextButton.waitForExistence(timeout: 5))
+        session.nextButton.tap()
 
         XCTAssertEqual(session.progress.label, "Question 2 of 2")
         XCTAssertEqual(session.speaker.label, "Lee is asking", "Each question gets another interviewer")
         let second = question(shownIn: session)
         session.chooseWrong(insteadOf: second.gist)
-        XCTAssertFalse(session.gotItButton.exists, "Wrong answer cannot be rated as understood")
+        XCTAssertTrue(session.sampleAnswerButton.exists, "Sample answer is available after a wrong choice too")
         session.nextButton.tap()
 
         XCTAssertTrue(session.summary.waitForExistence(timeout: 5))
-        XCTAssertEqual(session.summaryGotIt.value as? String, "1")
-        XCTAssertEqual(session.summaryPartly.value as? String, "0")
+        XCTAssertEqual(session.summaryUnderstood.value as? String, "1")
         XCTAssertEqual(session.summaryMissed.value as? String, "1")
 
         session.doneButton.tap()

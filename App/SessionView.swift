@@ -5,6 +5,7 @@ struct SessionView: View {
     @State var model: SessionViewModel
     var autoplay = true
     var onDone: () -> Void = {}
+    @State private var showingSampleAnswer = false
 
     var body: some View {
         Group {
@@ -56,6 +57,10 @@ struct SessionView: View {
         .task(id: question.id) {
             if autoplay { model.playIfNotPlayedYet() }
         }
+        .sheet(isPresented: $showingSampleAnswer) {
+            SampleAnswerView(question: question, onListen: model.playSampleAnswer)
+                .onDisappear { model.leave() }
+        }
     }
 
     private var progress: some View {
@@ -99,15 +104,10 @@ struct SessionView: View {
 
     private var rateBar: some View {
         HStack(spacing: 12) {
-            if model.choiceCorrect == true {
-                rateButton("Only partly", systemImage: "circle.lefthalf.filled", style: .secondary,
-                           id: A11yID.Session.partlyButton) { model.rate(.partly) }
-                rateButton("Got it", systemImage: "checkmark", style: .primary,
-                           id: A11yID.Session.gotItButton) { model.rate(.gotIt) }
-            } else {
-                rateButton("Next question", systemImage: "arrow.right", style: .primary,
-                           id: A11yID.Session.nextButton) { model.rate(.missed) }
-            }
+            rateButton("Sample answer", systemImage: "text.bubble.fill", style: .secondary,
+                       id: A11yID.Session.sampleAnswerButton, animated: false) { showingSampleAnswer = true }
+            rateButton("Next", systemImage: "arrow.right", style: .primary,
+                       id: A11yID.Session.nextButton) { model.next() }
         }
         .padding(.horizontal, 20)
         .padding(.vertical, 12)
@@ -117,10 +117,11 @@ struct SessionView: View {
     private enum RateStyle { case primary, secondary }
 
     private func rateButton(
-        _ title: String, systemImage: String, style: RateStyle, id: String, action: @escaping () -> Void
+        _ title: String, systemImage: String, style: RateStyle, id: String, animated: Bool = true,
+        action: @escaping () -> Void
     ) -> some View {
         Button {
-            withAnimation(.spring(duration: 0.4)) { action() }
+            if animated { withAnimation(.spring(duration: 0.4)) { action() } } else { action() }
         } label: {
             Label(title, systemImage: systemImage)
                 .font(.headline)
@@ -345,8 +346,7 @@ struct SummaryView: View {
                 Text(headline).font(.body).foregroundStyle(.secondary).multilineTextAlignment(.center)
             }
             HStack(spacing: 12) {
-                tile("Got it", value: summary.gotIt, color: Theme.success, id: A11yID.Summary.gotIt)
-                tile("Partly", value: summary.partly, color: Theme.accent, id: A11yID.Summary.partly)
+                tile("Understood", value: summary.gotIt + summary.partly, color: Theme.success, id: A11yID.Summary.understood)
                 tile("Missed", value: summary.missed, color: Theme.sunset, id: A11yID.Summary.missed)
             }
             Spacer()

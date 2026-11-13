@@ -23,7 +23,8 @@
         "phrase": "what's brought you over",
         "meaning": "why you came here"
       }
-    ]
+    ],
+    "sampleAnswer": "Sure. I'm a [your role] with [number] years of experience, mostly in [industry]. In my last job I [one key achievement]. We moved to Australia because we wanted a stable future for our family, and I'm keen to build my career here."
   },
   {
     "id": "intro-002",
@@ -45,7 +46,8 @@
         "phrase": "what's your story",
         "meaning": "tell me about your life and career"
       }
-    ]
+    ],
+    "sampleAnswer": "I'm a [your role] with [number] years of experience. I enjoy [what you like about your work], and I'm known for being reliable and detail-oriented. Outside work I like [a hobby]. I recently moved to Australia and I'm looking for a team where I can grow."
   },
   {
     "id": "intro-003",
@@ -67,7 +69,8 @@
         "phrase": "going around",
         "meaning": "available right now"
       }
-    ]
+    ],
+    "sampleAnswer": "Three things caught my eye. The role matches my experience in [skill], your company works on [product or mission] that I find interesting, and the job ad mentioned [something from the ad], which is exactly what I enjoy doing."
   },
   {
     "id": "intro-004",
@@ -85,7 +88,8 @@
         "phrase": "if anything",
         "meaning": "it's okay if you know nothing"
       }
-    ]
+    ],
+    "sampleAnswer": "I had a good look at your website and LinkedIn. I know you [what the company does] and that you recently [news or product launch]. I also liked what you say about [a value or culture point], it fits how I like to work."
   },
   {
     "id": "intro-005",
@@ -107,7 +111,8 @@
         "phrase": "settling in",
         "meaning": "getting used to a new place"
       }
-    ]
+    ],
+    "sampleAnswer": "Pretty well, thanks. I've been here for [time]. There's a lot to get used to, but people have been really friendly. I've sorted out the basics like housing and a bank account, so now I'm focused on finding the right job."
   },
   {
     "id": "intro-006",
@@ -129,7 +134,8 @@
         "phrase": "in ... years' time",
         "meaning": "after ... years"
       }
-    ]
+    ],
+    "sampleAnswer": "I'd like to grow into a more senior [role] and take on more responsibility, for example [mentoring others or leading a project]. Most of all I want to be in a team where I keep learning, and I hope that team could be yours."
   },
   {
     "id": "intro-007",
@@ -151,7 +157,8 @@
         "phrase": "rundown",
         "meaning": "short summary"
       }
-    ]
+    ],
+    "sampleAnswer": "I work as a [role] in a team of [number] people. A typical day starts with a short stand-up meeting. Then I [main task], I [second task], and I work closely with [who you work with]. At the end of the day I update the team on my progress."
   },
   {
     "id": "intro-008",
@@ -169,7 +176,8 @@
         "phrase": "old manager",
         "meaning": "previous boss"
       }
-    ]
+    ],
+    "sampleAnswer": "My old manager would say I'm very reliable. When I take on a task, I finish it properly and on time. For example, [short example]. People knew they could count on me."
   },
   {
     "id": "intro-009",
@@ -191,7 +199,8 @@
         "phrase": "professionally speaking",
         "meaning": "talking about work"
       }
-    ]
+    ],
+    "sampleAnswer": "I'm working on [a real skill to improve, for example public speaking or saying no to extra work]. To improve it, I [what you are doing about it], and I can already see progress. For example, [small result]."
   },
   {
     "id": "intro-010",
@@ -213,7 +222,8 @@
         "phrase": "in the first place",
         "meaning": "originally, at the very start"
       }
-    ]
+    ],
+    "sampleAnswer": "I've always liked [what attracts you to this work]. When I first tried [first experience], I really enjoyed it, and I've kept growing in this field ever since. I like that my work [the impact your work has]."
   },
   {
     "id": "intro-011",
@@ -239,7 +249,8 @@
         "phrase": "resume",
         "meaning": "CV"
       }
-    ]
+    ],
+    "sampleAnswer": "I'd be happy to talk more about my time at [company]. That's where I [main achievement], and I think it's the most relevant to this role. I can walk you through what I did and the results."
   },
   {
     "id": "intro-012",
@@ -257,7 +268,8 @@
         "phrase": "unwind",
         "meaning": "relax"
       }
-    ]
+    ],
+    "sampleAnswer": "I like to keep active. I go for walks or to the beach, and on weekends I spend time with my family. I also enjoy [a hobby]. It helps me switch off and come back to work fresh."
   },
   {
     "id": "intro-013",
@@ -279,7 +291,8 @@
         "phrase": "a bit of both",
         "meaning": "some of each"
       }
-    ]
+    ],
+    "sampleAnswer": "I've worked in both, and I'm happy in either. In smaller teams I like that everyone talks to each other directly. In bigger teams I like learning from more people. What matters most to me is open communication and helping each other."
   },
   {
     "id": "intro-014",
@@ -297,7 +310,8 @@
         "phrase": "Aussie",
         "meaning": "Australian"
       }
-    ]
+    ],
+    "sampleAnswer": "This would be my first Australian company, but I've worked with international teams and clients before, so I'm used to different working styles. I'm a quick learner and I'm looking forward to it."
   },
   {
     "id": "intro-015",
@@ -319,7 +333,8 @@
         "phrase": "how's your day been",
         "meaning": "how is your day going"
       }
-    ]
+    ],
+    "sampleAnswer": "Good, thanks! It's been a busy morning, but I'm glad to be here. How's your day going?"
   },
   {
     "id": "behavioural-001",
@@ -349,7 +364,8 @@
         "phrase": "go about raising it",
         "meaning": "how exactly you reported it"
       }
-    ]
+    ],
+    "sampleAnswer": "Yes. We had a bug that only happened sometimes, for example [describe it]. I collected logs, found the exact steps, and noticed it only happened when [the condition]. I wrote a clear bug report with steps, logs and a screenshot, and walked the developer through it. It was fixed in [time]."
   },
   {
     "id": "behavioural-002",
@@ -375,7 +391,8 @@
         "phrase": "reckons",
         "meaning": "thinks (very common in Australia)"
       }
-    ]
+    ],
+    "sampleAnswer": "First I make sure I understand their point. Then I show the facts: the steps, the expected result from the requirements, and the impact on users. If we still disagree, I ask the product owner to decide. It's not about who is right, it's about the user."
   },
   {
     "id": "behavioural-003",
@@ -405,7 +422,8 @@
         "phrase": "on the same page",
         "meaning": "having the same information"
       }
-    ]
+    ],
+    "sampleAnswer": "I'd write things down. Clear updates in the team chat, notes after each meeting, and status in the tickets, so people can catch up when they start their day. I'd also use the overlap hours for the most important conversations."
   },
   {
     "id": "behavioural-004",
@@ -427,7 +445,8 @@
         "phrase": "how'd you go",
         "meaning": "how did it go"
       }
-    ]
+    ],
+    "sampleAnswer": "We once had only [time] to test a release. I agreed with the team on the most important features, focused on those first, and gave daily updates on risks. We released on time and there were no critical issues in production."
   },
   {
     "id": "behavioural-005",
@@ -449,7 +468,8 @@
         "phrase": "can you think of a time",
         "meaning": "give a real example"
       }
-    ]
+    ],
+    "sampleAnswer": "Once I [the mistake]. As soon as I noticed, I told my manager, fixed the problem, and checked nothing else was affected. Since then I always [what you do differently now]. It taught me that it's better to raise a problem early."
   },
   {
     "id": "behavioural-006",
@@ -471,7 +491,8 @@
         "phrase": "stakeholder",
         "meaning": "a person who cares about the result: client, manager, product owner"
       }
-    ]
+    ],
+    "sampleAnswer": "A client kept changing the requirements late in the project. I set up a short weekly call, wrote down every agreement, and showed how each change affected the deadline. After that the requests became more realistic and our relationship improved."
   },
   {
     "id": "behavioural-007",
@@ -497,7 +518,8 @@
         "phrase": "tackle",
         "meaning": "deal with"
       }
-    ]
+    ],
+    "sampleAnswer": "Yes. I look at the impact and the deadline of each task. If it's not clear, I ask my manager which one matters most for the business. Then I tell the people whose tasks will wait, so nobody is surprised."
   },
   {
     "id": "behavioural-008",
@@ -515,7 +537,8 @@
         "phrase": "went above and beyond",
         "meaning": "did more than expected"
       }
-    ]
+    ],
+    "sampleAnswer": "A customer had a problem late on a Friday that blocked their work. It wasn't my task, but I stayed, found the cause together with a developer, and they could work again the same evening. They later thanked our team in writing."
   },
   {
     "id": "behavioural-009",
@@ -537,7 +560,8 @@
         "phrase": "handle",
         "meaning": "deal with"
       }
-    ]
+    ],
+    "sampleAnswer": "My manager wanted to [their plan], but I thought it was risky because [reason]. I asked for a short meeting and showed my data. We agreed on [the compromise]. Even when I disagree, I respect the final decision."
   },
   {
     "id": "behavioural-010",
@@ -559,7 +583,8 @@
         "phrase": "get up to speed",
         "meaning": "learn enough to work well"
       }
-    ]
+    ],
+    "sampleAnswer": "I start with the official documentation and ask colleagues for a short overview. Then I try it hands-on on a small example. I write notes as I go, and I'm not afraid to ask questions early."
   },
   {
     "id": "behavioural-011",
@@ -577,7 +602,8 @@
         "phrase": "didn't go to plan",
         "meaning": "went wrong"
       }
-    ]
+    ],
+    "sampleAnswer": "On one project a key system wasn't ready in time. I told the team about the risk early, we changed the plan and tested with [a workaround], and we still delivered the most important part on time. The rest came in the next release."
   },
   {
     "id": "behavioural-012",
@@ -599,7 +625,8 @@
         "phrase": "approach",
         "meaning": "start dealing with"
       }
-    ]
+    ],
+    "sampleAnswer": "Yes. I did it in private, focused on the work and not the person, and gave a specific example. I also offered to help. My colleague took it well, and the problem didn't happen again."
   },
   {
     "id": "behavioural-013",
@@ -617,7 +644,8 @@
         "phrase": "stand out",
         "meaning": "be special, different from the rest"
       }
-    ]
+    ],
+    "sampleAnswer": "I'm proud of [achievement]. Before that, [the problem]. I [what you did], and as a result [measurable result]. It stands out because it helped the whole team, not just me."
   },
   {
     "id": "behavioural-014",
@@ -639,7 +667,8 @@
         "phrase": "drops something on you",
         "meaning": "gives it to you suddenly"
       }
-    ]
+    ],
+    "sampleAnswer": "I'd talk to my manager straight away. I'd show what I'm working on and ask which task is the priority now. Then I'd tell anyone affected that their task might move. That way nothing important gets dropped quietly."
   },
   {
     "id": "behavioural-015",
@@ -657,7 +686,8 @@
         "phrase": "across the details",
         "meaning": "knows the details (Australian)"
       }
-    ]
+    ],
+    "sampleAnswer": "I had to explain a technical problem to [a manager or client]. I avoided jargon, used a simple comparison, and focused on what it meant for them: the risk, the impact on users, and what we planned to do. They understood and approved the plan."
   },
   {
     "id": "logistics-001",
@@ -687,7 +717,8 @@
         "phrase": "super",
         "meaning": "superannuation, the employer's retirement contribution"
       }
-    ]
+    ],
+    "sampleAnswer": "I'm looking for around [amount] base, plus super. I'm a bit flexible depending on the whole package, for example training or flexible hours. What's the range for this role?"
   },
   {
     "id": "logistics-002",
@@ -713,7 +744,8 @@
         "phrase": "what sort of... are we looking at",
         "meaning": "what kind of... is it"
       }
-    ]
+    ],
+    "sampleAnswer": "I'm available to start [date or 'straight away']. [If you have a job: My notice period is (number) weeks.] I'm happy to do any paperwork or onboarding before that."
   },
   {
     "id": "logistics-003",
@@ -735,7 +767,8 @@
         "phrase": "open to",
         "meaning": "willing to consider"
       }
-    ]
+    ],
+    "sampleAnswer": "I'm mainly after a full-time permanent role, but I'm open to a contract if it's the right fit."
   },
   {
     "id": "logistics-004",
@@ -753,7 +786,8 @@
         "phrase": "working rights",
         "meaning": "legal permission to work"
       }
-    ]
+    ],
+    "sampleAnswer": "Yes, I have full working rights in Australia. [Or: I'm on a (visa) visa that allows me to work full-time.] I can provide the details whenever you need them."
   },
   {
     "id": "logistics-005",
@@ -775,7 +809,8 @@
         "phrase": "coming into the office",
         "meaning": "working on site"
       }
-    ]
+    ],
+    "sampleAnswer": "That works for me. I like having some time with the team in person, and I'm comfortable working from home on the other days."
   },
   {
     "id": "logistics-006",
@@ -797,7 +832,8 @@
         "phrase": "after-hours",
         "meaning": "outside normal working hours"
       }
-    ]
+    ],
+    "sampleAnswer": "Yes, that's fine. I understand releases sometimes need extra time. As long as it's planned in advance when possible, I'm happy to help."
   },
   {
     "id": "logistics-007",
@@ -819,7 +855,8 @@
         "phrase": "we'd be looking at",
         "meaning": "it would be"
       }
-    ]
+    ],
+    "sampleAnswer": "Yes, that's completely fine. I understand it's standard in Australia, and it's a good chance for both of us to make sure it's the right fit."
   },
   {
     "id": "logistics-008",
@@ -837,7 +874,8 @@
         "phrase": "booked",
         "meaning": "planned and paid for"
       }
-    ]
+    ],
+    "sampleAnswer": "No, nothing booked at the moment. [Or: I have a short trip in (month), but I'm happy to talk about it.]"
   },
   {
     "id": "logistics-009",
@@ -863,7 +901,8 @@
         "phrase": "does that work for you",
         "meaning": "is that okay for you"
       }
-    ]
+    ],
+    "sampleAnswer": "Thanks for letting me know. That range works for me, especially with super on top. I'd love to hear more about the other parts of the package too."
   },
   {
     "id": "logistics-010",
@@ -885,7 +924,8 @@
         "phrase": "down the track",
         "meaning": "in the future (Australian)"
       }
-    ]
+    ],
+    "sampleAnswer": "No, I don't need sponsorship. [Or: Yes, I would need sponsorship. My current visa allows me to work until (date).]"
   },
   {
     "id": "logistics-011",
@@ -903,7 +943,8 @@
         "phrase": "anywhere else",
         "meaning": "at other companies"
       }
-    ]
+    ],
+    "sampleAnswer": "Yes, I'm talking to a couple of other companies, but this role is one of my top choices because [reason]."
   },
   {
     "id": "logistics-012",
@@ -925,7 +966,8 @@
         "phrase": "made you an offer",
         "meaning": "offered you the job"
       }
-    ]
+    ],
+    "sampleAnswer": "I could start [date or 'within two weeks']. If you need someone sooner, I'll do my best to make it work."
   },
   {
     "id": "logistics-013",
@@ -947,7 +989,8 @@
         "phrase": "referees",
         "meaning": "people who give you a reference"
       }
-    ]
+    ],
+    "sampleAnswer": "Yes, of course. I can send you the contact details of [number] referees today."
   },
   {
     "id": "logistics-014",
@@ -973,7 +1016,8 @@
         "phrase": "commute",
         "meaning": "the trip to work and back"
       }
-    ]
+    ],
+    "sampleAnswer": "I live in [suburb]. It's about [time] to the office by [car or public transport], so the commute is fine."
   },
   {
     "id": "logistics-015",
@@ -999,7 +1043,8 @@
         "phrase": "that suit you?",
         "meaning": "is that okay for you?"
       }
-    ]
+    ],
+    "sampleAnswer": "Yes, that suits me. Is there anything I should prepare for the technical chat?"
   },
   {
     "id": "qa-it-001",
@@ -1025,7 +1070,8 @@
         "phrase": "flaky",
         "meaning": "sometimes passes, sometimes fails"
       }
-    ]
+    ],
+    "sampleAnswer": "Yes. I use mocks to isolate the parts I'm testing, for example a mock server for API responses. To keep tests reliable, I use stable test data, wait for elements instead of fixed delays, and run each test independently. When a test is flaky, I find the root cause instead of just re-running it."
   },
   {
     "id": "qa-it-002",
@@ -1051,7 +1097,8 @@
         "phrase": "no worries if not",
         "meaning": "it's fine if you haven't"
       }
-    ]
+    ],
+    "sampleAnswer": "Yes. I tested [chatbot or AI feature] built on [the model or API]. I created test questions with expected answers and checked the replies for accuracy, hallucinations and tone. I re-ran the set every time the prompt or model changed. [If not: Not yet, but I've been learning about it, and I'd love to.]"
   },
   {
     "id": "qa-it-003",
@@ -1073,7 +1120,8 @@
         "phrase": "say",
         "meaning": "for example"
       }
-    ]
+    ],
+    "sampleAnswer": "First the happy path: a valid login works. Then the main negative cases: wrong password, empty fields, a locked account. After that, quick checks of security and usability: the password is hidden, there's a limit on attempts, error messages don't reveal too much. I'd note anything I didn't have time for."
   },
   {
     "id": "qa-it-004",
@@ -1095,7 +1143,8 @@
         "phrase": "the whole ... debate",
         "meaning": "the well-known argument about"
       }
-    ]
+    ],
+    "sampleAnswer": "I think we need both. Automation is great for stable, repeated checks like regression. Manual and exploratory testing is better for new features and for things that need a human eye, like usability."
   },
   {
     "id": "qa-it-005",
@@ -1113,7 +1162,8 @@
         "phrase": "worth",
         "meaning": "useful enough"
       }
-    ]
+    ],
+    "sampleAnswer": "I automate tests that run often, are stable, and protect important flows, like login or payments. I don't automate features that change every week or checks that are cheaper to do by hand once."
   },
   {
     "id": "qa-it-006",
@@ -1139,7 +1189,8 @@
         "phrase": "straight away",
         "meaning": "immediately"
       }
-    ]
+    ],
+    "sampleAnswer": "A short, clear title. Exact steps to reproduce, expected and actual result, environment and app version. Then screenshots, a video or logs, and the impact and severity. A developer should be able to reproduce it without asking me anything."
   },
   {
     "id": "qa-it-007",
@@ -1161,7 +1212,8 @@
         "phrase": "in production",
         "meaning": "on the live system real users use"
       }
-    ]
+    ],
+    "sampleAnswer": "It can be useful, carefully. For example smoke tests after a release, or monitoring and feature flags. I've done [what you did, for example post-release smoke checks]. It never replaces testing before release."
   },
   {
     "id": "qa-it-008",
@@ -1179,7 +1231,8 @@
         "phrase": "get your head around",
         "meaning": "understand something difficult"
       }
-    ]
+    ],
+    "sampleAnswer": "I start by using the product like a real user. Then I read the docs and the existing tests, look at the main flows, and ask a developer for a quick walkthrough. I also look at recent bugs to see where the weak spots are."
   },
   {
     "id": "qa-it-009",
@@ -1197,7 +1250,8 @@
         "phrase": "reach for",
         "meaning": "usually choose to use"
       }
-    ]
+    ],
+    "sampleAnswer": "Yes, a lot. I use [Postman or a similar tool] for manual API testing and [REST Assured or a similar library] for automated tests. I check status codes, the response body, error handling and the API contract."
   },
   {
     "id": "qa-it-010",
@@ -1219,7 +1273,8 @@
         "phrase": "like",
         "meaning": "I mean (filler word)"
       }
-    ]
+    ],
+    "sampleAnswer": "My tests run in [CI tool] on every merge request. Fast tests run on every change, the full regression runs [nightly or before release]. If a test fails, the merge is blocked and the team gets the report."
   },
   {
     "id": "qa-it-011",
@@ -1241,7 +1296,8 @@
         "phrase": "regression",
         "meaning": "re-testing features that already worked"
       }
-    ]
+    ],
+    "sampleAnswer": "I'd focus on the riskiest areas: the main user flows, anything that changed in this release, and the areas with recent bugs. I'd tell the team clearly what I didn't test, so they can decide on the risk."
   },
   {
     "id": "qa-it-012",
@@ -1263,7 +1319,8 @@
         "phrase": "on your machine",
         "meaning": "on your own computer"
       }
-    ]
+    ],
+    "sampleAnswer": "Usually it's a difference in the environment, timing or test data. I'd compare the CI logs and settings with my machine, check for race conditions and shared data, and try to reproduce it in a similar environment. Then I fix the root cause."
   },
   {
     "id": "qa-it-013",
@@ -1285,7 +1342,8 @@
         "phrase": "at all",
         "meaning": "even a little"
       }
-    ]
+    ],
+    "sampleAnswer": "A bit. I've used [tool, for example JMeter or k6] to check response times under load. [If not: Not much yet, but I understand the basics, and I'd be happy to learn.]"
   },
   {
     "id": "qa-it-014",
@@ -1311,7 +1369,8 @@
         "phrase": "a bit thin",
         "meaning": "has too little detail"
       }
-    ]
+    ],
+    "sampleAnswer": "I talk to the product owner or the developer early. I write down my understanding as simple examples, like 'given, when, then', and ask them to confirm. That way we agree before anything gets built."
   },
   {
     "id": "qa-it-015",
@@ -1333,7 +1392,8 @@
         "phrase": "look like to you",
         "meaning": "in your opinion"
       }
-    ]
+    ],
+    "sampleAnswer": "A good test strategy says what we test, how and when, based on risk. Lots of fast unit tests, fewer integration tests and only a few end-to-end tests, all running in CI, plus exploratory testing for new features."
   },
   {
     "id": "volunteering-001",
@@ -1351,7 +1411,8 @@
         "phrase": "keen",
         "meaning": "interested, eager (Australian)"
       }
-    ]
+    ],
+    "sampleAnswer": "I'd like to give something back to the community, and I really like what your organisation does for [the people you help]. I also want to meet people and get to know my new country better."
   },
   {
     "id": "volunteering-002",
@@ -1369,7 +1430,8 @@
         "phrase": "back home",
         "meaning": "in the country you come from"
       }
-    ]
+    ],
+    "sampleAnswer": "Yes. Back home I [what you did, for example helped at a clinic or a charity]. [Or: Not yet, but I've helped friends and neighbours, and now I'd like to do it properly.]"
   },
   {
     "id": "volunteering-003",
@@ -1391,7 +1453,8 @@
         "phrase": "give us",
         "meaning": "spend with us"
       }
-    ]
+    ],
+    "sampleAnswer": "Realistically, around [number] hours a week. I'd rather start with what I can do reliably and add more later."
   },
   {
     "id": "volunteering-004",
@@ -1413,7 +1476,8 @@
         "phrase": "a weekday person",
         "meaning": "someone who prefers Monday to Friday"
       }
-    ]
+    ],
+    "sampleAnswer": "I can do [weekdays or weekends or both]. My best days are [days]."
   },
   {
     "id": "volunteering-005",
@@ -1435,7 +1499,8 @@
         "phrase": "happy to",
         "meaning": "willing to"
       }
-    ]
+    ],
+    "sampleAnswer": "Yes, I have a current police check. [Or: Not yet, but I'm happy to get one straight away.]"
   },
   {
     "id": "volunteering-006",
@@ -1457,7 +1522,8 @@
         "phrase": "sorted",
         "meaning": "done, arranged"
       }
-    ]
+    ],
+    "sampleAnswer": "Yes, I have one. [Or: Not yet, but I'll apply for it this week.]"
   },
   {
     "id": "volunteering-007",
@@ -1475,7 +1541,8 @@
         "phrase": "aggro",
         "meaning": "aggressive, angry (Australian slang)"
       }
-    ]
+    ],
+    "sampleAnswer": "I'd stay calm, speak slowly and listen. I'd try to understand what's wrong and show that I care. If I felt unsafe, I'd step back and get help from a staff member."
   },
   {
     "id": "volunteering-008",
@@ -1497,7 +1564,8 @@
         "phrase": "confidential",
         "meaning": "private, not shared"
       }
-    ]
+    ],
+    "sampleAnswer": "I understand that confidentiality is really important. I wouldn't share anything about clients with anyone outside the team. If I heard something that suggests someone is at risk, I'd tell my supervisor."
   },
   {
     "id": "volunteering-009",
@@ -1515,7 +1583,8 @@
         "phrase": "help someone out",
         "meaning": "help someone"
       }
-    ]
+    ],
+    "sampleAnswer": "At [place], we helped [who] with [what]. I [your part], and the team [what they did]. In the end [the result]. I liked that we all worked together."
   },
   {
     "id": "volunteering-010",
@@ -1537,7 +1606,8 @@
         "phrase": "bring to",
         "meaning": "offer, contribute"
       }
-    ]
+    ],
+    "sampleAnswer": "I have experience in [your field, for example medicine], so I'm calm in stressful situations and good at listening to people. I'm also organised and reliable."
   },
   {
     "id": "volunteering-011",
@@ -1555,7 +1625,8 @@
         "phrase": "all walks of life",
         "meaning": "all kinds of backgrounds"
       }
-    ]
+    ],
+    "sampleAnswer": "I'm an immigrant myself, so I know how it feels to be new. I'm open, respectful and curious about other cultures, and I always try to listen first."
   },
   {
     "id": "volunteering-012",
@@ -1573,7 +1644,8 @@
         "phrase": "a real help",
         "meaning": "very useful"
       }
-    ]
+    ],
+    "sampleAnswer": "Yes, I speak [languages]. I'd be happy to help clients who speak them."
   },
   {
     "id": "volunteering-013",
@@ -1595,7 +1667,8 @@
         "phrase": "look after yourself",
         "meaning": "take care of yourself"
       }
-    ]
+    ],
+    "sampleAnswer": "I try to keep a good balance: enough sleep, exercise and time with family. If something is hard, I talk to my supervisor or the team."
   },
   {
     "id": "volunteering-014",
@@ -1613,7 +1686,8 @@
         "phrase": "outside your role",
         "meaning": "not part of your duties"
       }
-    ]
+    ],
+    "sampleAnswer": "I'd explain politely that it's outside my role and I'm not allowed to do it. Then I'd tell my supervisor, so the client gets the right help."
   },
   {
     "id": "volunteering-015",
@@ -1631,7 +1705,8 @@
         "phrase": "own transport",
         "meaning": "your own car"
       }
-    ]
+    ],
+    "sampleAnswer": "I'll come by [car or public transport]. It's about [time] from my place, so that's no problem."
   },
   {
     "id": "aged-care-001",
@@ -1653,7 +1728,8 @@
         "phrase": "aged care",
         "meaning": "care for elderly people"
       }
-    ]
+    ],
+    "sampleAnswer": "I like helping people, and I find it really meaningful to support older people so they can live with dignity. [If true: I have a medical background, so caring for people comes naturally to me.]"
   },
   {
     "id": "aged-care-002",
@@ -1675,7 +1751,8 @@
         "phrase": "working towards",
         "meaning": "studying for"
       }
-    ]
+    ],
+    "sampleAnswer": "Yes, I've completed it. [Or: I'm studying it now and I'll finish in (month). I've already done my placement at (place).]"
   },
   {
     "id": "aged-care-003",
@@ -1697,7 +1774,8 @@
         "phrase": "dignity",
         "meaning": "self-respect, privacy"
       }
-    ]
+    ],
+    "sampleAnswer": "I'd ask for their consent first and explain each step. I'd keep them covered with a towel as much as possible, check the water temperature, and let them do as much as they can themselves. I'd always respect their choices."
   },
   {
     "id": "aged-care-004",
@@ -1723,7 +1801,8 @@
         "phrase": "agitated",
         "meaning": "nervous, upset"
       }
-    ]
+    ],
+    "sampleAnswer": "I'd stay calm, speak gently and listen. I wouldn't argue. I'd try to redirect them with something they like, for example a cup of tea or a walk. I'd follow their care plan and tell the RN."
   },
   {
     "id": "aged-care-005",
@@ -1741,7 +1820,8 @@
         "phrase": "found on the floor",
         "meaning": "they have fallen"
       }
-    ]
+    ],
+    "sampleAnswer": "I wouldn't move them. I'd stay with them, call for help and tell the registered nurse straight away. Then I'd follow the facility's procedure and write an incident report."
   },
   {
     "id": "aged-care-006",
@@ -1763,7 +1843,8 @@
         "phrase": "hoist",
         "meaning": "a lifting machine for people"
       }
-    ]
+    ],
+    "sampleAnswer": "I always check the care plan first, use the right equipment, and ask for a second person when it's needed. Yes, I've used a hoist [in training or at work]. I never lift a resident on my own if it's not safe."
   },
   {
     "id": "aged-care-007",
@@ -1785,7 +1866,8 @@
         "phrase": "noticed",
         "meaning": "saw"
       }
-    ]
+    ],
+    "sampleAnswer": "I'd tell the registered nurse straight away and write it down in the notes. If I thought it could be abuse, I'd follow the reporting procedure. The resident's safety comes first."
   },
   {
     "id": "aged-care-008",
@@ -1803,7 +1885,8 @@
         "phrase": "person-centred care",
         "meaning": "care built around the person's own wishes"
       }
-    ]
+    ],
+    "sampleAnswer": "It means seeing the person, not just the tasks. I respect their choices, their routine and their culture, and I involve them and their family in decisions about their care."
   },
   {
     "id": "aged-care-009",
@@ -1825,7 +1908,8 @@
         "phrase": "are you right with that",
         "meaning": "is that okay for you (Australian)"
       }
-    ]
+    ],
+    "sampleAnswer": "Yes, I'm fine with that. I understand care is needed around the clock, and I'm flexible."
   },
   {
     "id": "aged-care-010",
@@ -1847,7 +1931,8 @@
         "phrase": "mum",
         "meaning": "mother"
       }
-    ]
+    ],
+    "sampleAnswer": "I'd stay calm, listen and not take it personally. I'd show that I understand their worry, and tell them I'll pass it on to the registered nurse or manager, who can follow up properly."
   },
   {
     "id": "aged-care-011",
@@ -1865,7 +1950,8 @@
         "phrase": "refuses",
         "meaning": "says no to"
       }
-    ]
+    ],
+    "sampleAnswer": "I wouldn't force them. I'd gently try to find out why, maybe they feel unwell, or they don't like the food. I'd tell the RN and write it in the notes."
   },
   {
     "id": "aged-care-012",
@@ -1883,7 +1969,8 @@
         "phrase": "end of life",
         "meaning": "the last days before death, palliative care"
       }
-    ]
+    ],
+    "sampleAnswer": "Yes. I [your experience]. I focused on keeping the person comfortable and pain-free, I sat with them, and I supported the family. It's hard, but it's a privilege to be there."
   },
   {
     "id": "aged-care-013",
@@ -1905,7 +1992,8 @@
         "phrase": "up to scratch",
         "meaning": "good enough (Australian)"
       }
-    ]
+    ],
+    "sampleAnswer": "I write my notes during or right after care, so I don't forget anything. They're clear, factual and on time. At handover I mention any changes or concerns, and I check the next person understood."
   },
   {
     "id": "aged-care-014",
@@ -1927,7 +2015,8 @@
         "phrase": "police clearance",
         "meaning": "police check"
       }
-    ]
+    ],
+    "sampleAnswer": "Yes, I have both. [Or: I've applied and I'm waiting for the result. I can send you the reference number.]"
   },
   {
     "id": "aged-care-015",
@@ -1945,6 +2034,7 @@
         "phrase": "duty of care",
         "meaning": "the legal duty to keep people safe"
       }
-    ]
+    ],
+    "sampleAnswer": "Duty of care means I must keep residents safe from harm, while still respecting their choices. If something could hurt them, I need to act and report it."
   }
 ]

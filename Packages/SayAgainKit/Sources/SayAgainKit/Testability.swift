@@ -31,8 +31,7 @@ public enum A11yID {
         public static let reveal = "session.reveal"
         public static let resultBanner = "session.result"
         public static let originalText = "session.originalText"
-        public static let gotItButton = "session.rate.gotIt"
-        public static let partlyButton = "session.rate.partly"
+        public static let sampleAnswerButton = "session.sampleAnswer"
         public static let nextButton = "session.next"
         public static func choice(_ index: Int) -> String { "session.choice.\(index)" }
     }
@@ -47,10 +46,16 @@ public enum A11yID {
         public static func previewButton(_ name: String) -> String { "settings.voice.\(name).play" }
     }
 
+    public enum SampleAnswer {
+        public static let sheet = "sampleAnswer.sheet"
+        public static let text = "sampleAnswer.text"
+        public static let listenButton = "sampleAnswer.listen"
+        public static let closeButton = "sampleAnswer.close"
+    }
+
     public enum Summary {
         public static let root = "summary.root"
-        public static let gotIt = "summary.gotIt"
-        public static let partly = "summary.partly"
+        public static let understood = "summary.understood"
         public static let missed = "summary.missed"
         public static let doneButton = "summary.done"
     }
@@ -66,7 +71,8 @@ public extension QuestionBank {
             rephrase: "Tell me about yourself and your experience.",
             gist: "Tell me about your background.",
             distractors: ["Why do you want this job?", "What are your weaknesses?"],
-            phrases: [Phrase(phrase: "to kick things off", meaning: "to start")]
+            phrases: [Phrase(phrase: "to kick things off", meaning: "to start")],
+            sampleAnswer: "Sure. I'm a [your role] with [number] years of experience."
         ),
         Question(
             id: "fixture-behavioural-1",
@@ -75,7 +81,8 @@ public extension QuestionBank {
             rephrase: "Tell me about a difficult bug you found.",
             gist: "Describe a hard bug you investigated.",
             distractors: ["How many bugs do you find a week?", "Which bug tracker do you use?"],
-            phrases: [Phrase(phrase: "tracked down", meaning: "found after searching")]
+            phrases: [Phrase(phrase: "tracked down", meaning: "found after searching")],
+            sampleAnswer: "Yes. I collected logs, found the exact steps and wrote a clear bug report."
         ),
         Question(
             id: "fixture-behavioural-2",
@@ -84,7 +91,8 @@ public extension QuestionBank {
             rephrase: "If a developer says your bug is not a real bug, what do you do?",
             gist: "How do you handle a developer who disagrees with your bug?",
             distractors: ["How do you report a bug?", "Have you ever worked as a developer?"],
-            phrases: [Phrase(phrase: "reckons", meaning: "thinks")]
+            phrases: [Phrase(phrase: "reckons", meaning: "thinks")],
+            sampleAnswer: "I listen first, then show the facts and the impact on users."
         )
     ])
 }
