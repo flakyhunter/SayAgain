@@ -15,7 +15,7 @@ struct SayAgainApp: App {
 
     var body: some Scene {
         WindowGroup {
-            HomeView(bank: environment.bank)
+            HomeView(bank: environment.bank, animated: !environment.isUITesting)
         }
     }
 }

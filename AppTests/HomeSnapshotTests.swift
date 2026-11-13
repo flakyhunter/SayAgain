@@ -11,7 +11,7 @@ struct HomeSnapshotTests {
         bank: QuestionBank,
         style: UIUserInterfaceStyle = .light
     ) -> UIViewController {
-        let controller = UIHostingController(rootView: HomeView(bank: bank))
+        let controller = UIHostingController(rootView: HomeView(bank: bank, animated: false))
         controller.overrideUserInterfaceStyle = style
         return controller
     }
