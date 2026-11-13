@@ -2036,5 +2036,330 @@
       }
     ],
     "sampleAnswer": "Duty of care means I must keep residents safe from harm, while still respecting their choices. If something could hurt them, I need to act and report it."
+  },
+  {
+    "id": "school-001",
+    "category": "school",
+    "locale": "en-AU",
+    "text": "Hi there! What's your name, love?",
+    "rephrase": "What is your name?",
+    "gist": "What is your name?",
+    "distractors": [
+      "Where is your mum?",
+      "How old are you?"
+    ],
+    "phrases": [
+      {
+        "phrase": "hi there",
+        "meaning": "hello"
+      },
+      {
+        "phrase": "love",
+        "meaning": "a friendly word adults say to kids (Australian)"
+      }
+    ],
+    "sampleAnswer": "Hi! My name is [your name]."
+  },
+  {
+    "id": "school-002",
+    "category": "school",
+    "locale": "en-AU",
+    "text": "And how old are you, mate?",
+    "rephrase": "How old are you?",
+    "gist": "How old are you?",
+    "distractors": [
+      "What class are you in?",
+      "What is your friend's name?"
+    ],
+    "phrases": [
+      {
+        "phrase": "mate",
+        "meaning": "friend (Australian)"
+      }
+    ],
+    "sampleAnswer": "I'm [ten] years old."
+  },
+  {
+    "id": "school-003",
+    "category": "school",
+    "locale": "en-AU",
+    "text": "Where are you from? Have you just moved here?",
+    "rephrase": "Which country are you from? Are you new here?",
+    "gist": "Where are you from, and are you new here?",
+    "distractors": [
+      "Where do you live now?",
+      "Do you like moving house?"
+    ],
+    "phrases": [
+      {
+        "phrase": "moved here",
+        "meaning": "came to live here"
+      }
+    ],
+    "sampleAnswer": "I'm from [your country]. Yes, we just moved here."
+  },
+  {
+    "id": "school-004",
+    "category": "school",
+    "locale": "en-AU",
+    "text": "Do you need to go to the toilet? Just put your hand up and ask.",
+    "rephrase": "If you need the toilet, raise your hand and ask.",
+    "gist": "Raise your hand and ask to go to the toilet.",
+    "distractors": [
+      "Wash your hands after lunch.",
+      "Put your bag on the hook."
+    ],
+    "phrases": [
+      {
+        "phrase": "put your hand up",
+        "meaning": "raise your hand"
+      }
+    ],
+    "sampleAnswer": "Excuse me, Miss. Can I go to the toilet, please?"
+  },
+  {
+    "id": "school-005",
+    "category": "school",
+    "locale": "en-AU",
+    "text": "Righto, everyone, grab your hats. No hat, no play!",
+    "rephrase": "Everyone, take your hats. You can't play outside without a hat.",
+    "gist": "Take your hat. You need it to play outside.",
+    "distractors": [
+      "Put your hats in your bags.",
+      "We are not playing today."
+    ],
+    "phrases": [
+      {
+        "phrase": "righto",
+        "meaning": "okay"
+      },
+      {
+        "phrase": "grab",
+        "meaning": "take"
+      },
+      {
+        "phrase": "No hat, no play",
+        "meaning": "a school sun rule: no hat means no playing outside"
+      }
+    ],
+    "sampleAnswer": "Okay! I've got my hat."
+  },
+  {
+    "id": "school-006",
+    "category": "school",
+    "locale": "en-AU",
+    "text": "It's recess now. Have you got something to eat?",
+    "rephrase": "It is the short break now. Do you have food?",
+    "gist": "Do you have a snack for the break?",
+    "distractors": [
+      "Is your lunch hot?",
+      "Do you want to go home?"
+    ],
+    "phrases": [
+      {
+        "phrase": "recess",
+        "meaning": "the short break in the morning"
+      }
+    ],
+    "sampleAnswer": "Yes, I have a snack in my bag."
+  },
+  {
+    "id": "school-007",
+    "category": "school",
+    "locale": "en-AU",
+    "text": "Did you bring your water bottle? You can fill it up at the bubbler.",
+    "rephrase": "Do you have a water bottle? You can get water at the drinking fountain.",
+    "gist": "Do you have a water bottle to fill up?",
+    "distractors": [
+      "Do you want a new bottle?",
+      "Is the water too cold?"
+    ],
+    "phrases": [
+      {
+        "phrase": "bubbler",
+        "meaning": "drinking fountain (Australian)"
+      },
+      {
+        "phrase": "fill it up",
+        "meaning": "put water in it"
+      }
+    ],
+    "sampleAnswer": "Yes, here it is. Where is the bubbler?"
+  },
+  {
+    "id": "school-008",
+    "category": "school",
+    "locale": "en-AU",
+    "text": "Can you pop your bag on the hook and come sit on the mat?",
+    "rephrase": "Put your bag on the hook and sit on the mat.",
+    "gist": "Put your bag away and sit on the mat.",
+    "distractors": [
+      "Bring your bag to the mat.",
+      "Take your bag home."
+    ],
+    "phrases": [
+      {
+        "phrase": "pop",
+        "meaning": "put (casual)"
+      },
+      {
+        "phrase": "the mat",
+        "meaning": "the carpet where the class sits together"
+      }
+    ],
+    "sampleAnswer": "Okay! Where do I sit?"
+  },
+  {
+    "id": "school-009",
+    "category": "school",
+    "locale": "en-AU",
+    "text": "Do you want to play with us at lunch? We're playing handball.",
+    "rephrase": "Do you want to play handball with us at lunchtime?",
+    "gist": "Do you want to play with us at lunch?",
+    "distractors": [
+      "Do you want to eat lunch with us?",
+      "Can you buy us lunch?"
+    ],
+    "phrases": [
+      {
+        "phrase": "handball",
+        "meaning": "a popular school game with a ball and four squares"
+      }
+    ],
+    "sampleAnswer": "Yes, please! Can you show me the rules?"
+  },
+  {
+    "id": "school-010",
+    "category": "school",
+    "locale": "en-AU",
+    "text": "What's your favourite subject so far?",
+    "rephrase": "Which school subject do you like the most?",
+    "gist": "What subject do you like best?",
+    "distractors": [
+      "What is your favourite food?",
+      "How far is your school?"
+    ],
+    "phrases": [
+      {
+        "phrase": "subject",
+        "meaning": "maths, art, sport and so on"
+      },
+      {
+        "phrase": "so far",
+        "meaning": "until now"
+      }
+    ],
+    "sampleAnswer": "I like [maths]. It's fun."
+  },
+  {
+    "id": "school-011",
+    "category": "school",
+    "locale": "en-AU",
+    "text": "Are you okay? You look a bit lost. Do you need a hand?",
+    "rephrase": "Are you okay? Do you need help?",
+    "gist": "Do you need help?",
+    "distractors": [
+      "Did you lose your hand?",
+      "Are you going home now?"
+    ],
+    "phrases": [
+      {
+        "phrase": "lost",
+        "meaning": "not knowing where to go"
+      },
+      {
+        "phrase": "need a hand",
+        "meaning": "need help"
+      }
+    ],
+    "sampleAnswer": "Yes, please. I can't find my classroom."
+  },
+  {
+    "id": "school-012",
+    "category": "school",
+    "locale": "en-AU",
+    "text": "Can you say that again, a bit louder? I didn't quite catch it.",
+    "rephrase": "Please say that again, louder. I didn't hear you.",
+    "gist": "Please say it again, louder.",
+    "distractors": [
+      "Please stop talking.",
+      "Please write it down."
+    ],
+    "phrases": [
+      {
+        "phrase": "catch it",
+        "meaning": "hear it"
+      }
+    ],
+    "sampleAnswer": "Sorry! I'm still learning English. I said [your words]."
+  },
+  {
+    "id": "school-013",
+    "category": "school",
+    "locale": "en-AU",
+    "text": "Have you got a lunch order today, or did you bring lunch from home?",
+    "rephrase": "Did you order lunch at school, or bring lunch from home?",
+    "gist": "Did you order lunch or bring it from home?",
+    "distractors": [
+      "Do you want to cook lunch?",
+      "What time is lunch?"
+    ],
+    "phrases": [
+      {
+        "phrase": "lunch order",
+        "meaning": "lunch you order from the school canteen"
+      }
+    ],
+    "sampleAnswer": "I brought lunch from home."
+  },
+  {
+    "id": "school-014",
+    "category": "school",
+    "locale": "en-AU",
+    "text": "We've got assembly after recess, so line up at the door, please.",
+    "rephrase": "We have a school meeting after the break. Please stand in a line at the door.",
+    "gist": "Line up at the door for assembly.",
+    "distractors": [
+      "Sit at your desk after recess.",
+      "Go home after assembly."
+    ],
+    "phrases": [
+      {
+        "phrase": "assembly",
+        "meaning": "a meeting of the whole school"
+      },
+      {
+        "phrase": "line up",
+        "meaning": "stand in a line"
+      }
+    ],
+    "sampleAnswer": "Okay! Can I stand next to you?"
+  },
+  {
+    "id": "school-015",
+    "category": "school",
+    "locale": "en-AU",
+    "text": "Is someone picking you up this arvo, or are you going to after-school care?",
+    "rephrase": "Is someone coming to get you this afternoon, or are you staying at after-school care?",
+    "gist": "Who is taking you home this afternoon?",
+    "distractors": [
+      "Do you want to go to the park this afternoon?",
+      "Do you like your teacher?"
+    ],
+    "phrases": [
+      {
+        "phrase": "arvo",
+        "meaning": "afternoon (Australian)"
+      },
+      {
+        "phrase": "picking you up",
+        "meaning": "coming to take you home"
+      },
+      {
+        "phrase": "after-school care",
+        "meaning": "a place where kids stay after school"
+      }
+    ],
+    "sampleAnswer": "My [mum] is picking me up."
   }
 ]

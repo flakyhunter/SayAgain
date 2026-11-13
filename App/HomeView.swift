@@ -257,6 +257,7 @@ extension QuestionCategory {
         case .qaIT: "ladybug.fill"
         case .volunteering: "hands.and.sparkles.fill"
         case .agedCare: "heart.text.square.fill"
+        case .school: "backpack.fill"
         }
     }
 
@@ -268,6 +269,7 @@ extension QuestionCategory {
         case .qaIT: Theme.sunset
         case .volunteering: Color(red: 0.84, green: 0.33, blue: 0.52)
         case .agedCare: Color(red: 0.20, green: 0.45, blue: 0.82)
+        case .school: Color(red: 0.91, green: 0.58, blue: 0.08)
         }
     }
 }

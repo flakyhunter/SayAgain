@@ -13,7 +13,7 @@ a plain-English version and the phrases that usually trip people up. Every quest
 a sample answer in simple English, with [placeholders] for your own details, that you can listen to.
 
 Categories: intro and background, behavioural, salary and logistics, QA and IT, volunteering,
-aged care. 90 questions, read by the Australian voices installed on the device.
+aged care, school (for kids). 105 questions, read by the Australian voices installed on the device.
 
 > Status: **v1 in progress.** The practice loop works: listen, choose the meaning, see the answer, rate yourself.
 > Next: more questions, settings, TestFlight.
@@ -40,7 +40,7 @@ the focus is on how it is tested and shipped:
 
 | Level | Tooling | What it covers | Tests | Runs on |
 |---|---|---|---|---|
-| Unit | Swift Testing | Content rules (90 questions in 6 categories, 15+ each, no city-specific text, sample answers with balanced placeholders), Leitner scheduling, session state machine, seeded shuffling, progress storage, view model with a recording speech double, voice rotation, settings | 48 | macOS + simulator, under 1 s |
+| Unit | Swift Testing | Content rules (105 questions in 7 categories, 15+ each, no city-specific text, sample answers with balanced placeholders), Leitner scheduling, session state machine, seeded shuffling, progress storage, view model with a recording speech double, voice rotation, settings | 48 | macOS + simulator, under 1 s |
 | Snapshot | [swift-snapshot-testing](https://github.com/pointfreeco/swift-snapshot-testing) | Home (light, dark, empty), practice (answering, wrong, right in dark), summary, single-voice hint, settings | 9 | iOS Simulator, ~3 s |
 | UI | XCUITest + page objects | Full session from home to summary, replay, home content, reset progress with confirmation, slow-by-default setting | 5 | iOS Simulator |
 
