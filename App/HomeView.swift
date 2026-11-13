@@ -13,6 +13,13 @@ struct HomeView: View {
     @State private var startOverCandidate: QuestionCategory?
     /// Bumped after a reset so the progress on the cards is read again.
     @State private var progressVersion = 0
+    /// The card being dragged to a new place.
+    @State private var dragging: QuestionCategory?
+    private var summaries: [CategorySummary] { bank.categorySummaries(order: environment.settings.categoryOrder) }
+
+    private func shift(_ category: QuestionCategory, by offset: Int) {
+        environment.settings.categoryOrder = CategoryOrder.shift(category, by: offset, in: environment.settings.categoryOrder)
+    }
 
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     private var bank: QuestionBank { environment.bank }
@@ -30,10 +37,17 @@ struct HomeView: View {
                 .padding(.bottom, 32)
             }
             .accessibilityIdentifier(A11yID.Home.list)
+            .onDrop(of: [.text], isTargeted: nil) { _ in
+                dragging = nil
+                return true
+            }
             .background(Color(.systemGroupedBackground))
             .navigationTitle("Say Again")
             // Back from practice (Done or the back button): progress may have changed.
-            .onChange(of: path) { progressVersion += 1 }
+            .onChange(of: path) {
+                progressVersion += 1
+                dragging = nil
+            }
             .confirmationDialog(
                 "Start \(startOverCandidate?.title ?? "") over?",
                 isPresented: Binding(get: { startOverCandidate != nil }, set: { if !$0 { startOverCandidate = nil } }),
@@ -79,11 +93,20 @@ struct HomeView: View {
     @ViewBuilder
     private var categories: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("Categories")
-                .font(.title3.bold())
-                .accessibilityAddTraits(.isHeader)
+            HStack(alignment: .firstTextBaseline) {
+                Text("Categories")
+                    .font(.title3.bold())
+                    .accessibilityAddTraits(.isHeader)
+                Spacer()
+                if summaries.count > 1 {
+                    Label("Hold and drag to reorder", systemImage: "hand.draw")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                        .accessibilityHidden(true)
+                }
+            }
 
-            if bank.categorySummaries.isEmpty {
+            if summaries.isEmpty {
                 Text("No questions yet.")
                     .foregroundStyle(.secondary)
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -93,7 +116,7 @@ struct HomeView: View {
             }
 
             LazyVStack(spacing: 12) {
-                ForEach(Array(bank.categorySummaries.enumerated()), id: \.element.id) { index, summary in
+                ForEach(Array(summaries.enumerated()), id: \.element.id) { index, summary in
                     // Reading the version makes SwiftUI recompute progress after a session or a reset.
                     let learned = progressVersion >= 0
                         ? bank.learnedCount(in: summary.category, store: environment.store) : 0
@@ -126,12 +149,22 @@ struct HomeView: View {
                             .accessibilityIdentifier(A11yID.Home.startOverButton(summary.category))
                         }
                     }
+                    .opacity(dragging == summary.category ? 0.35 : 1)
+                    .onDrag {
+                        dragging = summary.category
+                        return NSItemProvider(object: summary.category.rawValue as NSString)
+                    }
+                    .onDrop(of: [.text], delegate: CategoryDropDelegate(
+                        target: summary.category, dragging: $dragging, settings: environment.settings, animated: motion
+                    ))
                     .contextMenu {
                         Button("Start over", systemImage: "arrow.counterclockwise", role: .destructive) {
                             startOverCandidate = summary.category
                         }
                         .disabled(learned == 0)
                     }
+                    .accessibilityAction(named: "Move up") { shift(summary.category, by: -1) }
+                    .accessibilityAction(named: "Move down") { shift(summary.category, by: 1) }
 
                     .scrollTransition(.interactive, axis: .vertical) { content, phase in
                         // Rows shrink and fade a little as they reach the screen edges.
@@ -144,6 +177,27 @@ struct HomeView: View {
                 }
             }
         }
+    }
+}
+
+/// Live reordering: while a card is dragged over another, they swap places.
+private struct CategoryDropDelegate: DropDelegate {
+    let target: QuestionCategory
+    @Binding var dragging: QuestionCategory?
+    let settings: AppSettings
+    let animated: Bool
+
+    func dropEntered(info: DropInfo) {
+        guard let dragging, dragging != target else { return }
+        let reorder = { settings.categoryOrder = CategoryOrder.move(dragging, to: target, in: settings.categoryOrder) }
+        if animated { withAnimation(.spring(duration: 0.35, bounce: 0.25), reorder) } else { reorder() }
+    }
+
+    func dropUpdated(info: DropInfo) -> DropProposal? { DropProposal(operation: .move) }
+
+    func performDrop(info: DropInfo) -> Bool {
+        dragging = nil
+        return true
     }
 }
 

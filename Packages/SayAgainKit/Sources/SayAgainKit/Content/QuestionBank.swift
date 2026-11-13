@@ -44,9 +44,14 @@ public struct QuestionBank: Sendable {
         questions.filter { $0.category == category }
     }
 
-    /// Categories that have at least one question, in display order.
+    /// Categories that have at least one question, in the default display order.
     public var categorySummaries: [CategorySummary] {
-        QuestionCategory.allCases.compactMap { category in
+        categorySummaries(order: CategoryOrder.default)
+    }
+
+    /// Categories that have at least one question, in the given order.
+    public func categorySummaries(order: [QuestionCategory]) -> [CategorySummary] {
+        CategoryOrder.resolve(saved: order.map(\.rawValue)).compactMap { category in
             let count = questions(in: category).count
             return count > 0 ? CategorySummary(category: category, count: count) : nil
         }

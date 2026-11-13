@@ -43,6 +43,7 @@ public enum A11yID {
     public enum Settings {
         public static let slowByDefaultToggle = "settings.slowByDefault"
         public static let resetButton = "settings.reset"
+        public static let resetOrderButton = "settings.resetOrder"
         public static let resetConfirmButton = "settings.resetConfirm"
         public static let resetDoneLabel = "settings.resetDone"
         public static let version = "settings.version"

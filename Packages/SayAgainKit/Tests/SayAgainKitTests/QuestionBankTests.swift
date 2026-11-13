@@ -14,7 +14,7 @@ struct ShippedContentTests {
     @Test("Every category has at least one question")
     func everyCategoryCovered() throws {
         let bank = try QuestionBank.bundled()
-        #expect(bank.categorySummaries.map(\.category) == QuestionCategory.allCases)
+        #expect(Set(bank.categorySummaries.map(\.category)) == Set(QuestionCategory.allCases))
     }
 
     @Test("Release needs at least 60 questions, 15 per category")
@@ -113,6 +113,44 @@ struct SampleAnswerTests {
         #expect(AnswerTemplate.spoken("I'm a [your role].") == "I'm a your role.")
         #expect(AnswerTemplate.hasPlaceholders("I'm a [your role]."))
         #expect(!AnswerTemplate.hasPlaceholders("Yes, of course."))
+    }
+}
+
+@Suite("Category order")
+struct CategoryOrderTests {
+    @Test func defaultStartsWithSchoolAgedCareAndQA() {
+        #expect(Array(CategoryOrder.default.prefix(3)) == [.school, .agedCare, .qaIT])
+        #expect(Set(CategoryOrder.default) == Set(QuestionCategory.allCases), "Every category has a place")
+    }
+
+    @Test func emptySavedOrderGivesTheDefault() {
+        #expect(CategoryOrder.resolve(saved: []) == CategoryOrder.default)
+    }
+
+    @Test func savedOrderIsKeptAndNewCategoriesGoToTheEnd() {
+        let resolved = CategoryOrder.resolve(saved: ["intro", "unknown-from-old-version", "intro", "qa-it"])
+        #expect(Array(resolved.prefix(2)) == [.intro, .qaIT])
+        #expect(resolved.count == QuestionCategory.allCases.count)
+        #expect(Array(resolved.dropFirst(2)) == CategoryOrder.default.filter { $0 != .intro && $0 != .qaIT })
+    }
+
+    @Test func movingOntoAnotherCardTakesItsPlace() {
+        let order: [QuestionCategory] = [.school, .agedCare, .qaIT, .intro]
+        #expect(CategoryOrder.move(.intro, to: .school, in: order) == [.intro, .school, .agedCare, .qaIT])
+        #expect(CategoryOrder.move(.school, to: .qaIT, in: order) == [.agedCare, .qaIT, .school, .intro])
+        #expect(CategoryOrder.move(.qaIT, to: .qaIT, in: order) == order)
+    }
+
+    @Test func shiftStopsAtTheEnds() {
+        let order: [QuestionCategory] = [.school, .agedCare, .qaIT]
+        #expect(CategoryOrder.shift(.agedCare, by: -1, in: order) == [.agedCare, .school, .qaIT])
+        #expect(CategoryOrder.shift(.school, by: -1, in: order) == order)
+        #expect(CategoryOrder.shift(.qaIT, by: 1, in: order) == order)
+    }
+
+    @Test func summariesFollowTheGivenOrderAndSkipEmptyCategories() {
+        let summaries = QuestionBank.fixture.categorySummaries(order: [.behavioural, .school, .intro])
+        #expect(summaries.map(\.category) == [.behavioural, .intro])
     }
 }
 

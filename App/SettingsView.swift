@@ -32,6 +32,13 @@ final class SettingsViewModel {
         speech.speak(Self.previewLine, voice: voice, locale: Self.locale, slow: settings.slowByDefault)
     }
 
+    private(set) var orderWasReset = false
+
+    func resetCategoryOrder() {
+        settings.resetCategoryOrder()
+        orderWasReset = true
+    }
+
     func resetProgress() {
         store.reset()
         progressWasReset = true
@@ -100,6 +107,19 @@ struct SettingsView: View {
                 Text("Listening")
             } footer: {
                 Text("Handy at the start. Turn it off when normal speed feels easy.")
+            }
+
+            Section {
+                Button("Reset category order", systemImage: "arrow.up.arrow.down") {
+                    model.resetCategoryOrder()
+                }
+                .accessibilityIdentifier(A11yID.Settings.resetOrderButton)
+            } header: {
+                Text("Home screen")
+            } footer: {
+                Text(model.orderWasReset
+                    ? "Order reset: School, Aged care and QA come first."
+                    : "Hold a category on the home screen and drag it to change the order.")
             }
 
             Section {

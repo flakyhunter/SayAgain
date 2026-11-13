@@ -1,5 +1,6 @@
 import Foundation
 import Observation
+import SayAgainKit
 
 /// User preferences, stored on the device only.
 @MainActor
@@ -7,6 +8,7 @@ import Observation
 final class AppSettings {
     enum Key {
         static let slowByDefault = "settings.slowByDefault"
+        static let categoryOrder = "settings.categoryOrder"
     }
 
     @ObservationIgnored private let defaults: UserDefaults
@@ -16,9 +18,19 @@ final class AppSettings {
         didSet { defaults.set(slowByDefault, forKey: Key.slowByDefault) }
     }
 
+    /// Home screen order, changed by dragging cards.
+    var categoryOrder: [QuestionCategory] {
+        didSet { defaults.set(categoryOrder.map(\.rawValue), forKey: Key.categoryOrder) }
+    }
+
     init(defaults: UserDefaults) {
         self.defaults = defaults
         slowByDefault = defaults.bool(forKey: Key.slowByDefault)
+        categoryOrder = CategoryOrder.resolve(saved: defaults.stringArray(forKey: Key.categoryOrder) ?? [])
+    }
+
+    func resetCategoryOrder() {
+        categoryOrder = CategoryOrder.default
     }
 
     /// Fresh, isolated settings for tests and UI-test mode.
