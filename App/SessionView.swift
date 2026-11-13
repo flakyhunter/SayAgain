@@ -148,6 +148,12 @@ private struct ListenCard: View {
             .accessibilityIdentifier(A11yID.Session.playButton)
 
             VStack(alignment: .leading, spacing: 8) {
+                if let speaker = model.speaker {
+                    Label("\(speaker.name) is asking", systemImage: "person.wave.2.fill")
+                        .font(.headline)
+                        .foregroundStyle(Theme.ocean)
+                        .accessibilityIdentifier(A11yID.Session.speaker)
+                }
                 Text(model.isRevealed ? "Listen again with the text below." : "Listen. The text is hidden on purpose.")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
@@ -163,6 +169,21 @@ private struct ListenCard: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(18)
         .background(Color(.secondarySystemGroupedBackground), in: .rect(cornerRadius: 22))
+        .safeAreaInset(edge: .bottom, spacing: 8) {
+            if model.canGetMoreVoices { moreVoicesHint }
+        }
+    }
+
+    private var moreVoicesHint: some View {
+        Label {
+            Text("Want different interviewers? Download more English (Australia) voices in Settings > Accessibility > Spoken Content > Voices.")
+        } icon: {
+            Image(systemName: "person.3.fill")
+        }
+        .font(.footnote)
+        .foregroundStyle(.secondary)
+        .padding(.horizontal, 6)
+        .accessibilityIdentifier(A11yID.Session.moreVoicesHint)
     }
 
     static func playedText(_ count: Int) -> String {

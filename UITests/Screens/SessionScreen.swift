@@ -12,6 +12,7 @@ struct SessionScreen {
 
     var progress: XCUIElement { element(A11yID.Session.progress) }
     var playButton: XCUIElement { app.buttons[A11yID.Session.playButton] }
+    var speaker: XCUIElement { element(A11yID.Session.speaker) }
     var reveal: XCUIElement { element(A11yID.Session.reveal) }
     var originalText: XCUIElement { element(A11yID.Session.originalText) }
     var gotItButton: XCUIElement { app.buttons[A11yID.Session.gotItButton] }

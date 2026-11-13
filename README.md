@@ -34,8 +34,8 @@ the focus is on how it is tested and shipped:
 
 | Level | Tooling | What it covers | Tests | Runs on |
 |---|---|---|---|---|
-| Unit | Swift Testing | Content rules (60+ questions, no city-specific text), Leitner scheduling, session state machine, seeded shuffling, progress storage, view model with a recording speech double | 37 | macOS + simulator, under 1 s |
-| Snapshot | [swift-snapshot-testing](https://github.com/pointfreeco/swift-snapshot-testing) | Home (light, dark, empty), practice (answering, wrong, right in dark), summary | 7 | iOS Simulator, ~3 s |
+| Unit | Swift Testing | Content rules (60+ questions, no city-specific text), Leitner scheduling, session state machine, seeded shuffling, progress storage, view model with a recording speech double, voice rotation | 43 | macOS + simulator, under 1 s |
+| Snapshot | [swift-snapshot-testing](https://github.com/pointfreeco/swift-snapshot-testing) | Home (light, dark, empty), practice (answering, wrong, right in dark), summary, single-voice hint | 8 | iOS Simulator, ~3 s |
 | UI | XCUITest + page objects | Full session from home to summary, replay, home content | 3 | iOS Simulator |
 
 Numbers as of the current commit. A full CI run takes about 7 minutes, most of it is the simulator boot on the

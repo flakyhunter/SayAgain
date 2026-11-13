@@ -23,6 +23,8 @@ public enum A11yID {
         public static let progress = "session.progress"
         public static let playButton = "session.play"
         public static let slowToggle = "session.slow"
+        public static let speaker = "session.speaker"
+        public static let moreVoicesHint = "session.moreVoicesHint"
         public static let reveal = "session.reveal"
         public static let resultBanner = "session.result"
         public static let originalText = "session.originalText"

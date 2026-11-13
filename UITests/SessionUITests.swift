@@ -14,6 +14,7 @@ final class SessionUITests: SayAgainUITestCase {
         XCTAssertEqual(session.progress.label, "Question 1 of 2")
         XCTAssertEqual(session.playButton.value as? String, "Played once", "Question autoplays once")
         XCTAssertFalse(session.reveal.exists, "Text stays hidden until the user answers")
+        XCTAssertEqual(session.speaker.label, "Karen is asking")
 
         let first = question(shownIn: session)
         session.choose(first.gist)
@@ -22,6 +23,7 @@ final class SessionUITests: SayAgainUITestCase {
         session.gotItButton.tap()
 
         XCTAssertEqual(session.progress.label, "Question 2 of 2")
+        XCTAssertEqual(session.speaker.label, "Lee is asking", "Each question gets another interviewer")
         let second = question(shownIn: session)
         session.chooseWrong(insteadOf: second.gist)
         XCTAssertFalse(session.gotItButton.exists, "Wrong answer cannot be rated as understood")

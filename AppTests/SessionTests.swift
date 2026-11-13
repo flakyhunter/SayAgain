@@ -22,7 +22,7 @@ struct SessionViewModelTests {
         let model = model()
         let question = try #require(model.session.current)
         model.play()
-        #expect(speech.utterances == [Utterance(text: question.text, locale: "en-AU", slow: false)])
+        #expect(speech.utterances == [Utterance(text: question.text, voiceName: "Karen", locale: "en-AU", slow: false)])
         #expect(model.playCount == 1)
     }
 
@@ -64,6 +64,26 @@ struct SessionViewModelTests {
         #expect(store.box(for: question.id) == 1)
     }
 
+    @Test func nextQuestionIsAskedByAnotherVoice() throws {
+        let model = model()
+        #expect(model.speaker?.name == "Karen")
+        model.choose(try #require(model.session.current).gist)
+        model.rate(.gotIt)
+        model.play()
+        #expect(model.speaker?.name == "Lee")
+        #expect(speech.utterances.last?.voiceName == "Lee")
+        #expect(!model.canGetMoreVoices)
+    }
+
+    @Test func oneInstalledVoiceShowsTheDownloadHint() {
+        let speech = RecordingSpeechService(voices: [RecordingSpeechService.defaultVoices[0]])
+        let model = SessionViewModel(
+            session: .make(bank: .fixture, category: nil, store: store, seed: 1), speech: speech, store: store
+        )
+        #expect(model.canGetMoreVoices)
+        #expect(model.speaker?.name == "Karen")
+    }
+
     @Test func leavingStopsSpeech() {
         model().leave()
         #expect(speech.stopCount == 1)
@@ -100,6 +120,16 @@ struct SessionSnapshotTests {
         let model = model()
         model.choose(try #require(model.session.current).gist)
         assertSnapshot(of: Snapshot.host(screen(model), style: .dark), as: Snapshot.strategy)
+    }
+
+    @Test func singleVoiceWithHint() {
+        let store = InMemoryProgressStore()
+        let model = SessionViewModel(
+            session: .make(bank: .fixture, category: .behavioural, store: store, seed: LaunchArgument.uiTestingSeed),
+            speech: RecordingSpeechService(voices: [RecordingSpeechService.defaultVoices[0]]),
+            store: store
+        )
+        assertSnapshot(of: Snapshot.host(screen(model)), as: Snapshot.strategy)
     }
 
     @Test func summary() {

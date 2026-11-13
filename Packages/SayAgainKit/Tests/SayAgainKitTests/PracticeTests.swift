@@ -154,9 +154,35 @@ struct PracticeSessionTests {
 struct RecordingSpeechTests {
     @Test func recordsUtterancesAndStops() {
         let speech = RecordingSpeechService()
-        speech.speak("G'day", locale: "en-AU", slow: true)
+        speech.speak("G'day", voice: RecordingSpeechService.defaultVoices[1], locale: "en-AU", slow: true)
         speech.stop()
-        #expect(speech.utterances == [Utterance(text: "G'day", locale: "en-AU", slow: true)])
+        #expect(speech.utterances == [Utterance(text: "G'day", voiceName: "Lee", locale: "en-AU", slow: true)])
         #expect(speech.stopCount == 1)
+    }
+}
+
+@Suite("Voice roster")
+struct VoiceRosterTests {
+    private let karen = VoiceOption(id: "k1", name: "Karen", quality: 1)
+    private let karenPremium = VoiceOption(id: "k3", name: "Karen", quality: 3)
+    private let lee = VoiceOption(id: "l3", name: "Lee", quality: 3)
+    private let matilda = VoiceOption(id: "m2", name: "Matilda", quality: 2)
+
+    @Test func castKeepsBestQualityPerPersonSortedByName() {
+        #expect(VoiceRoster.cast(from: [matilda, karen, lee, karenPremium]) == [karenPremium, lee, matilda])
+    }
+
+    @Test func neighbouringTurnsGetDifferentVoices() {
+        let voices = [karen, lee, matilda]
+        let names = (0..<6).compactMap { VoiceRoster.voice(forTurn: $0, from: voices)?.name }
+        #expect(names == ["Karen", "Lee", "Matilda", "Karen", "Lee", "Matilda"])
+    }
+
+    @Test func singleVoiceIsUsedForEveryTurn() {
+        #expect(VoiceRoster.voice(forTurn: 5, from: [karen]) == karen)
+    }
+
+    @Test func noVoicesMeansSystemDefault() {
+        #expect(VoiceRoster.voice(forTurn: 0, from: []) == nil)
     }
 }

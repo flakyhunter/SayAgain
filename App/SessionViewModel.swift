@@ -31,9 +31,21 @@ final class SessionViewModel {
         return nil
     }
 
+    /// Who asks the current question. Changes from question to question.
+    var speaker: VoiceOption? {
+        guard let question = session.current else { return nil }
+        return VoiceRoster.voice(forTurn: session.index, from: speech.voices(for: question.locale))
+    }
+
+    /// True when the device has fewer than two voices, so every question sounds the same.
+    var canGetMoreVoices: Bool {
+        guard let question = session.current else { return false }
+        return VoiceRoster.cast(from: speech.voices(for: question.locale)).count < 2
+    }
+
     func play() {
         guard let question = session.current else { return }
-        speech.speak(question.text, locale: question.locale, slow: slow)
+        speech.speak(question.text, voice: speaker, locale: question.locale, slow: slow)
         playCount += 1
     }
 
