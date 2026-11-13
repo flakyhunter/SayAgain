@@ -35,7 +35,10 @@ struct AppEnvironment {
 
     static func make(arguments: [String] = ProcessInfo.processInfo.arguments) -> AppEnvironment {
         if arguments.contains(LaunchArgument.uiTesting) {
-            return .testing()
+            let bank = arguments.contains(LaunchArgument.bundledContent)
+                ? (try? QuestionBank.bundled()) ?? .fixture
+                : .fixture
+            return .testing(bank: bank)
         }
         return AppEnvironment(
             bank: (try? QuestionBank.bundled()) ?? QuestionBank(questions: []),

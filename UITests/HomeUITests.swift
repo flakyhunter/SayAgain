@@ -5,10 +5,10 @@ import XCTest
 class SayAgainUITestCase: XCTestCase {
     /// Launches the app in deterministic UI-test mode: fixture content, silent speech,
     /// fresh progress, fixed seed, no animations.
-    func launchApp() -> XCUIApplication {
+    func launchApp(extraArguments: [String] = []) -> XCUIApplication {
         continueAfterFailure = false
         let app = XCUIApplication()
-        app.launchArguments = [LaunchArgument.uiTesting]
+        app.launchArguments = [LaunchArgument.uiTesting] + extraArguments
         app.launch()
         return app
     }

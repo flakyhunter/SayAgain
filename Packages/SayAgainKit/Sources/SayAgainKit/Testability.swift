@@ -2,6 +2,8 @@
 public enum LaunchArgument {
     /// Deterministic mode: fixture content, silent speech, fresh progress, fixed seed, no animations.
     public static let uiTesting = "-uiTesting"
+    /// With `uiTesting`: use the real shipped questions instead of the small fixture.
+    public static let bundledContent = "-bundledContent"
     /// Seed used in UI-test mode, so tests know the order of questions and answers.
     public static let uiTestingSeed: UInt64 = 42
 }

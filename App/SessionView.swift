@@ -38,17 +38,18 @@ struct SessionView: View {
                 if model.isRevealed { rateBar }
             }
             .onChange(of: model.isRevealed) { _, revealed in
+                // Next question: jump to the top at once, so a quick tap never lands on a moving button.
+                guard revealed else {
+                    proxy.scrollTo("top", anchor: .top)
+                    return
+                }
                 // Wait one layout pass: the reveal card does not exist yet when the choice is tapped.
                 Task { @MainActor in
                     try? await Task.sleep(for: .milliseconds(120))
                     withAnimation(.easeInOut(duration: 0.35)) {
                         // Bottom anchor: the whole explanation sits above the rating bar
                         // and the chosen answer stays visible above it.
-                        if revealed {
-                            proxy.scrollTo("reveal", anchor: .bottom)
-                        } else {
-                            proxy.scrollTo("top", anchor: .top)
-                        }
+                        proxy.scrollTo("reveal", anchor: .bottom)
                     }
                 }
             }
