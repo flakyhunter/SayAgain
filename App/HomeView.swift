@@ -240,13 +240,7 @@ private struct CategoryCard: View {
 
     var body: some View {
         HStack(spacing: 16) {
-            Image(systemName: summary.category.symbol)
-                .font(.title2.weight(.semibold))
-                .foregroundStyle(.white)
-                .symbolEffect(.bounce, options: .speed(0.8), value: appeared && animated)
-                .frame(width: 54, height: 54)
-                .background(summary.category.tint.gradient, in: .rect(cornerRadius: 16))
-                .shadow(color: summary.category.tint.opacity(0.35), radius: 8, y: 4)
+            CategoryIcon(category: summary.category, bounce: appeared && animated)
 
             VStack(alignment: .leading, spacing: 6) {
                 Text(summary.category.title)
@@ -287,30 +281,73 @@ private struct CategoryCard: View {
     }
 }
 
+/// Glossy two-tone app-style icon: gradient body, top highlight, hairline rim, duotone symbol.
+struct CategoryIcon: View {
+    let category: QuestionCategory
+    var size: CGFloat = 56
+    var bounce = false
+
+    var body: some View {
+        let shape = RoundedRectangle(cornerRadius: size * 0.3, style: .continuous)
+        let colors = category.gradient
+        ZStack {
+            shape.fill(LinearGradient(colors: colors, startPoint: .topLeading, endPoint: .bottomTrailing))
+            // Soft light from the top, like glass.
+            shape.fill(LinearGradient(
+                colors: [.white.opacity(0.38), .white.opacity(0.06), .clear],
+                startPoint: .top, endPoint: .center
+            ))
+            // A glow behind the symbol.
+            Circle()
+                .fill(.white.opacity(0.22))
+                .frame(width: size * 0.62)
+                .blur(radius: size * 0.14)
+            Image(systemName: category.symbol)
+                .font(.system(size: size * 0.42, weight: .semibold))
+                .symbolRenderingMode(.palette)
+                .foregroundStyle(.white, .white.opacity(0.62))
+                .shadow(color: .black.opacity(0.22), radius: 2, y: 1.5)
+                .symbolEffect(.bounce, options: .speed(0.8), value: bounce)
+        }
+        .frame(width: size, height: size)
+        .overlay(shape.strokeBorder(
+            LinearGradient(colors: [.white.opacity(0.55), .white.opacity(0.05)], startPoint: .top, endPoint: .bottom),
+            lineWidth: 1
+        ))
+        .shadow(color: colors.last!.opacity(0.4), radius: 10, y: 5)
+        .accessibilityHidden(true)
+    }
+}
+
 extension QuestionCategory {
     var symbol: String {
         switch self {
         case .intro: "hand.wave.fill"
-        case .behavioural: "person.2.fill"
-        case .logistics: "dollarsign.circle.fill"
+        case .behavioural: "bubble.left.and.bubble.right.fill"
+        case .logistics: "banknote.fill"
         case .qaIT: "ladybug.fill"
         case .volunteering: "hands.and.sparkles.fill"
-        case .agedCare: "heart.text.square.fill"
-        case .school: "backpack.fill"
+        case .agedCare: "stethoscope"
+        case .school: "graduationcap.fill"
         }
     }
 
-    var tint: Color {
-        switch self {
-        case .intro: Theme.ocean
-        case .behavioural: Color(red: 0.42, green: 0.36, blue: 0.80)
-        case .logistics: Color(red: 0.20, green: 0.62, blue: 0.36)
-        case .qaIT: Theme.sunset
-        case .volunteering: Color(red: 0.84, green: 0.33, blue: 0.52)
-        case .agedCare: Color(red: 0.20, green: 0.45, blue: 0.82)
-        case .school: Color(red: 0.91, green: 0.58, blue: 0.08)
+    /// Two tones per category, light top-left to deep bottom-right.
+    var gradient: [Color] {
+        func rgb(_ r: Double, _ g: Double, _ b: Double) -> Color { Color(red: r, green: g, blue: b) }
+        return switch self {
+        case .intro: [rgb(0.20, 0.78, 0.84), rgb(0.02, 0.40, 0.55)]
+        case .behavioural: [rgb(0.62, 0.52, 1.00), rgb(0.33, 0.24, 0.78)]
+        case .logistics: [rgb(0.38, 0.86, 0.58), rgb(0.07, 0.52, 0.36)]
+        case .qaIT: [rgb(1.00, 0.72, 0.36), rgb(0.93, 0.36, 0.16)]
+        case .volunteering: [rgb(1.00, 0.52, 0.66), rgb(0.80, 0.20, 0.45)]
+        case .agedCare: [rgb(0.42, 0.70, 1.00), rgb(0.14, 0.36, 0.84)]
+        case .school: [rgb(1.00, 0.84, 0.30), rgb(0.95, 0.52, 0.05)]
         }
     }
+
+    /// Main colour of the category, used for its progress bar.
+    var tint: Color { gradient.last! }
 }
 
 #Preview {

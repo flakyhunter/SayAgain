@@ -33,6 +33,27 @@ struct HomeSnapshotTests {
         assertSnapshot(of: Snapshot.host(HomeView(environment: environment)), as: Snapshot.strategy)
     }
 
+    @Test func allCategoryIcons() {
+        let grid = HStack(spacing: 0) {
+            ForEach([ColorScheme.light, .dark], id: \.self) { scheme in
+                VStack(spacing: 18) {
+                    ForEach(QuestionCategory.allCases, id: \.self) { category in
+                        HStack(spacing: 14) {
+                            CategoryIcon(category: category)
+                            Text(category.title).font(.headline)
+                            Spacer()
+                        }
+                    }
+                }
+                .padding(24)
+                .background(Color(.systemGroupedBackground))
+                .environment(\.colorScheme, scheme)
+            }
+        }
+        .frame(width: 640)
+        assertSnapshot(of: Snapshot.host(grid), as: .image(precision: 0.99, perceptualPrecision: 0.98, size: CGSize(width: 640, height: 640)))
+    }
+
     @Test func emptyState() {
         let environment = AppEnvironment.testing(bank: QuestionBank(questions: []))
         assertSnapshot(of: Snapshot.host(HomeView(environment: environment)), as: Snapshot.strategy)
