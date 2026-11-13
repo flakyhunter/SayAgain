@@ -116,6 +116,42 @@ struct SessionViewModelTests {
         #expect(utterance.voiceName == model.speaker?.name)
     }
 
+    @Test func finishingTheLastQuestionOfACategoryMastersIt() throws {
+        let environment = AppEnvironment.testing()
+        let model = environment.makeSession(category: .intro)
+        model.choose(try #require(model.session.current).gist)
+        model.next()
+        #expect(model.isFinished)
+        #expect(model.justMastered)
+        #expect(model.categoryQuestionCount == 1)
+
+        model.startCategoryOver()
+        #expect(environment.bank.learnedCount(in: .intro, store: environment.store) == 0)
+    }
+
+    @Test func alreadyMasteredOrMissedIsNotACelebration() throws {
+        let environment = AppEnvironment.testing()
+        environment.store.setBox(3, for: "fixture-intro-1")
+        let again = environment.makeSession(category: .intro)
+        again.choose(try #require(again.session.current).gist)
+        again.next()
+        #expect(!again.justMastered, "Mastered before this session")
+
+        let fresh = AppEnvironment.testing().makeSession(category: .intro)
+        fresh.choose(try #require(fresh.session.current).distractors[0])
+        fresh.next()
+        #expect(!fresh.justMastered, "Wrong answer does not master the category")
+    }
+
+    @Test func mixedPracticeNeverCelebratesACategory() throws {
+        let model = AppEnvironment.testing().makeSession(category: nil)
+        while let question = model.session.current {
+            model.choose(question.gist)
+            model.next()
+        }
+        #expect(!model.justMastered)
+    }
+
     @Test func leavingStopsSpeech() {
         model().leave()
         #expect(speech.stopCount == 1)
@@ -167,6 +203,14 @@ struct SessionSnapshotTests {
     @Test func sampleAnswerSheet() {
         let question = QuestionBank.fixture.questions[0]
         assertSnapshot(of: Snapshot.host(SampleAnswerView(question: question, onListen: {})), as: Snapshot.strategy)
+    }
+
+    @Test func summaryMastered() {
+        let view = SummaryView(
+            summary: .init(gotIt: 15, partly: 0, missed: 0),
+            mastered: .agedCare, masteredCount: 15, animated: false, onDone: {}
+        )
+        assertSnapshot(of: Snapshot.host(view), as: Snapshot.strategy)
     }
 
     @Test func summary() {

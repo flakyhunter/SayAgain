@@ -95,9 +95,27 @@ public final class UserDefaultsProgressStore: ProgressStore {
     }
 }
 
+public extension ProgressStore {
+    /// Sends the given questions back to the start, leaving all others as they are.
+    func reset(questionIDs: [String]) {
+        for id in questionIDs { setBox(LeitnerScheduler.firstBox, for: id) }
+    }
+}
+
 public extension QuestionBank {
     /// Questions the user has answered right at least once since they last missed them.
     func learnedCount(in category: QuestionCategory, store: ProgressStore) -> Int {
         questions(in: category).count { store.box(for: $0.id) > LeitnerScheduler.firstBox }
+    }
+
+    /// Every question of a non-empty category is understood.
+    func isMastered(_ category: QuestionCategory, store: ProgressStore) -> Bool {
+        let count = questions(in: category).count
+        return count > 0 && learnedCount(in: category, store: store) == count
+    }
+
+    /// "Start over" for one category.
+    func resetProgress(in category: QuestionCategory, store: ProgressStore) {
+        store.reset(questionIDs: questions(in: category).map(\.id))
     }
 }

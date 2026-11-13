@@ -17,6 +17,10 @@ public enum A11yID {
         public static let startButton = "home.start"
         public static let settingsButton = "home.settings"
         public static let emptyState = "home.emptyState"
+        public static let startOverConfirmButton = "home.startOverConfirm"
+        public static func startOverButton(_ category: QuestionCategory) -> String {
+            "home.category.\(category.rawValue).startOver"
+        }
         public static func categoryRow(_ category: QuestionCategory) -> String {
             "home.category.\(category.rawValue)"
         }
@@ -57,6 +61,8 @@ public enum A11yID {
         public static let root = "summary.root"
         public static let understood = "summary.understood"
         public static let missed = "summary.missed"
+        public static let masteredBanner = "summary.mastered"
+        public static let startOverButton = "summary.startOver"
         public static let doneButton = "summary.done"
     }
 }

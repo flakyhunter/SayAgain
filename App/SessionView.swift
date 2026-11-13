@@ -10,7 +10,17 @@ struct SessionView: View {
     var body: some View {
         Group {
             if model.isFinished {
-                SummaryView(summary: model.session.summary, onDone: onDone)
+                SummaryView(
+                    summary: model.session.summary,
+                    mastered: model.justMastered ? model.category : nil,
+                    masteredCount: model.categoryQuestionCount,
+                    animated: model.animated,
+                    onStartOver: {
+                        model.startCategoryOver()
+                        onDone()
+                    },
+                    onDone: onDone
+                )
             } else if let question = model.session.current {
                 questionScreen(question)
             }
@@ -332,37 +342,77 @@ private struct RevealCard: View {
 
 struct SummaryView: View {
     let summary: PracticeSession.Summary
+    /// Set when this session completed a whole category.
+    var mastered: QuestionCategory? = nil
+    var masteredCount = 0
+    var animated = false
+    var onStartOver: () -> Void = {}
     let onDone: () -> Void
 
     var body: some View {
         VStack(spacing: 28) {
             Spacer()
-            Image(systemName: summary.missed == 0 ? "star.circle.fill" : "checkmark.circle.fill")
-                .font(.system(size: 72))
-                .foregroundStyle(Theme.heroGradient)
-            VStack(spacing: 6) {
-                Text("Session done").font(.largeTitle.bold())
-                Text(headline).font(.body).foregroundStyle(.secondary).multilineTextAlignment(.center)
+            if let mastered {
+                CategoryIcon(category: mastered, size: 104, bounce: animated)
+                VStack(spacing: 8) {
+                    Text("You've mastered \(mastered.title)!")
+                        .font(.largeTitle.bold())
+                        .multilineTextAlignment(.center)
+                    Text("You understand all \(masteredCount) questions by ear. Good on ya!")
+                        .font(.body)
+                        .foregroundStyle(.secondary)
+                        .multilineTextAlignment(.center)
+                }
+                .accessibilityElement(children: .combine)
+                .accessibilityIdentifier(A11yID.Summary.masteredBanner)
+            } else {
+                Image(systemName: summary.missed == 0 ? "star.circle.fill" : "checkmark.circle.fill")
+                    .font(.system(size: 72))
+                    .foregroundStyle(Theme.heroGradient)
+                VStack(spacing: 6) {
+                    Text("Session done").font(.largeTitle.bold())
+                    Text(headline).font(.body).foregroundStyle(.secondary).multilineTextAlignment(.center)
+                }
             }
             HStack(spacing: 12) {
                 tile("Understood", value: summary.gotIt + summary.partly, color: Theme.success, id: A11yID.Summary.understood)
                 tile("Missed", value: summary.missed, color: Theme.sunset, id: A11yID.Summary.missed)
             }
             Spacer()
-            Button(action: onDone) {
-                Text("Back to home")
-                    .font(.headline)
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 16)
-                    .foregroundStyle(.white)
-                    .background(Theme.ocean, in: .rect(cornerRadius: 16))
+            VStack(spacing: 10) {
+                if mastered != nil {
+                    Button(action: onStartOver) {
+                        Label("Start over", systemImage: "arrow.counterclockwise")
+                            .font(.headline)
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 16)
+                            .foregroundStyle(Theme.accent)
+                            .background(Theme.accent.opacity(0.15), in: .rect(cornerRadius: 16))
+                    }
+                    .buttonStyle(.plain)
+                    .accessibilityHint("Resets this category so you can practise it again from the start")
+                    .accessibilityIdentifier(A11yID.Summary.startOverButton)
+                }
+                Button(action: onDone) {
+                    Text("Back to home")
+                        .font(.headline)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 16)
+                        .foregroundStyle(.white)
+                        .background(Theme.ocean, in: .rect(cornerRadius: 16))
+                }
+                .buttonStyle(.plain)
+                .accessibilityIdentifier(A11yID.Summary.doneButton)
             }
-            .buttonStyle(.plain)
-            .accessibilityIdentifier(A11yID.Summary.doneButton)
         }
         .padding(24)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(.systemGroupedBackground))
+        .overlay {
+            if mastered != nil && animated {
+                ConfettiView().allowsHitTesting(false).ignoresSafeArea()
+            }
+        }
         .accessibilityElement(children: .contain)
         .accessibilityIdentifier(A11yID.Summary.root)
     }
@@ -385,5 +435,58 @@ struct SummaryView: View {
         .accessibilityLabel("\(title): \(value)")
         .accessibilityValue("\(value)")
         .accessibilityIdentifier(id)
+    }
+}
+
+/// A short burst of falling confetti, drawn with Canvas. Stops by itself after a few seconds.
+struct ConfettiView: View {
+    private struct Piece {
+        let x: Double, delay: Double, speed: Double, drift: Double, spin: Double, size: Double, color: Color
+    }
+
+    private static let colors: [Color] = [
+        Theme.sunset, Theme.ocean, Color(red: 0.95, green: 0.78, blue: 0.20),
+        Color(red: 0.62, green: 0.52, blue: 1.00), Color(red: 1.00, green: 0.52, blue: 0.66),
+        Color(red: 0.38, green: 0.86, blue: 0.58)
+    ]
+    private static let duration = 4.0
+
+    @State private var start = Date()
+    private let pieces: [Piece] = {
+        var generator = SeededGenerator(seed: 7)
+        return (0..<90).map { _ in
+            Piece(
+                x: Double.random(in: 0...1, using: &generator),
+                delay: Double.random(in: 0...0.8, using: &generator),
+                speed: Double.random(in: 0.25...0.45, using: &generator),
+                drift: Double.random(in: -40...40, using: &generator),
+                spin: Double.random(in: 2...7, using: &generator),
+                size: Double.random(in: 6...11, using: &generator),
+                color: colors[Int.random(in: 0..<colors.count, using: &generator)]
+            )
+        }
+    }()
+
+    var body: some View {
+        TimelineView(.animation(paused: Date().timeIntervalSince(start) > Self.duration)) { context in
+            Canvas { canvas, size in
+                let elapsed = context.date.timeIntervalSince(start)
+                for piece in pieces {
+                    let t = elapsed - piece.delay
+                    guard t > 0 else { continue }
+                    let y = -20 + t * piece.speed * size.height
+                    guard y < size.height + 20 else { continue }
+                    let x = piece.x * size.width + sin(t * 2.2 + piece.x * 10) * piece.drift
+                    let fade = max(0, 1 - max(0, elapsed - (Self.duration - 1)))
+                    var context = canvas
+                    context.opacity = fade
+                    context.translateBy(x: x, y: y)
+                    context.rotate(by: .radians(t * piece.spin))
+                    let rect = CGRect(x: -piece.size / 2, y: -piece.size / 4, width: piece.size, height: piece.size / 2)
+                    context.fill(Path(roundedRect: rect, cornerRadius: 1.5), with: .color(piece.color))
+                }
+            }
+        }
+        .accessibilityHidden(true)
     }
 }

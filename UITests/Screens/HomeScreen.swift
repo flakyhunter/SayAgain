@@ -10,6 +10,17 @@ struct HomeScreen {
     var header: XCUIElement { app.descendants(matching: .any)[A11yID.Home.header] }
     var startButton: XCUIElement { app.buttons[A11yID.Home.startButton] }
     var settingsButton: XCUIElement { app.buttons[A11yID.Home.settingsButton] }
+    var startOverConfirmButton: XCUIElement {
+        app.buttons.matching(identifier: A11yID.Home.startOverConfirmButton).firstMatch
+    }
+
+    func startOverButton(_ category: QuestionCategory) -> XCUIElement {
+        app.buttons[A11yID.Home.startOverButton(category)]
+    }
+
+    func progress(of category: QuestionCategory) -> String {
+        categoryRow(category).value as? String ?? ""
+    }
 
     func categoryRow(_ category: QuestionCategory) -> XCUIElement {
         app.descendants(matching: .any)[A11yID.Home.categoryRow(category)]

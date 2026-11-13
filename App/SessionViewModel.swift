@@ -10,14 +10,49 @@ final class SessionViewModel {
     private(set) var playCount = 0
     var slow = false
 
+    /// The category being practised; nil for mixed practice.
+    let category: QuestionCategory?
+    /// Celebrations and confetti are off in tests and with Reduce Motion.
+    let animated: Bool
+
     @ObservationIgnored private let speech: SpeechService
     @ObservationIgnored private let store: ProgressStore
+    @ObservationIgnored private let bank: QuestionBank
+    @ObservationIgnored private let masteredBefore: Bool
 
-    init(session: PracticeSession, speech: SpeechService, store: ProgressStore, slow: Bool = false) {
+    init(
+        session: PracticeSession,
+        speech: SpeechService,
+        store: ProgressStore,
+        slow: Bool = false,
+        category: QuestionCategory? = nil,
+        bank: QuestionBank = QuestionBank(questions: []),
+        animated: Bool = false
+    ) {
         self.session = session
         self.slow = slow
         self.speech = speech
         self.store = store
+        self.category = category
+        self.bank = bank
+        self.animated = animated
+        masteredBefore = category.map { bank.isMastered($0, store: store) } ?? false
+    }
+
+    /// This session finished the category: every question in it is now understood.
+    var justMastered: Bool {
+        guard isFinished, let category, !masteredBefore else { return false }
+        return bank.isMastered(category, store: store)
+    }
+
+    var categoryQuestionCount: Int {
+        category.map { bank.questions(in: $0).count } ?? 0
+    }
+
+    /// Sends every question of this category back to the start.
+    func startCategoryOver() {
+        guard let category else { return }
+        bank.resetProgress(in: category, store: store)
     }
 
     var isFinished: Bool { session.phase == .finished }

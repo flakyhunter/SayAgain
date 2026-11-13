@@ -72,6 +72,24 @@ struct LearnedCountTests {
     }
 }
 
+@Suite("Mastery and start over")
+struct MasteryTests {
+    @Test func masteredWhenEveryQuestionIsUnderstood() {
+        let store = InMemoryProgressStore(boxes: ["fixture-behavioural-1": 2])
+        #expect(!QuestionBank.fixture.isMastered(.behavioural, store: store))
+        store.setBox(3, for: "fixture-behavioural-2")
+        #expect(QuestionBank.fixture.isMastered(.behavioural, store: store))
+        #expect(!QuestionBank.fixture.isMastered(.school, store: store), "An empty category is never mastered")
+    }
+
+    @Test func startOverResetsOnlyThatCategory() {
+        let store = InMemoryProgressStore(boxes: ["fixture-behavioural-1": 4, "fixture-behavioural-2": 3, "fixture-intro-1": 5])
+        QuestionBank.fixture.resetProgress(in: .behavioural, store: store)
+        #expect(QuestionBank.fixture.learnedCount(in: .behavioural, store: store) == 0)
+        #expect(store.box(for: "fixture-intro-1") == 5)
+    }
+}
+
 @Suite("Practice session")
 struct PracticeSessionTests {
     private func session(seed: UInt64 = 42) -> PracticeSession {

@@ -10,6 +10,11 @@ enum Theme {
         dark: UIColor(red: 0.36, green: 0.78, blue: 0.86, alpha: 1)
     )
     static let sunset = Color(red: 0.96, green: 0.52, blue: 0.22)
+    /// Mastered categories.
+    static let gold = adaptive(
+        light: UIColor(red: 0.85, green: 0.60, blue: 0.05, alpha: 1),
+        dark: UIColor(red: 1.00, green: 0.80, blue: 0.30, alpha: 1)
+    )
     static let success = adaptive(
         light: UIColor(red: 0.16, green: 0.60, blue: 0.36, alpha: 1),
         dark: UIColor(red: 0.30, green: 0.80, blue: 0.50, alpha: 1)

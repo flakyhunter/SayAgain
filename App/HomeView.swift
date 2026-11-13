@@ -9,6 +9,10 @@ struct SessionRoute: Hashable {
 struct HomeView: View {
     let environment: AppEnvironment
     @State private var path: [SessionRoute] = []
+    /// Category waiting for "Start over" confirmation.
+    @State private var startOverCandidate: QuestionCategory?
+    /// Bumped after a reset so the progress on the cards is read again.
+    @State private var progressVersion = 0
 
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     private var bank: QuestionBank { environment.bank }
@@ -28,6 +32,24 @@ struct HomeView: View {
             .accessibilityIdentifier(A11yID.Home.list)
             .background(Color(.systemGroupedBackground))
             .navigationTitle("Say Again")
+            // Back from practice (Done or the back button): progress may have changed.
+            .onChange(of: path) { progressVersion += 1 }
+            .confirmationDialog(
+                "Start \(startOverCandidate?.title ?? "") over?",
+                isPresented: Binding(get: { startOverCandidate != nil }, set: { if !$0 { startOverCandidate = nil } }),
+                titleVisibility: .visible
+            ) {
+                Button("Start over", role: .destructive) {
+                    if let category = startOverCandidate {
+                        bank.resetProgress(in: category, store: environment.store)
+                        progressVersion += 1
+                    }
+                    startOverCandidate = nil
+                }
+                .accessibilityIdentifier(A11yID.Home.startOverConfirmButton)
+            } message: {
+                Text("Progress in this category goes back to zero. Other categories stay as they are.")
+            }
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     NavigationLink {
@@ -72,15 +94,45 @@ struct HomeView: View {
 
             LazyVStack(spacing: 12) {
                 ForEach(Array(bank.categorySummaries.enumerated()), id: \.element.id) { index, summary in
-                    let learned = bank.learnedCount(in: summary.category, store: environment.store)
+                    // Reading the version makes SwiftUI recompute progress after a session or a reset.
+                    let learned = progressVersion >= 0
+                        ? bank.learnedCount(in: summary.category, store: environment.store) : 0
+                    let mastered = learned == summary.count
+                    ZStack(alignment: .trailing) {
                     NavigationLink(value: SessionRoute(category: summary.category)) {
                         CategoryCard(summary: summary, learned: learned, index: index, animated: motion)
                     }
                     .buttonStyle(PressableCardStyle(animated: motion))
                     .accessibilityLabel("\(summary.category.title), \(CategoryCard.countText(summary.count))")
-                    .accessibilityValue("\(learned) of \(summary.count) learned")
+                    .accessibilityValue(CategoryCard.progressText(learned: learned, count: summary.count)
+                        + (mastered ? ", mastered" : ""))
                     .accessibilityHint("Starts practice in this category")
                     .accessibilityIdentifier(A11yID.Home.categoryRow(summary.category))
+
+                        // A sibling of the link, not inside it, so it is its own button for VoiceOver and taps.
+                        if mastered {
+                            Button {
+                                startOverCandidate = summary.category
+                            } label: {
+                                Image(systemName: "arrow.counterclockwise")
+                                    .font(.subheadline.weight(.bold))
+                                    .foregroundStyle(Theme.accent)
+                                    .frame(width: 40, height: 40)
+                                    .background(Theme.accent.opacity(0.14), in: .circle)
+                            }
+                            .buttonStyle(.plain)
+                            .padding(.trailing, 14)
+                            .accessibilityLabel("Start \(summary.category.title) over")
+                            .accessibilityIdentifier(A11yID.Home.startOverButton(summary.category))
+                        }
+                    }
+                    .contextMenu {
+                        Button("Start over", systemImage: "arrow.counterclockwise", role: .destructive) {
+                            startOverCandidate = summary.category
+                        }
+                        .disabled(learned == 0)
+                    }
+
                     .scrollTransition(.interactive, axis: .vertical) { content, phase in
                         // Rows shrink and fade a little as they reach the screen edges.
                         let edge = motion && !phase.isIdentity
@@ -237,32 +289,39 @@ private struct CategoryCard: View {
     let animated: Bool
 
     @State private var appeared = false
+    private var mastered: Bool { learned == summary.count && summary.count > 0 }
 
     var body: some View {
         HStack(spacing: 16) {
             CategoryIcon(category: summary.category, bounce: appeared && animated)
 
             VStack(alignment: .leading, spacing: 6) {
-                Text(summary.category.title)
-                    .font(.headline)
-                    .foregroundStyle(.primary)
                 HStack(spacing: 6) {
-                    Text(Self.countText(summary.count))
-                    if learned > 0 {
-                        Text("\u{00B7}")
-                        Text("\(learned) learned")
+                    Text(summary.category.title)
+                        .font(.headline)
+                        .foregroundStyle(.primary)
+                    if mastered {
+                        Image(systemName: "checkmark.seal.fill")
+                            .foregroundStyle(Theme.gold)
+                            .symbolEffect(.bounce, value: appeared && animated)
                     }
                 }
-                .font(.subheadline)
-                .foregroundStyle(.secondary)
+                Text(Self.progressText(learned: learned, count: summary.count))
+                    .font(.subheadline)
+                    .foregroundStyle(mastered ? Theme.gold : .secondary)
                 ProgressView(value: Double(learned), total: Double(max(summary.count, 1)))
-                    .tint(summary.category.tint)
+                    .tint(mastered ? Theme.gold : summary.category.tint)
                     .scaleEffect(y: 0.8, anchor: .center)
             }
 
-            Image(systemName: "chevron.right")
-                .font(.subheadline.weight(.semibold))
-                .foregroundStyle(.tertiary)
+            if mastered {
+                // Keeps room for the round "Start over" button drawn on top of the card.
+                Color.clear.frame(width: 40, height: 40)
+            } else {
+                Image(systemName: "chevron.right")
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(.tertiary)
+            }
         }
         .padding(16)
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -278,6 +337,13 @@ private struct CategoryCard: View {
 
     static func countText(_ count: Int) -> String {
         "\(count) \(count == 1 ? "question" : "questions")"
+    }
+
+    /// "15 questions" before the first right answer, then "8 of 15 understood", then "All 15 understood".
+    static func progressText(learned: Int, count: Int) -> String {
+        if learned == 0 { return countText(count) }
+        if learned == count { return count == 1 ? "Understood" : "All \(count) understood" }
+        return "\(learned) of \(count) understood"
     }
 }
 

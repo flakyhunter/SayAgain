@@ -70,7 +70,10 @@ struct AppEnvironment {
             session: .make(bank: bank, category: category, store: store, seed: makeSeed()),
             speech: speech,
             store: store,
-            slow: settings.slowByDefault
+            slow: settings.slowByDefault,
+            category: category,
+            bank: bank,
+            animated: animated
         )
     }
 }

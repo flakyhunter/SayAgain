@@ -24,6 +24,8 @@ struct SessionScreen {
 
     var summary: XCUIElement { element(A11yID.Summary.root) }
     var summaryUnderstood: XCUIElement { element(A11yID.Summary.understood) }
+    var masteredBanner: XCUIElement { element(A11yID.Summary.masteredBanner) }
+    var summaryStartOverButton: XCUIElement { app.buttons[A11yID.Summary.startOverButton] }
 
     var sampleAnswerText: XCUIElement { element(A11yID.SampleAnswer.text) }
     var sampleAnswerListenButton: XCUIElement { app.buttons[A11yID.SampleAnswer.listenButton] }

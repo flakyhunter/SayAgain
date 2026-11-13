@@ -40,9 +40,9 @@ the focus is on how it is tested and shipped:
 
 | Level | Tooling | What it covers | Tests | Runs on |
 |---|---|---|---|---|
-| Unit | Swift Testing | Content rules (105 questions in 7 categories, 15+ each, no city-specific text, sample answers with balanced placeholders), Leitner scheduling, session state machine, seeded shuffling, progress storage, view model with a recording speech double, voice rotation, settings | 48 | macOS + simulator, under 1 s |
-| Snapshot | [swift-snapshot-testing](https://github.com/pointfreeco/swift-snapshot-testing) | Home (light, dark, empty, with progress), practice (answering, wrong, right in dark), summary, single-voice hint, settings, sample answer, all category icons | 12 | iOS Simulator, ~3 s |
-| UI | XCUITest + page objects | Full session from home to summary, replay, home content, reset progress with confirmation, slow-by-default setting | 5 | iOS Simulator |
+| Unit | Swift Testing | Content rules (105 questions in 7 categories, 15+ each, no city-specific text, sample answers with balanced placeholders), Leitner scheduling, session state machine, seeded shuffling, progress storage, view model with a recording speech double, voice rotation, settings, mastery and start over | 67 | macOS + simulator, under 1 s |
+| Snapshot | [swift-snapshot-testing](https://github.com/pointfreeco/swift-snapshot-testing) | Home (light, dark, empty, with progress and a mastered category), practice (answering, wrong, right in dark), summary, single-voice hint, settings, sample answer, all category icons, mastered summary | 13 | iOS Simulator, ~3 s |
+| UI | XCUITest + page objects | Full session from home to summary, replay, home content, reset progress with confirmation, slow-by-default setting, ten fast answers on real content, mastering a category and starting over | 8 | iOS Simulator |
 
 Numbers as of the current commit. A full CI run takes about 7 minutes, most of it is the simulator boot on the
 GitHub runner. Snapshots recorded on iOS 26.1 locally pass on iOS 26.5 in CI.

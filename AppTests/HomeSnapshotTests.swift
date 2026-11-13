@@ -30,6 +30,7 @@ struct HomeSnapshotTests {
     @Test func withProgress() {
         let environment = AppEnvironment.testing()
         environment.store.setBox(3, for: "fixture-behavioural-1")
+        environment.store.setBox(2, for: "fixture-intro-1")
         assertSnapshot(of: Snapshot.host(HomeView(environment: environment)), as: Snapshot.strategy)
     }
 
