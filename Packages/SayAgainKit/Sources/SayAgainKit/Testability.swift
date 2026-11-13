@@ -13,6 +13,7 @@ public enum A11yID {
         public static let list = "home.list"
         public static let header = "home.header"
         public static let startButton = "home.start"
+        public static let settingsButton = "home.settings"
         public static let emptyState = "home.emptyState"
         public static func categoryRow(_ category: QuestionCategory) -> String {
             "home.category.\(category.rawValue)"
@@ -32,6 +33,16 @@ public enum A11yID {
         public static let partlyButton = "session.rate.partly"
         public static let nextButton = "session.next"
         public static func choice(_ index: Int) -> String { "session.choice.\(index)" }
+    }
+
+    public enum Settings {
+        public static let slowByDefaultToggle = "settings.slowByDefault"
+        public static let resetButton = "settings.reset"
+        public static let resetConfirmButton = "settings.resetConfirm"
+        public static let resetDoneLabel = "settings.resetDone"
+        public static let version = "settings.version"
+        public static func voiceRow(_ name: String) -> String { "settings.voice.\(name)" }
+        public static func previewButton(_ name: String) -> String { "settings.voice.\(name).play" }
     }
 
     public enum Summary {

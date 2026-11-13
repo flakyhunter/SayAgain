@@ -27,6 +27,7 @@ struct AppEnvironment {
     let isUITesting: Bool
     let speech: SpeechService
     let store: ProgressStore
+    let settings: AppSettings
     /// Fixed in UI-test mode, random otherwise.
     let makeSeed: () -> UInt64
 
@@ -41,6 +42,7 @@ struct AppEnvironment {
             isUITesting: false,
             speech: SystemSpeechService(),
             store: UserDefaultsProgressStore(),
+            settings: AppSettings(defaults: .standard),
             makeSeed: { UInt64.random(in: .min ... .max) }
         )
     }
@@ -55,6 +57,7 @@ struct AppEnvironment {
             isUITesting: true,
             speech: speech,
             store: InMemoryProgressStore(),
+            settings: .ephemeral(),
             makeSeed: { LaunchArgument.uiTestingSeed }
         )
     }
@@ -63,7 +66,8 @@ struct AppEnvironment {
         SessionViewModel(
             session: .make(bank: bank, category: category, store: store, seed: makeSeed()),
             speech: speech,
-            store: store
+            store: store,
+            slow: settings.slowByDefault
         )
     }
 }

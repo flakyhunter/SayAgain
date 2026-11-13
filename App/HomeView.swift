@@ -28,6 +28,17 @@ struct HomeView: View {
             .accessibilityIdentifier(A11yID.Home.list)
             .background(Color(.systemGroupedBackground))
             .navigationTitle("Say Again")
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    NavigationLink {
+                        SettingsView(model: SettingsViewModel(environment: environment))
+                    } label: {
+                        Image(systemName: "gearshape.fill")
+                    }
+                    .accessibilityLabel("Settings")
+                    .accessibilityIdentifier(A11yID.Home.settingsButton)
+                }
+            }
             .navigationDestination(for: SessionRoute.self) { route in
                 SessionView(
                     model: environment.makeSession(category: route.category),
@@ -235,20 +246,6 @@ private struct CategoryCard: View {
     static func countText(_ count: Int) -> String {
         "\(count) \(count == 1 ? "question" : "questions")"
     }
-}
-
-// MARK: - Theme
-
-enum Theme {
-    static let ocean = Color(red: 0.02, green: 0.42, blue: 0.52)
-    static let sunset = Color(red: 0.96, green: 0.52, blue: 0.22)
-    static let success = Color(red: 0.16, green: 0.60, blue: 0.36)
-    static let danger = Color(red: 0.85, green: 0.25, blue: 0.24)
-    static let heroGradient = LinearGradient(
-        colors: [ocean, Color(red: 0.13, green: 0.55, blue: 0.62), sunset],
-        startPoint: .topLeading,
-        endPoint: .bottomTrailing
-    )
 }
 
 extension QuestionCategory {

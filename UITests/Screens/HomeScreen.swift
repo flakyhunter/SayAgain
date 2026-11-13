@@ -9,6 +9,7 @@ struct HomeScreen {
     var list: XCUIElement { app.descendants(matching: .any)[A11yID.Home.list] }
     var header: XCUIElement { app.descendants(matching: .any)[A11yID.Home.header] }
     var startButton: XCUIElement { app.buttons[A11yID.Home.startButton] }
+    var settingsButton: XCUIElement { app.buttons[A11yID.Home.settingsButton] }
 
     func categoryRow(_ category: QuestionCategory) -> XCUIElement {
         app.descendants(matching: .any)[A11yID.Home.categoryRow(category)]

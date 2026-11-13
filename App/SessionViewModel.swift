@@ -13,8 +13,9 @@ final class SessionViewModel {
     @ObservationIgnored private let speech: SpeechService
     @ObservationIgnored private let store: ProgressStore
 
-    init(session: PracticeSession, speech: SpeechService, store: ProgressStore) {
+    init(session: PracticeSession, speech: SpeechService, store: ProgressStore, slow: Bool = false) {
         self.session = session
+        self.slow = slow
         self.speech = speech
         self.store = store
     }

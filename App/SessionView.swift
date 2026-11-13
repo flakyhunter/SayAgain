@@ -54,7 +54,7 @@ struct SessionView: View {
                 .font(.subheadline.weight(.semibold))
                 .foregroundStyle(.secondary)
             ProgressView(value: Double(model.session.index), total: Double(model.session.questions.count))
-                .tint(Theme.ocean)
+                .tint(Theme.accent)
         }
         .accessibilityElement(children: .ignore)
         .accessibilityLabel("Question \(model.session.position) of \(model.session.questions.count)")
@@ -116,9 +116,9 @@ struct SessionView: View {
                 .font(.headline)
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 14)
-                .foregroundStyle(style == .primary ? .white : Theme.ocean)
+                .foregroundStyle(style == .primary ? .white : Theme.accent)
                 .background(
-                    style == .primary ? AnyShapeStyle(Theme.ocean) : AnyShapeStyle(Theme.ocean.opacity(0.12)),
+                    style == .primary ? AnyShapeStyle(Theme.ocean) : AnyShapeStyle(Theme.accent.opacity(0.15)),
                     in: .rect(cornerRadius: 16)
                 )
         }
@@ -151,7 +151,7 @@ private struct ListenCard: View {
                 if let speaker = model.speaker {
                     Label("\(speaker.name) is asking", systemImage: "person.wave.2.fill")
                         .font(.headline)
-                        .foregroundStyle(Theme.ocean)
+                        .foregroundStyle(Theme.accent)
                         .accessibilityIdentifier(A11yID.Session.speaker)
                 }
                 Text(model.isRevealed ? "Listen again with the text below." : "Listen. The text is hidden on purpose.")
@@ -162,7 +162,7 @@ private struct ListenCard: View {
                         .font(.subheadline.weight(.semibold))
                 }
                 .toggleStyle(.button)
-                .tint(Theme.ocean)
+                .tint(Theme.accent)
                 .accessibilityIdentifier(A11yID.Session.slowToggle)
             }
         }
@@ -292,7 +292,7 @@ private struct RevealCard: View {
                 VStack(alignment: .leading, spacing: 10) {
                     ForEach(question.phrases, id: \.self) { phrase in
                         VStack(alignment: .leading, spacing: 2) {
-                            Text(phrase.phrase).font(.body.weight(.semibold)).foregroundStyle(Theme.ocean)
+                            Text(phrase.phrase).font(.body.weight(.semibold)).foregroundStyle(Theme.accent)
                             Text(phrase.meaning).font(.subheadline).foregroundStyle(.secondary)
                         }
                         .accessibilityElement(children: .combine)
@@ -336,7 +336,7 @@ struct SummaryView: View {
             }
             HStack(spacing: 12) {
                 tile("Got it", value: summary.gotIt, color: Theme.success, id: A11yID.Summary.gotIt)
-                tile("Partly", value: summary.partly, color: Theme.ocean, id: A11yID.Summary.partly)
+                tile("Partly", value: summary.partly, color: Theme.accent, id: A11yID.Summary.partly)
                 tile("Missed", value: summary.missed, color: Theme.sunset, id: A11yID.Summary.missed)
             }
             Spacer()
