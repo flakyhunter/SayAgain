@@ -37,6 +37,19 @@ struct SessionScreen {
         return self
     }
 
+    /// The revealed text must be visible without scrolling: inside the window and above the rating bar.
+    func assertOriginalTextIsOnScreen(timeout: TimeInterval = 3, file: StaticString = #filePath, line: UInt = #line) {
+        let deadline = Date().addingTimeInterval(timeout)
+        var frame = originalText.frame
+        let bar = gotItButton.exists ? gotItButton.frame : nextButton.frame
+        while Date() < deadline, !(frame.minY >= 0 && frame.maxY <= bar.minY) {
+            RunLoop.current.run(until: Date().addingTimeInterval(0.1))
+            frame = originalText.frame
+        }
+        XCTAssertGreaterThanOrEqual(frame.minY, 0, "Original text is above the screen", file: file, line: line)
+        XCTAssertLessThanOrEqual(frame.maxY, bar.minY, "Original text is hidden under the rating bar", file: file, line: line)
+    }
+
     /// Taps the choice whose text equals `meaning`.
     func choose(_ meaning: String, file: StaticString = #filePath, line: UInt = #line) {
         guard let button = choices.first(where: { $0.label == meaning }) else {

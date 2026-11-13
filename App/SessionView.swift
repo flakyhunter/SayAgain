@@ -23,7 +23,7 @@ struct SessionView: View {
         ScrollViewReader { proxy in
             ScrollView {
                 VStack(alignment: .leading, spacing: 24) {
-                    progress
+                    progress.id("top")
                     ListenCard(model: model)
                     choices(for: question)
                     if model.isRevealed {
@@ -33,14 +33,24 @@ struct SessionView: View {
                     }
                 }
                 .padding(20)
-                .padding(.bottom, 100)
             }
             .safeAreaInset(edge: .bottom) {
                 if model.isRevealed { rateBar }
             }
             .onChange(of: model.isRevealed) { _, revealed in
-                guard revealed else { return }
-                withAnimation { proxy.scrollTo("reveal", anchor: .top) }
+                // Wait one layout pass: the reveal card does not exist yet when the choice is tapped.
+                Task { @MainActor in
+                    try? await Task.sleep(for: .milliseconds(120))
+                    withAnimation(.easeInOut(duration: 0.35)) {
+                        // Bottom anchor: the whole explanation sits above the rating bar
+                        // and the chosen answer stays visible above it.
+                        if revealed {
+                            proxy.scrollTo("reveal", anchor: .bottom)
+                        } else {
+                            proxy.scrollTo("top", anchor: .top)
+                        }
+                    }
+                }
             }
         }
         .task(id: question.id) {

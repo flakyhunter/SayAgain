@@ -20,6 +20,7 @@ final class SessionUITests: SayAgainUITestCase {
         session.choose(first.gist)
         XCTAssertTrue(session.reveal.waitForExistence(timeout: 5))
         XCTAssertEqual(session.originalText.label, "\u{201C}\(first.text)\u{201D}")
+        session.assertOriginalTextIsOnScreen()
         session.gotItButton.tap()
 
         XCTAssertEqual(session.progress.label, "Question 2 of 2")
