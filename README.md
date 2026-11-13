@@ -11,6 +11,13 @@ a plain-English version and the phrases that usually trip people up.
 
 > Status: **v0 - project skeleton.** The practice loop is coming in v1.
 
+<p align="center">
+  <img src="AppTests/__Snapshots__/HomeSnapshotTests/lightMode.1.png" width="260" alt="Home screen, light mode">
+  &nbsp;&nbsp;
+  <img src="AppTests/__Snapshots__/HomeSnapshotTests/darkMode.1.png" width="260" alt="Home screen, dark mode">
+</p>
+<p align="center"><sub>Rendered by the snapshot tests themselves: the same images CI compares on every run.</sub></p>
+
 ## Why this repo exists
 
 This is a personal portfolio project by a QA automation engineer. The app is small on purpose;
@@ -24,11 +31,14 @@ the focus is on how it is tested and shipped:
 
 ## Test strategy
 
-| Level | Tooling | What it covers | Runs on |
-|---|---|---|---|
-| Unit | Swift Testing, `swift test` | Content rules, category summaries, decoding errors | macOS, seconds |
-| Snapshot | [swift-snapshot-testing](https://github.com/pointfreeco/swift-snapshot-testing) | Home screen in light, dark and empty states | iOS Simulator |
-| UI | XCUITest + page objects | User-visible flows in deterministic mode | iOS Simulator |
+| Level | Tooling | What it covers | Tests | Runs on |
+|---|---|---|---|---|
+| Unit | Swift Testing, `swift test` | Content rules, category summaries, decoding errors, launch environment | 14 | macOS, under 1 s |
+| Snapshot | [swift-snapshot-testing](https://github.com/pointfreeco/swift-snapshot-testing) | Home screen in light, dark and empty states | 3 | iOS Simulator, ~2 s |
+| UI | XCUITest + page objects | User-visible flows in deterministic mode | 1 | iOS Simulator |
+
+Numbers as of v0. A full CI run takes about 7 minutes, most of it is the simulator boot on the
+GitHub runner. Snapshots recorded on iOS 26.1 locally pass on iOS 26.5 in CI.
 
 Key decisions:
 
@@ -72,6 +82,13 @@ xcodebuild test -project SayAgain.xcodeproj -scheme SayAgain \
 
 No accounts, no analytics, no tracking. Progress stays on the device. Speech is generated
 on the device by the system voices.
+
+## About me
+
+Aleksander Matsko - QA Automation Engineer / SDET, Perth, Western Australia.
+iOS and web test automation, API testing, AI-assisted QA workflows.
+
+[LinkedIn](https://www.linkedin.com/in/aleks-matsko/) · [GitHub](https://github.com/flakyhunter)
 
 ## License
 
