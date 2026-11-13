@@ -9,7 +9,8 @@ the accent, the slang, and the way interviewers really ask things
 You listen to a question first, pick what you think they asked, then see the original text,
 a plain-English version and the phrases that usually trip people up.
 
-> Status: **v0 - project skeleton.** The practice loop is coming in v1.
+> Status: **v1 in progress.** The practice loop works: listen, choose the meaning, see the answer, rate yourself.
+> Next: more questions, settings, TestFlight.
 
 <p align="center">
   <img src="AppTests/__Snapshots__/HomeSnapshotTests/lightMode.1.png" width="260" alt="Home screen, light mode">
@@ -33,19 +34,25 @@ the focus is on how it is tested and shipped:
 
 | Level | Tooling | What it covers | Tests | Runs on |
 |---|---|---|---|---|
-| Unit | Swift Testing, `swift test` | Content rules, category summaries, decoding errors, launch environment | 14 | macOS, under 1 s |
-| Snapshot | [swift-snapshot-testing](https://github.com/pointfreeco/swift-snapshot-testing) | Home screen in light, dark and empty states | 3 | iOS Simulator, ~2 s |
-| UI | XCUITest + page objects | User-visible flows in deterministic mode | 1 | iOS Simulator |
+| Unit | Swift Testing | Content rules, Leitner scheduling, session state machine, seeded shuffling, progress storage, view model with a recording speech double | 35 | macOS + simulator, under 1 s |
+| Snapshot | [swift-snapshot-testing](https://github.com/pointfreeco/swift-snapshot-testing) | Home (light, dark, empty), practice (answering, wrong, right in dark), summary | 7 | iOS Simulator, ~3 s |
+| UI | XCUITest + page objects | Full session from home to summary, replay, home content | 3 | iOS Simulator |
 
-Numbers as of v0. A full CI run takes about 7 minutes, most of it is the simulator boot on the
+Numbers as of the current commit. A full CI run takes about 7 minutes, most of it is the simulator boot on the
 GitHub runner. Snapshots recorded on iOS 26.1 locally pass on iOS 26.5 in CI.
 
 Key decisions:
 
 - **Shared contract.** `SayAgainKit` exposes `A11yID` and `LaunchArgument`, used by both the app
   and the UI tests, so a renamed identifier breaks the build, not a test run.
-- **Deterministic UI tests.** `-uiTesting` swaps in fixture content and turns off animations.
-  Tests wait on elements, never on `sleep`.
+- **Deterministic UI tests.** `-uiTesting` swaps in fixture content, a silent recording speech
+  service, in-memory progress and a fixed random seed, and turns off animations. The same seed
+  means the same question order and answer positions on every run. Tests wait on elements,
+  never on `sleep`.
+- **Pure core.** `PracticeSession` is a value type with no UI or audio; every rule (a wrong
+  answer always counts as missed, actions in the wrong phase are ignored) is a unit test.
+- **Observable without peeking.** UI tests check that audio played through the play button's
+  accessibility value ("Played 2 times"), which also helps VoiceOver users.
 - **Content is code.** Every question must pass the validator: unique ids, exactly two
   distractors, no distractor equal to the answer, no empty fields, typography rules.
 
@@ -73,8 +80,8 @@ xcodebuild test -project SayAgain.xcodeproj -scheme SayAgain \
 
 ## Roadmap
 
-- **v0** - skeleton, first tests on every level, CI. *(current)*
-- **v1** - practice loop (listen, choose, reveal, self-rate), spaced repetition, 60+ questions,
+- **v0** - skeleton, first tests on every level, CI. *(done)*
+- **v1** - *(in progress)* practice loop (listen, choose, reveal, self-rate), spaced repetition, 60+ questions,
   TestFlight from CI, App Store release.
 - **v2** - AI feedback on your retelling of the question, covered by an LLM eval suite in CI.
 

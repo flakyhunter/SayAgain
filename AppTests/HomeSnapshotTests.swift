@@ -5,45 +5,52 @@ import Testing
 @testable import SayAgain
 
 @MainActor
-@Suite("Home screen snapshots")
-struct HomeSnapshotTests {
-    private func controller(
-        bank: QuestionBank,
-        style: UIUserInterfaceStyle = .light
-    ) -> UIViewController {
-        let controller = UIHostingController(rootView: HomeView(bank: bank, animated: false))
+enum Snapshot {
+    static let strategy: Snapshotting<UIViewController, UIImage> =
+        .image(on: .iPhone13, precision: 0.99, perceptualPrecision: 0.98)
+
+    static func host(_ view: some View, style: UIUserInterfaceStyle = .light) -> UIViewController {
+        let controller = UIHostingController(rootView: view)
         controller.overrideUserInterfaceStyle = style
         return controller
     }
+}
 
-    private var strategy: Snapshotting<UIViewController, UIImage> {
-        .image(on: .iPhone13, precision: 0.99, perceptualPrecision: 0.98)
-    }
-
+@MainActor
+@Suite("Home screen snapshots")
+struct HomeSnapshotTests {
     @Test func lightMode() {
-        assertSnapshot(of: controller(bank: .fixture), as: strategy)
+        assertSnapshot(of: Snapshot.host(HomeView(environment: .testing())), as: Snapshot.strategy)
     }
 
     @Test func darkMode() {
-        assertSnapshot(of: controller(bank: .fixture, style: .dark), as: strategy)
+        assertSnapshot(of: Snapshot.host(HomeView(environment: .testing()), style: .dark), as: Snapshot.strategy)
     }
 
     @Test func emptyState() {
-        assertSnapshot(of: controller(bank: QuestionBank(questions: [])), as: strategy)
+        let environment = AppEnvironment.testing(bank: QuestionBank(questions: []))
+        assertSnapshot(of: Snapshot.host(HomeView(environment: environment)), as: Snapshot.strategy)
     }
 }
 
+@MainActor
 @Suite("App environment")
 struct AppEnvironmentTests {
-    @Test func uiTestingArgumentSwitchesToFixture() {
+    @Test func uiTestingArgumentSwitchesToDeterministicMode() {
         let environment = AppEnvironment.make(arguments: [LaunchArgument.uiTesting])
         #expect(environment.isUITesting)
+        #expect(!environment.animated)
         #expect(environment.bank.questions == QuestionBank.fixture.questions)
+        #expect(environment.speech is RecordingSpeechService)
+        #expect(environment.store is InMemoryProgressStore)
+        #expect(environment.makeSeed() == LaunchArgument.uiTestingSeed)
     }
 
-    @Test func normalLaunchUsesBundledContent() throws {
+    @Test func normalLaunchUsesBundledContentAndRealServices() throws {
         let environment = AppEnvironment.make(arguments: [])
         #expect(!environment.isUITesting)
         #expect(environment.bank.questions == (try QuestionBank.bundled()).questions)
+        #expect(environment.speech is SystemSpeechService)
+        #expect(environment.store is UserDefaultsProgressStore)
     }
 }

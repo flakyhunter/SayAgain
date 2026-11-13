@@ -15,21 +15,55 @@ struct SayAgainApp: App {
 
     var body: some Scene {
         WindowGroup {
-            HomeView(bank: environment.bank, animated: !environment.isUITesting)
+            HomeView(environment: environment)
         }
     }
 }
 
 /// Dependencies chosen once at launch. UI tests switch them with launch arguments.
+@MainActor
 struct AppEnvironment {
     let bank: QuestionBank
     let isUITesting: Bool
+    let speech: SpeechService
+    let store: ProgressStore
+    /// Fixed in UI-test mode, random otherwise.
+    let makeSeed: () -> UInt64
+
+    var animated: Bool { !isUITesting }
 
     static func make(arguments: [String] = ProcessInfo.processInfo.arguments) -> AppEnvironment {
         if arguments.contains(LaunchArgument.uiTesting) {
-            return AppEnvironment(bank: .fixture, isUITesting: true)
+            return .testing()
         }
-        let bank = (try? QuestionBank.bundled()) ?? QuestionBank(questions: [])
-        return AppEnvironment(bank: bank, isUITesting: false)
+        return AppEnvironment(
+            bank: (try? QuestionBank.bundled()) ?? QuestionBank(questions: []),
+            isUITesting: false,
+            speech: SystemSpeechService(),
+            store: UserDefaultsProgressStore(),
+            makeSeed: { UInt64.random(in: .min ... .max) }
+        )
+    }
+
+    /// Deterministic environment: fixture content, silent speech, fresh progress, fixed seed.
+    static func testing(
+        bank: QuestionBank = .fixture,
+        speech: SpeechService = RecordingSpeechService()
+    ) -> AppEnvironment {
+        AppEnvironment(
+            bank: bank,
+            isUITesting: true,
+            speech: speech,
+            store: InMemoryProgressStore(),
+            makeSeed: { LaunchArgument.uiTestingSeed }
+        )
+    }
+
+    func makeSession(category: QuestionCategory?) -> SessionViewModel {
+        SessionViewModel(
+            session: .make(bank: bank, category: category, store: store, seed: makeSeed()),
+            speech: speech,
+            store: store
+        )
     }
 }

@@ -1,7 +1,9 @@
 /// Launch arguments shared by the app and the UI tests.
 public enum LaunchArgument {
-    /// Deterministic mode: fixture content, no animations.
+    /// Deterministic mode: fixture content, silent speech, fresh progress, fixed seed, no animations.
     public static let uiTesting = "-uiTesting"
+    /// Seed used in UI-test mode, so tests know the order of questions and answers.
+    public static let uiTestingSeed: UInt64 = 42
 }
 
 /// Accessibility identifiers shared by the app and the UI tests.
@@ -10,10 +12,32 @@ public enum A11yID {
     public enum Home {
         public static let list = "home.list"
         public static let header = "home.header"
+        public static let startButton = "home.start"
         public static let emptyState = "home.emptyState"
         public static func categoryRow(_ category: QuestionCategory) -> String {
             "home.category.\(category.rawValue)"
         }
+    }
+
+    public enum Session {
+        public static let progress = "session.progress"
+        public static let playButton = "session.play"
+        public static let slowToggle = "session.slow"
+        public static let reveal = "session.reveal"
+        public static let resultBanner = "session.result"
+        public static let originalText = "session.originalText"
+        public static let gotItButton = "session.rate.gotIt"
+        public static let partlyButton = "session.rate.partly"
+        public static let nextButton = "session.next"
+        public static func choice(_ index: Int) -> String { "session.choice.\(index)" }
+    }
+
+    public enum Summary {
+        public static let root = "summary.root"
+        public static let gotIt = "summary.gotIt"
+        public static let partly = "summary.partly"
+        public static let missed = "summary.missed"
+        public static let doneButton = "summary.done"
     }
 }
 

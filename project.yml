@@ -43,7 +43,9 @@ targets:
   SayAgainTests:
     type: bundle.unit-test
     platform: iOS
-    sources: [AppTests]
+    sources:
+      - path: AppTests
+        excludes: ["__Snapshots__/**"]
     dependencies:
       - target: SayAgain
       - package: SayAgainKit

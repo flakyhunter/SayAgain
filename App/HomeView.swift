@@ -1,19 +1,25 @@
 import SayAgainKit
 import SwiftUI
 
+/// A practice run: one category, or a mix of all when `category` is nil.
+struct SessionRoute: Hashable {
+    let category: QuestionCategory?
+}
+
 struct HomeView: View {
-    let bank: QuestionBank
-    /// Off in UI tests, snapshot tests and with Reduce Motion, so every frame is deterministic.
-    var animated: Bool = true
+    let environment: AppEnvironment
+    @State private var path: [SessionRoute] = []
 
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
-    private var motion: Bool { animated && !reduceMotion }
+    private var bank: QuestionBank { environment.bank }
+    /// Off in UI tests, snapshot tests and with Reduce Motion, so every frame is deterministic.
+    private var motion: Bool { environment.animated && !reduceMotion }
 
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path) {
             ScrollView {
                 VStack(alignment: .leading, spacing: 28) {
-                    HeroCard(phrases: tickerPhrases, animated: motion)
+                    HeroCard(phrases: tickerPhrases, animated: motion, canStart: !bank.questions.isEmpty)
                     categories
                 }
                 .padding(.horizontal, 20)
@@ -22,6 +28,13 @@ struct HomeView: View {
             .accessibilityIdentifier(A11yID.Home.list)
             .background(Color(.systemGroupedBackground))
             .navigationTitle("Say Again")
+            .navigationDestination(for: SessionRoute.self) { route in
+                SessionView(
+                    model: environment.makeSession(category: route.category),
+                    onDone: { path.removeAll() }
+                )
+                .navigationTitle(route.category?.title ?? "Mixed practice")
+            }
         }
     }
 
@@ -48,7 +61,13 @@ struct HomeView: View {
 
             LazyVGrid(columns: [GridItem(.flexible(), spacing: 12), GridItem(.flexible(), spacing: 12)], spacing: 12) {
                 ForEach(Array(bank.categorySummaries.enumerated()), id: \.element.id) { index, summary in
-                    CategoryCard(summary: summary, index: index, animated: motion)
+                    NavigationLink(value: SessionRoute(category: summary.category)) {
+                        CategoryCard(summary: summary, index: index, animated: motion)
+                    }
+                    .buttonStyle(.plain)
+                    .accessibilityLabel("\(summary.category.title), \(CategoryCard.countText(summary.count))")
+                    .accessibilityHint("Starts practice in this category")
+                    .accessibilityIdentifier(A11yID.Home.categoryRow(summary.category))
                 }
             }
         }
@@ -60,6 +79,7 @@ struct HomeView: View {
 private struct HeroCard: View {
     let phrases: [String]
     let animated: Bool
+    let canStart: Bool
 
     @State private var phraseIndex = 0
 
@@ -85,13 +105,31 @@ private struct HeroCard: View {
                 .frame(height: 44)
                 .accessibilityHidden(true)
 
-            phraseBubble
+            HStack(alignment: .center) {
+                phraseBubble
+                Spacer(minLength: 8)
+                if canStart { startButton }
+            }
         }
         .foregroundStyle(.white)
         .padding(22)
         .background(Theme.heroGradient, in: .rect(cornerRadius: 28))
         .shadow(color: Theme.ocean.opacity(0.25), radius: 18, y: 8)
         .task(id: animated) { await cyclePhrases() }
+    }
+
+    private var startButton: some View {
+        NavigationLink(value: SessionRoute(category: nil)) {
+            Label("Start", systemImage: "play.fill")
+                .font(.headline)
+                .foregroundStyle(Theme.ocean)
+                .padding(.horizontal, 18)
+                .padding(.vertical, 11)
+                .background(.white, in: .capsule)
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel("Start mixed practice")
+        .accessibilityIdentifier(A11yID.Home.startButton)
     }
 
     private var phraseBubble: some View {
@@ -192,9 +230,6 @@ private struct CategoryCard: View {
             guard animated else { appeared = true; return }
             withAnimation(.spring(duration: 0.55).delay(0.08 * Double(index))) { appeared = true }
         }
-        .accessibilityElement(children: .ignore)
-        .accessibilityLabel("\(summary.category.title), \(Self.countText(summary.count))")
-        .accessibilityIdentifier(A11yID.Home.categoryRow(summary.category))
     }
 
     static func countText(_ count: Int) -> String {
@@ -207,6 +242,8 @@ private struct CategoryCard: View {
 enum Theme {
     static let ocean = Color(red: 0.02, green: 0.42, blue: 0.52)
     static let sunset = Color(red: 0.96, green: 0.52, blue: 0.22)
+    static let success = Color(red: 0.16, green: 0.60, blue: 0.36)
+    static let danger = Color(red: 0.85, green: 0.25, blue: 0.24)
     static let heroGradient = LinearGradient(
         colors: [ocean, Color(red: 0.13, green: 0.55, blue: 0.62), sunset],
         startPoint: .topLeading,
@@ -234,10 +271,6 @@ extension QuestionCategory {
     }
 }
 
-#Preview("Animated") {
-    HomeView(bank: .fixture)
-}
-
-#Preview("Static") {
-    HomeView(bank: .fixture, animated: false)
+#Preview {
+    HomeView(environment: .testing())
 }
