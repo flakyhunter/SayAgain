@@ -14,6 +14,9 @@ a sample answer in simple English, with [placeholders] for your own details, tha
 
 Categories: intro and background, behavioural, salary and logistics, QA and IT, volunteering,
 aged care, school (for kids). 105 questions, read by the Australian voices installed on the device.
+A phrasebook collects every phrase with search and audio; Russian translation can be turned on in Settings.
+
+[Support](https://flakyhunter.github.io/SayAgain/) · [Privacy Policy](https://flakyhunter.github.io/SayAgain/privacy.html) · App Store screenshots: `scripts/screenshots.sh`
 
 > Status: **v1 in progress.** The practice loop works: listen, choose the meaning, see the answer, rate yourself.
 > Next: more questions, settings, TestFlight.
