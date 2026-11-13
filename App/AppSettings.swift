@@ -9,6 +9,7 @@ final class AppSettings {
     enum Key {
         static let slowByDefault = "settings.slowByDefault"
         static let categoryOrder = "settings.categoryOrder"
+        static let showRussian = "settings.showRussian"
     }
 
     @ObservationIgnored private let defaults: UserDefaults
@@ -23,8 +24,14 @@ final class AppSettings {
         didSet { defaults.set(categoryOrder.map(\.rawValue), forKey: Key.categoryOrder) }
     }
 
+    /// Russian translation under phrases and for the kids' questions.
+    var showRussian: Bool {
+        didSet { defaults.set(showRussian, forKey: Key.showRussian) }
+    }
+
     init(defaults: UserDefaults) {
         self.defaults = defaults
+        showRussian = defaults.bool(forKey: Key.showRussian)
         slowByDefault = defaults.bool(forKey: Key.slowByDefault)
         categoryOrder = CategoryOrder.resolve(saved: defaults.stringArray(forKey: Key.categoryOrder) ?? [])
     }

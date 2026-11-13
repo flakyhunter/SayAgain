@@ -13,15 +13,18 @@
     "phrases": [
       {
         "phrase": "to kick things off",
-        "meaning": "to start"
+        "meaning": "to start",
+        "translationRu": "для начала"
       },
       {
         "phrase": "walk me through",
-        "meaning": "explain step by step"
+        "meaning": "explain step by step",
+        "translationRu": "расскажи по порядку"
       },
       {
         "phrase": "what's brought you over",
-        "meaning": "why you came here"
+        "meaning": "why you came here",
+        "translationRu": "что тебя сюда привело"
       }
     ],
     "sampleAnswer": "Sure. I'm a [your role] with [number] years of experience, mostly in [industry]. In my last job I [one key achievement]. We moved to Australia because we wanted a stable future for our family, and I'm keen to build my career here."
@@ -40,11 +43,13 @@
     "phrases": [
       {
         "phrase": "a bit about",
-        "meaning": "a little about"
+        "meaning": "a little about",
+        "translationRu": "немного о"
       },
       {
         "phrase": "what's your story",
-        "meaning": "tell me about your life and career"
+        "meaning": "tell me about your life and career",
+        "translationRu": "расскажи о себе, о жизни и карьере"
       }
     ],
     "sampleAnswer": "I'm a [your role] with [number] years of experience. I enjoy [what you like about your work], and I'm known for being reliable and detail-oriented. Outside work I like [a hobby]. I recently moved to Australia and I'm looking for a team where I can grow."
@@ -63,11 +68,13 @@
     "phrases": [
       {
         "phrase": "what's got you interested",
-        "meaning": "why are you interested"
+        "meaning": "why are you interested",
+        "translationRu": "чем тебя заинтересовало"
       },
       {
         "phrase": "going around",
-        "meaning": "available right now"
+        "meaning": "available right now",
+        "translationRu": "которые сейчас есть"
       }
     ],
     "sampleAnswer": "Three things caught my eye. The role matches my experience in [skill], your company works on [product or mission] that I find interesting, and the job ad mentioned [something from the ad], which is exactly what I enjoy doing."
@@ -86,7 +93,8 @@
     "phrases": [
       {
         "phrase": "if anything",
-        "meaning": "it's okay if you know nothing"
+        "meaning": "it's okay if you know nothing",
+        "translationRu": "если вообще что-то знаешь"
       }
     ],
     "sampleAnswer": "I had a good look at your website and LinkedIn. I know you [what the company does] and that you recently [news or product launch]. I also liked what you say about [a value or culture point], it fits how I like to work."
@@ -105,11 +113,13 @@
     "phrases": [
       {
         "phrase": "how'd you go",
-        "meaning": "how did it go (very Australian)"
+        "meaning": "how did it go (very Australian)",
+        "translationRu": "как прошло, как дела с этим"
       },
       {
         "phrase": "settling in",
-        "meaning": "getting used to a new place"
+        "meaning": "getting used to a new place",
+        "translationRu": "обустройство на новом месте"
       }
     ],
     "sampleAnswer": "Pretty well, thanks. I've been here for [time]. There's a lot to get used to, but people have been really friendly. I've sorted out the basics like housing and a bank account, so now I'm focused on finding the right job."
@@ -128,11 +138,13 @@
     "phrases": [
       {
         "phrase": "say",
-        "meaning": "for example"
+        "meaning": "for example",
+        "translationRu": "скажем, например"
       },
       {
         "phrase": "in ... years' time",
-        "meaning": "after ... years"
+        "meaning": "after ... years",
+        "translationRu": "через ... лет"
       }
     ],
     "sampleAnswer": "I'd like to grow into a more senior [role] and take on more responsibility, for example [mentoring others or leading a project]. Most of all I want to be in a team where I keep learning, and I hope that team could be yours."
@@ -151,11 +163,13 @@
     "phrases": [
       {
         "phrase": "give us",
-        "meaning": "give me (Australians often say us for me)"
+        "meaning": "give me (Australians often say us for me)",
+        "translationRu": "дай нам (часто в значении \"дай мне\")"
       },
       {
         "phrase": "rundown",
-        "meaning": "short summary"
+        "meaning": "short summary",
+        "translationRu": "краткий обзор"
       }
     ],
     "sampleAnswer": "I work as a [role] in a team of [number] people. A typical day starts with a short stand-up meeting. Then I [main task], I [second task], and I work closely with [who you work with]. At the end of the day I update the team on my progress."
@@ -174,7 +188,8 @@
     "phrases": [
       {
         "phrase": "old manager",
-        "meaning": "previous boss"
+        "meaning": "previous boss",
+        "translationRu": "бывший руководитель"
       }
     ],
     "sampleAnswer": "My old manager would say I'm very reliable. When I take on a task, I finish it properly and on time. For example, [short example]. People knew they could count on me."
@@ -193,11 +208,13 @@
     "phrases": [
       {
         "phrase": "still working on",
-        "meaning": "still trying to improve"
+        "meaning": "still trying to improve",
+        "translationRu": "над чем еще работаешь"
       },
       {
         "phrase": "professionally speaking",
-        "meaning": "talking about work"
+        "meaning": "talking about work",
+        "translationRu": "если говорить о работе"
       }
     ],
     "sampleAnswer": "I'm working on [a real skill to improve, for example public speaking or saying no to extra work]. To improve it, I [what you are doing about it], and I can already see progress. For example, [small result]."
@@ -216,11 +233,13 @@
     "phrases": [
       {
         "phrase": "this line of work",
-        "meaning": "this type of career"
+        "meaning": "this type of career",
+        "translationRu": "эта профессия"
       },
       {
         "phrase": "in the first place",
-        "meaning": "originally, at the very start"
+        "meaning": "originally, at the very start",
+        "translationRu": "изначально, вообще"
       }
     ],
     "sampleAnswer": "I've always liked [what attracts you to this work]. When I first tried [first experience], I really enjoyed it, and I've kept growing in this field ever since. I like that my work [the impact your work has]."
@@ -239,15 +258,18 @@
     "phrases": [
       {
         "phrase": "reckon",
-        "meaning": "think"
+        "meaning": "think",
+        "translationRu": "думать, считать"
       },
       {
         "phrase": "dig into",
-        "meaning": "look at in detail"
+        "meaning": "look at in detail",
+        "translationRu": "разобрать подробнее"
       },
       {
         "phrase": "resume",
-        "meaning": "CV"
+        "meaning": "CV",
+        "translationRu": "резюме"
       }
     ],
     "sampleAnswer": "I'd be happy to talk more about my time at [company]. That's where I [main achievement], and I think it's the most relevant to this role. I can walk you through what I did and the results."
@@ -266,7 +288,8 @@
     "phrases": [
       {
         "phrase": "unwind",
-        "meaning": "relax"
+        "meaning": "relax",
+        "translationRu": "расслабиться, отдохнуть"
       }
     ],
     "sampleAnswer": "I like to keep active. I go for walks or to the beach, and on weekends I spend time with my family. I also enjoy [a hobby]. It helps me switch off and come back to work fresh."
@@ -285,11 +308,13 @@
     "phrases": [
       {
         "phrase": "what sort of",
-        "meaning": "what kind of"
+        "meaning": "what kind of",
+        "translationRu": "какой, что за"
       },
       {
         "phrase": "a bit of both",
-        "meaning": "some of each"
+        "meaning": "some of each",
+        "translationRu": "и то и другое"
       }
     ],
     "sampleAnswer": "I've worked in both, and I'm happy in either. In smaller teams I like that everyone talks to each other directly. In bigger teams I like learning from more people. What matters most to me is open communication and helping each other."
@@ -308,7 +333,8 @@
     "phrases": [
       {
         "phrase": "Aussie",
-        "meaning": "Australian"
+        "meaning": "Australian",
+        "translationRu": "австралийский"
       }
     ],
     "sampleAnswer": "This would be my first Australian company, but I've worked with international teams and clients before, so I'm used to different working styles. I'm a quick learner and I'm looking forward to it."
@@ -327,11 +353,13 @@
     "phrases": [
       {
         "phrase": "get stuck into",
-        "meaning": "start doing something seriously (Australian)"
+        "meaning": "start doing something seriously (Australian)",
+        "translationRu": "приступить к делу"
       },
       {
         "phrase": "how's your day been",
-        "meaning": "how is your day going"
+        "meaning": "how is your day going",
+        "translationRu": "как проходит твой день"
       }
     ],
     "sampleAnswer": "Good, thanks! It's been a busy morning, but I'm glad to be here. How's your day going?"
@@ -350,19 +378,23 @@
     "phrases": [
       {
         "phrase": "a time you...",
-        "meaning": "a real situation when you..."
+        "meaning": "a real situation when you...",
+        "translationRu": "случай, когда ты..."
       },
       {
         "phrase": "tracked down",
-        "meaning": "found after a long search"
+        "meaning": "found after a long search",
+        "translationRu": "выследил, докопался"
       },
       {
         "phrase": "tricky",
-        "meaning": "difficult, not obvious"
+        "meaning": "difficult, not obvious",
+        "translationRu": "хитрый, непростой"
       },
       {
         "phrase": "go about raising it",
-        "meaning": "how exactly you reported it"
+        "meaning": "how exactly you reported it",
+        "translationRu": "как именно ты об этом сообщил"
       }
     ],
     "sampleAnswer": "Yes. We had a bug that only happened sometimes, for example [describe it]. I collected logs, found the exact steps, and noticed it only happened when [the condition]. I wrote a clear bug report with steps, logs and a screenshot, and walked the developer through it. It was fixed in [time]."
@@ -381,15 +413,18 @@
     "phrases": [
       {
         "phrase": "righto",
-        "meaning": "okay (Australian)"
+        "meaning": "okay (Australian)",
+        "translationRu": "ладно, хорошо"
       },
       {
         "phrase": "pushes back",
-        "meaning": "disagrees, resists"
+        "meaning": "disagrees, resists",
+        "translationRu": "возражает, спорит"
       },
       {
         "phrase": "reckons",
-        "meaning": "thinks (very common in Australia)"
+        "meaning": "thinks (very common in Australia)",
+        "translationRu": "считает"
       }
     ],
     "sampleAnswer": "First I make sure I understand their point. Then I show the facts: the steps, the expected result from the requirements, and the impact on users. If we still disagree, I ask the product owner to decide. It's not about who is right, it's about the user."
@@ -408,19 +443,23 @@
     "phrases": [
       {
         "phrase": "spread across",
-        "meaning": "located in different places"
+        "meaning": "located in different places",
+        "translationRu": "разбросаны по"
       },
       {
         "phrase": "a heap of",
-        "meaning": "a lot of (Australian)"
+        "meaning": "a lot of (Australian)",
+        "translationRu": "куча, много"
       },
       {
         "phrase": "overlap",
-        "meaning": "hours when everyone is working"
+        "meaning": "hours when everyone is working",
+        "translationRu": "пересечение по времени"
       },
       {
         "phrase": "on the same page",
-        "meaning": "having the same information"
+        "meaning": "having the same information",
+        "translationRu": "в курсе, на одной волне"
       }
     ],
     "sampleAnswer": "I'd write things down. Clear updates in the team chat, notes after each meeting, and status in the tickets, so people can catch up when they start their day. I'd also use the overlap hours for the most important conversations."
@@ -439,11 +478,13 @@
     "phrases": [
       {
         "phrase": "tight deadline",
-        "meaning": "very little time"
+        "meaning": "very little time",
+        "translationRu": "сжатый срок"
       },
       {
         "phrase": "how'd you go",
-        "meaning": "how did it go"
+        "meaning": "how did it go",
+        "translationRu": "как прошло, как дела с этим"
       }
     ],
     "sampleAnswer": "We once had only [time] to test a release. I agreed with the team on the most important features, focused on those first, and gave daily updates on risks. We released on time and there were no critical issues in production."
@@ -462,11 +503,13 @@
     "phrases": [
       {
         "phrase": "stuffed something up",
-        "meaning": "made a mistake (Australian, informal)"
+        "meaning": "made a mistake (Australian, informal)",
+        "translationRu": "накосячил, ошибся"
       },
       {
         "phrase": "can you think of a time",
-        "meaning": "give a real example"
+        "meaning": "give a real example",
+        "translationRu": "вспомни случай"
       }
     ],
     "sampleAnswer": "Once I [the mistake]. As soon as I noticed, I told my manager, fixed the problem, and checked nothing else was affected. Since then I always [what you do differently now]. It taught me that it's better to raise a problem early."
@@ -485,11 +528,13 @@
     "phrases": [
       {
         "phrase": "walk me through",
-        "meaning": "explain step by step"
+        "meaning": "explain step by step",
+        "translationRu": "расскажи по порядку"
       },
       {
         "phrase": "stakeholder",
-        "meaning": "a person who cares about the result: client, manager, product owner"
+        "meaning": "a person who cares about the result: client, manager, product owner",
+        "translationRu": "заинтересованная сторона: клиент, руководитель"
       }
     ],
     "sampleAnswer": "A client kept changing the requirements late in the project. I set up a short weekly call, wrote down every agreement, and showed how each change affected the deadline. After that the requests became more realistic and our relationship improved."
@@ -508,15 +553,18 @@
     "phrases": [
       {
         "phrase": "juggle",
-        "meaning": "handle many things at once"
+        "meaning": "handle many things at once",
+        "translationRu": "жонглировать, совмещать"
       },
       {
         "phrase": "competing priorities",
-        "meaning": "tasks that are all important"
+        "meaning": "tasks that are all important",
+        "translationRu": "одинаково важные задачи"
       },
       {
         "phrase": "tackle",
-        "meaning": "deal with"
+        "meaning": "deal with",
+        "translationRu": "взяться за"
       }
     ],
     "sampleAnswer": "Yes. I look at the impact and the deadline of each task. If it's not clear, I ask my manager which one matters most for the business. Then I tell the people whose tasks will wait, so nobody is surprised."
@@ -535,7 +583,8 @@
     "phrases": [
       {
         "phrase": "went above and beyond",
-        "meaning": "did more than expected"
+        "meaning": "did more than expected",
+        "translationRu": "сделал больше, чем требовалось"
       }
     ],
     "sampleAnswer": "A customer had a problem late on a Friday that blocked their work. It wasn't my task, but I stayed, found the cause together with a developer, and they could work again the same evening. They later thanked our team in writing."
@@ -554,11 +603,13 @@
     "phrases": [
       {
         "phrase": "give me an example",
-        "meaning": "tell me a real situation"
+        "meaning": "tell me a real situation",
+        "translationRu": "приведи пример"
       },
       {
         "phrase": "handle",
-        "meaning": "deal with"
+        "meaning": "deal with",
+        "translationRu": "справиться с"
       }
     ],
     "sampleAnswer": "My manager wanted to [their plan], but I thought it was risky because [reason]. I asked for a short meeting and showed my data. We agreed on [the compromise]. Even when I disagree, I respect the final decision."
@@ -577,11 +628,13 @@
     "phrases": [
       {
         "phrase": "how do you go about",
-        "meaning": "how do you do it"
+        "meaning": "how do you do it",
+        "translationRu": "как ты подходишь к"
       },
       {
         "phrase": "get up to speed",
-        "meaning": "learn enough to work well"
+        "meaning": "learn enough to work well",
+        "translationRu": "быстро войти в курс дела"
       }
     ],
     "sampleAnswer": "I start with the official documentation and ask colleagues for a short overview. Then I try it hands-on on a small example. I write notes as I go, and I'm not afraid to ask questions early."
@@ -600,7 +653,8 @@
     "phrases": [
       {
         "phrase": "didn't go to plan",
-        "meaning": "went wrong"
+        "meaning": "went wrong",
+        "translationRu": "пошло не по плану"
       }
     ],
     "sampleAnswer": "On one project a key system wasn't ready in time. I told the team about the risk early, we changed the plan and tested with [a workaround], and we still delivered the most important part on time. The rest came in the next release."
@@ -619,11 +673,13 @@
     "phrases": [
       {
         "phrase": "tough feedback",
-        "meaning": "negative, difficult comments"
+        "meaning": "negative, difficult comments",
+        "translationRu": "неприятная обратная связь"
       },
       {
         "phrase": "approach",
-        "meaning": "start dealing with"
+        "meaning": "start dealing with",
+        "translationRu": "подойти к, начать"
       }
     ],
     "sampleAnswer": "Yes. I did it in private, focused on the work and not the person, and gave a specific example. I also offered to help. My colleague took it well, and the problem didn't happen again."
@@ -642,7 +698,8 @@
     "phrases": [
       {
         "phrase": "stand out",
-        "meaning": "be special, different from the rest"
+        "meaning": "be special, different from the rest",
+        "translationRu": "выделяться"
       }
     ],
     "sampleAnswer": "I'm proud of [achievement]. Before that, [the problem]. I [what you did], and as a result [measurable result]. It stands out because it helped the whole team, not just me."
@@ -661,11 +718,13 @@
     "phrases": [
       {
         "phrase": "a heap on your plate",
-        "meaning": "a lot of work (Australian)"
+        "meaning": "a lot of work (Australian)",
+        "translationRu": "куча дел"
       },
       {
         "phrase": "drops something on you",
-        "meaning": "gives it to you suddenly"
+        "meaning": "gives it to you suddenly",
+        "translationRu": "внезапно сваливает на тебя"
       }
     ],
     "sampleAnswer": "I'd talk to my manager straight away. I'd show what I'm working on and ask which task is the priority now. Then I'd tell anyone affected that their task might move. That way nothing important gets dropped quietly."
@@ -684,7 +743,8 @@
     "phrases": [
       {
         "phrase": "across the details",
-        "meaning": "knows the details (Australian)"
+        "meaning": "knows the details (Australian)",
+        "translationRu": "в курсе деталей"
       }
     ],
     "sampleAnswer": "I had to explain a technical problem to [a manager or client]. I avoided jargon, used a simple comparison, and focused on what it meant for them: the risk, the impact on users, and what we planned to do. They understood and approved the plan."
@@ -703,19 +763,23 @@
     "phrases": [
       {
         "phrase": "salary wise",
-        "meaning": "about salary"
+        "meaning": "about salary",
+        "translationRu": "по зарплате"
       },
       {
         "phrase": "base",
-        "meaning": "salary without super"
+        "meaning": "salary without super",
+        "translationRu": "оклад без super"
       },
       {
         "phrase": "package",
-        "meaning": "salary plus super and other benefits"
+        "meaning": "salary plus super and other benefits",
+        "translationRu": "пакет: оклад плюс super и бонусы"
       },
       {
         "phrase": "super",
-        "meaning": "superannuation, the employer's retirement contribution"
+        "meaning": "superannuation, the employer's retirement contribution",
+        "translationRu": "пенсионные взносы работодателя (~12% сверху)"
       }
     ],
     "sampleAnswer": "I'm looking for around [amount] base, plus super. I'm a bit flexible depending on the whole package, for example training or flexible hours. What's the range for this role?"
@@ -734,15 +798,18 @@
     "phrases": [
       {
         "phrase": "availability",
-        "meaning": "when you are free to start"
+        "meaning": "when you are free to start",
+        "translationRu": "когда можешь начать"
       },
       {
         "phrase": "notice period",
-        "meaning": "time you must work after you resign"
+        "meaning": "time you must work after you resign",
+        "translationRu": "срок отработки при увольнении"
       },
       {
         "phrase": "what sort of... are we looking at",
-        "meaning": "what kind of... is it"
+        "meaning": "what kind of... is it",
+        "translationRu": "о каком... идет речь"
       }
     ],
     "sampleAnswer": "I'm available to start [date or 'straight away']. [If you have a job: My notice period is (number) weeks.] I'm happy to do any paperwork or onboarding before that."
@@ -761,11 +828,13 @@
     "phrases": [
       {
         "phrase": "are you after",
-        "meaning": "do you want (Australian)"
+        "meaning": "do you want (Australian)",
+        "translationRu": "ты ищешь, тебе нужно"
       },
       {
         "phrase": "open to",
-        "meaning": "willing to consider"
+        "meaning": "willing to consider",
+        "translationRu": "готов рассмотреть"
       }
     ],
     "sampleAnswer": "I'm mainly after a full-time permanent role, but I'm open to a contract if it's the right fit."
@@ -784,7 +853,8 @@
     "phrases": [
       {
         "phrase": "working rights",
-        "meaning": "legal permission to work"
+        "meaning": "legal permission to work",
+        "translationRu": "право на работу"
       }
     ],
     "sampleAnswer": "Yes, I have full working rights in Australia. [Or: I'm on a (visa) visa that allows me to work full-time.] I can provide the details whenever you need them."
@@ -803,11 +873,13 @@
     "phrases": [
       {
         "phrase": "a couple of",
-        "meaning": "two, or a few"
+        "meaning": "two, or a few",
+        "translationRu": "пара, несколько"
       },
       {
         "phrase": "coming into the office",
-        "meaning": "working on site"
+        "meaning": "working on site",
+        "translationRu": "приходить в офис"
       }
     ],
     "sampleAnswer": "That works for me. I like having some time with the team in person, and I'm comfortable working from home on the other days."
@@ -826,11 +898,13 @@
     "phrases": [
       {
         "phrase": "occasional",
-        "meaning": "sometimes, not often"
+        "meaning": "sometimes, not often",
+        "translationRu": "изредка"
       },
       {
         "phrase": "after-hours",
-        "meaning": "outside normal working hours"
+        "meaning": "outside normal working hours",
+        "translationRu": "в нерабочее время"
       }
     ],
     "sampleAnswer": "Yes, that's fine. I understand releases sometimes need extra time. As long as it's planned in advance when possible, I'm happy to help."
@@ -849,11 +923,13 @@
     "phrases": [
       {
         "phrase": "probation period",
-        "meaning": "trial period at the start of a job"
+        "meaning": "trial period at the start of a job",
+        "translationRu": "испытательный срок"
       },
       {
         "phrase": "we'd be looking at",
-        "meaning": "it would be"
+        "meaning": "it would be",
+        "translationRu": "речь пойдет о"
       }
     ],
     "sampleAnswer": "Yes, that's completely fine. I understand it's standard in Australia, and it's a good chance for both of us to make sure it's the right fit."
@@ -872,7 +948,8 @@
     "phrases": [
       {
         "phrase": "booked",
-        "meaning": "planned and paid for"
+        "meaning": "planned and paid for",
+        "translationRu": "забронирован"
       }
     ],
     "sampleAnswer": "No, nothing booked at the moment. [Or: I have a short trip in (month), but I'm happy to talk about it.]"
@@ -891,15 +968,18 @@
     "phrases": [
       {
         "phrase": "sits around",
-        "meaning": "is about"
+        "meaning": "is about",
+        "translationRu": "около, примерно"
       },
       {
         "phrase": "K",
-        "meaning": "thousand"
+        "meaning": "thousand",
+        "translationRu": "тысяча"
       },
       {
         "phrase": "does that work for you",
-        "meaning": "is that okay for you"
+        "meaning": "is that okay for you",
+        "translationRu": "тебе подходит?"
       }
     ],
     "sampleAnswer": "Thanks for letting me know. That range works for me, especially with super on top. I'd love to hear more about the other parts of the package too."
@@ -918,11 +998,13 @@
     "phrases": [
       {
         "phrase": "sponsorship",
-        "meaning": "employer support for your visa"
+        "meaning": "employer support for your visa",
+        "translationRu": "визовое спонсорство"
       },
       {
         "phrase": "down the track",
-        "meaning": "in the future (Australian)"
+        "meaning": "in the future (Australian)",
+        "translationRu": "в будущем"
       }
     ],
     "sampleAnswer": "No, I don't need sponsorship. [Or: Yes, I would need sponsorship. My current visa allows me to work until (date).]"
@@ -941,7 +1023,8 @@
     "phrases": [
       {
         "phrase": "anywhere else",
-        "meaning": "at other companies"
+        "meaning": "at other companies",
+        "translationRu": "где-то еще"
       }
     ],
     "sampleAnswer": "Yes, I'm talking to a couple of other companies, but this role is one of my top choices because [reason]."
@@ -960,11 +1043,13 @@
     "phrases": [
       {
         "phrase": "kick off",
-        "meaning": "start"
+        "meaning": "start",
+        "translationRu": "начать"
       },
       {
         "phrase": "made you an offer",
-        "meaning": "offered you the job"
+        "meaning": "offered you the job",
+        "translationRu": "предложили тебе работу"
       }
     ],
     "sampleAnswer": "I could start [date or 'within two weeks']. If you need someone sooner, I'll do my best to make it work."
@@ -983,11 +1068,13 @@
     "phrases": [
       {
         "phrase": "reach out to",
-        "meaning": "contact"
+        "meaning": "contact",
+        "translationRu": "связаться с"
       },
       {
         "phrase": "referees",
-        "meaning": "people who give you a reference"
+        "meaning": "people who give you a reference",
+        "translationRu": "люди, которые дают рекомендацию"
       }
     ],
     "sampleAnswer": "Yes, of course. I can send you the contact details of [number] referees today."
@@ -1006,15 +1093,18 @@
     "phrases": [
       {
         "phrase": "whereabouts",
-        "meaning": "where, roughly"
+        "meaning": "where, roughly",
+        "translationRu": "где примерно"
       },
       {
         "phrase": "based",
-        "meaning": "living"
+        "meaning": "living",
+        "translationRu": "живешь"
       },
       {
         "phrase": "commute",
-        "meaning": "the trip to work and back"
+        "meaning": "the trip to work and back",
+        "translationRu": "дорога на работу"
       }
     ],
     "sampleAnswer": "I live in [suburb]. It's about [time] to the office by [car or public transport], so the commute is fine."
@@ -1033,15 +1123,18 @@
     "phrases": [
       {
         "phrase": "manage expectations",
-        "meaning": "make clear what will happen"
+        "meaning": "make clear what will happen",
+        "translationRu": "заранее обозначить, чего ждать"
       },
       {
         "phrase": "a chat",
-        "meaning": "an informal talk, often an interview"
+        "meaning": "an informal talk, often an interview",
+        "translationRu": "разговор, беседа"
       },
       {
         "phrase": "that suit you?",
-        "meaning": "is that okay for you?"
+        "meaning": "is that okay for you?",
+        "translationRu": "тебе подходит?"
       }
     ],
     "sampleAnswer": "Yes, that suits me. Is there anything I should prepare for the technical chat?"
@@ -1060,15 +1153,18 @@
     "phrases": [
       {
         "phrase": "had much exposure to",
-        "meaning": "had much experience with"
+        "meaning": "had much experience with",
+        "translationRu": "много ли имел дело с"
       },
       {
         "phrase": "test setup",
-        "meaning": "test infrastructure"
+        "meaning": "test infrastructure",
+        "translationRu": "тестовая инфраструктура"
       },
       {
         "phrase": "flaky",
-        "meaning": "sometimes passes, sometimes fails"
+        "meaning": "sometimes passes, sometimes fails",
+        "translationRu": "нестабильный (то падает, то нет)"
       }
     ],
     "sampleAnswer": "Yes. I use mocks to isolate the parts I'm testing, for example a mock server for API responses. To keep tests reliable, I use stable test data, wait for elements instead of fixed delays, and run each test independently. When a test is flaky, I find the root cause instead of just re-running it."
@@ -1087,15 +1183,18 @@
     "phrases": [
       {
         "phrase": "fair enough",
-        "meaning": "okay, that makes sense"
+        "meaning": "okay, that makes sense",
+        "translationRu": "понятно, справедливо"
       },
       {
         "phrase": "had a crack at",
-        "meaning": "tried (Australian)"
+        "meaning": "tried (Australian)",
+        "translationRu": "пробовал"
       },
       {
         "phrase": "no worries if not",
-        "meaning": "it's fine if you haven't"
+        "meaning": "it's fine if you haven't",
+        "translationRu": "ничего страшного, если нет"
       }
     ],
     "sampleAnswer": "Yes. I tested [chatbot or AI feature] built on [the model or API]. I created test questions with expected answers and checked the replies for accuracy, hallucinations and tone. I re-ran the set every time the prompt or model changed. [If not: Not yet, but I've been learning about it, and I'd love to.]"
@@ -1114,11 +1213,13 @@
     "phrases": [
       {
         "phrase": "go about",
-        "meaning": "do it, approach it"
+        "meaning": "do it, approach it",
+        "translationRu": "подойти к, взяться за"
       },
       {
         "phrase": "say",
-        "meaning": "for example"
+        "meaning": "for example",
+        "translationRu": "скажем, например"
       }
     ],
     "sampleAnswer": "First the happy path: a valid login works. Then the main negative cases: wrong password, empty fields, a locked account. After that, quick checks of security and usability: the password is hidden, there's a limit on attempts, error messages don't reveal too much. I'd note anything I didn't have time for."
@@ -1137,11 +1238,13 @@
     "phrases": [
       {
         "phrase": "where do you sit on",
-        "meaning": "what is your opinion on"
+        "meaning": "what is your opinion on",
+        "translationRu": "как ты относишься к"
       },
       {
         "phrase": "the whole ... debate",
-        "meaning": "the well-known argument about"
+        "meaning": "the well-known argument about",
+        "translationRu": "вечный спор о"
       }
     ],
     "sampleAnswer": "I think we need both. Automation is great for stable, repeated checks like regression. Manual and exploratory testing is better for new features and for things that need a human eye, like usability."
@@ -1160,7 +1263,8 @@
     "phrases": [
       {
         "phrase": "worth",
-        "meaning": "useful enough"
+        "meaning": "useful enough",
+        "translationRu": "стоит того"
       }
     ],
     "sampleAnswer": "I automate tests that run often, are stable, and protect important flows, like login or payments. I don't automate features that change every week or checks that are cheaper to do by hand once."
@@ -1179,15 +1283,18 @@
     "phrases": [
       {
         "phrase": "write up",
-        "meaning": "write a report"
+        "meaning": "write a report",
+        "translationRu": "оформить, описать"
       },
       {
         "phrase": "pick it up",
-        "meaning": "start working on it"
+        "meaning": "start working on it",
+        "translationRu": "взять в работу"
       },
       {
         "phrase": "straight away",
-        "meaning": "immediately"
+        "meaning": "immediately",
+        "translationRu": "сразу"
       }
     ],
     "sampleAnswer": "A short, clear title. Exact steps to reproduce, expected and actual result, environment and app version. Then screenshots, a video or logs, and the impact and severity. A developer should be able to reproduce it without asking me anything."
@@ -1206,11 +1313,13 @@
     "phrases": [
       {
         "phrase": "your take on",
-        "meaning": "your opinion about"
+        "meaning": "your opinion about",
+        "translationRu": "твое мнение о"
       },
       {
         "phrase": "in production",
-        "meaning": "on the live system real users use"
+        "meaning": "on the live system real users use",
+        "translationRu": "на проде, в живой системе"
       }
     ],
     "sampleAnswer": "It can be useful, carefully. For example smoke tests after a release, or monitoring and feature flags. I've done [what you did, for example post-release smoke checks]. It never replaces testing before release."
@@ -1229,7 +1338,8 @@
     "phrases": [
       {
         "phrase": "get your head around",
-        "meaning": "understand something difficult"
+        "meaning": "understand something difficult",
+        "translationRu": "разобраться в"
       }
     ],
     "sampleAnswer": "I start by using the product like a real user. Then I read the docs and the existing tests, look at the main flows, and ask a developer for a quick walkthrough. I also look at recent bugs to see where the weak spots are."
@@ -1248,7 +1358,8 @@
     "phrases": [
       {
         "phrase": "reach for",
-        "meaning": "usually choose to use"
+        "meaning": "usually choose to use",
+        "translationRu": "обычно используешь"
       }
     ],
     "sampleAnswer": "Yes, a lot. I use [Postman or a similar tool] for manual API testing and [REST Assured or a similar library] for automated tests. I check status codes, the response body, error handling and the API contract."
@@ -1267,11 +1378,13 @@
     "phrases": [
       {
         "phrase": "CI pipeline",
-        "meaning": "automatic build and test process"
+        "meaning": "automatic build and test process",
+        "translationRu": "CI-пайплайн, автоматическая сборка и тесты"
       },
       {
         "phrase": "like",
-        "meaning": "I mean (filler word)"
+        "meaning": "I mean (filler word)",
+        "translationRu": "ну, то есть (слово-паразит)"
       }
     ],
     "sampleAnswer": "My tests run in [CI tool] on every merge request. Fast tests run on every change, the full regression runs [nightly or before release]. If a test fails, the merge is blocked and the team gets the report."
@@ -1290,11 +1403,13 @@
     "phrases": [
       {
         "phrase": "half a day",
-        "meaning": "about four hours"
+        "meaning": "about four hours",
+        "translationRu": "полдня"
       },
       {
         "phrase": "regression",
-        "meaning": "re-testing features that already worked"
+        "meaning": "re-testing features that already worked",
+        "translationRu": "регресс"
       }
     ],
     "sampleAnswer": "I'd focus on the riskiest areas: the main user flows, anything that changed in this release, and the areas with recent bugs. I'd tell the team clearly what I didn't test, so they can decide on the risk."
@@ -1313,11 +1428,13 @@
     "phrases": [
       {
         "phrase": "keeps falling over",
-        "meaning": "keeps failing (informal)"
+        "meaning": "keeps failing (informal)",
+        "translationRu": "постоянно падает"
       },
       {
         "phrase": "on your machine",
-        "meaning": "on your own computer"
+        "meaning": "on your own computer",
+        "translationRu": "на твоем компьютере"
       }
     ],
     "sampleAnswer": "Usually it's a difference in the environment, timing or test data. I'd compare the CI logs and settings with my machine, check for race conditions and shared data, and try to reproduce it in a similar environment. Then I fix the root cause."
@@ -1336,11 +1453,13 @@
     "phrases": [
       {
         "phrase": "had a go at",
-        "meaning": "tried"
+        "meaning": "tried",
+        "translationRu": "пробовал"
       },
       {
         "phrase": "at all",
-        "meaning": "even a little"
+        "meaning": "even a little",
+        "translationRu": "хоть немного"
       }
     ],
     "sampleAnswer": "A bit. I've used [tool, for example JMeter or k6] to check response times under load. [If not: Not much yet, but I understand the basics, and I'd be happy to learn.]"
@@ -1359,15 +1478,18 @@
     "phrases": [
       {
         "phrase": "work out",
-        "meaning": "figure out"
+        "meaning": "figure out",
+        "translationRu": "выяснить, понять"
       },
       {
         "phrase": "acceptance criteria",
-        "meaning": "conditions that show a task is done"
+        "meaning": "conditions that show a task is done",
+        "translationRu": "критерии приемки"
       },
       {
         "phrase": "a bit thin",
-        "meaning": "has too little detail"
+        "meaning": "has too little detail",
+        "translationRu": "маловато деталей"
       }
     ],
     "sampleAnswer": "I talk to the product owner or the developer early. I write down my understanding as simple examples, like 'given, when, then', and ask them to confirm. That way we agree before anything gets built."
@@ -1386,11 +1508,13 @@
     "phrases": [
       {
         "phrase": "in a nutshell",
-        "meaning": "briefly"
+        "meaning": "briefly",
+        "translationRu": "в двух словах"
       },
       {
         "phrase": "look like to you",
-        "meaning": "in your opinion"
+        "meaning": "in your opinion",
+        "translationRu": "по-твоему"
       }
     ],
     "sampleAnswer": "A good test strategy says what we test, how and when, based on risk. Lots of fast unit tests, fewer integration tests and only a few end-to-end tests, all running in CI, plus exploratory testing for new features."
@@ -1409,7 +1533,8 @@
     "phrases": [
       {
         "phrase": "keen",
-        "meaning": "interested, eager (Australian)"
+        "meaning": "interested, eager (Australian)",
+        "translationRu": "очень хочется, интересно"
       }
     ],
     "sampleAnswer": "I'd like to give something back to the community, and I really like what your organisation does for [the people you help]. I also want to meet people and get to know my new country better."
@@ -1428,7 +1553,8 @@
     "phrases": [
       {
         "phrase": "back home",
-        "meaning": "in the country you come from"
+        "meaning": "in the country you come from",
+        "translationRu": "на родине"
       }
     ],
     "sampleAnswer": "Yes. Back home I [what you did, for example helped at a clinic or a charity]. [Or: Not yet, but I've helped friends and neighbours, and now I'd like to do it properly.]"
@@ -1447,11 +1573,13 @@
     "phrases": [
       {
         "phrase": "realistically",
-        "meaning": "honestly, in real life"
+        "meaning": "honestly, in real life",
+        "translationRu": "реально, честно"
       },
       {
         "phrase": "give us",
-        "meaning": "spend with us"
+        "meaning": "spend with us",
+        "translationRu": "уделить нам"
       }
     ],
     "sampleAnswer": "Realistically, around [number] hours a week. I'd rather start with what I can do reliably and add more later."
@@ -1470,11 +1598,13 @@
     "phrases": [
       {
         "phrase": "are you right to",
-        "meaning": "are you able to, is it okay for you (Australian)"
+        "meaning": "are you able to, is it okay for you (Australian)",
+        "translationRu": "тебе удобно, можешь ли"
       },
       {
         "phrase": "a weekday person",
-        "meaning": "someone who prefers Monday to Friday"
+        "meaning": "someone who prefers Monday to Friday",
+        "translationRu": "человек, которому удобнее будни"
       }
     ],
     "sampleAnswer": "I can do [weekdays or weekends or both]. My best days are [days]."
@@ -1493,11 +1623,13 @@
     "phrases": [
       {
         "phrase": "police check",
-        "meaning": "a certificate about your criminal record"
+        "meaning": "a certificate about your criminal record",
+        "translationRu": "справка о несудимости"
       },
       {
         "phrase": "happy to",
-        "meaning": "willing to"
+        "meaning": "willing to",
+        "translationRu": "готов"
       }
     ],
     "sampleAnswer": "Yes, I have a current police check. [Or: Not yet, but I'm happy to get one straight away.]"
@@ -1516,11 +1648,13 @@
     "phrases": [
       {
         "phrase": "Working With Children Check",
-        "meaning": "a state clearance to work with kids"
+        "meaning": "a state clearance to work with kids",
+        "translationRu": "допуск к работе с детьми"
       },
       {
         "phrase": "sorted",
-        "meaning": "done, arranged"
+        "meaning": "done, arranged",
+        "translationRu": "оформлено, решено"
       }
     ],
     "sampleAnswer": "Yes, I have one. [Or: Not yet, but I'll apply for it this week.]"
@@ -1539,7 +1673,8 @@
     "phrases": [
       {
         "phrase": "aggro",
-        "meaning": "aggressive, angry (Australian slang)"
+        "meaning": "aggressive, angry (Australian slang)",
+        "translationRu": "агрессивный, злой"
       }
     ],
     "sampleAnswer": "I'd stay calm, speak slowly and listen. I'd try to understand what's wrong and show that I care. If I felt unsafe, I'd step back and get help from a staff member."
@@ -1558,11 +1693,13 @@
     "phrases": [
       {
         "phrase": "how do you go with",
-        "meaning": "how good are you at"
+        "meaning": "how good are you at",
+        "translationRu": "как у тебя с"
       },
       {
         "phrase": "confidential",
-        "meaning": "private, not shared"
+        "meaning": "private, not shared",
+        "translationRu": "конфиденциальный"
       }
     ],
     "sampleAnswer": "I understand that confidentiality is really important. I wouldn't share anything about clients with anyone outside the team. If I heard something that suggests someone is at risk, I'd tell my supervisor."
@@ -1581,7 +1718,8 @@
     "phrases": [
       {
         "phrase": "help someone out",
-        "meaning": "help someone"
+        "meaning": "help someone",
+        "translationRu": "выручить"
       }
     ],
     "sampleAnswer": "At [place], we helped [who] with [what]. I [your part], and the team [what they did]. In the end [the result]. I liked that we all worked together."
@@ -1600,11 +1738,13 @@
     "phrases": [
       {
         "phrase": "reckon",
-        "meaning": "think"
+        "meaning": "think",
+        "translationRu": "думать, считать"
       },
       {
         "phrase": "bring to",
-        "meaning": "offer, contribute"
+        "meaning": "offer, contribute",
+        "translationRu": "привнести"
       }
     ],
     "sampleAnswer": "I have experience in [your field, for example medicine], so I'm calm in stressful situations and good at listening to people. I'm also organised and reliable."
@@ -1623,7 +1763,8 @@
     "phrases": [
       {
         "phrase": "all walks of life",
-        "meaning": "all kinds of backgrounds"
+        "meaning": "all kinds of backgrounds",
+        "translationRu": "самые разные люди"
       }
     ],
     "sampleAnswer": "I'm an immigrant myself, so I know how it feels to be new. I'm open, respectful and curious about other cultures, and I always try to listen first."
@@ -1642,7 +1783,8 @@
     "phrases": [
       {
         "phrase": "a real help",
-        "meaning": "very useful"
+        "meaning": "very useful",
+        "translationRu": "большая помощь"
       }
     ],
     "sampleAnswer": "Yes, I speak [languages]. I'd be happy to help clients who speak them."
@@ -1661,11 +1803,13 @@
     "phrases": [
       {
         "phrase": "full on",
-        "meaning": "intense, very demanding (Australian)"
+        "meaning": "intense, very demanding (Australian)",
+        "translationRu": "напряженно, тяжело"
       },
       {
         "phrase": "look after yourself",
-        "meaning": "take care of yourself"
+        "meaning": "take care of yourself",
+        "translationRu": "заботиться о себе"
       }
     ],
     "sampleAnswer": "I try to keep a good balance: enough sleep, exercise and time with family. If something is hard, I talk to my supervisor or the team."
@@ -1684,7 +1828,8 @@
     "phrases": [
       {
         "phrase": "outside your role",
-        "meaning": "not part of your duties"
+        "meaning": "not part of your duties",
+        "translationRu": "не входит в твои обязанности"
       }
     ],
     "sampleAnswer": "I'd explain politely that it's outside my role and I'm not allowed to do it. Then I'd tell my supervisor, so the client gets the right help."
@@ -1703,7 +1848,8 @@
     "phrases": [
       {
         "phrase": "own transport",
-        "meaning": "your own car"
+        "meaning": "your own car",
+        "translationRu": "свой транспорт"
       }
     ],
     "sampleAnswer": "I'll come by [car or public transport]. It's about [time] from my place, so that's no problem."
@@ -1722,11 +1868,13 @@
     "phrases": [
       {
         "phrase": "get into",
-        "meaning": "start working in"
+        "meaning": "start working in",
+        "translationRu": "прийти в, заняться"
       },
       {
         "phrase": "aged care",
-        "meaning": "care for elderly people"
+        "meaning": "care for elderly people",
+        "translationRu": "уход за пожилыми"
       }
     ],
     "sampleAnswer": "I like helping people, and I find it really meaningful to support older people so they can live with dignity. [If true: I have a medical background, so caring for people comes naturally to me.]"
@@ -1745,11 +1893,13 @@
     "phrases": [
       {
         "phrase": "Cert III",
-        "meaning": "Certificate III, the basic aged care qualification"
+        "meaning": "Certificate III, the basic aged care qualification",
+        "translationRu": "сертификат III, базовая квалификация по уходу"
       },
       {
         "phrase": "working towards",
-        "meaning": "studying for"
+        "meaning": "studying for",
+        "translationRu": "учишься на"
       }
     ],
     "sampleAnswer": "Yes, I've completed it. [Or: I'm studying it now and I'll finish in (month). I've already done my placement at (place).]"
@@ -1768,11 +1918,13 @@
     "phrases": [
       {
         "phrase": "resident",
-        "meaning": "a person living in an aged care home"
+        "meaning": "a person living in an aged care home",
+        "translationRu": "проживающий в доме престарелых"
       },
       {
         "phrase": "dignity",
-        "meaning": "self-respect, privacy"
+        "meaning": "self-respect, privacy",
+        "translationRu": "достоинство"
       }
     ],
     "sampleAnswer": "I'd ask for their consent first and explain each step. I'd keep them covered with a towel as much as possible, check the water temperature, and let them do as much as they can themselves. I'd always respect their choices."
@@ -1791,15 +1943,18 @@
     "phrases": [
       {
         "phrase": "how would you go with",
-        "meaning": "how would you deal with"
+        "meaning": "how would you deal with",
+        "translationRu": "как бы ты поступил с"
       },
       {
         "phrase": "dementia",
-        "meaning": "an illness that causes memory loss"
+        "meaning": "an illness that causes memory loss",
+        "translationRu": "деменция"
       },
       {
         "phrase": "agitated",
-        "meaning": "nervous, upset"
+        "meaning": "nervous, upset",
+        "translationRu": "взволнованный, беспокойный"
       }
     ],
     "sampleAnswer": "I'd stay calm, speak gently and listen. I wouldn't argue. I'd try to redirect them with something they like, for example a cup of tea or a walk. I'd follow their care plan and tell the RN."
@@ -1818,7 +1973,8 @@
     "phrases": [
       {
         "phrase": "found on the floor",
-        "meaning": "they have fallen"
+        "meaning": "they have fallen",
+        "translationRu": "нашел на полу (человек упал)"
       }
     ],
     "sampleAnswer": "I wouldn't move them. I'd stay with them, call for help and tell the registered nurse straight away. Then I'd follow the facility's procedure and write an incident report."
@@ -1837,11 +1993,13 @@
     "phrases": [
       {
         "phrase": "manual handling",
-        "meaning": "lifting and moving people safely"
+        "meaning": "lifting and moving people safely",
+        "translationRu": "безопасное перемещение людей"
       },
       {
         "phrase": "hoist",
-        "meaning": "a lifting machine for people"
+        "meaning": "a lifting machine for people",
+        "translationRu": "подъемник"
       }
     ],
     "sampleAnswer": "I always check the care plan first, use the right equipment, and ask for a second person when it's needed. Yes, I've used a hoist [in training or at work]. I never lift a resident on my own if it's not safe."
@@ -1860,11 +2018,13 @@
     "phrases": [
       {
         "phrase": "bruise",
-        "meaning": "a dark mark on the skin after a hit"
+        "meaning": "a dark mark on the skin after a hit",
+        "translationRu": "синяк"
       },
       {
         "phrase": "noticed",
-        "meaning": "saw"
+        "meaning": "saw",
+        "translationRu": "заметил"
       }
     ],
     "sampleAnswer": "I'd tell the registered nurse straight away and write it down in the notes. If I thought it could be abuse, I'd follow the reporting procedure. The resident's safety comes first."
@@ -1883,7 +2043,8 @@
     "phrases": [
       {
         "phrase": "person-centred care",
-        "meaning": "care built around the person's own wishes"
+        "meaning": "care built around the person's own wishes",
+        "translationRu": "уход с учетом желаний человека"
       }
     ],
     "sampleAnswer": "It means seeing the person, not just the tasks. I respect their choices, their routine and their culture, and I involve them and their family in decisions about their care."
@@ -1902,11 +2063,13 @@
     "phrases": [
       {
         "phrase": "rotating roster",
-        "meaning": "a shift schedule that keeps changing"
+        "meaning": "a shift schedule that keeps changing",
+        "translationRu": "сменный график"
       },
       {
         "phrase": "are you right with that",
-        "meaning": "is that okay for you (Australian)"
+        "meaning": "is that okay for you (Australian)",
+        "translationRu": "тебя это устраивает?"
       }
     ],
     "sampleAnswer": "Yes, I'm fine with that. I understand care is needed around the clock, and I'm flexible."
@@ -1925,11 +2088,13 @@
     "phrases": [
       {
         "phrase": "having a go at you",
-        "meaning": "criticising or yelling at you (Australian)"
+        "meaning": "criticising or yelling at you (Australian)",
+        "translationRu": "наезжает на тебя"
       },
       {
         "phrase": "mum",
-        "meaning": "mother"
+        "meaning": "mother",
+        "translationRu": "мама"
       }
     ],
     "sampleAnswer": "I'd stay calm, listen and not take it personally. I'd show that I understand their worry, and tell them I'll pass it on to the registered nurse or manager, who can follow up properly."
@@ -1948,7 +2113,8 @@
     "phrases": [
       {
         "phrase": "refuses",
-        "meaning": "says no to"
+        "meaning": "says no to",
+        "translationRu": "отказывается"
       }
     ],
     "sampleAnswer": "I wouldn't force them. I'd gently try to find out why, maybe they feel unwell, or they don't like the food. I'd tell the RN and write it in the notes."
@@ -1967,7 +2133,8 @@
     "phrases": [
       {
         "phrase": "end of life",
-        "meaning": "the last days before death, palliative care"
+        "meaning": "the last days before death, palliative care",
+        "translationRu": "последние дни жизни, паллиатив"
       }
     ],
     "sampleAnswer": "Yes. I [your experience]. I focused on keeping the person comfortable and pain-free, I sat with them, and I supported the family. It's hard, but it's a privilege to be there."
@@ -1986,11 +2153,13 @@
     "phrases": [
       {
         "phrase": "handover",
-        "meaning": "passing information to the next shift"
+        "meaning": "passing information to the next shift",
+        "translationRu": "передача смены"
       },
       {
         "phrase": "up to scratch",
-        "meaning": "good enough (Australian)"
+        "meaning": "good enough (Australian)",
+        "translationRu": "на должном уровне"
       }
     ],
     "sampleAnswer": "I write my notes during or right after care, so I don't forget anything. They're clear, factual and on time. At handover I mention any changes or concerns, and I check the next person understood."
@@ -2009,11 +2178,13 @@
     "phrases": [
       {
         "phrase": "NDIS Worker Screening",
-        "meaning": "a clearance to work with people with disability"
+        "meaning": "a clearance to work with people with disability",
+        "translationRu": "проверка для работы с людьми с инвалидностью"
       },
       {
         "phrase": "police clearance",
-        "meaning": "police check"
+        "meaning": "police check",
+        "translationRu": "справка о несудимости"
       }
     ],
     "sampleAnswer": "Yes, I have both. [Or: I've applied and I'm waiting for the result. I can send you the reference number.]"
@@ -2032,7 +2203,8 @@
     "phrases": [
       {
         "phrase": "duty of care",
-        "meaning": "the legal duty to keep people safe"
+        "meaning": "the legal duty to keep people safe",
+        "translationRu": "обязанность заботиться о безопасности"
       }
     ],
     "sampleAnswer": "Duty of care means I must keep residents safe from harm, while still respecting their choices. If something could hurt them, I need to act and report it."
@@ -2051,14 +2223,20 @@
     "phrases": [
       {
         "phrase": "hi there",
-        "meaning": "hello"
+        "meaning": "hello",
+        "translationRu": "привет"
       },
       {
         "phrase": "love",
-        "meaning": "a friendly word adults say to kids (Australian)"
+        "meaning": "a friendly word adults say to kids (Australian)",
+        "translationRu": "дорогая, милая (так говорят детям)"
       }
     ],
-    "sampleAnswer": "Hi! My name is [your name]."
+    "sampleAnswer": "Hi! My name is [your name].",
+    "translationRu": {
+      "text": "Привет! Как тебя зовут?",
+      "sampleAnswer": "Привет! Меня зовут [твое имя]."
+    }
   },
   {
     "id": "school-002",
@@ -2074,10 +2252,15 @@
     "phrases": [
       {
         "phrase": "mate",
-        "meaning": "friend (Australian)"
+        "meaning": "friend (Australian)",
+        "translationRu": "дружище"
       }
     ],
-    "sampleAnswer": "I'm [ten] years old."
+    "sampleAnswer": "I'm [ten] years old.",
+    "translationRu": {
+      "text": "А сколько тебе лет?",
+      "sampleAnswer": "Мне [десять] лет."
+    }
   },
   {
     "id": "school-003",
@@ -2093,10 +2276,15 @@
     "phrases": [
       {
         "phrase": "moved here",
-        "meaning": "came to live here"
+        "meaning": "came to live here",
+        "translationRu": "переехала сюда"
       }
     ],
-    "sampleAnswer": "I'm from [your country]. Yes, we just moved here."
+    "sampleAnswer": "I'm from [your country]. Yes, we just moved here.",
+    "translationRu": {
+      "text": "Откуда ты? Ты только что переехала сюда?",
+      "sampleAnswer": "Я из [твоя страна]. Да, мы только что переехали."
+    }
   },
   {
     "id": "school-004",
@@ -2112,10 +2300,15 @@
     "phrases": [
       {
         "phrase": "put your hand up",
-        "meaning": "raise your hand"
+        "meaning": "raise your hand",
+        "translationRu": "подними руку"
       }
     ],
-    "sampleAnswer": "Excuse me, Miss. Can I go to the toilet, please?"
+    "sampleAnswer": "Excuse me, Miss. Can I go to the toilet, please?",
+    "translationRu": {
+      "text": "Тебе нужно в туалет? Просто подними руку и спроси.",
+      "sampleAnswer": "Извините, мисс. Можно мне в туалет, пожалуйста?"
+    }
   },
   {
     "id": "school-005",
@@ -2131,18 +2324,25 @@
     "phrases": [
       {
         "phrase": "righto",
-        "meaning": "okay"
+        "meaning": "okay",
+        "translationRu": "так, ладно"
       },
       {
         "phrase": "grab",
-        "meaning": "take"
+        "meaning": "take",
+        "translationRu": "возьмите"
       },
       {
         "phrase": "No hat, no play",
-        "meaning": "a school sun rule: no hat means no playing outside"
+        "meaning": "a school sun rule: no hat means no playing outside",
+        "translationRu": "без панамы гулять нельзя"
       }
     ],
-    "sampleAnswer": "Okay! I've got my hat."
+    "sampleAnswer": "Okay! I've got my hat.",
+    "translationRu": {
+      "text": "Так, все, берите панамы. Без панамы гулять нельзя!",
+      "sampleAnswer": "Хорошо! Моя панама у меня."
+    }
   },
   {
     "id": "school-006",
@@ -2158,10 +2358,15 @@
     "phrases": [
       {
         "phrase": "recess",
-        "meaning": "the short break in the morning"
+        "meaning": "the short break in the morning",
+        "translationRu": "перемена (утренняя)"
       }
     ],
-    "sampleAnswer": "Yes, I have a snack in my bag."
+    "sampleAnswer": "Yes, I have a snack in my bag.",
+    "translationRu": {
+      "text": "Сейчас перемена. У тебя есть что поесть?",
+      "sampleAnswer": "Да, у меня в рюкзаке перекус."
+    }
   },
   {
     "id": "school-007",
@@ -2177,14 +2382,20 @@
     "phrases": [
       {
         "phrase": "bubbler",
-        "meaning": "drinking fountain (Australian)"
+        "meaning": "drinking fountain (Australian)",
+        "translationRu": "фонтанчик с водой"
       },
       {
         "phrase": "fill it up",
-        "meaning": "put water in it"
+        "meaning": "put water in it",
+        "translationRu": "наполнить"
       }
     ],
-    "sampleAnswer": "Yes, here it is. Where is the bubbler?"
+    "sampleAnswer": "Yes, here it is. Where is the bubbler?",
+    "translationRu": {
+      "text": "Ты взяла бутылку для воды? Можно набрать воду в фонтанчике.",
+      "sampleAnswer": "Да, вот она. Где фонтанчик?"
+    }
   },
   {
     "id": "school-008",
@@ -2200,14 +2411,20 @@
     "phrases": [
       {
         "phrase": "pop",
-        "meaning": "put (casual)"
+        "meaning": "put (casual)",
+        "translationRu": "положи"
       },
       {
         "phrase": "the mat",
-        "meaning": "the carpet where the class sits together"
+        "meaning": "the carpet where the class sits together",
+        "translationRu": "коврик, где сидит класс"
       }
     ],
-    "sampleAnswer": "Okay! Where do I sit?"
+    "sampleAnswer": "Okay! Where do I sit?",
+    "translationRu": {
+      "text": "Повесь рюкзак на крючок и садись на коврик.",
+      "sampleAnswer": "Хорошо! Куда мне сесть?"
+    }
   },
   {
     "id": "school-009",
@@ -2223,10 +2440,15 @@
     "phrases": [
       {
         "phrase": "handball",
-        "meaning": "a popular school game with a ball and four squares"
+        "meaning": "a popular school game with a ball and four squares",
+        "translationRu": "хэндбол, игра с мячом в квадратах"
       }
     ],
-    "sampleAnswer": "Yes, please! Can you show me the rules?"
+    "sampleAnswer": "Yes, please! Can you show me the rules?",
+    "translationRu": {
+      "text": "Хочешь поиграть с нами на большой перемене? Мы играем в хэндбол.",
+      "sampleAnswer": "Да, пожалуйста! Покажете мне правила?"
+    }
   },
   {
     "id": "school-010",
@@ -2242,14 +2464,20 @@
     "phrases": [
       {
         "phrase": "subject",
-        "meaning": "maths, art, sport and so on"
+        "meaning": "maths, art, sport and so on",
+        "translationRu": "школьный предмет"
       },
       {
         "phrase": "so far",
-        "meaning": "until now"
+        "meaning": "until now",
+        "translationRu": "пока что"
       }
     ],
-    "sampleAnswer": "I like [maths]. It's fun."
+    "sampleAnswer": "I like [maths]. It's fun.",
+    "translationRu": {
+      "text": "Какой у тебя пока любимый предмет?",
+      "sampleAnswer": "Мне нравится [математика]. Это интересно."
+    }
   },
   {
     "id": "school-011",
@@ -2265,14 +2493,20 @@
     "phrases": [
       {
         "phrase": "lost",
-        "meaning": "not knowing where to go"
+        "meaning": "not knowing where to go",
+        "translationRu": "потерялась"
       },
       {
         "phrase": "need a hand",
-        "meaning": "need help"
+        "meaning": "need help",
+        "translationRu": "нужна помощь"
       }
     ],
-    "sampleAnswer": "Yes, please. I can't find my classroom."
+    "sampleAnswer": "Yes, please. I can't find my classroom.",
+    "translationRu": {
+      "text": "Ты в порядке? Ты как будто потерялась. Тебе помочь?",
+      "sampleAnswer": "Да, пожалуйста. Я не могу найти свой класс."
+    }
   },
   {
     "id": "school-012",
@@ -2288,10 +2522,15 @@
     "phrases": [
       {
         "phrase": "catch it",
-        "meaning": "hear it"
+        "meaning": "hear it",
+        "translationRu": "расслышать"
       }
     ],
-    "sampleAnswer": "Sorry! I'm still learning English. I said [your words]."
+    "sampleAnswer": "Sorry! I'm still learning English. I said [your words].",
+    "translationRu": {
+      "text": "Можешь повторить чуть громче? Я не расслышала.",
+      "sampleAnswer": "Извините! Я еще учу английский. Я сказала [твои слова]."
+    }
   },
   {
     "id": "school-013",
@@ -2307,10 +2546,15 @@
     "phrases": [
       {
         "phrase": "lunch order",
-        "meaning": "lunch you order from the school canteen"
+        "meaning": "lunch you order from the school canteen",
+        "translationRu": "заказ обеда в школьной столовой"
       }
     ],
-    "sampleAnswer": "I brought lunch from home."
+    "sampleAnswer": "I brought lunch from home.",
+    "translationRu": {
+      "text": "Ты заказала обед сегодня или принесла из дома?",
+      "sampleAnswer": "Я принесла обед из дома."
+    }
   },
   {
     "id": "school-014",
@@ -2326,14 +2570,20 @@
     "phrases": [
       {
         "phrase": "assembly",
-        "meaning": "a meeting of the whole school"
+        "meaning": "a meeting of the whole school",
+        "translationRu": "общешкольное собрание"
       },
       {
         "phrase": "line up",
-        "meaning": "stand in a line"
+        "meaning": "stand in a line",
+        "translationRu": "встаньте в линию"
       }
     ],
-    "sampleAnswer": "Okay! Can I stand next to you?"
+    "sampleAnswer": "Okay! Can I stand next to you?",
+    "translationRu": {
+      "text": "После перемены общешкольное собрание, встаньте в линию у двери, пожалуйста.",
+      "sampleAnswer": "Хорошо! Можно мне встать рядом с тобой?"
+    }
   },
   {
     "id": "school-015",
@@ -2349,17 +2599,24 @@
     "phrases": [
       {
         "phrase": "arvo",
-        "meaning": "afternoon (Australian)"
+        "meaning": "afternoon (Australian)",
+        "translationRu": "после обеда, днем"
       },
       {
         "phrase": "picking you up",
-        "meaning": "coming to take you home"
+        "meaning": "coming to take you home",
+        "translationRu": "заберет тебя"
       },
       {
         "phrase": "after-school care",
-        "meaning": "a place where kids stay after school"
+        "meaning": "a place where kids stay after school",
+        "translationRu": "продленка"
       }
     ],
-    "sampleAnswer": "My [mum] is picking me up."
+    "sampleAnswer": "My [mum] is picking me up.",
+    "translationRu": {
+      "text": "Тебя кто-то заберет после обеда или ты идешь на продленку?",
+      "sampleAnswer": "Меня заберет [мама]."
+    }
   }
 ]

@@ -16,6 +16,7 @@ public enum A11yID {
         public static let header = "home.header"
         public static let startButton = "home.start"
         public static let settingsButton = "home.settings"
+        public static let phrasebookButton = "home.phrasebook"
         public static let emptyState = "home.emptyState"
         public static let startOverConfirmButton = "home.startOverConfirm"
         public static func startOverButton(_ category: QuestionCategory) -> String {
@@ -44,11 +45,17 @@ public enum A11yID {
         public static let slowByDefaultToggle = "settings.slowByDefault"
         public static let resetButton = "settings.reset"
         public static let resetOrderButton = "settings.resetOrder"
+        public static let russianToggle = "settings.russian"
         public static let resetConfirmButton = "settings.resetConfirm"
         public static let resetDoneLabel = "settings.resetDone"
         public static let version = "settings.version"
         public static func voiceRow(_ name: String) -> String { "settings.voice.\(name)" }
         public static func previewButton(_ name: String) -> String { "settings.voice.\(name).play" }
+    }
+
+    public enum Phrasebook {
+        public static let list = "phrasebook.list"
+        public static func row(_ phrase: String) -> String { "phrasebook.row.\(phrase)" }
     }
 
     public enum SampleAnswer {
@@ -78,7 +85,7 @@ public extension QuestionBank {
             rephrase: "Tell me about yourself and your experience.",
             gist: "Tell me about your background.",
             distractors: ["Why do you want this job?", "What are your weaknesses?"],
-            phrases: [Phrase(phrase: "to kick things off", meaning: "to start")],
+            phrases: [Phrase(phrase: "to kick things off", meaning: "to start", translationRu: "для начала")],
             sampleAnswer: "Sure. I'm a [your role] with [number] years of experience."
         ),
         Question(
@@ -88,7 +95,7 @@ public extension QuestionBank {
             rephrase: "Tell me about a difficult bug you found.",
             gist: "Describe a hard bug you investigated.",
             distractors: ["How many bugs do you find a week?", "Which bug tracker do you use?"],
-            phrases: [Phrase(phrase: "tracked down", meaning: "found after searching")],
+            phrases: [Phrase(phrase: "tracked down", meaning: "found after searching", translationRu: "докопался")],
             sampleAnswer: "Yes. I collected logs, found the exact steps and wrote a clear bug report."
         ),
         Question(
@@ -98,7 +105,7 @@ public extension QuestionBank {
             rephrase: "If a developer says your bug is not a real bug, what do you do?",
             gist: "How do you handle a developer who disagrees with your bug?",
             distractors: ["How do you report a bug?", "Have you ever worked as a developer?"],
-            phrases: [Phrase(phrase: "reckons", meaning: "thinks")],
+            phrases: [Phrase(phrase: "reckons", meaning: "thinks", translationRu: "считает")],
             sampleAnswer: "I listen first, then show the facts and the impact on users."
         )
     ])

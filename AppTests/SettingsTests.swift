@@ -33,6 +33,39 @@ struct SettingsTests {
         #expect(model.orderWasReset)
     }
 
+    @Test func russianTranslationIsOffByDefaultAndPersists() throws {
+        let name = "SettingsTests.ru.\(UUID().uuidString)"
+        let defaults = try #require(UserDefaults(suiteName: name))
+        defer { defaults.removePersistentDomain(forName: name) }
+        #expect(!AppSettings(defaults: defaults).showRussian)
+        AppSettings(defaults: defaults).showRussian = true
+        #expect(AppSettings(defaults: defaults).showRussian)
+    }
+
+    @Test func phrasebookSnapshotWithRussian() {
+        let view = NavigationStack { PhrasebookView(environment: .testing()) }
+            .environment(\.showRussian, true)
+        assertSnapshot(of: Snapshot.host(view), as: Snapshot.strategy)
+    }
+
+    @Test func kidsSampleAnswerSnapshotWithRussian() {
+        let question = Question(
+            id: "school-test", category: .school,
+            text: "Do you need to go to the toilet? Just put your hand up and ask.",
+            rephrase: "If you need the toilet, raise your hand and ask.",
+            gist: "Raise your hand and ask to go to the toilet.",
+            distractors: ["A", "B"],
+            phrases: [Phrase(phrase: "put your hand up", meaning: "raise your hand", translationRu: "подними руку")],
+            sampleAnswer: "Excuse me, Miss. Can I go to the toilet, please?",
+            translationRu: QuestionTranslation(
+                text: "Тебе нужно в туалет? Просто подними руку и спроси.",
+                sampleAnswer: "Извините, мисс. Можно мне в туалет, пожалуйста?"
+            )
+        )
+        let view = SampleAnswerView(question: question, onListen: {}).environment(\.showRussian, true)
+        assertSnapshot(of: Snapshot.host(view), as: Snapshot.strategy)
+    }
+
     @Test func newSessionStartsSlowWhenSettingIsOn() {
         let environment = AppEnvironment.testing()
         #expect(environment.makeSession(category: nil).slow == false)

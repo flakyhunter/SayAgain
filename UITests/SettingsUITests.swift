@@ -13,6 +13,7 @@ final class SettingsUITests: SayAgainUITestCase {
         settings.resetButton.tap()
         XCTAssertTrue(settings.resetConfirmButton.waitForExistence(timeout: 5))
         settings.resetConfirmButton.tap()
+        app.swipeUp()   // the confirmation note is in the footer, lower down the longer form
         XCTAssertTrue(settings.resetDoneLabel.waitForExistence(timeout: 5))
     }
 

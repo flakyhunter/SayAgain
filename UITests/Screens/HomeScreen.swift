@@ -10,6 +10,7 @@ struct HomeScreen {
     var header: XCUIElement { app.descendants(matching: .any)[A11yID.Home.header] }
     var startButton: XCUIElement { app.buttons[A11yID.Home.startButton] }
     var settingsButton: XCUIElement { app.buttons[A11yID.Home.settingsButton] }
+    var phrasebookButton: XCUIElement { app.buttons[A11yID.Home.phrasebookButton] }
     var startOverConfirmButton: XCUIElement {
         app.buttons.matching(identifier: A11yID.Home.startOverConfirmButton).firstMatch
     }

@@ -27,10 +27,24 @@ public enum QuestionCategory: String, Codable, CaseIterable, Sendable {
 public struct Phrase: Codable, Hashable, Sendable {
     public let phrase: String
     public let meaning: String
+    /// Russian translation, shown when the user turns it on in Settings.
+    public let translationRu: String?
 
-    public init(phrase: String, meaning: String) {
+    public init(phrase: String, meaning: String, translationRu: String? = nil) {
         self.phrase = phrase
         self.meaning = meaning
+        self.translationRu = translationRu
+    }
+}
+
+/// Russian version of a whole question, for beginners (the kids' school category).
+public struct QuestionTranslation: Codable, Hashable, Sendable {
+    public let text: String
+    public let sampleAnswer: String
+
+    public init(text: String, sampleAnswer: String) {
+        self.text = text
+        self.sampleAnswer = sampleAnswer
     }
 }
 
@@ -49,6 +63,7 @@ public struct Question: Codable, Hashable, Identifiable, Sendable {
     public let phrases: [Phrase]
     /// What a good candidate could say. Parts in [brackets] are for the user's own details.
     public let sampleAnswer: String
+    public let translationRu: QuestionTranslation?
     /// BCP 47 voice locale, for example "en-AU".
     public let locale: String
 
@@ -61,6 +76,7 @@ public struct Question: Codable, Hashable, Identifiable, Sendable {
         distractors: [String],
         phrases: [Phrase],
         sampleAnswer: String,
+        translationRu: QuestionTranslation? = nil,
         locale: String = "en-AU"
     ) {
         self.id = id
@@ -71,6 +87,7 @@ public struct Question: Codable, Hashable, Identifiable, Sendable {
         self.distractors = distractors
         self.phrases = phrases
         self.sampleAnswer = sampleAnswer
+        self.translationRu = translationRu
         self.locale = locale
     }
 }

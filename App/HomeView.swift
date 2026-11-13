@@ -65,6 +65,15 @@ struct HomeView: View {
                 Text("Progress in this category goes back to zero. Other categories stay as they are.")
             }
             .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    NavigationLink {
+                        PhrasebookView(environment: environment)
+                    } label: {
+                        Image(systemName: "character.book.closed.fill")
+                    }
+                    .accessibilityLabel("Phrasebook")
+                    .accessibilityIdentifier(A11yID.Home.phrasebookButton)
+                }
                 ToolbarItem(placement: .topBarTrailing) {
                     NavigationLink {
                         SettingsView(model: SettingsViewModel(environment: environment))
@@ -83,6 +92,7 @@ struct HomeView: View {
                 .navigationTitle(route.category?.title ?? "Mixed practice")
             }
         }
+        .environment(\.showRussian, environment.settings.showRussian)
     }
 
     private var tickerPhrases: [String] {

@@ -6,6 +6,7 @@ struct SampleAnswerView: View {
     let question: Question
     let onListen: () -> Void
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.showRussian) private var showRussian
 
     var body: some View {
         NavigationStack {
@@ -27,6 +28,13 @@ struct SampleAnswerView: View {
                             .font(.title3)
                             .lineSpacing(4)
                             .accessibilityIdentifier(A11yID.SampleAnswer.text)
+                        if showRussian, let translation = question.translationRu {
+                            Self.highlighted(translation.sampleAnswer)
+                                .font(.body)
+                                .italic()
+                                .foregroundStyle(.secondary)
+                                .accessibilityIdentifier("ru")
+                        }
                         Button(action: onListen) {
                             Label("Listen", systemImage: "speaker.wave.2.fill")
                                 .font(.headline)

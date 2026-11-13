@@ -154,6 +154,49 @@ struct CategoryOrderTests {
     }
 }
 
+@Suite("Russian translation and phrasebook")
+struct TranslationTests {
+    @Test func everyShippedPhraseHasARussianTranslation() throws {
+        for question in try QuestionBank.bundled().questions {
+            for phrase in question.phrases {
+                #expect(phrase.translationRu?.isEmpty == false, "\(question.id): \(phrase.phrase)")
+            }
+        }
+    }
+
+    @Test func everySchoolQuestionIsFullyTranslatedWithMatchingPlaceholders() throws {
+        for question in try QuestionBank.bundled().questions(in: .school) {
+            let translation = try #require(question.translationRu, "\(question.id)")
+            #expect(!translation.text.isEmpty)
+            let english = question.sampleAnswer.filter { $0 == "[" }.count
+            let russian = translation.sampleAnswer.filter { $0 == "[" }.count
+            #expect(english == russian, "\(question.id): placeholders differ")
+        }
+    }
+
+    @Test func phrasebookHasEveryCategoryInOrderWithoutDuplicates() throws {
+        let sections = try QuestionBank.bundled().phrasebook()
+        #expect(sections.map(\.category) == CategoryOrder.default)
+        for section in sections {
+            let keys = section.entries.map { $0.phrase.lowercased() + "|" + $0.meaning }
+            #expect(Set(keys).count == keys.count, "\(section.category) has duplicates")
+            #expect(section.entries.map(\.phrase) == section.entries.map(\.phrase).sorted {
+                $0.localizedCaseInsensitiveCompare($1) == .orderedAscending
+            })
+        }
+    }
+
+    @Test(arguments: ["ARVO", "afternoon", "после обеда"])
+    func searchFindsByPhraseMeaningOrTranslation(query: String) throws {
+        let found = try QuestionBank.bundled().phrasebook(matching: query).flatMap(\.entries)
+        #expect(found.contains { $0.phrase == "arvo" })
+    }
+
+    @Test func searchWithNoMatchesReturnsNoSections() throws {
+        #expect(try QuestionBank.bundled().phrasebook(matching: "zzzz").isEmpty)
+    }
+}
+
 @Suite("Category summaries")
 struct CategorySummaryTests {
     @Test func countsAndOrderFollowCategoryOrder() {

@@ -110,6 +110,18 @@ struct SettingsView: View {
             }
 
             Section {
+                Toggle(isOn: $settings.showRussian) {
+                    Label("Show Russian translation", systemImage: "character.bubble")
+                }
+                .tint(Theme.accent)
+                .accessibilityIdentifier(A11yID.Settings.russianToggle)
+            } header: {
+                Text("Translation")
+            } footer: {
+                Text("Adds Russian under every phrase, in the phrasebook and for the kids' school questions. Показывать перевод на русский.")
+            }
+
+            Section {
                 Button("Reset category order", systemImage: "arrow.up.arrow.down") {
                     model.resetCategoryOrder()
                 }

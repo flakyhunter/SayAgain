@@ -91,7 +91,8 @@ public struct QuestionBank: Sendable {
 
             let allText = [question.text, question.rephrase, question.gist, question.sampleAnswer]
                 + question.distractors
-                + question.phrases.flatMap { [$0.phrase, $0.meaning] }
+                + question.phrases.flatMap { [$0.phrase, $0.meaning, $0.translationRu ?? ""] }
+                + [question.translationRu?.text ?? "", question.translationRu?.sampleAnswer ?? ""]
             for character in Self.forbiddenCharacters where allText.contains(where: { $0.contains(character) }) {
                 issues.append(.forbiddenCharacter(id: question.id, character: character))
             }

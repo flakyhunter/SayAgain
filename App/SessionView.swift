@@ -291,6 +291,7 @@ private struct ChoiceButton: View {
 private struct RevealCard: View {
     let question: Question
     let correct: Bool
+    @Environment(\.showRussian) private var showRussian
 
     var body: some View {
         VStack(alignment: .leading, spacing: 18) {
@@ -304,6 +305,9 @@ private struct RevealCard: View {
                 Text("\u{201C}\(question.text)\u{201D}")
                     .font(.body.italic())
                     .accessibilityIdentifier(A11yID.Session.originalText)
+                if showRussian, let translation = question.translationRu {
+                    RussianLine(text: translation.text)
+                }
             }
             section("In plain English") {
                 Text(question.rephrase)
@@ -314,6 +318,9 @@ private struct RevealCard: View {
                         VStack(alignment: .leading, spacing: 2) {
                             Text(phrase.phrase).font(.body.weight(.semibold)).foregroundStyle(Theme.accent)
                             Text(phrase.meaning).font(.subheadline).foregroundStyle(.secondary)
+                            if showRussian, let russian = phrase.translationRu {
+                                RussianLine(text: russian)
+                            }
                         }
                         .accessibilityElement(children: .combine)
                     }
