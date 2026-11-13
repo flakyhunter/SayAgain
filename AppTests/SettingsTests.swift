@@ -43,9 +43,17 @@ struct SettingsTests {
     }
 
     @Test func phrasebookSnapshotWithRussian() {
-        let view = NavigationStack { PhrasebookView(environment: .testing()) }
+        // Only the list: the system search and navigation bars render differently on each iOS version.
+        let environment = AppEnvironment.testing()
+        let sections = environment.bank.phrasebook(order: environment.settings.categoryOrder, matching: "")
+        let view = PhrasebookList(sections: sections, onSpeak: { _ in })
             .environment(\.showRussian, true)
         assertSnapshot(of: Snapshot.host(view), as: Snapshot.strategy)
+    }
+
+    @Test func phrasebookSearchPromptMentionsRussianOnlyWhenTranslationIsOn() {
+        #expect(PhrasebookView.searchPrompt(showRussian: true) == "Search phrases, meanings, перевод")
+        #expect(PhrasebookView.searchPrompt(showRussian: false) == "Search phrases and meanings")
     }
 
     @Test func kidsSampleAnswerSnapshotWithRussian() {

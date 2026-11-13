@@ -11,12 +11,42 @@ struct PhrasebookView: View {
         environment.bank.phrasebook(order: environment.settings.categoryOrder, matching: query)
     }
 
+    static func searchPrompt(showRussian: Bool) -> String {
+        showRussian ? "Search phrases, meanings, перевод" : "Search phrases and meanings"
+    }
+
+    var body: some View {
+        PhrasebookList(sections: sections, onSpeak: speak)
+            .overlay {
+                if sections.isEmpty {
+                    ContentUnavailableView.search(text: query)
+                }
+            }
+            .searchable(text: $query, prompt: Self.searchPrompt(showRussian: showRussian))
+            .navigationTitle("Phrasebook")
+            .navigationBarTitleDisplayMode(.large)
+            .onDisappear { environment.speech.stop() }
+    }
+
+    private func speak(_ phrase: String) {
+        let voice = VoiceRoster.voice(forTurn: 0, from: environment.speech.voices(for: "en-AU"))
+        environment.speech.speak(phrase, voice: voice, locale: "en-AU", slow: environment.settings.slowByDefault)
+    }
+}
+
+/// The phrase list itself, without system chrome (search bar, navigation bar),
+/// so snapshots do not depend on how a given iOS version draws that chrome.
+struct PhrasebookList: View {
+    let sections: [PhrasebookSection]
+    let onSpeak: (String) -> Void
+    @Environment(\.showRussian) private var showRussian
+
     var body: some View {
         List {
             ForEach(sections) { section in
                 Section {
                     ForEach(section.entries) { entry in
-                        Button { speak(entry.phrase) } label: { row(entry) }
+                        Button { onSpeak(entry.phrase) } label: { row(entry) }
                             .buttonStyle(.plain)
                             .accessibilityElement(children: .combine)
                             .accessibilityHint("Plays the phrase")
@@ -34,16 +64,7 @@ struct PhrasebookView: View {
                 }
             }
         }
-        .overlay {
-            if sections.isEmpty {
-                ContentUnavailableView.search(text: query)
-            }
-        }
         .accessibilityIdentifier(A11yID.Phrasebook.list)
-        .searchable(text: $query, prompt: showRussian ? "Search phrases, meanings, перевод" : "Search phrases and meanings")
-        .navigationTitle("Phrasebook")
-        .navigationBarTitleDisplayMode(.large)
-        .onDisappear { environment.speech.stop() }
     }
 
     private func row(_ entry: PhrasebookEntry) -> some View {
@@ -67,10 +88,5 @@ struct PhrasebookView: View {
         }
         .contentShape(.rect)
         .padding(.vertical, 2)
-    }
-
-    private func speak(_ phrase: String) {
-        let voice = VoiceRoster.voice(forTurn: 0, from: environment.speech.voices(for: "en-AU"))
-        environment.speech.speak(phrase, voice: voice, locale: "en-AU", slow: environment.settings.slowByDefault)
     }
 }
