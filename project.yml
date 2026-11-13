@@ -1,0 +1,77 @@
+name: SayAgain
+
+options:
+  bundleIdPrefix: dev.flakyhunter
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+  developmentLanguage: en
+
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    CODE_SIGN_STYLE: Automatic
+    TARGETED_DEVICE_FAMILY: "1"
+
+packages:
+  SayAgainKit:
+    path: Packages/SayAgainKit
+  SnapshotTesting:
+    url: https://github.com/pointfreeco/swift-snapshot-testing
+    from: "1.18.0"
+
+targets:
+  SayAgain:
+    type: application
+    platform: iOS
+    sources: [App]
+    dependencies:
+      - package: SayAgainKit
+    info:
+      path: App/Info.plist
+      properties:
+        CFBundleDisplayName: Say Again
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+        ITSAppUsesNonExemptEncryption: false
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: dev.flakyhunter.sayagain
+
+  SayAgainTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: [AppTests]
+    dependencies:
+      - target: SayAgain
+      - package: SayAgainKit
+      - package: SnapshotTesting
+        product: SnapshotTesting
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: dev.flakyhunter.sayagain.tests
+
+  SayAgainUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources: [UITests]
+    dependencies:
+      - target: SayAgain
+      - package: SayAgainKit
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: dev.flakyhunter.sayagain.uitests
+
+schemes:
+  SayAgain:
+    build:
+      targets:
+        SayAgain: all
+    test:
+      gatherCoverageData: true
+      coverageTargets: [SayAgain]
+      targets:
+        - SayAgainTests
+        - SayAgainUITests

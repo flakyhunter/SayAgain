@@ -1,0 +1,141 @@
+[
+  {
+    "id": "intro-001",
+    "category": "intro",
+    "locale": "en-AU",
+    "text": "So, just to kick things off, could you walk me through your background, and what's brought you over to Perth?",
+    "rephrase": "Tell me about yourself. What is your experience, and why did you move to Perth?",
+    "gist": "Tell me about your background and why you moved to Perth.",
+    "distractors": [
+      "Tell me about your plans for the next five years in Perth.",
+      "Explain why you left your last job."
+    ],
+    "phrases": [
+      { "phrase": "to kick things off", "meaning": "to start" },
+      { "phrase": "walk me through", "meaning": "explain step by step" },
+      { "phrase": "what's brought you over", "meaning": "why you came here" }
+    ]
+  },
+  {
+    "id": "behavioural-001",
+    "category": "behavioural",
+    "locale": "en-AU",
+    "text": "Can you tell me about a time you tracked down a really tricky bug? And how did you go about raising it with the devs?",
+    "rephrase": "Tell me about a difficult bug you found. How did you investigate it, and how did you tell the developers?",
+    "gist": "Describe a hard bug you found, and how you reported it to developers.",
+    "distractors": [
+      "Describe a bug that a developer found in your tests.",
+      "Explain how you would train new developers."
+    ],
+    "phrases": [
+      { "phrase": "a time you...", "meaning": "a real situation when you..." },
+      { "phrase": "tracked down", "meaning": "found after a long search" },
+      { "phrase": "tricky", "meaning": "difficult, not obvious" },
+      { "phrase": "go about raising it", "meaning": "how exactly you reported it" }
+    ]
+  },
+  {
+    "id": "behavioural-002",
+    "category": "behavioural",
+    "locale": "en-AU",
+    "text": "Righto, last one from me. If a developer pushes back and reckons your bug isn't really a bug, how do you handle that?",
+    "rephrase": "Last question. If a developer says your bug is not a real bug, what do you do?",
+    "gist": "What do you do when a developer says your bug is not a real bug?",
+    "distractors": [
+      "What do you do when you cannot reproduce a bug?",
+      "What was the last bug you reported?"
+    ],
+    "phrases": [
+      { "phrase": "righto", "meaning": "okay (Australian)" },
+      { "phrase": "pushes back", "meaning": "disagrees, resists" },
+      { "phrase": "reckons", "meaning": "thinks (very common in Australia)" }
+    ]
+  },
+  {
+    "id": "behavioural-003",
+    "category": "behavioural",
+    "locale": "en-AU",
+    "text": "The team's spread across a few time zones, so there isn't a heap of overlap. How would you keep everyone on the same page?",
+    "rephrase": "The team works in different time zones. How would you keep communication clear?",
+    "gist": "How would you keep a team in different time zones informed?",
+    "distractors": [
+      "Are you happy to work night shifts?",
+      "How many people were in your last team?"
+    ],
+    "phrases": [
+      { "phrase": "spread across", "meaning": "located in different places" },
+      { "phrase": "a heap of", "meaning": "a lot of (Australian)" },
+      { "phrase": "overlap", "meaning": "hours when everyone is working" },
+      { "phrase": "on the same page", "meaning": "having the same information" }
+    ]
+  },
+  {
+    "id": "logistics-001",
+    "category": "logistics",
+    "locale": "en-AU",
+    "text": "What are you looking for, salary wise? And just to be clear, is that base, or are we talking package, including super?",
+    "rephrase": "What salary do you expect? Is that without superannuation, or including it?",
+    "gist": "What salary do you expect, and does it include super?",
+    "distractors": [
+      "How much did you earn in your last job?",
+      "Do you need visa sponsorship?"
+    ],
+    "phrases": [
+      { "phrase": "salary wise", "meaning": "about salary" },
+      { "phrase": "base", "meaning": "salary without super" },
+      { "phrase": "package", "meaning": "salary plus super and other benefits" },
+      { "phrase": "super", "meaning": "superannuation, the employer's retirement contribution" }
+    ]
+  },
+  {
+    "id": "logistics-002",
+    "category": "logistics",
+    "locale": "en-AU",
+    "text": "And what's your availability like? What sort of notice period are we looking at?",
+    "rephrase": "When can you start? Do you need to give notice to your current employer?",
+    "gist": "When can you start, and what is your notice period?",
+    "distractors": [
+      "Which days of the week are you free for an interview?",
+      "How long did you stay in your last job?"
+    ],
+    "phrases": [
+      { "phrase": "availability", "meaning": "when you are free to start" },
+      { "phrase": "notice period", "meaning": "time you must work after you resign" },
+      { "phrase": "what sort of... are we looking at", "meaning": "what kind of... is it" }
+    ]
+  },
+  {
+    "id": "qa-it-001",
+    "category": "qa-it",
+    "locale": "en-AU",
+    "text": "Have you had much exposure to mocking in your test setup? And how do you make sure your automated tests are actually reliable, and not flaky?",
+    "rephrase": "Do you use mocks in your tests? And how do you make your automated tests stable?",
+    "gist": "Have you used mocks, and how do you keep automated tests stable?",
+    "distractors": [
+      "How many automated tests have you written?",
+      "Which test framework do you like the most?"
+    ],
+    "phrases": [
+      { "phrase": "had much exposure to", "meaning": "had much experience with" },
+      { "phrase": "test setup", "meaning": "test infrastructure" },
+      { "phrase": "flaky", "meaning": "sometimes passes, sometimes fails" }
+    ]
+  },
+  {
+    "id": "qa-it-002",
+    "category": "qa-it",
+    "locale": "en-AU",
+    "text": "Fair enough. Have you had a crack at testing anything A.I. driven, like L.L.M. features, or agents? No worries if not.",
+    "rephrase": "Have you tested any AI features, for example LLMs or AI agents? It's okay if you haven't.",
+    "gist": "Have you tested AI features like LLMs or agents?",
+    "distractors": [
+      "Do you use AI tools to write your tests?",
+      "What do you think about AI replacing testers?"
+    ],
+    "phrases": [
+      { "phrase": "fair enough", "meaning": "okay, that makes sense" },
+      { "phrase": "had a crack at", "meaning": "tried (Australian)" },
+      { "phrase": "no worries if not", "meaning": "it's fine if you haven't" }
+    ]
+  }
+]
