@@ -38,6 +38,7 @@
 - {id: p09, questionId: volunteering-013, tag: shifted, accept: [partly, missed], retelling: "Is volunteering hard work?"}
 - {id: p10, questionId: aged-care-013, tag: two-part, accept: [partly], retelling: "How do I write my notes?"}
 - {id: p11, questionId: qa-it-011, tag: shifted, accept: [partly, missed], retelling: "What is regression testing?"}
+- {id: p13, questionId: aged-care-011, tag: two-part, accept: [partly, understood], retelling: "What I have to do if the client doesn't want to it madecene?"}
 - {id: p12, questionId: logistics-015, tag: shifted, accept: [partly], retelling: "Next step is a chat with the team."}
 
 # --- missed --------------------------------------------------------------------------------
