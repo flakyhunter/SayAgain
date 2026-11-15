@@ -73,7 +73,7 @@ The AI feedback has its own layers:
 | Contract | Shared JSON in `contract/feedback` | The same example bodies are checked by the Worker's Zod schema and decoded by the Swift client | 3 + 3 | both sides |
 | Client | Swift Testing + URLProtocol stub | Request shape, every response and error code, offline, garbage with 200 | 12 | macOS |
 | End to end | XCUITest + `wrangler dev` | App, real HTTP, Worker and back, with an offline checker (no key, no cost) | 1 | local, opt-in |
-| Eval | Promptfoo + Claude Sonnet as judge | 50 retellings: paraphrases, broken English, Russian, half of a two-part question, shifted meaning, wrong question, vague, prompt injection. Gate: verdict accuracy 90%+, every injection case right, feedback quality 85%+ | 50 | CI on prompt changes |
+| Eval | Promptfoo + Claude Sonnet as judge | 51 retellings (one from a real tester): paraphrases, broken English, Russian, half of a two-part question, shifted meaning, wrong question, vague, prompt injection. Gate: verdict accuracy 90%+, every injection case right, feedback quality 85%+ | 51 | CI on prompt changes |
 A full CI run takes about 10 minutes, most of it is the simulator on the GitHub runner.
 
 Key decisions:
