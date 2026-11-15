@@ -33,3 +33,8 @@ struct RetellScreen {
         checkButton.tap()
     }
 }
+
+extension RetellScreen {
+    var micButton: XCUIElement { app.buttons[A11yID.Retell.micButton] }
+    var listening: XCUIElement { app.descendants(matching: .any)[A11yID.Retell.listening] }
+}

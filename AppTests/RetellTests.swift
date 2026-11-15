@@ -130,6 +130,89 @@ struct RetellViewModelTests {
 }
 
 @MainActor
+@Suite("Dictating the retelling")
+struct DictationViewModelTests {
+    let speech = RecordingSpeechService()
+    let dictation = ScriptedDictationService(script: "and why I came here")
+
+    private func model(dictation: DictationService? = nil) -> SessionViewModel {
+        let store = InMemoryProgressStore()
+        let settings = AppSettings.ephemeral()
+        settings.aiFeedback = .allowed
+        return SessionViewModel(
+            session: .make(bank: .fixture, category: .behavioural, store: store, seed: LaunchArgument.uiTestingSeed),
+            speech: speech, store: store, category: .behavioural, bank: .fixture,
+            feedback: ScriptedFeedbackService(), settings: settings, dictation: dictation ?? self.dictation
+        )
+    }
+
+    @Test func dictatedWordsGoAfterWhatWasTyped() async {
+        let model = model()
+        model.retellText = "My background"
+        await model.toggleDictation()
+        #expect(model.isDictating)
+        #expect(model.retellText == "My background and why I came here")
+    }
+
+    @Test func micStopsTheInterviewerFirst() async {
+        let model = model()
+        model.play()
+        await model.toggleDictation()
+        #expect(speech.stopCount == 1, "The question voice must not be recorded")
+    }
+
+    @Test func secondTapStops() async {
+        let model = model()
+        await model.toggleDictation()
+        await model.toggleDictation()
+        #expect(!model.isDictating)
+        #expect(!dictation.isListening)
+        #expect(model.retellText == "and why I came here", "Text stays after stopping")
+    }
+
+    @Test func cannotSendWhileListening() async {
+        let model = model()
+        await model.toggleDictation()
+        #expect(!model.canSubmitRetelling)
+        await model.toggleDictation()
+        #expect(model.canSubmitRetelling)
+    }
+
+    @Test func checkingStopsTheMicrophone() async {
+        let model = model()
+        await model.toggleDictation()
+        await model.submitRetelling()
+        #expect(!dictation.isListening)
+    }
+
+    @Test func leavingStopsTheMicrophone() async {
+        let model = model()
+        await model.toggleDictation()
+        model.leave()
+        #expect(!dictation.isListening)
+        #expect(!model.isDictating)
+    }
+
+    @Test(arguments: [DictationError.denied, .unsupported, .failed])
+    func failureShowsAMessageAndKeepsTyping(error: DictationError) async {
+        let model = model(dictation: ScriptedDictationService(prepareError: error))
+        model.retellText = "typed"
+        await model.toggleDictation()
+        #expect(!model.isDictating)
+        #expect(model.dictationError == error)
+        #expect(model.retellText == "typed")
+        #expect(model.canSubmitRetelling)
+    }
+
+    @Test func noDictationServiceNoMicButton() {
+        let store = InMemoryProgressStore()
+        let model = SessionViewModel(session: .make(bank: .fixture, category: .behavioural, store: store, seed: 1),
+                                     speech: speech, store: store)
+        #expect(!model.canDictate)
+    }
+}
+
+@MainActor
 @Suite("Feedback configuration")
 struct FeedbackConfigurationTests {
     @Test func usesTheEndpointFromInfoPlist() throws {
@@ -165,6 +248,20 @@ struct RetellSnapshotTests {
             speech: RecordingSpeechService(), store: store, category: .behavioural, bank: .fixture,
             feedback: ScriptedFeedbackService(), settings: settings
         )
+    }
+
+    @Test func listening() async {
+        let model = SessionViewModel(
+            session: .make(bank: .fixture, category: .behavioural, store: InMemoryProgressStore(), seed: LaunchArgument.uiTestingSeed),
+            speech: RecordingSpeechService(), store: InMemoryProgressStore(), category: .behavioural, bank: .fixture,
+            feedback: ScriptedFeedbackService(), settings: {
+                let settings = AppSettings.ephemeral()
+                settings.aiFeedback = .allowed
+                return settings
+            }(), dictation: ScriptedDictationService(script: "They want to know about a tricky bug I found")
+        )
+        await model.toggleDictation()
+        assertSnapshot(of: Snapshot.host(RetellView(model: model) {}), as: Snapshot.strategy)
     }
 
     @Test func consent() {

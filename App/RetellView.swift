@@ -38,6 +38,7 @@ struct RetellView: View {
         }
         .accessibilityIdentifier(A11yID.Retell.sheet)
         .presentationDetents([.large])
+        .onDisappear { model.stopDictation() }
     }
 
     // MARK: Consent
@@ -53,7 +54,7 @@ struct RetellView: View {
             VStack(spacing: 10) {
                 wideButton("Allow AI feedback", primary: true, id: A11yID.Retell.allowButton) {
                     model.setConsent(true)
-                    focused = true
+                    if !model.canDictate { focused = true }
                 }
                 wideButton("Not now", primary: false, id: A11yID.Retell.declineButton) {
                     model.setConsent(false)
@@ -72,7 +73,9 @@ struct RetellView: View {
         VStack(alignment: .leading, spacing: 14) {
             Text("What did they ask?")
                 .font(.title3.bold())
-            Text("Write it the way you'd explain it to a friend. Any English is fine, or Russian.")
+            Text(model.canDictate
+                 ? "Say it or type it, the way you'd explain it to a friend. Any English is fine."
+                 : "Write it the way you'd explain it to a friend. Any English is fine, or Russian.")
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
             TextField("They want to know...", text: $model.retellText, axis: .vertical)
@@ -82,12 +85,26 @@ struct RetellView: View {
                 .focused($focused)
                 .disabled(model.retellState == .checking)
                 .accessibilityIdentifier(A11yID.Retell.textField)
-                .onAppear { focused = true }
-            HStack {
+                .onAppear { if !model.canDictate { focused = true } }
+            HStack(alignment: .center) {
+                if model.canDictate { micButton }
+                if model.isDictating {
+                    Label("Listening...", systemImage: "waveform")
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(Theme.sunset)
+                        .symbolEffect(.variableColor.iterative, isActive: model.animated)
+                        .accessibilityIdentifier(A11yID.Retell.listening)
+                }
                 Spacer()
                 Text("\(model.retellText.count) / \(Retelling.maxLength)")
                     .font(.caption.monospacedDigit())
                     .foregroundStyle(model.retellText.count > Retelling.maxLength ? Theme.danger : .secondary)
+            }
+            if let error = model.dictationError {
+                Label(error.message, systemImage: "mic.slash")
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+                    .accessibilityIdentifier(A11yID.Retell.dictationError)
             }
             if model.retellState == .checking {
                 HStack(spacing: 10) {
@@ -107,6 +124,24 @@ struct RetellView: View {
                 .opacity(model.canSubmitRetelling ? 1 : 0.5)
             }
         }
+    }
+
+    private var micButton: some View {
+        Button {
+            focused = false
+            Task { await model.toggleDictation() }
+        } label: {
+            Image(systemName: model.isDictating ? "stop.fill" : "mic.fill")
+                .font(.system(size: 22, weight: .semibold))
+                .foregroundStyle(.white)
+                .frame(width: 56, height: 56)
+                .background(model.isDictating ? AnyShapeStyle(Theme.sunset) : AnyShapeStyle(Theme.heroGradient), in: .circle)
+                .shadow(color: Theme.ocean.opacity(0.25), radius: 6, y: 3)
+        }
+        .buttonStyle(.plain)
+        .disabled(model.retellState == .checking)
+        .accessibilityLabel(model.isDictating ? "Stop dictation" : "Dictate your answer")
+        .accessibilityIdentifier(A11yID.Retell.micButton)
     }
 
     // MARK: Result

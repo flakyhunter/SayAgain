@@ -39,6 +39,8 @@ targets:
         UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
         ITSAppUsesNonExemptEncryption: false
         SAFeedbackEndpoint: $(FEEDBACK_ENDPOINT)
+        NSMicrophoneUsageDescription: Say Again uses the microphone only while you dictate your answer. The audio stays on your iPhone and is not saved.
+        NSSpeechRecognitionUsageDescription: Your speech is turned into text on your iPhone, so you can say what you heard instead of typing it.
         NSAppTransportSecurity:
           NSAllowsLocalNetworking: true
     settings:

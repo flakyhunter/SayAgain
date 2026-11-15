@@ -214,3 +214,74 @@ struct ScriptedFeedbackServiceTests {
         }
     }
 }
+
+@Suite("Dictated text")
+struct DictationTextTests {
+    @Test(arguments: [
+        ("", "they want my background", "they want my background"),
+        ("They want", "my background", "They want my background"),
+        ("They want  ", "  my background ", "They want my background"),
+        ("typed only", "", "typed only"),
+        ("", "", "")
+    ])
+    func dictationGoesAfterTypedText(typed: String, dictated: String, expected: String) {
+        #expect(DictationText.combine(typed: typed, dictated: dictated) == expected)
+    }
+
+    @Test func neverLongerThanTheWorkerAccepts() {
+        let long = String(repeating: "word ", count: 200)
+        let result = DictationText.combine(typed: "start", dictated: long)
+        #expect(result.count == Retelling.maxLength)
+        #expect(result.hasPrefix("start word"))
+    }
+
+    @Test func everyErrorExplainsWhatToDo() {
+        for error in [DictationError.denied, .unsupported, .failed] {
+            #expect(!error.message.isEmpty)
+            #expect(!error.message.contains("\u{2014}"))
+        }
+    }
+}
+
+@MainActor
+@Suite("Scripted dictation")
+struct ScriptedDictationTests {
+    @Test func hearsTheScriptAndEndsOnStop() throws {
+        let service = ScriptedDictationService(script: "hello there")
+        var heard: [String] = []
+        var ended = 0
+        try service.start(locale: "en-AU", onText: { heard.append($0) }, onEnd: { ended += 1 })
+        #expect(heard == ["hello there"])
+        #expect(service.isListening)
+        service.stop()
+        service.stop()
+        #expect(ended == 1, "onEnd is called exactly once")
+        #expect(!service.isListening)
+    }
+
+    @Test func refusesWhenPermissionIsDenied() async {
+        let service = ScriptedDictationService(prepareError: .denied)
+        await #expect(throws: DictationError.denied) { try await service.prepare(locale: "en-AU") }
+    }
+}
+
+@Suite("Dictation language")
+struct DictationLocaleTests {
+    @Test func prefersTheQuestionAccent() {
+        #expect(DictationLocale.pick(preferred: "en-AU") { _ in true } == "en-AU")
+    }
+
+    /// Found on the iOS 26.1 simulator: only en-US runs on the device.
+    @Test func fallsBackToAnotherEnglishThatRunsOnTheDevice() {
+        #expect(DictationLocale.pick(preferred: "en-AU") { $0 == "en-US" } == "en-US")
+        #expect(DictationLocale.pick(preferred: "en-AU") { $0 != "en-AU" } == "en-GB")
+    }
+
+    @Test func nothingOnTheDeviceMeansNoDictation() {
+        #expect(DictationLocale.pick(preferred: "en-AU") { _ in false } == nil)
+    }
+
+    @Test func candidatesHaveNoDuplicates() {
+        #expect(DictationLocale.candidates(preferred: "en-US") == ["en-US", "en-AU", "en-GB"])
+    }
+}

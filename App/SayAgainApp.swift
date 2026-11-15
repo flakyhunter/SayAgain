@@ -31,6 +31,8 @@ struct AppEnvironment {
     let settings: AppSettings
     /// Checks the learner's own words. Nil when no Worker is configured for this build.
     let feedback: FeedbackService?
+    /// Speech to text for the retelling. On the device only.
+    let dictation: DictationService
     /// Fixed in UI-test mode, random otherwise.
     let makeSeed: () -> UInt64
 
@@ -53,6 +55,7 @@ struct AppEnvironment {
             store: UserDefaultsProgressStore(),
             settings: AppSettings(defaults: .standard),
             feedback: configuredFeedbackService(),
+            dictation: SystemDictationService(),
             makeSeed: { UInt64.random(in: .min ... .max) }
         )
     }
@@ -61,7 +64,8 @@ struct AppEnvironment {
     static func testing(
         bank: QuestionBank = .fixture,
         speech: SpeechService = RecordingSpeechService(),
-        feedback: FeedbackService? = ScriptedFeedbackService()
+        feedback: FeedbackService? = ScriptedFeedbackService(),
+        dictation: DictationService = ScriptedDictationService()
     ) -> AppEnvironment {
         AppEnvironment(
             bank: bank,
@@ -70,6 +74,7 @@ struct AppEnvironment {
             store: InMemoryProgressStore(),
             settings: .ephemeral(),
             feedback: feedback,
+            dictation: dictation,
             makeSeed: { LaunchArgument.uiTestingSeed }
         )
     }
@@ -91,7 +96,8 @@ struct AppEnvironment {
             bank: bank,
             animated: animated,
             feedback: feedback,
-            settings: settings
+            settings: settings,
+            dictation: dictation
         )
     }
 }

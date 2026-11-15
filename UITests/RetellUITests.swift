@@ -81,4 +81,30 @@ final class RetellUITests: SayAgainUITestCase {
         retell.openButton.tap()
         XCTAssertTrue(retell.textField.waitForExistence(timeout: 5), "Already allowed, no consent screen")
     }
+
+    /// Dictation: the mic "hears" the scripted words, they land in the field, then the check runs.
+    func testDictateInsteadOfTyping() {
+        let app = launchApp()
+        HomeScreen(app: app).waitUntilShown().categoryRow(.intro).tap()
+        SessionScreen(app: app).waitUntilShown()
+        let retell = RetellScreen(app: app)
+
+        retell.openButton.tap()
+        retell.allowButton.tap()
+        XCTAssertTrue(retell.micButton.waitForExistence(timeout: 5))
+        XCTAssertEqual(retell.micButton.label, "Dictate your answer")
+
+        retell.micButton.tap()
+        XCTAssertTrue(retell.listening.waitForExistence(timeout: 5))
+        XCTAssertEqual(retell.micButton.label, "Stop dictation")
+        XCTAssertEqual(retell.textField.value as? String, "partly they want my background")
+        XCTAssertFalse(retell.checkButton.isEnabled, "Can't send while the microphone is on")
+
+        retell.micButton.tap()
+        XCTAssertFalse(retell.listening.exists)
+        XCTAssertTrue(retell.checkButton.isEnabled)
+        retell.checkButton.tap()
+        XCTAssertTrue(retell.verdict.waitForExistence(timeout: 5))
+        XCTAssertEqual(retell.verdict.label, "Partly there")
+    }
 }

@@ -35,7 +35,8 @@ the accent, the slang, and the way interviewers really ask things
 - **Phrasebook** with search and audio for all 197 phrases. **Russian translation** can be turned on
   in Settings, including full translations for the kids' school category.
 - **Say it in your own words.** Instead of picking an option, type what you think they asked
-  (any English, or Russian). Claude checks whether you got the point and tells you what you
+  or dictate it with the mic button (speech is recognised on the device; the audio never leaves
+  the phone). Claude checks whether you got the point and tells you what you
   missed. Optional, asks for permission first, off for the kids' category.
 - Free, no ads, no accounts. Only text you choose to send for AI feedback leaves the phone.
   [Support](https://flakyhunter.github.io/SayAgain/) · [Privacy Policy](https://flakyhunter.github.io/SayAgain/privacy.html)
