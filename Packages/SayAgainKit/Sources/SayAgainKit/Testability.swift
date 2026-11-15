@@ -4,6 +4,9 @@ public enum LaunchArgument {
     public static let uiTesting = "-uiTesting"
     /// With `uiTesting`: use the real shipped questions instead of the small fixture.
     public static let bundledContent = "-bundledContent"
+    /// With `uiTesting`: send retellings to the real Worker from the build settings instead of the
+    /// scripted service. Used by the end-to-end test against `wrangler dev`.
+    public static let liveFeedback = "-liveFeedback"
     /// Seed used in UI-test mode, so tests know the order of questions and answers.
     public static let uiTestingSeed: UInt64 = 42
 }
@@ -38,10 +41,29 @@ public enum A11yID {
         public static let originalText = "session.originalText"
         public static let sampleAnswerButton = "session.sampleAnswer"
         public static let nextButton = "session.next"
+        public static let retellButton = "session.retell"
+        public static let aiFeedback = "session.aiFeedback"
         public static func choice(_ index: Int) -> String { "session.choice.\(index)" }
     }
 
+    public enum Retell {
+        public static let sheet = "retell.sheet"
+        public static let consent = "retell.consent"
+        public static let allowButton = "retell.allow"
+        public static let declineButton = "retell.decline"
+        public static let textField = "retell.text"
+        public static let checkButton = "retell.check"
+        public static let checking = "retell.checking"
+        public static let verdict = "retell.verdict"
+        public static let feedback = "retell.feedback"
+        public static let error = "retell.error"
+        public static let retryButton = "retell.retry"
+        public static let continueButton = "retell.continue"
+        public static let cancelButton = "retell.cancel"
+    }
+
     public enum Settings {
+        public static let aiFeedbackToggle = "settings.aiFeedback"
         public static let slowByDefaultToggle = "settings.slowByDefault"
         public static let resetButton = "settings.reset"
         public static let resetOrderButton = "settings.resetOrder"

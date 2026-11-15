@@ -38,9 +38,19 @@ targets:
         UILaunchScreen: {}
         UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
         ITSAppUsesNonExemptEncryption: false
+        SAFeedbackEndpoint: $(FEEDBACK_ENDPOINT)
+        NSAppTransportSecurity:
+          NSAllowsLocalNetworking: true
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: dev.flakyhunter.sayagain
+      configs:
+        # Debug talks to `npm run dev` in server/ (wrangler dev on the Mac).
+        Debug:
+          FEEDBACK_ENDPOINT: "http://localhost:8787"
+        # Set to the deployed Worker URL before the release. Empty hides AI feedback.
+        Release:
+          FEEDBACK_ENDPOINT: ""
 
   SayAgainTests:
     type: bundle.unit-test

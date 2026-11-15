@@ -1,0 +1,13 @@
+# Eval for the retelling checker. Needs ANTHROPIC_API_KEY. Costs about $1 per full run
+# (50 cases on Haiku plus a Sonnet judge). Run: npm run eval
+description: SayAgain retelling feedback
+prompts: ["{{retelling}}"]
+providers:
+  - id: file://provider.ts
+defaultTest:
+  options:
+    provider: anthropic:messages:claude-sonnet-5-5
+tests: file://tests.ts
+evaluateOptions:
+  maxConcurrency: 4
+outputPath: output/results.json

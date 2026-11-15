@@ -1,0 +1,737 @@
+[
+  {
+    "id": "intro-001",
+    "category": "intro",
+    "text": "So, just to kick things off, could you walk me through your background, and what's brought you over to Australia?",
+    "rephrase": "Tell me about yourself. What is your experience, and why did you come to Australia?",
+    "gist": "Tell me about your background and why you came to Australia."
+  },
+  {
+    "id": "intro-002",
+    "category": "intro",
+    "text": "Tell us a bit about yourself. What's your story?",
+    "rephrase": "Tell me about yourself.",
+    "gist": "Tell me about yourself."
+  },
+  {
+    "id": "intro-003",
+    "category": "intro",
+    "text": "So what's got you interested in this role, out of all the ones going around at the moment?",
+    "rephrase": "Why are you interested in this job, when there are many other jobs available?",
+    "gist": "Why do you want this particular job?"
+  },
+  {
+    "id": "intro-004",
+    "category": "intro",
+    "text": "What do you know about us as a company, if anything?",
+    "rephrase": "What do you know about our company?",
+    "gist": "What do you know about our company?"
+  },
+  {
+    "id": "intro-005",
+    "category": "intro",
+    "text": "How'd you go settling in? Have you been here long?",
+    "rephrase": "How is life in Australia so far? How long have you been here?",
+    "gist": "How long have you been in Australia, and how is it going?"
+  },
+  {
+    "id": "intro-006",
+    "category": "intro",
+    "text": "Where do you see yourself in, say, three to five years' time?",
+    "rephrase": "What are your career goals for the next three to five years?",
+    "gist": "What are your career goals for the next few years?"
+  },
+  {
+    "id": "intro-007",
+    "category": "intro",
+    "text": "Give us the quick rundown of your current role. What does a typical day look like?",
+    "rephrase": "Briefly describe your current job. What do you do on a normal day?",
+    "gist": "Describe your current job and a normal workday."
+  },
+  {
+    "id": "intro-008",
+    "category": "intro",
+    "text": "What would your old manager say is your biggest strength?",
+    "rephrase": "What would your previous boss say you are best at?",
+    "gist": "What would your last manager say you do best?"
+  },
+  {
+    "id": "intro-009",
+    "category": "intro",
+    "text": "And what's something you're still working on, professionally speaking?",
+    "rephrase": "What is a weakness you are trying to improve at work?",
+    "gist": "What work skill are you still trying to improve?"
+  },
+  {
+    "id": "intro-010",
+    "category": "intro",
+    "text": "What made you want to get into this line of work in the first place?",
+    "rephrase": "Why did you choose this career?",
+    "gist": "Why did you choose this career?"
+  },
+  {
+    "id": "intro-011",
+    "category": "intro",
+    "text": "Is there anything on your resume you reckon we should dig into a bit more?",
+    "rephrase": "Is there something on your CV you want to talk about in more detail?",
+    "gist": "What part of your CV should we discuss in more detail?"
+  },
+  {
+    "id": "intro-012",
+    "category": "intro",
+    "text": "How do you like to unwind outside of work?",
+    "rephrase": "What do you do to relax after work?",
+    "gist": "What do you do to relax outside work?"
+  },
+  {
+    "id": "intro-013",
+    "category": "intro",
+    "text": "What sort of team do you work best in? Big, small, a bit of both?",
+    "rephrase": "What kind of team do you prefer?",
+    "gist": "What size and type of team suits you best?"
+  },
+  {
+    "id": "intro-014",
+    "category": "intro",
+    "text": "Have you had any experience working with Aussie companies before, or would this be your first?",
+    "rephrase": "Have you worked for an Australian company before?",
+    "gist": "Have you worked for an Australian company before?"
+  },
+  {
+    "id": "intro-015",
+    "category": "intro",
+    "text": "Before we get stuck into it, how's your day been so far?",
+    "rephrase": "Before we start, how is your day going?",
+    "gist": "Small talk: how is your day going?"
+  },
+  {
+    "id": "behavioural-001",
+    "category": "behavioural",
+    "text": "Can you tell me about a time you tracked down a really tricky bug? And how did you go about raising it with the devs?",
+    "rephrase": "Tell me about a difficult bug you found. How did you investigate it, and how did you tell the developers?",
+    "gist": "Describe a hard bug you found, and how you reported it to developers."
+  },
+  {
+    "id": "behavioural-002",
+    "category": "behavioural",
+    "text": "Righto, last one from me. If a developer pushes back and reckons your bug isn't really a bug, how do you handle that?",
+    "rephrase": "Last question. If a developer says your bug is not a real bug, what do you do?",
+    "gist": "What do you do when a developer says your bug is not a real bug?"
+  },
+  {
+    "id": "behavioural-003",
+    "category": "behavioural",
+    "text": "The team's spread across a few time zones, so there isn't a heap of overlap. How would you keep everyone on the same page?",
+    "rephrase": "The team works in different time zones. How would you keep communication clear?",
+    "gist": "How would you keep a team in different time zones informed?"
+  },
+  {
+    "id": "behavioural-004",
+    "category": "behavioural",
+    "text": "Tell me about a time you had to work to a really tight deadline. How'd you go?",
+    "rephrase": "Describe a time you had very little time to finish work. How did it go?",
+    "gist": "Tell me about working to a very short deadline and the result."
+  },
+  {
+    "id": "behavioural-005",
+    "category": "behavioural",
+    "text": "Can you think of a time you stuffed something up at work? What happened, and what did you learn?",
+    "rephrase": "Tell me about a mistake you made at work and what you learned.",
+    "gist": "Describe a mistake you made at work and what you learned."
+  },
+  {
+    "id": "behavioural-006",
+    "category": "behavioural",
+    "text": "Walk me through a time you had to deal with a difficult stakeholder.",
+    "rephrase": "Tell me step by step about a time you worked with a difficult person, like a manager or client.",
+    "gist": "Describe working with a difficult manager or client."
+  },
+  {
+    "id": "behavioural-007",
+    "category": "behavioural",
+    "text": "Have you ever had to juggle a few competing priorities? How did you decide what to tackle first?",
+    "rephrase": "Have you had many important tasks at once? How did you choose what to do first?",
+    "gist": "How do you choose what to do first when several tasks are urgent?"
+  },
+  {
+    "id": "behavioural-008",
+    "category": "behavioural",
+    "text": "Tell me about a time you went above and beyond for a customer or your team.",
+    "rephrase": "Tell me about a time you did more than you had to.",
+    "gist": "Describe a time you did more than was expected."
+  },
+  {
+    "id": "behavioural-009",
+    "category": "behavioural",
+    "text": "Give me an example of when you disagreed with your manager. How did you handle it?",
+    "rephrase": "Tell me about a disagreement with your manager. What did you do?",
+    "gist": "Describe a disagreement with your manager and how you handled it."
+  },
+  {
+    "id": "behavioural-010",
+    "category": "behavioural",
+    "text": "How do you go about getting up to speed on something you know nothing about?",
+    "rephrase": "How do you learn something completely new?",
+    "gist": "How do you learn a new topic quickly?"
+  },
+  {
+    "id": "behavioural-011",
+    "category": "behavioural",
+    "text": "Tell me about a time things didn't go to plan on a project. What did you do?",
+    "rephrase": "Tell me about a project problem and how you reacted.",
+    "gist": "Describe a project that went wrong and what you did."
+  },
+  {
+    "id": "behavioural-012",
+    "category": "behavioural",
+    "text": "Have you ever had to give a colleague some tough feedback? How'd you approach that?",
+    "rephrase": "Did you ever have to tell a coworker something negative about their work? How did you do it?",
+    "gist": "How did you give difficult feedback to a colleague?"
+  },
+  {
+    "id": "behavioural-013",
+    "category": "behavioural",
+    "text": "What's an achievement you're really proud of, and why does it stand out for you?",
+    "rephrase": "What is your proudest achievement, and why is it special for you?",
+    "gist": "What achievement are you most proud of, and why?"
+  },
+  {
+    "id": "behavioural-014",
+    "category": "behavioural",
+    "text": "Say you've got a heap on your plate and your manager drops another urgent task on you. What do you do?",
+    "rephrase": "You are already very busy and your manager gives you another urgent task. What do you do?",
+    "gist": "What do you do when you are very busy and get another urgent task?"
+  },
+  {
+    "id": "behavioural-015",
+    "category": "behavioural",
+    "text": "Tell me about a time you had to explain something technical to someone who wasn't across the details.",
+    "rephrase": "Tell me about explaining a technical topic to a non-technical person.",
+    "gist": "Describe explaining something technical to a non-technical person."
+  },
+  {
+    "id": "logistics-001",
+    "category": "logistics",
+    "text": "What are you looking for, salary wise? And just to be clear, is that base, or are we talking package, including super?",
+    "rephrase": "What salary do you expect? Is that without superannuation, or including it?",
+    "gist": "What salary do you expect, and does it include super?"
+  },
+  {
+    "id": "logistics-002",
+    "category": "logistics",
+    "text": "And what's your availability like? What sort of notice period are we looking at?",
+    "rephrase": "When can you start? Do you need to give notice to your current employer?",
+    "gist": "When can you start, and what is your notice period?"
+  },
+  {
+    "id": "logistics-003",
+    "category": "logistics",
+    "text": "Are you after full-time, part-time, or are you open to contract work?",
+    "rephrase": "Do you want full-time, part-time, or contract work?",
+    "gist": "What type of employment do you want?"
+  },
+  {
+    "id": "logistics-004",
+    "category": "logistics",
+    "text": "Do you have full working rights in Australia?",
+    "rephrase": "Are you allowed to work in Australia without limits?",
+    "gist": "Are you legally allowed to work in Australia?"
+  },
+  {
+    "id": "logistics-005",
+    "category": "logistics",
+    "text": "How would you feel about coming into the office a couple of days a week?",
+    "rephrase": "Are you okay working in the office two days a week?",
+    "gist": "Are you okay with working in the office two days a week?"
+  },
+  {
+    "id": "logistics-006",
+    "category": "logistics",
+    "text": "Are you okay with the occasional bit of after-hours work around releases?",
+    "rephrase": "Can you sometimes work in the evening when there is a release?",
+    "gist": "Can you sometimes work after hours during releases?"
+  },
+  {
+    "id": "logistics-007",
+    "category": "logistics",
+    "text": "We'd be looking at a probation period of six months. Is that alright with you?",
+    "rephrase": "The first six months are a trial period. Is that okay?",
+    "gist": "Do you accept a six-month probation period?"
+  },
+  {
+    "id": "logistics-008",
+    "category": "logistics",
+    "text": "Have you got any holidays booked in the next few months that we should know about?",
+    "rephrase": "Do you have any planned holidays soon?",
+    "gist": "Do you have any planned holidays soon?"
+  },
+  {
+    "id": "logistics-009",
+    "category": "logistics",
+    "text": "Just so you know, the budget for this role sits around ninety to a hundred K plus super. Does that work for you?",
+    "rephrase": "The salary is about 90 to 100 thousand dollars plus super. Is that okay?",
+    "gist": "Is a salary of 90 to 100 thousand plus super okay for you?"
+  },
+  {
+    "id": "logistics-010",
+    "category": "logistics",
+    "text": "Would you need any sponsorship, now or down the track?",
+    "rephrase": "Will you need visa sponsorship now or in the future?",
+    "gist": "Will you need visa sponsorship now or later?"
+  },
+  {
+    "id": "logistics-011",
+    "category": "logistics",
+    "text": "Are you currently interviewing anywhere else?",
+    "rephrase": "Do you have interviews with other companies now?",
+    "gist": "Are you interviewing with other companies?"
+  },
+  {
+    "id": "logistics-012",
+    "category": "logistics",
+    "text": "If we made you an offer, how soon could you kick off?",
+    "rephrase": "If we offer you the job, when can you start?",
+    "gist": "How soon can you start if you get an offer?"
+  },
+  {
+    "id": "logistics-013",
+    "category": "logistics",
+    "text": "Are you happy for us to reach out to a couple of your referees?",
+    "rephrase": "Can we contact some of your references?",
+    "gist": "Can we contact your references?"
+  },
+  {
+    "id": "logistics-014",
+    "category": "logistics",
+    "text": "Whereabouts are you based? Is the commute going to be a problem?",
+    "rephrase": "Where do you live? Will travelling to the office be difficult?",
+    "gist": "Where do you live, and is travel to the office a problem?"
+  },
+  {
+    "id": "logistics-015",
+    "category": "logistics",
+    "text": "Just to manage expectations, the next step would be a technical chat with the team. That suit you?",
+    "rephrase": "The next stage is a technical interview with the team. Is that okay?",
+    "gist": "Are you okay with a technical interview as the next step?"
+  },
+  {
+    "id": "qa-it-001",
+    "category": "qa-it",
+    "text": "Have you had much exposure to mocking in your test setup? And how do you make sure your automated tests are actually reliable, and not flaky?",
+    "rephrase": "Do you use mocks in your tests? And how do you make your automated tests stable?",
+    "gist": "Have you used mocks, and how do you keep automated tests stable?"
+  },
+  {
+    "id": "qa-it-002",
+    "category": "qa-it",
+    "text": "Fair enough. Have you had a crack at testing anything A.I. driven, like L.L.M. features, or agents? No worries if not.",
+    "rephrase": "Have you tested any AI features, for example LLMs or AI agents? It's okay if you haven't.",
+    "gist": "Have you tested AI features like LLMs or agents?"
+  },
+  {
+    "id": "qa-it-003",
+    "category": "qa-it",
+    "text": "How would you go about testing a login screen if we gave you, say, twenty minutes?",
+    "rephrase": "How would you test a login screen in twenty minutes?",
+    "gist": "How would you test a login screen in a short time?"
+  },
+  {
+    "id": "qa-it-004",
+    "category": "qa-it",
+    "text": "Where do you sit on the whole manual versus automation debate?",
+    "rephrase": "What is your opinion about manual testing compared to automation?",
+    "gist": "What do you think about manual versus automated testing?"
+  },
+  {
+    "id": "qa-it-005",
+    "category": "qa-it",
+    "text": "How do you decide what's worth automating and what's not?",
+    "rephrase": "How do you choose which tests to automate?",
+    "gist": "How do you choose which tests to automate?"
+  },
+  {
+    "id": "qa-it-006",
+    "category": "qa-it",
+    "text": "Talk me through how you'd write up a bug so a dev can pick it up straight away.",
+    "rephrase": "How do you write a bug report so a developer understands it immediately?",
+    "gist": "How do you write a clear bug report?"
+  },
+  {
+    "id": "qa-it-007",
+    "category": "qa-it",
+    "text": "What's your take on testing in production? Ever done it?",
+    "rephrase": "What do you think about testing on the live system? Have you done it?",
+    "gist": "What do you think about testing in production?"
+  },
+  {
+    "id": "qa-it-008",
+    "category": "qa-it",
+    "text": "How do you get your head around a new codebase or product quickly?",
+    "rephrase": "How do you understand a new product or code quickly?",
+    "gist": "How do you learn a new product or codebase quickly?"
+  },
+  {
+    "id": "qa-it-009",
+    "category": "qa-it",
+    "text": "Have you worked much with APIs? What tools do you reach for?",
+    "rephrase": "Do you have experience testing APIs? Which tools do you use?",
+    "gist": "What is your API testing experience, and which tools do you use?"
+  },
+  {
+    "id": "qa-it-010",
+    "category": "qa-it",
+    "text": "How do you fit into a CI pipeline? Like, where do your tests actually run?",
+    "rephrase": "How do your tests work in CI? Where are they executed?",
+    "gist": "Where and how do your automated tests run in CI?"
+  },
+  {
+    "id": "qa-it-011",
+    "category": "qa-it",
+    "text": "If you only had half a day for regression before a release, what would you focus on?",
+    "rephrase": "You have four hours for regression testing before release. What do you test?",
+    "gist": "What would you test with very little regression time?"
+  },
+  {
+    "id": "qa-it-012",
+    "category": "qa-it",
+    "text": "How do you deal with a test that passes on your machine but keeps falling over in the pipeline?",
+    "rephrase": "A test passes locally but fails in CI. What do you do?",
+    "gist": "What do you do when a test passes locally but fails in CI?"
+  },
+  {
+    "id": "qa-it-013",
+    "category": "qa-it",
+    "text": "Have you had a go at performance or load testing at all?",
+    "rephrase": "Have you tried performance or load testing?",
+    "gist": "Do you have performance or load testing experience?"
+  },
+  {
+    "id": "qa-it-014",
+    "category": "qa-it",
+    "text": "How do you work out the acceptance criteria when the ticket's a bit thin?",
+    "rephrase": "How do you find the requirements when a task has little detail?",
+    "gist": "How do you clarify requirements when a ticket has few details?"
+  },
+  {
+    "id": "qa-it-015",
+    "category": "qa-it",
+    "text": "What does a good test strategy look like to you, in a nutshell?",
+    "rephrase": "Briefly, what is a good test strategy?",
+    "gist": "Briefly describe a good test strategy."
+  },
+  {
+    "id": "volunteering-001",
+    "category": "volunteering",
+    "text": "So what's got you keen on volunteering with us?",
+    "rephrase": "Why do you want to volunteer with our organisation?",
+    "gist": "Why do you want to volunteer with us?"
+  },
+  {
+    "id": "volunteering-002",
+    "category": "volunteering",
+    "text": "Have you done any volunteering before, back home or here?",
+    "rephrase": "Do you have any volunteer experience, in your country or in Australia?",
+    "gist": "Have you volunteered before?"
+  },
+  {
+    "id": "volunteering-003",
+    "category": "volunteering",
+    "text": "How many hours a week could you realistically give us?",
+    "rephrase": "How many hours a week can you volunteer?",
+    "gist": "How many hours a week can you volunteer?"
+  },
+  {
+    "id": "volunteering-004",
+    "category": "volunteering",
+    "text": "Are you right to do weekends, or are you more of a weekday person?",
+    "rephrase": "Can you volunteer on weekends, or only on weekdays?",
+    "gist": "Can you volunteer on weekends or only on weekdays?"
+  },
+  {
+    "id": "volunteering-005",
+    "category": "volunteering",
+    "text": "Do you have a current police check, or would you be happy to get one?",
+    "rephrase": "Do you have a police certificate? If not, can you get one?",
+    "gist": "Do you have a police check, or can you get one?"
+  },
+  {
+    "id": "volunteering-006",
+    "category": "volunteering",
+    "text": "Some of our roles need a Working With Children Check. Is that something you've got sorted?",
+    "rephrase": "Some roles need a Working With Children Check. Do you have one?",
+    "gist": "Do you have a Working With Children Check?"
+  },
+  {
+    "id": "volunteering-007",
+    "category": "volunteering",
+    "text": "How would you handle someone who's really upset or a bit aggro?",
+    "rephrase": "What would you do if a person is very upset or aggressive?",
+    "gist": "How do you deal with an upset or aggressive person?"
+  },
+  {
+    "id": "volunteering-008",
+    "category": "volunteering",
+    "text": "You might hear some pretty personal stuff. How do you go with keeping things confidential?",
+    "rephrase": "People may tell you private things. Can you keep information private?",
+    "gist": "Can you keep private information confidential?"
+  },
+  {
+    "id": "volunteering-009",
+    "category": "volunteering",
+    "text": "Tell me about a time you worked as part of a team to help someone out.",
+    "rephrase": "Give an example of teamwork to help another person.",
+    "gist": "Describe helping someone as part of a team."
+  },
+  {
+    "id": "volunteering-010",
+    "category": "volunteering",
+    "text": "What skills from your background do you reckon you'd bring to this role?",
+    "rephrase": "Which of your skills would be useful in this volunteer role?",
+    "gist": "What skills would you bring to this role?"
+  },
+  {
+    "id": "volunteering-011",
+    "category": "volunteering",
+    "text": "Our volunteers come from all walks of life. How do you go working with people from different cultures?",
+    "rephrase": "Our volunteers are very different people. Are you comfortable working with other cultures?",
+    "gist": "How do you work with people from different cultures?"
+  },
+  {
+    "id": "volunteering-012",
+    "category": "volunteering",
+    "text": "Do you speak any other languages? That can be a real help with some of our clients.",
+    "rephrase": "Do you speak other languages? It helps with some clients.",
+    "gist": "Do you speak any other languages?"
+  },
+  {
+    "id": "volunteering-013",
+    "category": "volunteering",
+    "text": "Volunteering can be pretty full on at times. How do you look after yourself?",
+    "rephrase": "Volunteering can be stressful. How do you take care of yourself?",
+    "gist": "How do you manage stress and look after yourself?"
+  },
+  {
+    "id": "volunteering-014",
+    "category": "volunteering",
+    "text": "What would you do if a client asked you for something that's outside your role?",
+    "rephrase": "What if a client asks you to do something that is not your job?",
+    "gist": "What do you do when a client asks for something outside your role?"
+  },
+  {
+    "id": "volunteering-015",
+    "category": "volunteering",
+    "text": "And how are you getting here? Have you got your own transport?",
+    "rephrase": "How will you travel here? Do you have a car?",
+    "gist": "How will you get here? Do you have transport?"
+  },
+  {
+    "id": "aged-care-001",
+    "category": "aged-care",
+    "text": "What made you want to get into aged care?",
+    "rephrase": "Why did you choose aged care work?",
+    "gist": "Why do you want to work in aged care?"
+  },
+  {
+    "id": "aged-care-002",
+    "category": "aged-care",
+    "text": "Have you done your Cert III in Individual Support, or are you working towards it?",
+    "rephrase": "Do you have the Certificate III in Individual Support, or are you studying for it?",
+    "gist": "Do you have a Cert III in Individual Support?"
+  },
+  {
+    "id": "aged-care-003",
+    "category": "aged-care",
+    "text": "Talk me through how you'd help a resident with a shower while keeping their dignity.",
+    "rephrase": "How would you help a resident shower and respect their privacy?",
+    "gist": "How do you help a resident shower with dignity?"
+  },
+  {
+    "id": "aged-care-004",
+    "category": "aged-care",
+    "text": "How would you go with a resident with dementia who's getting agitated and wants to go home?",
+    "rephrase": "A resident with dementia is upset and wants to go home. What do you do?",
+    "gist": "How do you calm a resident with dementia who wants to go home?"
+  },
+  {
+    "id": "aged-care-005",
+    "category": "aged-care",
+    "text": "What would you do if you found a resident on the floor?",
+    "rephrase": "What would you do if a resident has fallen?",
+    "gist": "What do you do if a resident has fallen?"
+  },
+  {
+    "id": "aged-care-006",
+    "category": "aged-care",
+    "text": "How do you go about manual handling? Have you used a hoist before?",
+    "rephrase": "How do you lift and move people safely? Have you used a lifting machine?",
+    "gist": "How do you move residents safely, and have you used a hoist?"
+  },
+  {
+    "id": "aged-care-007",
+    "category": "aged-care",
+    "text": "If you noticed a resident had a new bruise, what would you do?",
+    "rephrase": "You see a new bruise on a resident. What do you do?",
+    "gist": "What do you do if you notice a new bruise on a resident?"
+  },
+  {
+    "id": "aged-care-008",
+    "category": "aged-care",
+    "text": "What does person-centred care mean to you?",
+    "rephrase": "What is your understanding of person-centred care?",
+    "gist": "What is person-centred care?"
+  },
+  {
+    "id": "aged-care-009",
+    "category": "aged-care",
+    "text": "We work on a rotating roster, including nights and weekends. Are you right with that?",
+    "rephrase": "Shifts change, including nights and weekends. Is that okay?",
+    "gist": "Can you work rotating shifts, including nights and weekends?"
+  },
+  {
+    "id": "aged-care-010",
+    "category": "aged-care",
+    "text": "A family member is unhappy with the care their mum's getting and starts having a go at you. How do you handle it?",
+    "rephrase": "A relative is angry about their mother's care and shouts at you. What do you do?",
+    "gist": "How do you handle an angry family member?"
+  },
+  {
+    "id": "aged-care-011",
+    "category": "aged-care",
+    "text": "What would you do if a resident refuses their medication or doesn't want to eat?",
+    "rephrase": "A resident won't take medicine or won't eat. What do you do?",
+    "gist": "What do you do when a resident refuses medicine or food?"
+  },
+  {
+    "id": "aged-care-012",
+    "category": "aged-care",
+    "text": "Can you tell me about a time you supported someone at the end of their life?",
+    "rephrase": "Have you cared for someone who was dying?",
+    "gist": "Describe supporting someone at the end of their life."
+  },
+  {
+    "id": "aged-care-013",
+    "category": "aged-care",
+    "text": "How do you make sure your notes and handover are up to scratch?",
+    "rephrase": "How do you keep good records and pass information to the next shift?",
+    "gist": "How do you write good notes and do a clear handover?"
+  },
+  {
+    "id": "aged-care-014",
+    "category": "aged-care",
+    "text": "Have you got your NDIS Worker Screening and a current police clearance?",
+    "rephrase": "Do you have NDIS Worker Screening and a police check?",
+    "gist": "Do you have the required screening and police checks?"
+  },
+  {
+    "id": "aged-care-015",
+    "category": "aged-care",
+    "text": "What's your understanding of duty of care?",
+    "rephrase": "What does duty of care mean?",
+    "gist": "What is duty of care?"
+  },
+  {
+    "id": "school-001",
+    "category": "school",
+    "text": "Hi there! What's your name, love?",
+    "rephrase": "What is your name?",
+    "gist": "What is your name?"
+  },
+  {
+    "id": "school-002",
+    "category": "school",
+    "text": "And how old are you, mate?",
+    "rephrase": "How old are you?",
+    "gist": "How old are you?"
+  },
+  {
+    "id": "school-003",
+    "category": "school",
+    "text": "Where are you from? Have you just moved here?",
+    "rephrase": "Which country are you from? Are you new here?",
+    "gist": "Where are you from, and are you new here?"
+  },
+  {
+    "id": "school-004",
+    "category": "school",
+    "text": "Do you need to go to the toilet? Just put your hand up and ask.",
+    "rephrase": "If you need the toilet, raise your hand and ask.",
+    "gist": "Raise your hand and ask to go to the toilet."
+  },
+  {
+    "id": "school-005",
+    "category": "school",
+    "text": "Righto, everyone, grab your hats. No hat, no play!",
+    "rephrase": "Everyone, take your hats. You can't play outside without a hat.",
+    "gist": "Take your hat. You need it to play outside."
+  },
+  {
+    "id": "school-006",
+    "category": "school",
+    "text": "It's recess now. Have you got something to eat?",
+    "rephrase": "It is the short break now. Do you have food?",
+    "gist": "Do you have a snack for the break?"
+  },
+  {
+    "id": "school-007",
+    "category": "school",
+    "text": "Did you bring your water bottle? You can fill it up at the bubbler.",
+    "rephrase": "Do you have a water bottle? You can get water at the drinking fountain.",
+    "gist": "Do you have a water bottle to fill up?"
+  },
+  {
+    "id": "school-008",
+    "category": "school",
+    "text": "Can you pop your bag on the hook and come sit on the mat?",
+    "rephrase": "Put your bag on the hook and sit on the mat.",
+    "gist": "Put your bag away and sit on the mat."
+  },
+  {
+    "id": "school-009",
+    "category": "school",
+    "text": "Do you want to play with us at lunch? We're playing handball.",
+    "rephrase": "Do you want to play handball with us at lunchtime?",
+    "gist": "Do you want to play with us at lunch?"
+  },
+  {
+    "id": "school-010",
+    "category": "school",
+    "text": "What's your favourite subject so far?",
+    "rephrase": "Which school subject do you like the most?",
+    "gist": "What subject do you like best?"
+  },
+  {
+    "id": "school-011",
+    "category": "school",
+    "text": "Are you okay? You look a bit lost. Do you need a hand?",
+    "rephrase": "Are you okay? Do you need help?",
+    "gist": "Do you need help?"
+  },
+  {
+    "id": "school-012",
+    "category": "school",
+    "text": "Can you say that again, a bit louder? I didn't quite catch it.",
+    "rephrase": "Please say that again, louder. I didn't hear you.",
+    "gist": "Please say it again, louder."
+  },
+  {
+    "id": "school-013",
+    "category": "school",
+    "text": "Have you got a lunch order today, or did you bring lunch from home?",
+    "rephrase": "Did you order lunch at school, or bring lunch from home?",
+    "gist": "Did you order lunch or bring it from home?"
+  },
+  {
+    "id": "school-014",
+    "category": "school",
+    "text": "We've got assembly after recess, so line up at the door, please.",
+    "rephrase": "We have a school meeting after the break. Please stand in a line at the door.",
+    "gist": "Line up at the door for assembly."
+  },
+  {
+    "id": "school-015",
+    "category": "school",
+    "text": "Is someone picking you up this arvo, or are you going to after-school care?",
+    "rephrase": "Is someone coming to get you this afternoon, or are you staying at after-school care?",
+    "gist": "Who is taking you home this afternoon?"
+  }
+]

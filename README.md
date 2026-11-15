@@ -34,7 +34,10 @@ the accent, the slang, and the way interviewers really ask things
   behavioural, salary and logistics, volunteering. Drag categories to put yours first.
 - **Phrasebook** with search and audio for all 197 phrases. **Russian translation** can be turned on
   in Settings, including full translations for the kids' school category.
-- Free, no ads, no accounts, nothing leaves the phone.
+- **Say it in your own words.** Instead of picking an option, type what you think they asked
+  (any English, or Russian). Claude checks whether you got the point and tells you what you
+  missed. Optional, asks for permission first, off for the kids' category.
+- Free, no ads, no accounts. Only text you choose to send for AI feedback leaves the phone.
   [Support](https://flakyhunter.github.io/SayAgain/) · [Privacy Policy](https://flakyhunter.github.io/SayAgain/privacy.html)
 
 > Status: **feature-complete for v1**, preparing the App Store release (TestFlight next).
@@ -48,17 +51,29 @@ but the focus is on how it is tested and shipped:
 - a deterministic UI-test mode (fixed content and seed, silent speech, no animations),
 - page objects and shared accessibility identifiers instead of text-based queries,
 - content that is validated by tests like code,
+- an LLM feature with an eval suite (Promptfoo, LLM-as-judge, prompt injection cases) as a release gate,
 - CI on every push and pull request.
 
 ## Test strategy
 
 | Level | Tooling | What it covers | Tests | Runs on |
 |---|---|---|---|---|
-| Unit | Swift Testing | Content rules (105 questions, 15+ per category, translations, placeholders, no city names), Leitner scheduling, session state machine, seeded shuffling, slow-mode phrase splitting, category order, mastery and start over, phrasebook search, view models with a recording speech double, settings | 80 | macOS + simulator, about 1 s |
-| Snapshot | [swift-snapshot-testing](https://github.com/pointfreeco/swift-snapshot-testing) | Home (light, dark, empty, progress, mastered), practice (answering, wrong, right in dark, single-voice hint), sample answer, summary, mastered summary, settings, phrasebook and kids' answer in Russian, every category icon in both themes | 15 | iOS Simulator, a few seconds |
-| UI | XCUITest + page objects | Full session, replay and slow mode, ten fast answers on the real content, mastering a category and starting over, drag to reorder, settings, phrasebook search in English and Russian | 10 | iOS Simulator |
+| Unit | Swift Testing | Content rules (105 questions, 15+ per category, translations, placeholders, no city names), Leitner scheduling, session state machine, seeded shuffling, slow-mode phrase splitting, category order, mastery and start over, phrasebook search, view models with a recording speech double, settings, retelling rules, verdict to rating, consent and the retelling flow in the view model | 111 | macOS + simulator, about 1 s |
+| Snapshot | [swift-snapshot-testing](https://github.com/pointfreeco/swift-snapshot-testing) | Home (light, dark, empty, progress, mastered), practice (answering, wrong, right in dark, single-voice hint), sample answer, summary, mastered summary, settings, phrasebook and kids' answer in Russian, every category icon in both themes, the AI consent screen, partly and missed feedback (dark), reveal with AI feedback | 20 | iOS Simulator, a few seconds |
+| UI | XCUITest + page objects | Full session, replay and slow mode, ten fast answers on the real content, mastering a category and starting over, drag to reorder, settings, phrasebook search in English and Russian, retelling with consent and partly verdict, offline error and recovery, declining and turning it back on in Settings | 13 | iOS Simulator |
 
-Plus one UI test that produces the App Store screenshots (skipped in normal runs).
+Plus one UI test that produces the App Store screenshots and one end-to-end test against the
+local Worker (both skipped in normal runs).
+
+The AI feedback has its own layers:
+
+| Level | Tooling | What it covers | Tests | Runs on |
+|---|---|---|---|---|
+| Worker unit | Vitest | Routing, validation, 400-character limit, only shipped question ids (not an open proxy), kids' category blocked, rate limit before Claude, error mapping, refusal and cut-off replies, prompt tags that can't be closed by the user | 37 | Node, under 1 s |
+| Contract | Shared JSON in `contract/feedback` | The same example bodies are checked by the Worker's Zod schema and decoded by the Swift client | 3 + 3 | both sides |
+| Client | Swift Testing + URLProtocol stub | Request shape, every response and error code, offline, garbage with 200 | 12 | macOS |
+| End to end | XCUITest + `wrangler dev` | App, real HTTP, Worker and back, with an offline checker (no key, no cost) | 1 | local, opt-in |
+| Eval | Promptfoo + Claude Sonnet as judge | 50 retellings: paraphrases, broken English, Russian, half of a two-part question, shifted meaning, wrong question, vague, prompt injection. Gate: verdict accuracy 90%+, every injection case right, feedback quality 85%+ | 50 | CI on prompt changes |
 A full CI run takes about 10 minutes, most of it is the simulator on the GitHub runner.
 
 Key decisions:
@@ -72,6 +87,12 @@ Key decisions:
   plain values and functions with no UI or audio, so every rule is a fast unit test.
 - **Observable without peeking.** UI tests check that audio played through the play button's
   accessibility value ("Played 2 times"), which also helps VoiceOver users.
+- **AI behind a thin Worker.** The Anthropic key lives in a Cloudflare Worker, never in the app.
+  The Worker only accepts ids of questions that ship in the app (its copy is checked against the
+  app's JSON in CI), so it can't be used as a free general-purpose proxy to Claude. Claude Haiku
+  answers with structured output; the reply is validated with Zod before it reaches the app.
+- **The eval is the spec for the prompt.** Changing the prompt or model reruns the eval in CI; a
+  drop below the thresholds fails the pull request.
 - **Content is code.** Every question must pass the validator: unique ids, exactly two
   distractors, no distractor equal to the answer, no empty fields, typography rules.
 
@@ -97,7 +118,9 @@ UITests/                 XCUITest journeys and page objects (Screens/)
 Packages/SayAgainKit/    Models, content, validation, scheduling, test contract - no UI
 AppStore/screenshots/    App Store screenshots (6.9-inch)
 docs/                    Support and privacy pages (GitHub Pages)
-scripts/                 screenshots.sh
+scripts/                 screenshots.sh, run.sh
+server/                  Cloudflare Worker for AI feedback (TypeScript), tests and eval/
+contract/feedback/       API examples shared by the Worker and app tests
 project.yml              XcodeGen spec (the .xcodeproj is generated, not committed)
 ```
 
@@ -114,6 +137,19 @@ xcodebuild test -project SayAgain.xcodeproj -scheme SayAgain \
 ./scripts/screenshots.sh   # App Store screenshots into AppStore/screenshots
 ```
 
+AI feedback server (Node 24):
+
+```sh
+cd server
+npm ci
+npm test                   # Worker unit and contract tests
+npm run dev                # local Worker on :8787 with an offline checker (.dev.vars: FAKE_FEEDBACK=1)
+ANTHROPIC_API_KEY=... npm run eval   # Promptfoo eval against Claude, about $1 per run
+```
+
+Debug builds of the app talk to `http://localhost:8787`. Release builds use the
+`FEEDBACK_ENDPOINT` build setting in `project.yml`; when it is empty, AI feedback is hidden.
+
 ## Roadmap
 
 - **v0** - skeleton, first tests on every level, CI. *(done)*
@@ -121,11 +157,14 @@ xcodebuild test -project SayAgain.xcodeproj -scheme SayAgain \
   translation, settings, screenshots, support and privacy pages. *(done)* TestFlight from CI and
   App Store release. *(next)*
 - **v2** - AI feedback on your retelling of the question, covered by an LLM eval suite in CI.
+  *(built, waiting for the first eval run against Claude and the Worker deploy)*
 
 ## Privacy
 
 No accounts, no analytics, no tracking. Progress and settings stay on the device. Speech is
-generated on the device by the system voices. Full policy: [privacy page](https://flakyhunter.github.io/SayAgain/privacy.html).
+generated on the device by the system voices. AI feedback is optional and asks first: only the
+text you type and the question id are sent, through the Worker, to Claude by Anthropic; the
+Worker keeps no logs of the text. Full policy: [privacy page](https://flakyhunter.github.io/SayAgain/privacy.html).
 
 ## About me
 

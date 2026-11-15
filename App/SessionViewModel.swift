@@ -19,6 +19,21 @@ final class SessionViewModel {
     @ObservationIgnored private let store: ProgressStore
     @ObservationIgnored private let bank: QuestionBank
     @ObservationIgnored private let masteredBefore: Bool
+    @ObservationIgnored private let feedbackService: FeedbackService?
+    @ObservationIgnored private let settings: AppSettings?
+
+    /// The retelling flow for the current question.
+    enum RetellState: Equatable {
+        case editing
+        case checking
+        case result(RetellingFeedback)
+        case failed(FeedbackServiceError)
+    }
+
+    var retellText = ""
+    private(set) var retellState = RetellState.editing
+    /// Feedback the learner accepted for the current question, shown with the revealed text.
+    private(set) var acceptedFeedback: RetellingFeedback?
 
     init(
         session: PracticeSession,
@@ -27,8 +42,12 @@ final class SessionViewModel {
         slow: Bool = false,
         category: QuestionCategory? = nil,
         bank: QuestionBank = QuestionBank(questions: []),
-        animated: Bool = false
+        animated: Bool = false,
+        feedback: FeedbackService? = nil,
+        settings: AppSettings? = nil
     ) {
+        self.feedbackService = feedback
+        self.settings = settings
         self.session = session
         self.slow = slow
         self.speech = speech
@@ -97,9 +116,53 @@ final class SessionViewModel {
         speech.speak(AnswerTemplate.spoken(question.sampleAnswer), voice: speaker, locale: question.locale, slow: slow)
     }
 
-    /// Moves on. A right choice counts as understood, a wrong one comes back sooner.
+    /// Moves on. A right choice or retelling counts as understood, a wrong one comes back sooner.
     func next() {
-        rate(choiceCorrect == true ? .gotIt : .missed)
+        rate(session.suggestedRating ?? .missed)
+    }
+
+    // MARK: - Retelling with AI feedback
+
+    /// "Say it in your own words" is offered: a Worker is configured, the category may use it,
+    /// the learner did not turn it off, and the question is not answered yet.
+    var canRetell: Bool {
+        guard feedbackService != nil, settings?.aiFeedback != .declined,
+              let question = session.current, Retelling.isAvailable(for: question.category) else { return false }
+        return session.phase == .answering
+    }
+
+    /// The learner has not said yet whether their words may be sent.
+    var needsConsent: Bool { settings?.aiFeedback == .notAsked }
+
+    func setConsent(_ allowed: Bool) {
+        settings?.aiFeedback = allowed ? .allowed : .declined
+    }
+
+    var canSubmitRetelling: Bool {
+        Retelling.prepared(retellText) != nil && retellState != .checking
+    }
+
+    func submitRetelling() async {
+        guard let service = feedbackService, let question = session.current,
+              let text = Retelling.prepared(retellText), settings?.aiFeedback != .declined else { return }
+        retellState = .checking
+        do {
+            retellState = .result(try await service.check(questionID: question.id, retelling: text))
+        } catch {
+            retellState = .failed(error)
+        }
+    }
+
+    /// Back to the text field after an error, keeping what the learner typed.
+    func editRetellingAgain() {
+        retellState = .editing
+    }
+
+    /// Reveals the question with the AI verdict counting as the answer.
+    func acceptFeedback() {
+        guard case let .result(feedback) = retellState else { return }
+        acceptedFeedback = feedback
+        session.retell(verdict: feedback.verdict)
     }
 
     /// Plays the question once when it first appears.
@@ -117,6 +180,9 @@ final class SessionViewModel {
         store.setBox(LeitnerScheduler.nextBox(current: current, rating: outcome.rating), for: outcome.questionID)
         speech.stop()
         playCount = 0
+        retellText = ""
+        retellState = .editing
+        acceptedFeedback = nil
     }
 
     func leave() {

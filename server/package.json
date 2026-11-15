@@ -1,0 +1,27 @@
+{
+  "name": "sayagain-feedback",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "sync-questions": "node scripts/sync-questions.mjs",
+    "eval": "cd eval && promptfoo eval -c promptfooconfig.yaml --no-cache; node check-threshold.mjs",
+    "check-questions": "node scripts/sync-questions.mjs --check"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.8.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261114.1",
+    "@types/js-yaml": "^4.0.9",
+    "js-yaml": "^5.5.0",
+    "promptfoo": "^0.125.1",
+    "typescript": "^7.0.2",
+    "vitest": "^5.1.0",
+    "wrangler": "^4.162.0"
+  }
+}

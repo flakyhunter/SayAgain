@@ -158,9 +158,24 @@ struct SettingsView: View {
             }
 
             Section {
+                Toggle(isOn: Binding(
+                    get: { settings.aiFeedback == .allowed },
+                    set: { settings.aiFeedback = $0 ? .allowed : .declined }
+                )) {
+                    Label("Check my own words with AI", systemImage: "sparkles")
+                }
+                .tint(Theme.accent)
+                .accessibilityIdentifier(A11yID.Settings.aiFeedbackToggle)
+            } header: {
+                Text("AI feedback")
+            } footer: {
+                Text("When on, the text you type in \"Say it in your own words\" is sent to the Say Again server and to Claude by Anthropic to check it. Nothing else is sent. The kids' school questions never use it.")
+            }
+
+            Section {
                 LabeledContent("Version", value: model.version)
                     .accessibilityIdentifier(A11yID.Settings.version)
-                LabeledContent("Data collected", value: "None")
+                LabeledContent("Data collected", value: "Only text you send for AI feedback")
                 Link(destination: SettingsViewModel.sourceURL) {
                     Label("Source code on GitHub", systemImage: "chevron.left.forwardslash.chevron.right")
                 }

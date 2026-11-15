@@ -1,0 +1,13 @@
+name = "sayagain-feedback"
+main = "src/index.ts"
+compatibility_date = "2026-11-01"
+compatibility_flags = ["nodejs_compat"]
+
+[observability]
+enabled = true
+
+# Burst limit per client IP. The monthly spend limit in the Anthropic console is the hard cap.
+[[ratelimits]]
+name = "PER_IP"
+namespace_id = "1001"
+simple = { limit = 6, period = 60 }

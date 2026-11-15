@@ -6,6 +6,7 @@ struct SessionView: View {
     var autoplay = true
     var onDone: () -> Void = {}
     @State private var showingSampleAnswer = false
+    @State private var showingRetell = false
 
     var body: some View {
         Group {
@@ -38,7 +39,7 @@ struct SessionView: View {
                     ListenCard(model: model)
                     choices(for: question, proxy: proxy)
                     if model.isRevealed {
-                        RevealCard(question: question, correct: model.choiceCorrect == true)
+                        RevealCard(question: question, correct: model.choiceCorrect == true, feedback: model.acceptedFeedback)
                             .id("reveal")
                             .transition(.move(edge: .bottom).combined(with: .opacity))
                     }
@@ -47,6 +48,14 @@ struct SessionView: View {
             }
             .safeAreaInset(edge: .bottom) {
                 if model.isRevealed { rateBar }
+            }
+            .sheet(isPresented: $showingRetell) {
+                RetellView(model: model) {
+                    Task { @MainActor in
+                        try? await Task.sleep(for: .milliseconds(450))
+                        withAnimation(.easeInOut(duration: 0.35)) { proxy.scrollTo("reveal", anchor: .bottom) }
+                    }
+                }
             }
             .onChange(of: model.isRevealed) { _, revealed in
                 guard !revealed else { return }
@@ -100,6 +109,20 @@ struct SessionView: View {
                 // Not .disabled: it would fade the green and red answers.
                 .allowsHitTesting(!model.isRevealed)
                 .accessibilityIdentifier(A11yID.Session.choice(index))
+            }
+            if model.canRetell {
+                Button {
+                    showingRetell = true
+                } label: {
+                    Label("Or say it in your own words", systemImage: "sparkles")
+                        .font(.subheadline.weight(.semibold))
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 12)
+                        .foregroundStyle(Theme.accent)
+                }
+                .buttonStyle(.plain)
+                .accessibilityHint("Type what you heard and get AI feedback")
+                .accessibilityIdentifier(A11yID.Session.retellButton)
             }
         }
     }
@@ -291,15 +314,29 @@ private struct ChoiceButton: View {
 private struct RevealCard: View {
     let question: Question
     let correct: Bool
+    var feedback: RetellingFeedback? = nil
     @Environment(\.showRussian) private var showRussian
 
     var body: some View {
         VStack(alignment: .leading, spacing: 18) {
-            Label(correct ? "Nice, you got the meaning." : "Not quite. Here is what they asked.",
-                  systemImage: correct ? "hand.thumbsup.fill" : "ear.trianglebadge.exclamationmark")
-                .font(.headline)
-                .foregroundStyle(correct ? Theme.success : Theme.sunset)
-                .accessibilityIdentifier(A11yID.Session.resultBanner)
+            if let feedback {
+                Label(FeedbackCard.title(feedback.verdict), systemImage: FeedbackCard.icon(feedback.verdict))
+                    .font(.headline)
+                    .foregroundStyle(FeedbackCard.color(feedback.verdict))
+                    .accessibilityElement(children: .ignore)
+                    .accessibilityLabel(FeedbackCard.title(feedback.verdict))
+                    .accessibilityIdentifier(A11yID.Session.resultBanner)
+                section("AI feedback") {
+                    Text(feedback.feedback)
+                        .accessibilityIdentifier(A11yID.Session.aiFeedback)
+                }
+            } else {
+                Label(correct ? "Nice, you got the meaning." : "Not quite. Here is what they asked.",
+                      systemImage: correct ? "hand.thumbsup.fill" : "ear.trianglebadge.exclamationmark")
+                    .font(.headline)
+                    .foregroundStyle(correct ? Theme.success : Theme.sunset)
+                    .accessibilityIdentifier(A11yID.Session.resultBanner)
+            }
 
             section("They said") {
                 Text("\u{201C}\(question.text)\u{201D}")
