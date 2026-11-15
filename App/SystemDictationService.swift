@@ -28,10 +28,8 @@ final class SystemDictationService: DictationService {
 
     func prepare(locale: String) async throws(DictationError) {
         guard Self.recognizer(preferred: locale) != nil else { throw .unsupported }
-        let speech = await withCheckedContinuation { continuation in
-            SFSpeechRecognizer.requestAuthorization { continuation.resume(returning: $0) }
-        }
-        guard speech == .authorized, await AVAudioApplication.requestRecordPermission() else { throw .denied }
+        guard await Self.requestSpeechAuthorization() == .authorized,
+              await AVAudioApplication.requestRecordPermission() else { throw .denied }
     }
 
     func start(locale: String, onText: @escaping @MainActor (String) -> Void,
@@ -51,10 +49,8 @@ final class SystemDictationService: DictationService {
             let input = engine.inputNode
             let format = input.outputFormat(forBus: 0)
             input.removeTap(onBus: 0)
-            nonisolated(unsafe) let target = request
-            input.installTap(onBus: 0, bufferSize: 1024, format: format) { buffer, _ in
-                target.append(buffer)
-            }
+            let target = request
+            input.installTap(onBus: 0, bufferSize: 1024, format: format, block: Self.tapBlock(appendingTo: target))
             engine.prepare()
             try engine.start()
         } catch {
@@ -67,15 +63,11 @@ final class SystemDictationService: DictationService {
         self.request = request
         self.onText = onText
         self.onEnd = onEnd
-        task = recognizer.recognitionTask(with: request) { [weak self] result, error in
-            let text = result?.bestTranscription.formattedString
-            let done = error != nil || (result?.isFinal ?? false)
-            Task { @MainActor in
-                guard let self, self.run == current else { return }
-                if let text { self.onText?(text) }
-                if done { self.finish() }
-            }
-        }
+        task = recognizer.recognitionTask(with: request, resultHandler: Self.resultHandler { [weak self] text, done in
+            guard let self, self.run == current else { return }
+            if let text { self.onText?(text) }
+            if done { self.finish() }
+        })
         timeout = Task { [weak self] in
             try? await Task.sleep(for: Self.maxDuration)
             self?.stop()
@@ -96,6 +88,36 @@ final class SystemDictationService: DictationService {
             try? await Task.sleep(for: .seconds(1.5))
             guard let self, self.run == current else { return }
             self.finish()
+        }
+    }
+
+    // MARK: Callbacks from system queues
+    //
+    // Speech and AVFoundation call these on their own background queues. Closures written inside
+    // this @MainActor class would inherit main-actor isolation, and Swift 6 traps when they run
+    // off the main thread (the crash found on the first manual run). So they are built in
+    // nonisolated functions and hop to the main actor explicitly.
+
+    nonisolated private static func requestSpeechAuthorization() async -> SFSpeechRecognizerAuthorizationStatus {
+        await withCheckedContinuation { continuation in
+            SFSpeechRecognizer.requestAuthorization { continuation.resume(returning: $0) }
+        }
+    }
+
+    nonisolated private static func tapBlock(
+        appendingTo request: SFSpeechAudioBufferRecognitionRequest
+    ) -> AVAudioNodeTapBlock {
+        nonisolated(unsafe) let request = request
+        return { buffer, _ in request.append(buffer) }
+    }
+
+    nonisolated private static func resultHandler(
+        _ deliver: @escaping @MainActor (String?, Bool) -> Void
+    ) -> @Sendable (SFSpeechRecognitionResult?, Error?) -> Void {
+        { result, error in
+            let text = result?.bestTranscription.formattedString
+            let done = error != nil || (result?.isFinal ?? false)
+            Task { @MainActor in deliver(text, done) }
         }
     }
 

@@ -46,7 +46,10 @@ struct AppEnvironment {
             let feedback: FeedbackService? = arguments.contains(LaunchArgument.liveFeedback)
                 ? configuredFeedbackService()
                 : ScriptedFeedbackService()
-            return .testing(bank: bank, feedback: feedback)
+            let dictation: DictationService = arguments.contains(LaunchArgument.liveDictation)
+                ? SystemDictationService()
+                : ScriptedDictationService()
+            return .testing(bank: bank, feedback: feedback, dictation: dictation)
         }
         return AppEnvironment(
             bank: (try? QuestionBank.bundled()) ?? QuestionBank(questions: []),

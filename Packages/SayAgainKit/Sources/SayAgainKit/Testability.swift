@@ -7,6 +7,8 @@ public enum LaunchArgument {
     /// With `uiTesting`: send retellings to the real Worker from the build settings instead of the
     /// scripted service. Used by the end-to-end test against `wrangler dev`.
     public static let liveFeedback = "-liveFeedback"
+    /// With `uiTesting`: use the real on-device speech recogniser instead of the scripted one.
+    public static let liveDictation = "-liveDictation"
     /// Seed used in UI-test mode, so tests know the order of questions and answers.
     public static let uiTestingSeed: UInt64 = 42
 }

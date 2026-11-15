@@ -63,8 +63,8 @@ but the focus is on how it is tested and shipped:
 | Snapshot | [swift-snapshot-testing](https://github.com/pointfreeco/swift-snapshot-testing) | Home (light, dark, empty, progress, mastered), practice (answering, wrong, right in dark, single-voice hint), sample answer, summary, mastered summary, settings, phrasebook and kids' answer in Russian, every category icon in both themes, the AI consent screen, partly and missed feedback (dark), reveal with AI feedback, dictation in progress | 21 | iOS Simulator, a few seconds |
 | UI | XCUITest + page objects | Full session, replay and slow mode, ten fast answers on the real content, mastering a category and starting over, drag to reorder, settings, phrasebook search in English and Russian, retelling with consent and partly verdict, offline error and recovery, declining and turning it back on in Settings, dictating instead of typing | 14 | iOS Simulator |
 
-Plus one UI test that produces the App Store screenshots and one end-to-end test against the
-local Worker (both skipped in normal runs).
+Plus three opt-in UI tests, skipped in normal runs: App Store screenshots, end to end against the
+local Worker, and dictation with the real on-device recogniser.
 
 The AI feedback has its own layers:
 
@@ -109,6 +109,9 @@ Real findings from building this app, kept here because they are the point of th
 | The explanation sometimes stayed under the bottom bar | User report; reproduced with animations on | Scroll waits for the appear animation to finish; checked 6 of 6 with animations |
 | "Slower" barely changed anything | User report; measured the audio length | The rate scale is not linear (+13 % only); slow mode now reads phrase by phrase with pauses (x1.45, measured) |
 | CI failed: the pinned Xcode on the runner had no matching simulator | First CI run | Use the runner's default Xcode and the latest simulator; snapshots pass across iOS 26.1 and 26.5 |
+| The app crashed on the first tap of the dictation mic | Manual check on the simulator; crash log showed a Swift 6 isolation trap | Speech and microphone callbacks arrive on background queues, but closures written inside a `@MainActor` class inherit main-actor isolation. They are now built in `nonisolated` helpers that hop to the main actor. Guarded by an opt-in UI test with the real recogniser, which fails on the old code |
+| On-device speech recognition for en-AU is missing on the simulator | Probing `SFSpeechRecognizer` per locale | Dictation falls back to another on-device English model instead of sending audio to a server |
+| "Your own words" retold correctly with a typo was marked "Not quite" by the offline stand-in checker | Manual test | Added as an eval case: the real checker must judge meaning, not matching words |
 
 ## Project layout
 
