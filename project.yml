@@ -68,6 +68,7 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: dev.flakyhunter.sayagain.tests
+        GENERATE_INFOPLIST_FILE: YES
 
   SayAgainUITests:
     type: bundle.ui-testing
@@ -79,6 +80,7 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: dev.flakyhunter.sayagain.uitests
+        GENERATE_INFOPLIST_FILE: YES
 
 schemes:
   SayAgain:

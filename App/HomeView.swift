@@ -474,7 +474,12 @@ extension QuestionCategory {
     var photo: String? {
         switch self {
         case .school: "SchoolKid"
-        default: nil
+        case .agedCare: "AgedCare"
+        case .qaIT: "QaIT"
+        case .intro: "Intro"
+        case .behavioural: "Behavioural"
+        case .logistics: "Salary"
+        case .volunteering: "Volunteering"
         }
     }
 
