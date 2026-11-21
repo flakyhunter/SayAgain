@@ -13,37 +13,160 @@
         "titleRu": "Знакомство с жителем",
         "goalRu": "Поздороваться, представиться волонтером, узнать, как обращаться к жителю, и попрощаться.",
         "words": [
-          { "text": "G'day!", "translationRu": "Привет! Здравствуйте!", "noteRu": "Австралийское приветствие, его говорят и молодые, и пожилые.", "aussie": true },
-          { "text": "Good morning.", "translationRu": "Доброе утро." },
-          { "text": "My name is Nina.", "translationRu": "Меня зовут Нина.", "noteRu": "Подставьте свое имя." },
-          { "text": "I'm a volunteer.", "translationRu": "Я волонтер." },
-          { "text": "What's your name?", "translationRu": "Как вас зовут?" },
-          { "text": "Nice to meet you.", "translationRu": "Приятно познакомиться." },
-          { "text": "How are you going?", "translationRu": "Как дела?", "noteRu": "Так в Австралии спрашивают \"How are you?\". Это не про то, куда вы идете.", "aussie": true },
-          { "text": "Not bad, thanks. And you?", "translationRu": "Неплохо, спасибо. А у вас?" },
-          { "text": "What would you like me to call you?", "translationRu": "Как мне к вам обращаться?", "noteRu": "Сначала Mr + фамилия (мужчина), Mrs (замужняя женщина), Ms (если не знаете). По имени, только если человек сам разрешил: \"Call me Peggy\"." },
-          { "text": "Pardon? Sorry?", "translationRu": "Простите? (не расслышала)" },
-          { "text": "Can you say that again slowly, please?", "translationRu": "Повторите, пожалуйста, медленнее." },
-          { "text": "love, dear", "translationRu": "дорогая, дорогой", "noteRu": "Так часто обращаются пожилые австралийцы. Это дружелюбно, не грубо.", "aussie": true },
-          { "text": "Ta.", "translationRu": "Спасибо.", "aussie": true },
-          { "text": "See you next time.", "translationRu": "До следующего раза." },
-          { "text": "Have a lovely day!", "translationRu": "Хорошего дня!" },
-          { "text": "I'm a volunteer, I'm not allowed to do that. I'll get someone for you.", "translationRu": "Я волонтер, мне это нельзя. Я позову кого-нибудь.", "noteRu": "Главная фраза курса. Волонтер не водит в туалет, не поднимает и не пересаживает, не кормит и не поит (даже чаем), не фотографирует жителей и не дает свой номер телефона." }
+          {
+            "text": "G'day!",
+            "translationRu": "Привет! Здравствуйте!",
+            "noteRu": "Австралийское приветствие, его говорят и молодые, и пожилые.",
+            "aussie": true
+          },
+          {
+            "text": "Good morning.",
+            "translationRu": "Доброе утро."
+          },
+          {
+            "text": "My name is Nina.",
+            "translationRu": "Меня зовут Нина.",
+            "noteRu": "Подставьте свое имя."
+          },
+          {
+            "text": "I'm a volunteer.",
+            "translationRu": "Я волонтер."
+          },
+          {
+            "text": "What's your name?",
+            "translationRu": "Как вас зовут?"
+          },
+          {
+            "text": "Nice to meet you.",
+            "translationRu": "Приятно познакомиться."
+          },
+          {
+            "text": "How are you going?",
+            "translationRu": "Как дела?",
+            "noteRu": "Так в Австралии спрашивают \"How are you?\". Это не про то, куда вы идете.",
+            "aussie": true
+          },
+          {
+            "text": "Not bad, thanks. And you?",
+            "translationRu": "Неплохо, спасибо. А у вас?"
+          },
+          {
+            "text": "What would you like me to call you?",
+            "translationRu": "Как мне к вам обращаться?",
+            "noteRu": "Сначала Mr + фамилия (мужчина), Mrs (замужняя женщина), Ms (если не знаете). По имени, только если человек сам разрешил: \"Call me Peggy\"."
+          },
+          {
+            "text": "Pardon? Sorry?",
+            "translationRu": "Простите? (не расслышала)"
+          },
+          {
+            "text": "Can you say that again slowly, please?",
+            "translationRu": "Повторите, пожалуйста, медленнее."
+          },
+          {
+            "text": "love, dear",
+            "translationRu": "дорогая, дорогой",
+            "noteRu": "Так часто обращаются пожилые австралийцы. Это дружелюбно, не грубо.",
+            "aussie": true
+          },
+          {
+            "text": "Ta.",
+            "translationRu": "Спасибо.",
+            "aussie": true
+          },
+          {
+            "text": "See you next time.",
+            "translationRu": "До следующего раза."
+          },
+          {
+            "text": "Have a lovely day!",
+            "translationRu": "Хорошего дня!"
+          },
+          {
+            "text": "I'm a volunteer, I'm not allowed to do that. I'll get someone for you.",
+            "translationRu": "Я волонтер, мне это нельзя. Я позову кого-нибудь.",
+            "noteRu": "Главная фраза курса. Волонтер не водит в туалет, не поднимает и не пересаживает, не кормит и не поит (даже чаем), не фотографирует жителей и не дает свой номер телефона."
+          }
         ],
         "dialogue": [
-          { "role": "volunteer", "speaker": "Nina", "text": "Good morning! My name is Nina. I'm a volunteer.", "translationRu": "Доброе утро! Меня зовут Нина. Я волонтер." },
-          { "role": "resident", "speaker": "Mrs Brown", "text": "Pardon, love?", "translationRu": "Простите, дорогая?" },
-          { "role": "volunteer", "speaker": "Nina", "text": "My name is Nina. I'm a volunteer.", "translationRu": "Меня зовут Нина. Я волонтер." },
-          { "role": "resident", "speaker": "Mrs Brown", "text": "Oh, hello, Nina. I'm Mrs Brown. Margaret Brown.", "translationRu": "А, здравствуйте, Нина. Я миссис Браун. Маргарет Браун." },
-          { "role": "volunteer", "speaker": "Nina", "text": "Nice to meet you, Mrs Brown. What would you like me to call you?", "translationRu": "Приятно познакомиться, миссис Браун. Как мне к вам обращаться?" },
-          { "role": "resident", "speaker": "Mrs Brown", "text": "Call me Peggy, dear. Everyone does. Where are you from?", "translationRu": "Зовите меня Пегги, дорогая. Все так зовут. Откуда вы?" },
-          { "role": "volunteer", "speaker": "Nina", "text": "I'm from Russia. I'm new here.", "translationRu": "Я из России. Я здесь новенькая." },
-          { "role": "resident", "speaker": "Mrs Brown", "text": "Russia! That's a long way from home. Welcome, love.", "translationRu": "Из России! Далеко же от дома. Добро пожаловать, дорогая." },
-          { "role": "volunteer", "speaker": "Nina", "text": "Thank you. How are you going today, Peggy?", "translationRu": "Спасибо. Как у вас сегодня дела, Пегги?" },
-          { "role": "resident", "speaker": "Mrs Brown", "text": "Not bad, not bad. A bit tired. Could you take me to the loo?", "translationRu": "Неплохо, неплохо. Немного устала. Можете отвести меня в туалет?" },
-          { "role": "volunteer", "speaker": "Nina", "text": "I'm a volunteer, I'm not allowed to do that. I'll get someone for you.", "translationRu": "Я волонтер, мне это нельзя. Я позову кого-нибудь." },
-          { "role": "resident", "speaker": "Mrs Brown", "text": "No worries. Ta, love.", "translationRu": "Ничего страшного. Спасибо, дорогая." },
-          { "role": "volunteer", "speaker": "Nina", "text": "See you next time, Peggy. Have a lovely day!", "translationRu": "До следующего раза, Пегги. Хорошего дня!" }
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Good morning! My name is Nina. I'm a volunteer.",
+            "translationRu": "Доброе утро! Меня зовут Нина. Я волонтер."
+          },
+          {
+            "role": "resident",
+            "speaker": "Mrs Brown",
+            "text": "Pardon, love?",
+            "translationRu": "Простите, дорогая?"
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "My name is Nina. I'm a volunteer.",
+            "translationRu": "Меня зовут Нина. Я волонтер."
+          },
+          {
+            "role": "resident",
+            "speaker": "Mrs Brown",
+            "text": "Oh, hello, Nina. I'm Mrs Brown. Margaret Brown.",
+            "translationRu": "А, здравствуйте, Нина. Я миссис Браун. Маргарет Браун."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Nice to meet you, Mrs Brown. What would you like me to call you?",
+            "translationRu": "Приятно познакомиться, миссис Браун. Как мне к вам обращаться?"
+          },
+          {
+            "role": "resident",
+            "speaker": "Mrs Brown",
+            "text": "Call me Peggy, dear. Everyone does. Where are you from?",
+            "translationRu": "Зовите меня Пегги, дорогая. Все так зовут. Откуда вы?"
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "I'm from Russia. I'm new here.",
+            "translationRu": "Я из России. Я здесь новенькая."
+          },
+          {
+            "role": "resident",
+            "speaker": "Mrs Brown",
+            "text": "Russia! That's a long way from home. Welcome, love.",
+            "translationRu": "Из России! Далеко же от дома. Добро пожаловать, дорогая."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Thank you. How are you going today, Peggy?",
+            "translationRu": "Спасибо. Как у вас сегодня дела, Пегги?"
+          },
+          {
+            "role": "resident",
+            "speaker": "Mrs Brown",
+            "text": "Not bad, not bad. A bit tired. Could you take me to the loo?",
+            "translationRu": "Неплохо, неплохо. Немного устала. Можете отвести меня в туалет?"
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "I'm a volunteer, I'm not allowed to do that. I'll get someone for you.",
+            "translationRu": "Я волонтер, мне это нельзя. Я позову кого-нибудь."
+          },
+          {
+            "role": "resident",
+            "speaker": "Mrs Brown",
+            "text": "No worries. Ta, love.",
+            "translationRu": "Ничего страшного. Спасибо, дорогая."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "See you next time, Peggy. Have a lovely day!",
+            "translationRu": "До следующего раза, Пегги. Хорошего дня!"
+          }
         ],
         "tip": {
           "title": "to be: am, is, are",
@@ -59,110 +182,2623 @@
         },
         "practice": [
           {
-            "id": "acv-01-p1", "kind": "listen", "say": "Pardon, love?",
-            "situation": "A resident answers you.", "situationRu": "Жительница отвечает вам. Что она имеет в виду?",
+            "id": "acv-01-p1",
+            "kind": "listen",
+            "say": "Pardon, love?",
+            "situation": "A resident answers you.",
+            "situationRu": "Жительница отвечает вам. Что она имеет в виду?",
             "answer": "Она не расслышала и просит повторить",
-            "distractors": ["Она просит вас уйти", "Она зовет медсестру"],
+            "distractors": [
+              "Она просит вас уйти",
+              "Она зовет медсестру"
+            ],
             "explanation": "\"Pardon?\" means \"say it again, please\". \"Love\" is just friendly.",
             "explanationRu": "\"Pardon?\" значит \"повторите, пожалуйста\". \"Love\" - просто дружелюбное обращение. Повторите медленнее и громче."
           },
           {
-            "id": "acv-01-p2", "kind": "listen", "say": "How are you going today?",
-            "situation": "A resident asks you a question.", "situationRu": "Житель задает вам вопрос. О чем он спрашивает?",
+            "id": "acv-01-p2",
+            "kind": "listen",
+            "say": "How are you going today?",
+            "situation": "A resident asks you a question.",
+            "situationRu": "Житель задает вам вопрос. О чем он спрашивает?",
             "answer": "Как у вас сегодня дела?",
-            "distractors": ["Куда вы сегодня идете?", "Как вы сюда добрались?"],
+            "distractors": [
+              "Куда вы сегодня идете?",
+              "Как вы сюда добрались?"
+            ],
             "explanation": "\"How are you going?\" is the Aussie \"How are you?\".",
             "explanationRu": "\"How are you going?\" - австралийское \"Как дела?\". Ответ: \"Good, thanks. And you?\""
           },
           {
-            "id": "acv-01-p3", "kind": "reply", "say": null,
-            "situation": "You meet a resident for the first time.", "situationRu": "Вы впервые подходите к жителю. Что сказать?",
+            "id": "acv-01-p3",
+            "kind": "reply",
+            "say": null,
+            "situation": "You meet a resident for the first time.",
+            "situationRu": "Вы впервые подходите к жителю. Что сказать?",
             "answer": "Good morning! My name is Nina. I'm a volunteer.",
-            "distractors": ["Hey you! What's your name?", "Good night! I'm a nurse."],
+            "distractors": [
+              "Hey you! What's your name?",
+              "Good night! I'm a nurse."
+            ],
             "explanation": "Greet, say your name and that you are a volunteer.",
             "explanationRu": "Поздоровайтесь, назовите имя и скажите, что вы волонтер. Вы не медсестра, это важно сказать сразу."
           },
           {
-            "id": "acv-01-p4", "kind": "slang", "say": "G'day! How are you going?",
-            "situation": "Hear the Aussie way, pick the plain English.", "situationRu": "Послушайте по-австралийски и выберите то же самое обычным английским.",
+            "id": "acv-01-p4",
+            "kind": "slang",
+            "say": "G'day! How are you going?",
+            "situation": "Hear the Aussie way, pick the plain English.",
+            "situationRu": "Послушайте по-австралийски и выберите то же самое обычным английским.",
             "answer": "Hello! How are you?",
-            "distractors": ["Good day! Where are you going?", "Goodbye! Are you leaving?"],
+            "distractors": [
+              "Good day! Where are you going?",
+              "Goodbye! Are you leaving?"
+            ],
             "explanation": "G'day = hello. How are you going = how are you.",
             "explanationRu": "G'day = hello, How are you going = how are you. Это приветствие, а не прощание."
           },
           {
-            "id": "acv-01-p5", "kind": "reply", "say": "Could you take me to the loo, love?",
-            "situation": "A resident asks you to take her to the toilet.", "situationRu": "Жительница просит отвести ее в туалет (the loo). Что сказать?",
+            "id": "acv-01-p5",
+            "kind": "reply",
+            "say": "Could you take me to the loo, love?",
+            "situation": "A resident asks you to take her to the toilet.",
+            "situationRu": "Жительница просит отвести ее в туалет (the loo). Что сказать?",
             "answer": "I'm a volunteer, I'm not allowed to do that. I'll get someone for you.",
-            "distractors": ["Sure, let's go.", "No. Ask someone else."],
+            "distractors": [
+              "Sure, let's go.",
+              "No. Ask someone else."
+            ],
             "explanation": "Volunteers don't help in the toilet. Say it kindly and get a staff member.",
             "explanationRu": "Волонтер не водит в туалет. Откажите вежливо и сразу позовите персонал."
           },
           {
-            "id": "acv-01-p6", "kind": "listen", "say": "Where are you from, dear?",
-            "situation": "A resident asks you a question.", "situationRu": "Жительница задает вопрос. О чем она спрашивает?",
+            "id": "acv-01-p6",
+            "kind": "listen",
+            "say": "Where are you from, dear?",
+            "situation": "A resident asks you a question.",
+            "situationRu": "Жительница задает вопрос. О чем она спрашивает?",
             "answer": "Откуда вы?",
-            "distractors": ["Где вы живете здесь?", "Куда вы идете?"],
+            "distractors": [
+              "Где вы живете здесь?",
+              "Куда вы идете?"
+            ],
             "explanation": "\"Where are you from?\" asks about your home country.",
             "explanationRu": "\"Where are you from?\" - про страну, откуда вы. Ответ: \"I'm from Russia\" (или ваша страна)."
           },
           {
-            "id": "acv-01-p7", "kind": "reply", "say": null,
-            "situation": "You are leaving the lounge.", "situationRu": "Вы уходите из гостиной. Что сказать жителю на прощание?",
+            "id": "acv-01-p7",
+            "kind": "reply",
+            "say": null,
+            "situation": "You are leaving the lounge.",
+            "situationRu": "Вы уходите из гостиной. Что сказать жителю на прощание?",
             "answer": "See you next time. Have a lovely day!",
-            "distractors": ["Nice to meet you!", "Good morning!"],
+            "distractors": [
+              "Nice to meet you!",
+              "Good morning!"
+            ],
             "explanation": "\"See you next time\" is a goodbye. \"Nice to meet you\" is for the first hello.",
             "explanationRu": "\"See you next time\" - прощание. \"Nice to meet you\" говорят при знакомстве."
           }
         ],
         "check": [
           {
-            "id": "acv-01-c1", "kind": "listen", "say": "Sorry, love, what was your name again?",
-            "situation": "A resident speaks to you.", "situationRu": "Жительница говорит с вами. Чего она хочет?",
+            "id": "acv-01-c1",
+            "kind": "listen",
+            "say": "Sorry, love, what was your name again?",
+            "situation": "A resident speaks to you.",
+            "situationRu": "Жительница говорит с вами. Чего она хочет?",
             "answer": "Она забыла, как вас зовут, и спрашивает снова",
-            "distractors": ["Она извиняется, что опоздала", "Она спрашивает, как зовут медсестру"],
+            "distractors": [
+              "Она извиняется, что опоздала",
+              "Она спрашивает, как зовут медсестру"
+            ],
             "explanation": "\"What was your name again?\" means she forgot your name.",
             "explanationRu": "\"What was your name again?\" - \"напомните, как вас зовут\". Спокойно назовите имя еще раз."
           },
           {
-            "id": "acv-01-c2", "kind": "reply", "say": "Call me Bob.",
-            "situation": "Mr Wilson says: \"Call me Bob.\"", "situationRu": "Мистер Уилсон говорит: \"Call me Bob\". Что ответить?",
+            "id": "acv-01-c2",
+            "kind": "reply",
+            "say": "Call me Bob.",
+            "situation": "Mr Wilson says: \"Call me Bob.\"",
+            "situationRu": "Мистер Уилсон говорит: \"Call me Bob\". Что ответить?",
             "answer": "Nice to meet you, Bob.",
-            "distractors": ["Nice to meet you, Mr Bob.", "OK, Mr Wilson."],
+            "distractors": [
+              "Nice to meet you, Mr Bob.",
+              "OK, Mr Wilson."
+            ],
             "explanation": "He said you can use his first name, so just Bob.",
             "explanationRu": "Он разрешил называть себя по имени, значит просто Bob. \"Mr\" ставят только перед фамилией."
           },
           {
-            "id": "acv-01-c3", "kind": "slang", "say": "Not bad, ta.",
-            "situation": "Hear the Aussie way, pick the plain English.", "situationRu": "Послушайте по-австралийски и выберите то же самое обычным английским.",
+            "id": "acv-01-c3",
+            "kind": "slang",
+            "say": "Not bad, ta.",
+            "situation": "Hear the Aussie way, pick the plain English.",
+            "situationRu": "Послушайте по-австралийски и выберите то же самое обычным английским.",
             "answer": "Not bad, thanks.",
-            "distractors": ["Not bad, take it.", "Not bad, a cup of tea."],
+            "distractors": [
+              "Not bad, take it.",
+              "Not bad, a cup of tea."
+            ],
             "explanation": "Ta = thanks.",
             "explanationRu": "Ta = thanks, коротко \"спасибо\"."
           },
           {
-            "id": "acv-01-c4", "kind": "reply", "say": "Could you get me a cup of tea, love?",
-            "situation": "A resident asks you for a cup of tea.", "situationRu": "Житель просит принести чай. Что сказать?",
+            "id": "acv-01-c4",
+            "kind": "reply",
+            "say": "Could you get me a cup of tea, love?",
+            "situation": "A resident asks you for a cup of tea.",
+            "situationRu": "Житель просит принести чай. Что сказать?",
             "answer": "I'm a volunteer, I'm not allowed to do that. I'll get someone for you.",
-            "distractors": ["Of course! Milk and sugar?", "Make it yourself, please."],
+            "distractors": [
+              "Of course! Milk and sugar?",
+              "Make it yourself, please."
+            ],
             "explanation": "Volunteers don't give food or drinks, not even tea.",
             "explanationRu": "Волонтер не кормит и не поит, даже чаем: у жителя может быть диета или риск подавиться. Позовите персонал."
           },
           {
-            "id": "acv-01-c5", "kind": "listen", "say": "I'm a bit tired today, love.",
-            "situation": "A resident tells you something.", "situationRu": "Жительница что-то говорит. Что именно?",
+            "id": "acv-01-c5",
+            "kind": "listen",
+            "say": "I'm a bit tired today, love.",
+            "situation": "A resident tells you something.",
+            "situationRu": "Жительница что-то говорит. Что именно?",
             "answer": "Она сегодня немного устала",
-            "distractors": ["Она хочет, чтобы вы ушли", "Сегодня у нее день рождения"],
+            "distractors": [
+              "Она хочет, чтобы вы ушли",
+              "Сегодня у нее день рождения"
+            ],
             "explanation": "\"A bit tired\" means a little tired.",
             "explanationRu": "\"A bit tired\" - немного устала. Можно ответить: \"Oh, I'm sorry. Have a rest.\""
           },
           {
-            "id": "acv-01-c6", "kind": "reply", "say": null,
-            "situation": "A resident speaks fast and you don't understand.", "situationRu": "Житель говорит быстро, вы не поняли. Что сказать?",
+            "id": "acv-01-c6",
+            "kind": "reply",
+            "say": null,
+            "situation": "A resident speaks fast and you don't understand.",
+            "situationRu": "Житель говорит быстро, вы не поняли. Что сказать?",
             "answer": "Sorry? Can you say that again slowly, please?",
-            "distractors": ["Yes, yes.", "I don't speak English."],
+            "distractors": [
+              "Yes, yes.",
+              "I don't speak English."
+            ],
             "explanation": "Always ask again. Saying \"yes\" without understanding can be unsafe.",
             "explanationRu": "Всегда переспрашивайте. Сказать \"yes\", не поняв, бывает опасно: житель мог сказать, что ему плохо."
+          }
+        ]
+      },
+      {
+        "id": "acv-02",
+        "number": 2,
+        "title": "Who's who",
+        "titleRu": "Кто есть кто",
+        "goalRu": "Знать, кто работает в доме престарелых, и понимать, к кому обратиться.",
+        "words": [
+          {
+            "text": "resident",
+            "translationRu": "житель (дома престарелых)",
+            "noteRu": "В aged care говорят resident, а не patient."
+          },
+          {
+            "text": "Registered Nurse, RN",
+            "translationRu": "дипломированная медсестра (старшая)",
+            "noteRu": "Дает лекарства, отвечает за здоровье жителей."
+          },
+          {
+            "text": "Enrolled Nurse, EN",
+            "translationRu": "медсестра"
+          },
+          {
+            "text": "Assistant in Nursing, AIN",
+            "translationRu": "помощник медсестры",
+            "noteRu": "Помогает с душем, едой, туалетом."
+          },
+          {
+            "text": "Personal Care Worker, PCW",
+            "translationRu": "работник по уходу"
+          },
+          {
+            "text": "wellbeing coordinator",
+            "translationRu": "координатор досуга",
+            "noteRu": "Планирует занятия: бинго, музыку, викторины."
+          },
+          {
+            "text": "volunteer coordinator",
+            "translationRu": "координатор волонтеров",
+            "noteRu": "Ваш главный контакт: расписание, вопросы, проблемы."
+          },
+          {
+            "text": "the GP",
+            "translationRu": "семейный врач",
+            "noteRu": "General Practitioner. В Австралии всегда говорят GP, а не doctor.",
+            "aussie": true
+          },
+          {
+            "text": "physio",
+            "translationRu": "физиотерапевт",
+            "noteRu": "Сокращение от physiotherapist.",
+            "aussie": true
+          },
+          {
+            "text": "kitchen staff",
+            "translationRu": "работники кухни"
+          },
+          {
+            "text": "receptionist",
+            "translationRu": "администратор на входе"
+          },
+          {
+            "text": "next of kin",
+            "translationRu": "ближайший родственник"
+          },
+          {
+            "text": "Who can I ask?",
+            "translationRu": "К кому можно обратиться?"
+          },
+          {
+            "text": "I'll ask the nurse.",
+            "translationRu": "Я спрошу медсестру."
+          }
+        ],
+        "dialogue": [
+          {
+            "role": "staff",
+            "speaker": "Receptionist",
+            "text": "Morning! Are you a visitor?",
+            "translationRu": "Доброе утро! Вы посетитель?"
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "No, I'm a volunteer. I'm Nina. Where can I find Megan, please?",
+            "translationRu": "Нет, я волонтер. Я Нина. Где найти Меган, пожалуйста?"
+          },
+          {
+            "role": "staff",
+            "speaker": "Receptionist",
+            "text": "She's in her office, down the main corridor on the left. Please sign in first.",
+            "translationRu": "Она у себя в кабинете, по главному коридору слева. Сначала отметьтесь, пожалуйста."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Thank you. Who gives the residents their tablets?",
+            "translationRu": "Спасибо. А кто дает жителям таблетки?"
+          },
+          {
+            "role": "staff",
+            "speaker": "Receptionist",
+            "text": "The nurse does. If a resident needs anything, tell a nurse or an AIN.",
+            "translationRu": "Медсестра. Если жителю что-то нужно, скажите медсестре или помощнику."
+          },
+          {
+            "role": "resident",
+            "speaker": "Mr Wilson",
+            "text": "Excuse me, love. Can you give me my tablets?",
+            "translationRu": "Простите, дорогая. Можете дать мне мои таблетки?"
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "I'm a volunteer, I'm not allowed to do that. I'll get someone for you. I'll ask the nurse.",
+            "translationRu": "Я волонтер, мне это нельзя. Я позову кого-нибудь. Я спрошу медсестру."
+          },
+          {
+            "role": "resident",
+            "speaker": "Mr Wilson",
+            "text": "Good on you. Ta.",
+            "translationRu": "Молодец. Спасибо."
+          }
+        ],
+        "tip": {
+          "title": "Present Simple: he / she works",
+          "ruleRu": "С he / she / it к глаголу добавляется -s: I work, she works. Отрицание: doesn't + глагол без -s. Вопрос: Does she...? Who gives...? - The nurse does.",
+          "examples": [
+            "The nurse gives medication.",
+            "The physio helps residents walk.",
+            "Nina doesn't give medication.",
+            "Who plans the activities? Megan does.",
+            "Does the GP visit on Thursdays? Yes, he does."
+          ]
+        },
+        "practice": [
+          {
+            "id": "acv-02-p1",
+            "kind": "listen",
+            "say": "The nurse gives the tablets.",
+            "situation": "Listen and choose the meaning.",
+            "situationRu": "О чем говорят?",
+            "answer": "Лекарства дает медсестра",
+            "distractors": [
+              "Таблетки лежат у медсестры",
+              "Медсестра просит таблетки"
+            ],
+            "explanation": "",
+            "explanationRu": "\"gives the tablets\" - дает таблетки. Это делает только медсестра."
+          },
+          {
+            "id": "acv-02-p2",
+            "kind": "reply",
+            "say": null,
+            "situation": "Choose what to say.",
+            "situationRu": "У жительницы болит нога. Кому вы скажете и что?",
+            "answer": "I'll tell the nurse.",
+            "distractors": [
+              "I'll call the kitchen staff.",
+              "Let me look at your leg."
+            ],
+            "explanation": "",
+            "explanationRu": "Боль, лекарства, здоровье - всегда к медсестре. Сами не осматриваете."
+          },
+          {
+            "id": "acv-02-p3",
+            "kind": "listen",
+            "say": "The GP visits on Thursdays.",
+            "situation": "Listen and choose the meaning.",
+            "situationRu": "О чем речь?",
+            "answer": "Врач приходит по четвергам",
+            "distractors": [
+              "Врач приходит в четверг в три",
+              "Физиотерапевт приходит по вторникам"
+            ],
+            "explanation": "",
+            "explanationRu": "GP - семейный врач. on Thursdays - по четвергам, каждую неделю."
+          },
+          {
+            "id": "acv-02-p4",
+            "kind": "reply",
+            "say": null,
+            "situation": "Choose what to say.",
+            "situationRu": "Вы хотите поменять свой день волонтерства. Что сказать на ресепшене?",
+            "answer": "Can I talk to the volunteer coordinator, please?",
+            "distractors": [
+              "Can I talk to the GP, please?",
+              "Can I talk to the kitchen staff, please?"
+            ],
+            "explanation": "",
+            "explanationRu": "Расписание волонтера - это volunteer coordinator."
+          },
+          {
+            "id": "acv-02-p5",
+            "kind": "reply",
+            "say": "Can you give me my tablets, love?",
+            "situation": "Choose what to say.",
+            "situationRu": "Житель просит дать ему таблетки. Что сказать?",
+            "answer": "I'm a volunteer, I'm not allowed to do that. I'll get someone for you.",
+            "distractors": [
+              "Sure, which ones?",
+              "Take two, they're on the table."
+            ],
+            "explanation": "",
+            "explanationRu": "Лекарства дает только медсестра. Волонтер их никогда не трогает."
+          },
+          {
+            "id": "acv-02-p6",
+            "kind": "slang",
+            "say": "The physio's coming this arvo.",
+            "situation": "Hear the Aussie way, pick the plain English.",
+            "situationRu": "Послушайте по-австралийски и выберите то же самое обычным английским.",
+            "answer": "The physiotherapist is coming this afternoon.",
+            "distractors": [
+              "The physio is coming tomorrow.",
+              "The physiotherapist was here this morning."
+            ],
+            "explanation": "",
+            "explanationRu": "physio = physiotherapist, this arvo = this afternoon."
+          }
+        ],
+        "check": [
+          {
+            "id": "acv-02-c1",
+            "kind": "listen",
+            "say": "Are you a visitor?",
+            "situation": "Listen and choose the meaning.",
+            "situationRu": "Администратор спрашивает вас. О чем?",
+            "answer": "Вы посетитель?",
+            "distractors": [
+              "Вы здесь живете?",
+              "Вы медсестра?"
+            ],
+            "explanation": "",
+            "explanationRu": "visitor - посетитель. Ответ: \"No, I'm a volunteer.\""
+          },
+          {
+            "id": "acv-02-c2",
+            "kind": "listen",
+            "say": "Please sign in first.",
+            "situation": "Listen and choose the meaning.",
+            "situationRu": "Что просит администратор?",
+            "answer": "Сначала отметьтесь, пожалуйста",
+            "distractors": [
+              "Сначала подпишите договор",
+              "Сначала наденьте бейдж"
+            ],
+            "explanation": "",
+            "explanationRu": "sign in - отметиться в журнале или на планшете при входе."
+          },
+          {
+            "id": "acv-02-c3",
+            "kind": "reply",
+            "say": null,
+            "situation": "Choose what to say.",
+            "situationRu": "Вы забыли код от двери. Что сказать на ресепшене?",
+            "answer": "Sorry, I forgot the door code. Can you help me?",
+            "distractors": [
+              "Open the door, please, quick.",
+              "I'll ask the GP for the code."
+            ],
+            "explanation": "",
+            "explanationRu": "Код и вход - к администратору (receptionist)."
+          },
+          {
+            "id": "acv-02-c4",
+            "kind": "reply",
+            "say": "Help me stand up, dear.",
+            "situation": "Choose what to say.",
+            "situationRu": "Жительница просит помочь ей встать. Что сказать?",
+            "answer": "I'm a volunteer, I'm not allowed to do that. I'll get someone for you.",
+            "distractors": [
+              "OK, hold my arm.",
+              "Sorry, I'm busy."
+            ],
+            "explanation": "",
+            "explanationRu": "Волонтер не поднимает и не пересаживает: может упасть и жительница, и вы."
+          },
+          {
+            "id": "acv-02-c5",
+            "kind": "listen",
+            "say": "Tom helps residents with showers and meals.",
+            "situation": "Listen and choose the meaning.",
+            "situationRu": "Что делает Том?",
+            "answer": "Помогает жителям с душем и едой",
+            "distractors": [
+              "Готовит еду для жителей",
+              "Убирает душевые"
+            ],
+            "explanation": "",
+            "explanationRu": "helps residents with showers and meals - помогает с душем и едой. Это работа AIN."
+          }
+        ]
+      },
+      {
+        "id": "acv-03",
+        "number": 3,
+        "title": "Places and my visit",
+        "titleRu": "Помещения и мой визит",
+        "goalRu": "Называть помещения, объяснять дорогу и рассказывать о порядке своего визита.",
+        "words": [
+          {
+            "text": "reception",
+            "translationRu": "стойка администратора"
+          },
+          {
+            "text": "sign in, sign out",
+            "translationRu": "отметиться при входе, при выходе"
+          },
+          {
+            "text": "badge",
+            "translationRu": "бейдж"
+          },
+          {
+            "text": "corridor, hallway",
+            "translationRu": "коридор"
+          },
+          {
+            "text": "lounge",
+            "translationRu": "гостиная, комната отдыха"
+          },
+          {
+            "text": "dining room",
+            "translationRu": "столовая"
+          },
+          {
+            "text": "nurses' station",
+            "translationRu": "пост медсестер"
+          },
+          {
+            "text": "the loo",
+            "translationRu": "туалет",
+            "noteRu": "Разговорное австралийское слово. Официально - toilet.",
+            "aussie": true
+          },
+          {
+            "text": "lift, stairs",
+            "translationRu": "лифт, лестница",
+            "noteRu": "В Австралии lift, а не elevator."
+          },
+          {
+            "text": "garden, courtyard",
+            "translationRu": "сад, внутренний двор"
+          },
+          {
+            "text": "feedback book",
+            "translationRu": "журнал отзывов волонтеров"
+          },
+          {
+            "text": "next to, opposite",
+            "translationRu": "рядом с, напротив"
+          },
+          {
+            "text": "at the end of the corridor",
+            "translationRu": "в конце коридора"
+          },
+          {
+            "text": "on the left, on the right",
+            "translationRu": "слева, справа"
+          },
+          {
+            "text": "Sorry, I'm not sure. You can ask at reception.",
+            "translationRu": "Простите, я не знаю. Можно спросить на ресепшене."
+          }
+        ],
+        "dialogue": [
+          {
+            "role": "staff",
+            "speaker": "Visitor",
+            "text": "Excuse me, where's the lounge, please?",
+            "translationRu": "Простите, где гостиная?"
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Go straight down the corridor. It's at the end, on the right.",
+            "translationRu": "Идите прямо по коридору. Она в конце, справа."
+          },
+          {
+            "role": "staff",
+            "speaker": "Visitor",
+            "text": "Thanks. And is there a loo near here?",
+            "translationRu": "Спасибо. А туалет здесь есть поблизости?"
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Yes, there is. It's next to the nurses' station.",
+            "translationRu": "Да, есть. Рядом с постом медсестер."
+          },
+          {
+            "role": "staff",
+            "speaker": "Visitor",
+            "text": "Is there a cafe in the building?",
+            "translationRu": "А в здании есть кафе?"
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Sorry, I'm not sure. You can ask at reception.",
+            "translationRu": "Простите, я не знаю. Можно спросить на ресепшене."
+          },
+          {
+            "role": "staff",
+            "speaker": "Visitor",
+            "text": "Oh, and could you take Mum to the loo? She's in room six.",
+            "translationRu": "Ой, а можете отвести маму в туалет? Она в шестой комнате."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "I'm a volunteer, I'm not allowed to do that. I'll get someone for you.",
+            "translationRu": "Я волонтер, мне это нельзя. Я позову кого-нибудь."
+          },
+          {
+            "role": "staff",
+            "speaker": "Visitor",
+            "text": "No worries, thanks.",
+            "translationRu": "Ничего страшного, спасибо."
+          }
+        ],
+        "tip": {
+          "title": "there is / there are",
+          "ruleRu": "There is - для одного предмета, there are - для нескольких. Вопрос: Is there...? Are there...? Ответ: Yes, there is. No, there isn't. Дорога: Go straight. Turn left. It's at the end of the corridor.",
+          "examples": [
+            "There is a lounge next to the nurses' station.",
+            "There are ten rooms on this floor.",
+            "Is there a lift? Yes, there is.",
+            "Go straight and turn left.",
+            "It's opposite the dining room."
+          ]
+        },
+        "practice": [
+          {
+            "id": "acv-03-p1",
+            "kind": "listen",
+            "say": "It's at the end of the corridor, on the right.",
+            "situation": "Listen and choose the meaning.",
+            "situationRu": "Вам объясняют дорогу. Где это?",
+            "answer": "В конце коридора, справа",
+            "distractors": [
+              "В начале коридора, слева",
+              "Напротив лифта, справа"
+            ],
+            "explanation": "",
+            "explanationRu": "at the end - в конце, on the right - справа."
+          },
+          {
+            "id": "acv-03-p2",
+            "kind": "listen",
+            "say": "Is there a lift?",
+            "situation": "Listen and choose the meaning.",
+            "situationRu": "Посетитель спрашивает. О чем?",
+            "answer": "Здесь есть лифт?",
+            "distractors": [
+              "Где здесь лестница?",
+              "Лифт сломан?"
+            ],
+            "explanation": "",
+            "explanationRu": "Is there...? - Есть ли...? lift - лифт."
+          },
+          {
+            "id": "acv-03-p3",
+            "kind": "reply",
+            "say": null,
+            "situation": "Choose what to say.",
+            "situationRu": "Посетитель спрашивает, где кафе. Вы не знаете. Что сказать?",
+            "answer": "Sorry, I'm not sure. You can ask at reception.",
+            "distractors": [
+              "There isn't a cafe.",
+              "I don't know."
+            ],
+            "explanation": "",
+            "explanationRu": "Не угадывайте. Вежливо скажите, что не знаете, и подскажите, где спросить."
+          },
+          {
+            "id": "acv-03-p4",
+            "kind": "slang",
+            "say": "Where's the loo, love?",
+            "situation": "Hear the Aussie way, pick the plain English.",
+            "situationRu": "Послушайте по-австралийски и выберите то же самое обычным английским.",
+            "answer": "Where is the toilet?",
+            "distractors": [
+              "Where is the lounge?",
+              "Where is my room?"
+            ],
+            "explanation": "",
+            "explanationRu": "the loo = the toilet."
+          },
+          {
+            "id": "acv-03-p5",
+            "kind": "reply",
+            "say": "Can you walk me back to my room? My legs are a bit wobbly.",
+            "situation": "Choose what to say.",
+            "situationRu": "Житель плохо держится на ногах и просит довести его до комнаты. Что сказать?",
+            "answer": "I'm a volunteer, I'm not allowed to do that. I'll get someone for you.",
+            "distractors": [
+              "Sure, lean on me.",
+              "Your room is down the corridor."
+            ],
+            "explanation": "",
+            "explanationRu": "Если человек нетвердо стоит, водить его - работа персонала. Позовите AIN или медсестру."
+          },
+          {
+            "id": "acv-03-p6",
+            "kind": "listen",
+            "say": "Don't forget to sign out.",
+            "situation": "Listen and choose the meaning.",
+            "situationRu": "О чем вам напоминают?",
+            "answer": "Не забудьте отметиться на выходе",
+            "distractors": [
+              "Не забудьте снять бейдж",
+              "Не забудьте записать в журнал"
+            ],
+            "explanation": "",
+            "explanationRu": "sign out - отметиться при выходе."
+          }
+        ],
+        "check": [
+          {
+            "id": "acv-03-c1",
+            "kind": "listen",
+            "say": "The dining room is opposite the lounge.",
+            "situation": "Listen and choose the meaning.",
+            "situationRu": "Где столовая?",
+            "answer": "Напротив гостиной",
+            "distractors": [
+              "Рядом с гостиной",
+              "За гостиной"
+            ],
+            "explanation": "",
+            "explanationRu": "opposite - напротив, через коридор."
+          },
+          {
+            "id": "acv-03-c2",
+            "kind": "reply",
+            "say": null,
+            "situation": "Choose what to say.",
+            "situationRu": "Вы пришли на смену. Что вы делаете сначала?",
+            "answer": "I sign in and put on my badge.",
+            "distractors": [
+              "I go to the lounge and sit down.",
+              "I write in the feedback book."
+            ],
+            "explanation": "",
+            "explanationRu": "Сначала отметиться и надеть бейдж. В журнал отзывов пишут в конце."
+          },
+          {
+            "id": "acv-03-c3",
+            "kind": "listen",
+            "say": "Go straight and turn left.",
+            "situation": "Listen and choose the meaning.",
+            "situationRu": "Вам объясняют дорогу. Куда идти?",
+            "answer": "Прямо, потом налево",
+            "distractors": [
+              "Прямо, потом направо",
+              "Налево, потом прямо"
+            ],
+            "explanation": "",
+            "explanationRu": "go straight - прямо, turn left - поверните налево."
+          },
+          {
+            "id": "acv-03-c4",
+            "kind": "reply",
+            "say": "Could you grab my tablets from my room, love?",
+            "situation": "Choose what to say.",
+            "situationRu": "Житель просит принести ему таблетки из комнаты. Что сказать?",
+            "answer": "I'm a volunteer, I'm not allowed to do that. I'll get someone for you.",
+            "distractors": [
+              "OK, where are they?",
+              "Your room is on the left."
+            ],
+            "explanation": "",
+            "explanationRu": "Лекарства трогает только медсестра, даже просто принести нельзя."
+          },
+          {
+            "id": "acv-03-c5",
+            "kind": "slang",
+            "say": "Ta, see you this arvo.",
+            "situation": "Hear the Aussie way, pick the plain English.",
+            "situationRu": "Послушайте по-австралийски и выберите то же самое обычным английским.",
+            "answer": "Thanks, see you this afternoon.",
+            "distractors": [
+              "Tea, see you this evening.",
+              "Thanks, see you tomorrow."
+            ],
+            "explanation": "",
+            "explanationRu": "Ta = thanks, this arvo = this afternoon."
+          }
+        ]
+      },
+      {
+        "id": "acv-04",
+        "number": 4,
+        "title": "Small talk, Aussie style",
+        "titleRu": "Беседа по-австралийски",
+        "goalRu": "Поддержать легкую беседу 3-5 минут и понимать австралийские разговорные слова.",
+        "words": [
+          {
+            "text": "Lovely day, isn't it?",
+            "translationRu": "Чудесный день, правда?",
+            "noteRu": "Погода - самая безопасная тема для начала разговора."
+          },
+          {
+            "text": "It's hot. It's cold. It's windy. It's rainy.",
+            "translationRu": "Жарко. Холодно. Ветрено. Дождливо."
+          },
+          {
+            "text": "a cuppa",
+            "translationRu": "чашка чая",
+            "noteRu": "Почти всегда это чай.",
+            "aussie": true
+          },
+          {
+            "text": "this arvo",
+            "translationRu": "сегодня после обеда",
+            "noteRu": "arvo = afternoon.",
+            "aussie": true
+          },
+          {
+            "text": "No worries.",
+            "translationRu": "Не за что. Ничего страшного.",
+            "noteRu": "Самая австралийская фраза.",
+            "aussie": true
+          },
+          {
+            "text": "heaps",
+            "translationRu": "очень, много",
+            "noteRu": "heaps of fun - очень весело, heaps better - намного лучше.",
+            "aussie": true
+          },
+          {
+            "text": "I reckon...",
+            "translationRu": "Я думаю...",
+            "aussie": true
+          },
+          {
+            "text": "the footy",
+            "translationRu": "футбол (австралийский)",
+            "noteRu": "Если житель говорит о футболе, достаточно спросить: What team do you like?",
+            "aussie": true
+          },
+          {
+            "text": "grandkids",
+            "translationRu": "внуки",
+            "noteRu": "Разговорное от grandchildren."
+          },
+          {
+            "text": "Do you have any children?",
+            "translationRu": "У вас есть дети?"
+          },
+          {
+            "text": "What did you do for work?",
+            "translationRu": "Кем вы работали?"
+          },
+          {
+            "text": "Where did you grow up?",
+            "translationRu": "Где вы выросли?"
+          },
+          {
+            "text": "That's lovely! Really?",
+            "translationRu": "Как здорово! Правда?"
+          }
+        ],
+        "dialogue": [
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Good morning, Mr Jones. Lovely day, isn't it?",
+            "translationRu": "Доброе утро, мистер Джонс. Чудесный день, правда?"
+          },
+          {
+            "role": "resident",
+            "speaker": "Mr Jones",
+            "text": "G'day, Nina. Yeah, it's a beauty. Bit hot this arvo, I reckon.",
+            "translationRu": "Привет, Нина. Да, красота. Хотя после обеда будет жарковато, я думаю."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Do you like the hot weather?",
+            "translationRu": "Вы любите жару?"
+          },
+          {
+            "role": "resident",
+            "speaker": "Mr Jones",
+            "text": "Not really. I like winter. And the footy! Do you watch the footy?",
+            "translationRu": "Не очень. Я люблю зиму. И футбол! Вы смотрите футбол?"
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "No, not yet. What team do you like?",
+            "translationRu": "Пока нет. За какую команду вы болеете?"
+          },
+          {
+            "role": "resident",
+            "speaker": "Mr Jones",
+            "text": "My team's heaps better than the rest, that's all you need to know!",
+            "translationRu": "Моя команда намного лучше остальных, больше вам знать не нужно!"
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Do you have any children, Mr Jones?",
+            "translationRu": "У вас есть дети, мистер Джонс?"
+          },
+          {
+            "role": "resident",
+            "speaker": "Mr Jones",
+            "text": "Two daughters and five grandkids.",
+            "translationRu": "Две дочери и пятеро внуков."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Five! That's lovely. Do they visit you?",
+            "translationRu": "Пятеро! Как здорово. Они вас навещают?"
+          },
+          {
+            "role": "resident",
+            "speaker": "Mr Jones",
+            "text": "Every Sunday. Hey, can you get me a cuppa?",
+            "translationRu": "Каждое воскресенье. Слушай, принесешь мне чашку чая?"
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "I'm sorry, I'm a volunteer, I'm not allowed. I'll ask the staff for you.",
+            "translationRu": "Простите, я волонтер, мне нельзя. Я попрошу персонал."
+          },
+          {
+            "role": "resident",
+            "speaker": "Mr Jones",
+            "text": "No worries. Ta, love.",
+            "translationRu": "Ничего страшного. Спасибо, дорогая."
+          }
+        ],
+        "tip": {
+          "title": "Questions: What, Where, Who, How many, Do you...?",
+          "ruleRu": "Вопросительное слово в начале, потом do / does / did: What team do you like? Where did you grow up? Вопрос да/нет: Do you like music? После like часто -ing: I like gardening.",
+          "examples": [
+            "What team do you like?",
+            "Where did you grow up?",
+            "Who is in this photo?",
+            "How many grandkids do you have?",
+            "Do you like reading?",
+            "I like gardening."
+          ]
+        },
+        "practice": [
+          {
+            "id": "acv-04-p1",
+            "kind": "slang",
+            "say": "Would you like a cuppa?",
+            "situation": "Hear the Aussie way, pick the plain English.",
+            "situationRu": "Послушайте по-австралийски и выберите то же самое обычным английским.",
+            "answer": "Would you like a cup of tea?",
+            "distractors": [
+              "Would you like a cupcake?",
+              "Would you like to come up?"
+            ],
+            "explanation": "",
+            "explanationRu": "cuppa = a cup of tea."
+          },
+          {
+            "id": "acv-04-p2",
+            "kind": "slang",
+            "say": "I reckon it's going to rain.",
+            "situation": "Hear the Aussie way, pick the plain English.",
+            "situationRu": "Послушайте по-австралийски и выберите то же самое обычным английским.",
+            "answer": "I think it's going to rain.",
+            "distractors": [
+              "I remember it was raining.",
+              "I hope it's not going to rain."
+            ],
+            "explanation": "",
+            "explanationRu": "I reckon = I think."
+          },
+          {
+            "id": "acv-04-p3",
+            "kind": "listen",
+            "say": "Bingo was heaps of fun.",
+            "situation": "Listen and choose the meaning.",
+            "situationRu": "Жительница рассказывает. Что она говорит?",
+            "answer": "Бинго было очень весело",
+            "distractors": [
+              "На бинго было много людей",
+              "Бинго было скучно"
+            ],
+            "explanation": "",
+            "explanationRu": "heaps of fun - очень весело."
+          },
+          {
+            "id": "acv-04-p4",
+            "kind": "listen",
+            "say": "What did you do for work?",
+            "situation": "Listen and choose the meaning.",
+            "situationRu": "Это вопрос жителю. О чем он?",
+            "answer": "Кем вы работали?",
+            "distractors": [
+              "Что вы делаете на работе?",
+              "Где вы сейчас работаете?"
+            ],
+            "explanation": "",
+            "explanationRu": "Вопрос о прошлом (did): кем человек работал раньше."
+          },
+          {
+            "id": "acv-04-p5",
+            "kind": "reply",
+            "say": "These are my grandkids.",
+            "situation": "Choose what to say.",
+            "situationRu": "Жительница показывает фото внуков. Что сказать?",
+            "answer": "Oh, that's lovely! How many grandkids do you have?",
+            "distractors": [
+              "OK. Can I take a photo?",
+              "Are they your children?"
+            ],
+            "explanation": "",
+            "explanationRu": "Реагируйте с интересом и задайте вопрос. Фотографировать жителей нельзя."
+          },
+          {
+            "id": "acv-04-p6",
+            "kind": "reply",
+            "say": "Can you bring me a biscuit, love?",
+            "situation": "Choose what to say.",
+            "situationRu": "Жительница просит печенье. Что сказать?",
+            "answer": "I'm a volunteer, I'm not allowed to do that. I'll get someone for you.",
+            "distractors": [
+              "Sure, chocolate or plain?",
+              "No biscuits for you."
+            ],
+            "explanation": "",
+            "explanationRu": "Даже печенье нельзя: у жителя может быть диета или трудности с глотанием."
+          }
+        ],
+        "check": [
+          {
+            "id": "acv-04-c1",
+            "kind": "listen",
+            "say": "Bit hot this arvo.",
+            "situation": "Listen and choose the meaning.",
+            "situationRu": "Житель говорит о погоде. Что он сказал?",
+            "answer": "Сегодня днем жарковато",
+            "distractors": [
+              "Вчера было жарко",
+              "Утром было холодно"
+            ],
+            "explanation": "",
+            "explanationRu": "this arvo - сегодня после обеда. bit hot - жарковато."
+          },
+          {
+            "id": "acv-04-c2",
+            "kind": "slang",
+            "say": "No worries.",
+            "situation": "Hear the Aussie way, pick the plain English.",
+            "situationRu": "Послушайте по-австралийски и выберите то же самое обычным английским.",
+            "answer": "That's fine, it's OK.",
+            "distractors": [
+              "Don't worry, be happy.",
+              "I'm very worried."
+            ],
+            "explanation": "",
+            "explanationRu": "No worries - все нормально, не за что."
+          },
+          {
+            "id": "acv-04-c3",
+            "kind": "listen",
+            "say": "Where did you grow up?",
+            "situation": "Listen and choose the meaning.",
+            "situationRu": "Вас спрашивают. О чем?",
+            "answer": "Где вы выросли?",
+            "distractors": [
+              "Где вы сейчас живете?",
+              "Куда вы идете?"
+            ],
+            "explanation": "",
+            "explanationRu": "grow up - вырасти. Where did you grow up? - Где прошло ваше детство?"
+          },
+          {
+            "id": "acv-04-c4",
+            "kind": "reply",
+            "say": null,
+            "situation": "Choose what to say.",
+            "situationRu": "Жительница говорит, что была учительницей. Что сказать?",
+            "answer": "Really? What did you teach?",
+            "distractors": [
+              "OK. I'm a volunteer.",
+              "Teachers work hard."
+            ],
+            "explanation": "",
+            "explanationRu": "Покажите интерес и задайте вопрос - так разговор продолжается."
+          },
+          {
+            "id": "acv-04-c5",
+            "kind": "reply",
+            "say": "Get us a cuppa, would you, love?",
+            "situation": "Choose what to say.",
+            "situationRu": "Житель просит чашку чая. Что сказать?",
+            "answer": "I'm a volunteer, I'm not allowed to do that. I'll get someone for you.",
+            "distractors": [
+              "Milk and sugar?",
+              "Get it yourself."
+            ],
+            "explanation": "",
+            "explanationRu": "Даже чай - нельзя. Вежливо откажите и позовите персонал."
+          }
+        ]
+      },
+      {
+        "id": "acv-05",
+        "number": 5,
+        "title": "Activities",
+        "titleRu": "Занятия жителей",
+        "goalRu": "Приглашать жителей на занятия, помогать во время занятия, хвалить и спокойно принимать отказ.",
+        "words": [
+          {
+            "text": "activity, activities",
+            "translationRu": "занятие, занятия"
+          },
+          {
+            "text": "bingo, quiz, word games",
+            "translationRu": "бинго, викторина, игры со словами"
+          },
+          {
+            "text": "exercises",
+            "translationRu": "зарядка"
+          },
+          {
+            "text": "sing-along",
+            "translationRu": "петь вместе"
+          },
+          {
+            "text": "cards, board games, craft",
+            "translationRu": "карты, настольные игры, рукоделие"
+          },
+          {
+            "text": "happy hour",
+            "translationRu": "\"счастливый час\" - общение и напитки",
+            "noteRu": "Напитки на happy hour подает персонал, не волонтер."
+          },
+          {
+            "text": "Would you like to join us?",
+            "translationRu": "Хотите присоединиться?"
+          },
+          {
+            "text": "It starts at half past ten.",
+            "translationRu": "Начинается в 10:30."
+          },
+          {
+            "text": "It's your turn.",
+            "translationRu": "Ваша очередь."
+          },
+          {
+            "text": "Well done!",
+            "translationRu": "Молодец!"
+          },
+          {
+            "text": "Good on you!",
+            "translationRu": "Молодец! Так держать!",
+            "aussie": true
+          },
+          {
+            "text": "That's OK. Maybe next time.",
+            "translationRu": "Ничего страшного. Может, в следующий раз."
+          },
+          {
+            "text": "Let's play!",
+            "translationRu": "Давайте играть!"
+          },
+          {
+            "text": "I don't feel like it.",
+            "translationRu": "Мне не хочется."
+          }
+        ],
+        "dialogue": [
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Good morning, Mrs Kelly! Would you like to play bingo with us?",
+            "translationRu": "Доброе утро, миссис Келли! Хотите поиграть с нами в бинго?"
+          },
+          {
+            "role": "resident",
+            "speaker": "Mrs Kelly",
+            "text": "Oh, I don't like bingo. I'm a bit tired.",
+            "translationRu": "Ой, я не люблю бинго. Я немного устала."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "That's OK. There's music this arvo. Would you like to come?",
+            "translationRu": "Ничего страшного. После обеда будет музыка. Хотите прийти?"
+          },
+          {
+            "role": "resident",
+            "speaker": "Mrs Kelly",
+            "text": "Music? What time does it start?",
+            "translationRu": "Музыка? Во сколько начало?"
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "It starts at half past one, in the lounge.",
+            "translationRu": "В половине второго, в гостиной."
+          },
+          {
+            "role": "resident",
+            "speaker": "Mrs Kelly",
+            "text": "Lovely. Count me in.",
+            "translationRu": "Чудесно. Я приду."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Great! Let's go to the lounge.",
+            "translationRu": "Отлично! Пойдемте в гостиную."
+          },
+          {
+            "role": "resident",
+            "speaker": "Mrs Kelly",
+            "text": "Can you get me a lemonade first, love?",
+            "translationRu": "А можешь сначала принести мне лимонад, дорогая?"
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "I'm a volunteer, I'm not allowed to do that. I'll get someone for you.",
+            "translationRu": "Я волонтер, мне это нельзя. Я позову кого-нибудь."
+          }
+        ],
+        "tip": {
+          "title": "Would you like...? Let's... can",
+          "ruleRu": "Вежливое приглашение: Would you like to + глагол? Предложение \"давайте\": Let's + глагол. can / can't - могу, умею: She can't see the numbers.",
+          "examples": [
+            "Would you like to play bingo?",
+            "Would you like to join us?",
+            "Let's start!",
+            "Let's go to the dining room.",
+            "I can help you with the card.",
+            "She can't see the numbers."
+          ]
+        },
+        "practice": [
+          {
+            "id": "acv-05-p1",
+            "kind": "listen",
+            "say": "I don't feel like bingo today.",
+            "situation": "Listen and choose the meaning.",
+            "situationRu": "Жительница отвечает на приглашение. Что она говорит?",
+            "answer": "Ей сегодня не хочется в бинго",
+            "distractors": [
+              "Она не умеет играть в бинго",
+              "Она хочет играть в бинго весь день"
+            ],
+            "explanation": "",
+            "explanationRu": "I don't feel like... - мне не хочется."
+          },
+          {
+            "id": "acv-05-p2",
+            "kind": "reply",
+            "say": null,
+            "situation": "Choose what to say.",
+            "situationRu": "Житель не хочет идти на занятие. Что сказать?",
+            "answer": "That's OK. Maybe next time.",
+            "distractors": [
+              "Come on, you have to come.",
+              "Why not? Bingo is fun!"
+            ],
+            "explanation": "",
+            "explanationRu": "Не настаивайте. Можно предложить другое занятие."
+          },
+          {
+            "id": "acv-05-p3",
+            "kind": "reply",
+            "say": null,
+            "situation": "Choose what to say.",
+            "situationRu": "Жительница правильно ответила в викторине. Что сказать?",
+            "answer": "Well done!",
+            "distractors": [
+              "It's your turn.",
+              "Let's start!"
+            ],
+            "explanation": "",
+            "explanationRu": "Хвалите: Well done! или Good on you!"
+          },
+          {
+            "id": "acv-05-p4",
+            "kind": "slang",
+            "say": "Good on you!",
+            "situation": "Hear the Aussie way, pick the plain English.",
+            "situationRu": "Послушайте по-австралийски и выберите то же самое обычным английским.",
+            "answer": "Well done!",
+            "distractors": [
+              "Good luck!",
+              "You look good!"
+            ],
+            "explanation": "",
+            "explanationRu": "Good on you! - похвала: молодец."
+          },
+          {
+            "id": "acv-05-p5",
+            "kind": "listen",
+            "say": "I can't see the numbers.",
+            "situation": "Listen and choose the meaning.",
+            "situationRu": "Что говорит жительница?",
+            "answer": "Она не видит числа",
+            "distractors": [
+              "Она не знает числа",
+              "У нее нет карточки"
+            ],
+            "explanation": "",
+            "explanationRu": "can't see - не видит. Можно предложить карточку с крупными цифрами."
+          },
+          {
+            "id": "acv-05-p6",
+            "kind": "reply",
+            "say": "Can you pour me a drink, love? It's happy hour!",
+            "situation": "Choose what to say.",
+            "situationRu": "На happy hour жительница просит налить ей напиток. Что сказать?",
+            "answer": "I'm a volunteer, I'm not allowed to do that. I'll get someone for you.",
+            "distractors": [
+              "Sure, what would you like?",
+              "Only one, OK?"
+            ],
+            "explanation": "",
+            "explanationRu": "Напитки на happy hour подает только персонал."
+          }
+        ],
+        "check": [
+          {
+            "id": "acv-05-c1",
+            "kind": "listen",
+            "say": "What time does it start?",
+            "situation": "Listen and choose the meaning.",
+            "situationRu": "Житель спрашивает про занятие. О чем?",
+            "answer": "Во сколько начало?",
+            "distractors": [
+              "Сколько это длится?",
+              "Где это будет?"
+            ],
+            "explanation": "",
+            "explanationRu": "What time - во сколько. start - начинаться."
+          },
+          {
+            "id": "acv-05-c2",
+            "kind": "listen",
+            "say": "It starts at half past ten.",
+            "situation": "Listen and choose the meaning.",
+            "situationRu": "Когда начало?",
+            "answer": "В 10:30",
+            "distractors": [
+              "В 10:15",
+              "В 9:30"
+            ],
+            "explanation": "",
+            "explanationRu": "half past ten - половина одиннадцатого, 10:30."
+          },
+          {
+            "id": "acv-05-c3",
+            "kind": "reply",
+            "say": null,
+            "situation": "Choose what to say.",
+            "situationRu": "Все сели, пора начинать. Что сказать?",
+            "answer": "Let's start!",
+            "distractors": [
+              "Maybe next time.",
+              "Well done!"
+            ],
+            "explanation": "",
+            "explanationRu": "Let's + глагол: давайте начнем."
+          },
+          {
+            "id": "acv-05-c4",
+            "kind": "reply",
+            "say": null,
+            "situation": "Choose what to say.",
+            "situationRu": "Сейчас очередь миссис Ли бросать мяч. Что сказать?",
+            "answer": "Mrs Lee, it's your turn.",
+            "distractors": [
+              "Mrs Lee, well done.",
+              "Mrs Lee, let's go."
+            ],
+            "explanation": "",
+            "explanationRu": "It's your turn - ваша очередь."
+          },
+          {
+            "id": "acv-05-c5",
+            "kind": "reply",
+            "say": "Give us a hand to stand up, love.",
+            "situation": "Choose what to say.",
+            "situationRu": "Жительница просит помочь ей встать со стула. Что сказать?",
+            "answer": "I'm a volunteer, I'm not allowed to do that. I'll get someone for you.",
+            "distractors": [
+              "Sure, hold my hand.",
+              "You can do it yourself."
+            ],
+            "explanation": "",
+            "explanationRu": "Не поднимать и не пересаживать: зовите персонал."
+          }
+        ]
+      },
+      {
+        "id": "acv-06",
+        "number": 6,
+        "title": "Numbers, time and bingo",
+        "titleRu": "Числа, время и бинго",
+        "goalRu": "Быстро понимать числа 1-90 на слух, говорить время и вести бинго.",
+        "words": [
+          {
+            "text": "thirteen, thirty",
+            "translationRu": "13, 30",
+            "noteRu": "В 13 ударение в конце: thir-TEEN. В 30 - в начале: THIR-ty."
+          },
+          {
+            "text": "fourteen, forty",
+            "translationRu": "14, 40"
+          },
+          {
+            "text": "fifteen, fifty",
+            "translationRu": "15, 50"
+          },
+          {
+            "text": "o'clock, half past",
+            "translationRu": "ровно, половина",
+            "noteRu": "ten o'clock - 10:00, half past ten - 10:30."
+          },
+          {
+            "text": "quarter past, quarter to",
+            "translationRu": "четверть после, без четверти",
+            "noteRu": "quarter past twelve - 12:15, quarter to two - 1:45."
+          },
+          {
+            "text": "bingo card, dabber",
+            "translationRu": "карточка, маркер для бинго"
+          },
+          {
+            "text": "Eyes down!",
+            "translationRu": "Начинаем! (смотрим в карточки)",
+            "aussie": true
+          },
+          {
+            "text": "a line, a full house",
+            "translationRu": "линия, вся карточка"
+          },
+          {
+            "text": "Check, please!",
+            "translationRu": "Проверьте, пожалуйста!"
+          },
+          {
+            "text": "Kelly's eye, number one",
+            "translationRu": "один",
+            "noteRu": "Традиционное \"прозвище\" числа в бинго. Жители их любят.",
+            "aussie": true
+          },
+          {
+            "text": "Legs eleven",
+            "translationRu": "одиннадцать",
+            "aussie": true
+          },
+          {
+            "text": "Two little ducks, twenty-two",
+            "translationRu": "двадцать два",
+            "aussie": true
+          },
+          {
+            "text": "Two fat ladies, eighty-eight",
+            "translationRu": "восемьдесят восемь",
+            "aussie": true
+          },
+          {
+            "text": "Top of the shop, ninety",
+            "translationRu": "девяносто",
+            "aussie": true
+          },
+          {
+            "text": "Was that thirteen or thirty?",
+            "translationRu": "Это было тринадцать или тридцать?"
+          }
+        ],
+        "dialogue": [
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Good morning, everyone! Eyes down!",
+            "translationRu": "Доброе утро всем! Начинаем!"
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Seven, on its own, number seven.",
+            "translationRu": "Семь, одна цифра, номер семь."
+          },
+          {
+            "role": "resident",
+            "speaker": "Mrs Lee",
+            "text": "Was that thirteen or thirty?",
+            "translationRu": "Это было тринадцать или тридцать?"
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Seven, Mrs Lee. Next: one and three, thirteen.",
+            "translationRu": "Семь, миссис Ли. Дальше: один и три, тринадцать."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Legs eleven!",
+            "translationRu": "Ноги, одиннадцать!"
+          },
+          {
+            "role": "resident",
+            "speaker": "Mr Jones",
+            "text": "Bingo! Full house!",
+            "translationRu": "Бинго! Вся карточка!"
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Let me check... Yes! Well done, Mr Jones!",
+            "translationRu": "Сейчас проверю... Да! Молодец, мистер Джонс!"
+          },
+          {
+            "role": "resident",
+            "speaker": "Mr Jones",
+            "text": "Do I get a biscuit for winning, love?",
+            "translationRu": "А мне положено печенье за победу, дорогая?"
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "I'm a volunteer, I'm not allowed to do that. I'll get someone for you.",
+            "translationRu": "Я волонтер, мне это нельзя. Я позову кого-нибудь."
+          }
+        ],
+        "tip": {
+          "title": "at, on, in (time)",
+          "ruleRu": "at + время: at 10 o'clock, at lunchtime. on + день: on Monday, on Wednesday morning. in + часть дня или месяц: in the morning, in December.",
+          "examples": [
+            "Bingo is on Wednesday.",
+            "I arrive at ten o'clock.",
+            "Lunch is at half past twelve.",
+            "Activities start again in the afternoon.",
+            "The choir is once a month, on Friday."
+          ]
+        },
+        "practice": [
+          {
+            "id": "acv-06-p1",
+            "kind": "listen",
+            "say": "Thirty.",
+            "situation": "Listen and choose the meaning.",
+            "situationRu": "Какое число назвали?",
+            "answer": "30",
+            "distractors": [
+              "13",
+              "33"
+            ],
+            "explanation": "",
+            "explanationRu": "THIR-ty - ударение в начале, это 30."
+          },
+          {
+            "id": "acv-06-p2",
+            "kind": "listen",
+            "say": "Fourteen.",
+            "situation": "Listen and choose the meaning.",
+            "situationRu": "Какое число назвали?",
+            "answer": "14",
+            "distractors": [
+              "40",
+              "44"
+            ],
+            "explanation": "",
+            "explanationRu": "four-TEEN - ударение в конце, это 14."
+          },
+          {
+            "id": "acv-06-p3",
+            "kind": "listen",
+            "say": "Legs eleven!",
+            "situation": "Listen and choose the meaning.",
+            "situationRu": "Какое число назвали?",
+            "answer": "11",
+            "distractors": [
+              "7",
+              "17"
+            ],
+            "explanation": "",
+            "explanationRu": "Legs eleven - 11: две цифры похожи на ноги."
+          },
+          {
+            "id": "acv-06-p4",
+            "kind": "listen",
+            "say": "It's quarter to two.",
+            "situation": "Listen and choose the meaning.",
+            "situationRu": "Который час?",
+            "answer": "1:45",
+            "distractors": [
+              "2:15",
+              "2:45"
+            ],
+            "explanation": "",
+            "explanationRu": "quarter to two - без четверти два."
+          },
+          {
+            "id": "acv-06-p5",
+            "kind": "reply",
+            "say": "Was that fifteen or fifty?",
+            "situation": "Choose what to say.",
+            "situationRu": "Вы назвали 50, а житель переспрашивает. Что ответить?",
+            "answer": "Fifty. Five and zero, fifty.",
+            "distractors": [
+              "Fifteen. One and five.",
+              "Yes."
+            ],
+            "explanation": "",
+            "explanationRu": "Повторите число и назовите цифры по отдельности - так не перепутают."
+          },
+          {
+            "id": "acv-06-p6",
+            "kind": "reply",
+            "say": "Can I have a biscuit as a prize, love?",
+            "situation": "Choose what to say.",
+            "situationRu": "Победитель просит печенье в награду. Что сказать?",
+            "answer": "I'm a volunteer, I'm not allowed to do that. I'll get someone for you.",
+            "distractors": [
+              "Of course, you won!",
+              "Only one biscuit."
+            ],
+            "explanation": "",
+            "explanationRu": "Еду дает только персонал, даже как приз."
+          }
+        ],
+        "check": [
+          {
+            "id": "acv-06-c1",
+            "kind": "listen",
+            "say": "Sixty.",
+            "situation": "Listen and choose the meaning.",
+            "situationRu": "Какое число назвали?",
+            "answer": "60",
+            "distractors": [
+              "16",
+              "66"
+            ],
+            "explanation": "",
+            "explanationRu": "SIX-ty - 60."
+          },
+          {
+            "id": "acv-06-c2",
+            "kind": "listen",
+            "say": "Two little ducks!",
+            "situation": "Listen and choose the meaning.",
+            "situationRu": "Какое число назвали?",
+            "answer": "22",
+            "distractors": [
+              "2",
+              "12"
+            ],
+            "explanation": "",
+            "explanationRu": "Two little ducks - 22: двойки похожи на уточек."
+          },
+          {
+            "id": "acv-06-c3",
+            "kind": "listen",
+            "say": "Eighteen.",
+            "situation": "Listen and choose the meaning.",
+            "situationRu": "Какое число назвали?",
+            "answer": "18",
+            "distractors": [
+              "80",
+              "88"
+            ],
+            "explanation": "",
+            "explanationRu": "eigh-TEEN - 18."
+          },
+          {
+            "id": "acv-06-c4",
+            "kind": "listen",
+            "say": "Bingo is on Wednesday at half past ten.",
+            "situation": "Listen and choose the meaning.",
+            "situationRu": "Когда бинго?",
+            "answer": "В среду в 10:30",
+            "distractors": [
+              "Во вторник в 10:30",
+              "В среду в 11:30"
+            ],
+            "explanation": "",
+            "explanationRu": "on Wednesday - в среду, at half past ten - в 10:30."
+          },
+          {
+            "id": "acv-06-c5",
+            "kind": "reply",
+            "say": "Can you take me to the loo before we start?",
+            "situation": "Choose what to say.",
+            "situationRu": "Перед игрой жительница просит отвести ее в туалет. Что сказать?",
+            "answer": "I'm a volunteer, I'm not allowed to do that. I'll get someone for you.",
+            "distractors": [
+              "Quick, let's go now.",
+              "Wait until the end."
+            ],
+            "explanation": "",
+            "explanationRu": "В туалет водит только персонал. Позовите сотрудника, а игру можно подождать."
+          }
+        ]
+      },
+      {
+        "id": "acv-07",
+        "number": 7,
+        "title": "Safety first",
+        "titleRu": "Безопасность",
+        "goalRu": "Знать, что делать и что говорить при падении, пожарной тревоге и в экстренной ситуации. Проверка засчитывается только на 100%.",
+        "words": [
+          {
+            "text": "a fall, to fall, fell",
+            "translationRu": "падение, падать, упал"
+          },
+          {
+            "text": "call bell",
+            "translationRu": "кнопка вызова"
+          },
+          {
+            "text": "emergency",
+            "translationRu": "экстренная ситуация"
+          },
+          {
+            "text": "fire alarm",
+            "translationRu": "пожарная тревога"
+          },
+          {
+            "text": "evacuate, exit",
+            "translationRu": "эвакуироваться, выход"
+          },
+          {
+            "text": "muster point",
+            "translationRu": "место сбора при эвакуации",
+            "noteRu": "Узнайте у координатора, где оно в вашем доме."
+          },
+          {
+            "text": "Triple Zero, 000",
+            "translationRu": "экстренный номер в Австралии",
+            "aussie": true
+          },
+          {
+            "text": "Help! I need a nurse!",
+            "translationRu": "Помогите! Нужна медсестра!"
+          },
+          {
+            "text": "Are you hurt?",
+            "translationRu": "Вам больно? Вы ушиблись?"
+          },
+          {
+            "text": "Stay still. Don't move.",
+            "translationRu": "Не двигайтесь."
+          },
+          {
+            "text": "Help is coming.",
+            "translationRu": "Помощь идет."
+          },
+          {
+            "text": "I'll stay with you.",
+            "translationRu": "Я останусь с вами."
+          },
+          {
+            "text": "He fell in the corridor.",
+            "translationRu": "Он упал в коридоре."
+          },
+          {
+            "text": "I'll take over.",
+            "translationRu": "Дальше я сама.",
+            "noteRu": "Так говорит медсестра, когда берет ситуацию на себя."
+          },
+          {
+            "text": "You're in good hands.",
+            "translationRu": "Вы в надежных руках."
+          }
+        ],
+        "dialogue": [
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Mr Green! Are you OK? Are you hurt?",
+            "translationRu": "Мистер Грин! Вы в порядке? Вам больно?"
+          },
+          {
+            "role": "resident",
+            "speaker": "Mr Green",
+            "text": "Oh... my hip... Help me up, love. I want to get up.",
+            "translationRu": "Ох... бедро... Помоги мне встать, дорогая. Я хочу встать."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Please stay still. Don't move. I'm a volunteer, I'm not allowed to do that. I'll get someone for you.",
+            "translationRu": "Пожалуйста, не двигайтесь. Я волонтер, мне это нельзя. Я позову кого-нибудь."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Help! I need a nurse!",
+            "translationRu": "Помогите! Нужна медсестра!"
+          },
+          {
+            "role": "staff",
+            "speaker": "Nurse",
+            "text": "What happened?",
+            "translationRu": "Что случилось?"
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Mr Green fell in the corridor. He says his hip hurts.",
+            "translationRu": "Мистер Грин упал в коридоре. Он говорит, что у него болит бедро."
+          },
+          {
+            "role": "staff",
+            "speaker": "Nurse",
+            "text": "OK, thank you. I'll take over now.",
+            "translationRu": "Хорошо, спасибо. Дальше я сама."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "The nurse is here, Mr Green. You're in good hands.",
+            "translationRu": "Медсестра здесь, мистер Грин. Вы в надежных руках."
+          }
+        ],
+        "tip": {
+          "title": "Imperative: Stay! Don't move!",
+          "ruleRu": "Просьба или команда - глагол в начале: Stay here. Press the call bell. Запрет: Don't + глагол: Don't move. Don't use the lift. Вежливо - добавьте please.",
+          "examples": [
+            "Please stay still.",
+            "Press the call bell.",
+            "Go to the muster point.",
+            "Don't move.",
+            "Don't lift him.",
+            "Don't use the lift."
+          ]
+        },
+        "practice": [
+          {
+            "id": "acv-07-p1",
+            "kind": "listen",
+            "say": "Oh, my hip... I want to get up.",
+            "situation": "Listen and choose the meaning.",
+            "situationRu": "Упавший житель говорит. Что?",
+            "answer": "У него болит бедро, он хочет встать",
+            "distractors": [
+              "Он хочет пойти домой",
+              "Он хочет пить"
+            ],
+            "explanation": "",
+            "explanationRu": "hip - бедро. Встать ему помогает только персонал."
+          },
+          {
+            "id": "acv-07-p2",
+            "kind": "reply",
+            "say": "Help me up, love.",
+            "situation": "Choose what to say.",
+            "situationRu": "Житель упал и просит помочь встать. Что сказать?",
+            "answer": "Please stay still. I'm a volunteer, I'm not allowed to do that. I'll get someone for you.",
+            "distractors": [
+              "OK, hold my hand and stand up.",
+              "Let me get you a chair."
+            ],
+            "explanation": "",
+            "explanationRu": "Не поднимайте упавшего: можно навредить и ему, и себе. Попросите не двигаться и зовите помощь."
+          },
+          {
+            "id": "acv-07-p3",
+            "kind": "reply",
+            "say": "What happened?",
+            "situation": "Choose what to say.",
+            "situationRu": "Медсестра пришла и спрашивает, что случилось. Что ответить?",
+            "answer": "Mr Green fell in the corridor. He says his hip hurts.",
+            "distractors": [
+              "I don't know. He's fine.",
+              "I helped him up."
+            ],
+            "explanation": "",
+            "explanationRu": "Коротко: кто, где упал и на что жалуется."
+          },
+          {
+            "id": "acv-07-p4",
+            "kind": "reply",
+            "say": "What's that noise? What do I do?",
+            "situation": "Choose what to say.",
+            "situationRu": "Звучит пожарная тревога, жительница испугалась. Что сказать?",
+            "answer": "It's the fire alarm. Stay with me, the staff will tell us what to do.",
+            "distractors": [
+              "Run to the lift, quick!",
+              "It's nothing, don't worry."
+            ],
+            "explanation": "",
+            "explanationRu": "Сохраняйте спокойствие, слушайте персонал, не пользуйтесь лифтом."
+          },
+          {
+            "id": "acv-07-p5",
+            "kind": "listen",
+            "say": "Don't use the lift.",
+            "situation": "Listen and choose the meaning.",
+            "situationRu": "Что говорит персонал при тревоге?",
+            "answer": "Не пользуйтесь лифтом",
+            "distractors": [
+              "Идите к лифту",
+              "Лифт не работает"
+            ],
+            "explanation": "",
+            "explanationRu": "Don't use - не пользуйтесь. При пожаре лифтом нельзя."
+          }
+        ],
+        "check": [
+          {
+            "id": "acv-07-c1",
+            "kind": "listen",
+            "say": "Go to the muster point.",
+            "situation": "Listen and choose the meaning.",
+            "situationRu": "Что говорит персонал?",
+            "answer": "Идите к месту сбора",
+            "distractors": [
+              "Идите на пост медсестер",
+              "Оставайтесь в комнате"
+            ],
+            "explanation": "",
+            "explanationRu": "muster point - место сбора при эвакуации."
+          },
+          {
+            "id": "acv-07-c2",
+            "kind": "reply",
+            "say": null,
+            "situation": "Choose what to say.",
+            "situationRu": "Житель упал, рядом никого нет. Что вы делаете и говорите?",
+            "answer": "Press the call bell and say: Help! I need a nurse!",
+            "distractors": [
+              "Lift him up and sit him on a chair.",
+              "Give him some water."
+            ],
+            "explanation": "",
+            "explanationRu": "Нажмите кнопку вызова и зовите медсестру. Не поднимайте и не давайте воду."
+          },
+          {
+            "id": "acv-07-c3",
+            "kind": "listen",
+            "say": "I'll take over now.",
+            "situation": "Listen and choose the meaning.",
+            "situationRu": "Что сказала медсестра?",
+            "answer": "Дальше она сама",
+            "distractors": [
+              "Она уходит",
+              "Она просит вас помочь поднять"
+            ],
+            "explanation": "",
+            "explanationRu": "I'll take over - я беру это на себя."
+          },
+          {
+            "id": "acv-07-c4",
+            "kind": "reply",
+            "say": "Can I have some water, love? My mouth is dry.",
+            "situation": "Choose what to say.",
+            "situationRu": "Упавший житель просит воды. Что сказать?",
+            "answer": "I'm sorry, I'm not allowed to do that. The nurse is coming.",
+            "distractors": [
+              "Sure, here you go.",
+              "Drink slowly, OK?"
+            ],
+            "explanation": "",
+            "explanationRu": "После падения ничего не давать: ни воды, ни еды. Решает медсестра."
+          },
+          {
+            "id": "acv-07-c5",
+            "kind": "reply",
+            "say": null,
+            "situation": "Choose what to say.",
+            "situationRu": "Вы слышите пожарную тревогу. Что делать?",
+            "answer": "Listen to the staff and use the exit, not the lift.",
+            "distractors": [
+              "Take the lift to the ground floor.",
+              "Go home."
+            ],
+            "explanation": "",
+            "explanationRu": "Слушайте персонал, выход - по лестнице, потом к месту сбора."
+          }
+        ],
+        "passPercent": 100
+      },
+      {
+        "id": "acv-08",
+        "number": 8,
+        "title": "Infection control",
+        "titleRu": "Гигиена и инфекции",
+        "goalRu": "Понимать правила гигиены и знаки на дверях, сообщить о своей болезни и отменить визит.",
+        "words": [
+          {
+            "text": "wash your hands",
+            "translationRu": "мыть руки"
+          },
+          {
+            "text": "hand sanitiser",
+            "translationRu": "антисептик для рук",
+            "noteRu": "Австралийское написание через s: sanitiser."
+          },
+          {
+            "text": "gloves, mask, gown",
+            "translationRu": "перчатки, маска, халат"
+          },
+          {
+            "text": "PPE",
+            "translationRu": "средства индивидуальной защиты",
+            "noteRu": "Personal Protective Equipment."
+          },
+          {
+            "text": "isolation",
+            "translationRu": "изоляция"
+          },
+          {
+            "text": "outbreak",
+            "translationRu": "вспышка инфекции"
+          },
+          {
+            "text": "gastro",
+            "translationRu": "кишечная инфекция",
+            "noteRu": "Разговорное от gastroenteritis.",
+            "aussie": true
+          },
+          {
+            "text": "flu",
+            "translationRu": "грипп"
+          },
+          {
+            "text": "a cough, a sore throat, a runny nose",
+            "translationRu": "кашель, боль в горле, насморк"
+          },
+          {
+            "text": "a temperature",
+            "translationRu": "температура (повышенная)"
+          },
+          {
+            "text": "I feel unwell.",
+            "translationRu": "Я плохо себя чувствую."
+          },
+          {
+            "text": "I'm crook.",
+            "translationRu": "Я заболела.",
+            "noteRu": "crook - больной, плохо себя чувствую.",
+            "aussie": true
+          },
+          {
+            "text": "I can't come in today.",
+            "translationRu": "Я не смогу сегодня прийти."
+          },
+          {
+            "text": "Feel better soon!",
+            "translationRu": "Выздоравливайте!"
+          }
+        ],
+        "dialogue": [
+          {
+            "role": "staff",
+            "speaker": "Megan",
+            "text": "Wellbeing, Megan speaking.",
+            "translationRu": "Отдел досуга, Меган слушает."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Hi Megan, it's Nina, the volunteer. I'm sorry, I'm a bit crook.",
+            "translationRu": "Привет, Меган, это Нина, волонтер. Простите, я немного заболела."
+          },
+          {
+            "role": "staff",
+            "speaker": "Megan",
+            "text": "Oh no! What's wrong?",
+            "translationRu": "Ой! Что случилось?"
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "I have a sore throat and a temperature, so I can't come in today.",
+            "translationRu": "У меня болит горло и температура, поэтому сегодня я не смогу прийти."
+          },
+          {
+            "role": "staff",
+            "speaker": "Megan",
+            "text": "Thanks for letting me know. Please wait until you're symptom-free for 48 hours.",
+            "translationRu": "Спасибо, что предупредили. Пожалуйста, подождите, пока не будет симптомов 48 часов."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "OK. Can I come next Friday?",
+            "translationRu": "Хорошо. Можно прийти в следующую пятницу?"
+          },
+          {
+            "role": "staff",
+            "speaker": "Megan",
+            "text": "Sure, if you feel better. And just so you know, there's gastro on level two, so that wing is in isolation.",
+            "translationRu": "Конечно, если станет лучше. И на всякий случай: на втором этаже кишечная инфекция, это крыло на изоляции."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Got it. I won't go there.",
+            "translationRu": "Поняла. Я туда не пойду."
+          },
+          {
+            "role": "staff",
+            "speaker": "Megan",
+            "text": "Feel better soon!",
+            "translationRu": "Выздоравливайте!"
+          }
+        ],
+        "tip": {
+          "title": "I have a... / I feel... / I can't...",
+          "ruleRu": "I have a + существительное: I have a cough, a sore throat, a temperature. I feel + прилагательное (без a): I feel sick, tired, unwell. I can't + глагол: I can't come in today.",
+          "examples": [
+            "I have a cough.",
+            "I have a sore throat.",
+            "I have a temperature.",
+            "I feel unwell.",
+            "I feel tired.",
+            "I can't come in today."
+          ]
+        },
+        "practice": [
+          {
+            "id": "acv-08-p1",
+            "kind": "listen",
+            "say": "Please see staff before entering this room.",
+            "situation": "Listen and choose the meaning.",
+            "situationRu": "Знак на двери. Что он значит?",
+            "answer": "Перед входом обратитесь к персоналу",
+            "distractors": [
+              "Персонал в этой комнате",
+              "Входить только персоналу с ключом"
+            ],
+            "explanation": "",
+            "explanationRu": "see staff - обратитесь к персоналу. Сами не входите."
+          },
+          {
+            "id": "acv-08-p2",
+            "kind": "listen",
+            "say": "Visiting is restricted.",
+            "situation": "Listen and choose the meaning.",
+            "situationRu": "Объявление на входе. Что оно значит?",
+            "answer": "Посещения ограничены",
+            "distractors": [
+              "Посещения отменены навсегда",
+              "Посетителей ждут в гостиной"
+            ],
+            "explanation": "",
+            "explanationRu": "restricted - ограничены. Спросите на ресепшене, можно ли вам сегодня."
+          },
+          {
+            "id": "acv-08-p3",
+            "kind": "reply",
+            "say": null,
+            "situation": "Choose what to say.",
+            "situationRu": "Утром у вас насморк и температура. Сегодня ваш день визита. Что написать координатору?",
+            "answer": "Hi Megan, I feel unwell. I have a temperature, so I can't come in today.",
+            "distractors": [
+              "Hi Megan, I'll come in, but I'll wear a mask.",
+              "Hi Megan, I'm late today."
+            ],
+            "explanation": "",
+            "explanationRu": "С симптомами не приходите: для пожилых людей это опасно."
+          },
+          {
+            "id": "acv-08-p4",
+            "kind": "slang",
+            "say": "I'm a bit crook today.",
+            "situation": "Hear the Aussie way, pick the plain English.",
+            "situationRu": "Послушайте по-австралийски и выберите то же самое обычным английским.",
+            "answer": "I'm a bit sick today.",
+            "distractors": [
+              "I'm a bit late today.",
+              "I'm a bit busy today."
+            ],
+            "explanation": "",
+            "explanationRu": "crook = sick, нездоров."
+          },
+          {
+            "id": "acv-08-p5",
+            "kind": "reply",
+            "say": "Come in, love, and bring me some water.",
+            "situation": "Choose what to say.",
+            "situationRu": "Жительница в комнате с табличкой STOP зовет вас и просит воды. Что сказать?",
+            "answer": "Sorry, I need to ask the staff first. I'm not allowed to do that.",
+            "distractors": [
+              "OK, I'll be quick.",
+              "Here's your water."
+            ],
+            "explanation": "",
+            "explanationRu": "В комнату на изоляции - только по разрешению персонала. И воду волонтер не дает."
+          }
+        ],
+        "check": [
+          {
+            "id": "acv-08-c1",
+            "kind": "listen",
+            "say": "PPE required: mask and gloves.",
+            "situation": "Listen and choose the meaning.",
+            "situationRu": "Знак на двери. Что нужно?",
+            "answer": "Нужны маска и перчатки",
+            "distractors": [
+              "Нужен халат и бахилы",
+              "Маски не нужны"
+            ],
+            "explanation": "",
+            "explanationRu": "PPE required - нужны средства защиты: маска и перчатки."
+          },
+          {
+            "id": "acv-08-c2",
+            "kind": "reply",
+            "say": null,
+            "situation": "Choose what to say.",
+            "situationRu": "Как правильно сказать, что болит горло?",
+            "answer": "I have a sore throat.",
+            "distractors": [
+              "I feel a sore throat.",
+              "I am a sore throat."
+            ],
+            "explanation": "",
+            "explanationRu": "Существительное - с have a: I have a sore throat."
+          },
+          {
+            "id": "acv-08-c3",
+            "kind": "listen",
+            "say": "Please wait until you're symptom-free for 48 hours.",
+            "situation": "Listen and choose the meaning.",
+            "situationRu": "Что просит координатор?",
+            "answer": "Подождать 48 часов без симптомов",
+            "distractors": [
+              "Прийти через 48 часов в любом случае",
+              "Сдать тест за 48 часов"
+            ],
+            "explanation": "",
+            "explanationRu": "symptom-free for 48 hours - 48 часов без симптомов."
+          },
+          {
+            "id": "acv-08-c4",
+            "kind": "slang",
+            "say": "There's gastro going around.",
+            "situation": "Hear the Aussie way, pick the plain English.",
+            "situationRu": "Послушайте по-австралийски и выберите то же самое обычным английским.",
+            "answer": "There is a stomach bug in the building.",
+            "distractors": [
+              "There is a gas leak in the building.",
+              "There are new residents coming."
+            ],
+            "explanation": "",
+            "explanationRu": "gastro - кишечная инфекция, going around - ходит, распространяется."
+          },
+          {
+            "id": "acv-08-c5",
+            "kind": "reply",
+            "say": "Can you help me put my slippers on, dear?",
+            "situation": "Choose what to say.",
+            "situationRu": "Жительница просит помочь надеть тапочки. Что сказать?",
+            "answer": "I'm a volunteer, I'm not allowed to do that. I'll get someone for you.",
+            "distractors": [
+              "Sure, give me your foot.",
+              "Do it yourself, please."
+            ],
+            "explanation": "",
+            "explanationRu": "Личный уход (одежда, обувь) - работа персонала."
+          }
+        ]
+      },
+      {
+        "id": "acv-09",
+        "number": 9,
+        "title": "Review and test",
+        "titleRu": "Повторение и тест",
+        "goalRu": "Повторить все из блока: полный визит от входа до выхода. Проверка - итоговый тест блока.",
+        "words": [
+          {
+            "text": "I'm a volunteer.",
+            "translationRu": "Я волонтер."
+          },
+          {
+            "text": "How are you going?",
+            "translationRu": "Как дела?",
+            "aussie": true
+          },
+          {
+            "text": "Pardon? Can you say that again slowly, please?",
+            "translationRu": "Простите? Повторите медленнее, пожалуйста."
+          },
+          {
+            "text": "Who can I ask?",
+            "translationRu": "К кому можно обратиться?"
+          },
+          {
+            "text": "It's at the end of the corridor.",
+            "translationRu": "В конце коридора."
+          },
+          {
+            "text": "Would you like to join us?",
+            "translationRu": "Хотите присоединиться?"
+          },
+          {
+            "text": "Well done! Good on you!",
+            "translationRu": "Молодец!",
+            "aussie": true
+          },
+          {
+            "text": "Help! I need a nurse!",
+            "translationRu": "Помогите! Нужна медсестра!"
+          },
+          {
+            "text": "Stay still. Help is coming.",
+            "translationRu": "Не двигайтесь. Помощь идет."
+          },
+          {
+            "text": "I feel unwell, I can't come in today.",
+            "translationRu": "Я плохо себя чувствую, сегодня не приду."
+          },
+          {
+            "text": "Resident B was quieter than usual. I told the nurse.",
+            "translationRu": "Жительница Б была тише обычного. Я сказала медсестре.",
+            "noteRu": "Так пишут в журнал отзывов (feedback book) в конце визита."
+          },
+          {
+            "text": "I'm a volunteer, I'm not allowed to do that. I'll get someone for you.",
+            "translationRu": "Я волонтер, мне это нельзя. Я позову кого-нибудь."
+          }
+        ],
+        "dialogue": [
+          {
+            "role": "staff",
+            "speaker": "Receptionist",
+            "text": "Morning, Nina! Signing in?",
+            "translationRu": "Доброе утро, Нина! Отмечаетесь?"
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Yes, thanks. Where's bingo today?",
+            "translationRu": "Да, спасибо. Где сегодня бинго?"
+          },
+          {
+            "role": "staff",
+            "speaker": "Receptionist",
+            "text": "In the dining room, at half past ten.",
+            "translationRu": "В столовой, в половине одиннадцатого."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "G'day, Mrs Brown! Would you like to play bingo with us?",
+            "translationRu": "Здравствуйте, миссис Браун! Хотите поиграть с нами в бинго?"
+          },
+          {
+            "role": "resident",
+            "speaker": "Mrs Brown",
+            "text": "Not today, love. I didn't sleep well.",
+            "translationRu": "Не сегодня, дорогая. Я плохо спала."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "That's OK. Maybe next time. Have a rest.",
+            "translationRu": "Ничего страшного. Может, в следующий раз. Отдохните."
+          },
+          {
+            "role": "resident",
+            "speaker": "Mr Wilson",
+            "text": "Oh! I've slipped... Help me up, would you?",
+            "translationRu": "Ой! Я поскользнулся... Поможете встать?"
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Please stay still, Mr Wilson. I'm a volunteer, I'm not allowed to do that. I'll get someone for you. Help! I need a nurse!",
+            "translationRu": "Пожалуйста, не двигайтесь, мистер Уилсон. Я волонтер, мне это нельзя. Я позову кого-нибудь. Помогите! Нужна медсестра!"
+          },
+          {
+            "role": "staff",
+            "speaker": "Nurse",
+            "text": "What happened?",
+            "translationRu": "Что случилось?"
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Mr Wilson fell next to the lounge. He says his knee hurts.",
+            "translationRu": "Мистер Уилсон упал рядом с гостиной. Он говорит, что болит колено."
+          },
+          {
+            "role": "staff",
+            "speaker": "Nurse",
+            "text": "Thanks, I'll take over.",
+            "translationRu": "Спасибо, дальше я сама."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Mrs Brown was quieter than usual today. She said she didn't sleep well.",
+            "translationRu": "Миссис Браун сегодня была тише обычного. Сказала, что плохо спала."
+          },
+          {
+            "role": "staff",
+            "speaker": "Nurse",
+            "text": "Thanks for telling me. Please write it in the feedback book too.",
+            "translationRu": "Спасибо, что сказали. Запишите это, пожалуйста, и в журнал."
+          }
+        ],
+        "practice": [
+          {
+            "id": "acv-09-p1",
+            "kind": "listen",
+            "say": "Sorry, love, what was your name again?",
+            "situation": "Listen and choose the meaning.",
+            "situationRu": "Что хочет жительница?",
+            "answer": "Она забыла, как вас зовут",
+            "distractors": [
+              "Она извиняется",
+              "Она спрашивает имя медсестры"
+            ],
+            "explanation": "",
+            "explanationRu": "What was your name again? - напомните, как вас зовут."
+          },
+          {
+            "id": "acv-09-p2",
+            "kind": "reply",
+            "say": null,
+            "situation": "Choose what to say.",
+            "situationRu": "У жителя болит рука. Что вы делаете?",
+            "answer": "I'll tell the nurse.",
+            "distractors": [
+              "I'll look at his arm.",
+              "I'll give him a tablet."
+            ],
+            "explanation": "",
+            "explanationRu": "Здоровье - всегда к медсестре."
+          },
+          {
+            "id": "acv-09-p3",
+            "kind": "slang",
+            "say": "Fancy a cuppa this arvo?",
+            "situation": "Hear the Aussie way, pick the plain English.",
+            "situationRu": "Послушайте по-австралийски и выберите то же самое обычным английским.",
+            "answer": "Would you like a cup of tea this afternoon?",
+            "distractors": [
+              "Do you have a cup this evening?",
+              "Would you like a cupcake tomorrow?"
+            ],
+            "explanation": "",
+            "explanationRu": "fancy - хотите, cuppa - чай, this arvo - сегодня днем."
+          },
+          {
+            "id": "acv-09-p4",
+            "kind": "listen",
+            "say": "Fifty.",
+            "situation": "Listen and choose the meaning.",
+            "situationRu": "Какое число назвали?",
+            "answer": "50",
+            "distractors": [
+              "15",
+              "55"
+            ],
+            "explanation": "",
+            "explanationRu": "FIF-ty - 50."
+          },
+          {
+            "id": "acv-09-p5",
+            "kind": "reply",
+            "say": "Can you help me to the toilet, love?",
+            "situation": "Choose what to say.",
+            "situationRu": "Жительница просит отвести ее в туалет. Что сказать?",
+            "answer": "I'm a volunteer, I'm not allowed to do that. I'll get someone for you.",
+            "distractors": [
+              "Sure, let's go.",
+              "Wait, I'm busy."
+            ],
+            "explanation": "",
+            "explanationRu": "Главное правило блока."
+          },
+          {
+            "id": "acv-09-p6",
+            "kind": "listen",
+            "say": "Outbreak. Visiting restricted. Please contact reception.",
+            "situation": "Listen and choose the meaning.",
+            "situationRu": "Объявление на входе. Что делать?",
+            "answer": "Вспышка инфекции, обратиться на ресепшен",
+            "distractors": [
+              "Выход закрыт, идти к другому входу",
+              "Сегодня праздник, всех ждут"
+            ],
+            "explanation": "",
+            "explanationRu": "outbreak - вспышка, contact reception - обратитесь на ресепшен."
+          }
+        ],
+        "check": [
+          {
+            "id": "acv-09-c1",
+            "kind": "listen",
+            "say": "How are you going today?",
+            "situation": "Listen and choose the meaning.",
+            "situationRu": "Что спрашивает житель?",
+            "answer": "Как у вас дела сегодня?",
+            "distractors": [
+              "Куда вы сегодня идете?",
+              "Как вы сюда приехали?"
+            ],
+            "explanation": "",
+            "explanationRu": "How are you going? - как дела."
+          },
+          {
+            "id": "acv-09-c2",
+            "kind": "listen",
+            "say": "The physio comes on Mondays.",
+            "situation": "Listen and choose the meaning.",
+            "situationRu": "О чем речь?",
+            "answer": "Физиотерапевт приходит по понедельникам",
+            "distractors": [
+              "Врач приходит в понедельник",
+              "Физиотерапевт приходит раз в месяц"
+            ],
+            "explanation": "",
+            "explanationRu": "physio - физиотерапевт, on Mondays - по понедельникам."
+          },
+          {
+            "id": "acv-09-c3",
+            "kind": "listen",
+            "say": "The lounge is opposite the dining room.",
+            "situation": "Listen and choose the meaning.",
+            "situationRu": "Где гостиная?",
+            "answer": "Напротив столовой",
+            "distractors": [
+              "Рядом со столовой",
+              "В конце коридора"
+            ],
+            "explanation": "",
+            "explanationRu": "opposite - напротив."
+          },
+          {
+            "id": "acv-09-c4",
+            "kind": "reply",
+            "say": null,
+            "situation": "Choose what to say.",
+            "situationRu": "Житель не хочет идти на занятие. Что сказать?",
+            "answer": "That's OK. Maybe next time.",
+            "distractors": [
+              "You must come.",
+              "Let's start!"
+            ],
+            "explanation": "",
+            "explanationRu": "Не настаивайте."
+          },
+          {
+            "id": "acv-09-c5",
+            "kind": "listen",
+            "say": "Was that thirteen or thirty?",
+            "situation": "Listen and choose the meaning.",
+            "situationRu": "Что спрашивает жительница?",
+            "answer": "13 или 30?",
+            "distractors": [
+              "13 или 3?",
+              "30 или 33?"
+            ],
+            "explanation": "",
+            "explanationRu": "Повторите число и назовите цифры: one and three, thirteen."
+          },
+          {
+            "id": "acv-09-c6",
+            "kind": "reply",
+            "say": "Help me up, love.",
+            "situation": "Choose what to say.",
+            "situationRu": "Житель упал и просит помочь встать. Что сказать?",
+            "answer": "Please stay still. I'm a volunteer, I'm not allowed to do that. I'll get someone for you.",
+            "distractors": [
+              "OK, give me your hand.",
+              "Sit on this chair."
+            ],
+            "explanation": "",
+            "explanationRu": "Не поднимайте, не двигайте, зовите помощь."
+          },
+          {
+            "id": "acv-09-c7",
+            "kind": "reply",
+            "say": null,
+            "situation": "Choose what to say.",
+            "situationRu": "Медсестра спрашивает, что случилось. Житель упал в столовой, болит колено.",
+            "answer": "Mr Wilson fell in the dining room. He says his knee hurts.",
+            "distractors": [
+              "Mr Wilson is fine now.",
+              "I don't know."
+            ],
+            "explanation": "",
+            "explanationRu": "Кто, где, на что жалуется."
+          },
+          {
+            "id": "acv-09-c8",
+            "kind": "reply",
+            "say": null,
+            "situation": "Choose what to say.",
+            "situationRu": "Вы заболели. Что сказать координатору?",
+            "answer": "I feel unwell, so I can't come in today.",
+            "distractors": [
+              "I have unwell, I come later.",
+              "I'm well, but I'm not coming."
+            ],
+            "explanation": "",
+            "explanationRu": "I feel unwell + I can't come in today."
+          },
+          {
+            "id": "acv-09-c9",
+            "kind": "reply",
+            "say": null,
+            "situation": "Choose what to say.",
+            "situationRu": "В конце визита. Что написать в журнал о тихой жительнице?",
+            "answer": "Mrs Brown was quieter than usual. I told the nurse.",
+            "distractors": [
+              "Mrs Brown is sick. I gave her tea.",
+              "Nothing happened today."
+            ],
+            "explanation": "",
+            "explanationRu": "Пишите факты и что вы сделали: сказали медсестре."
+          },
+          {
+            "id": "acv-09-c10",
+            "kind": "reply",
+            "say": "Get us a cuppa, love?",
+            "situation": "Choose what to say.",
+            "situationRu": "Житель просит чашку чая. Что сказать?",
+            "answer": "I'm a volunteer, I'm not allowed to do that. I'll get someone for you.",
+            "distractors": [
+              "Milk and sugar?",
+              "Later, OK?"
+            ],
+            "explanation": "",
+            "explanationRu": "Даже чай - нельзя."
           }
         ]
       }

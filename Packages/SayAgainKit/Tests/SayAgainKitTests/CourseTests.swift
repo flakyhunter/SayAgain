@@ -56,6 +56,14 @@ struct ShippedCourseTests {
         #expect(course.lessons.first?.number == 1)
     }
 
+    @Test("Block 1 has nine lessons and the safety lesson needs every answer right")
+    func blockOneShape() throws {
+        let course = try #require(try CourseLibrary.bundled().course(id: Course.agedCareVolunteerID))
+        #expect(course.lessons.map(\.number) == Array(1...9))
+        #expect(course.lessons.first { $0.title == "Safety first" }?.passPercent == 100)
+        #expect(course.lessons.last?.check.count ?? 0 >= 10, "The block test is longer than a lesson check")
+    }
+
     @Test("Every lesson has words, a dialogue, practice and a check")
     func everyLessonIsComplete() throws {
         for course in try CourseLibrary.bundled().courses {
