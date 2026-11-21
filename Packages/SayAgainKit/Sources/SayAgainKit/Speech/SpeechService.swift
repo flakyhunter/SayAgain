@@ -37,7 +37,22 @@ public protocol SpeechService: AnyObject {
     /// Voices installed on the device for the locale. May be empty.
     func voices(for locale: String) -> [VoiceOption]
     func speak(_ text: String, voice: VoiceOption?, locale: String, slow: Bool)
+    /// Several lines one after another, each with its own voice (a dialogue). Stops anything playing first.
+    func speak(lines: [SpokenLine], locale: String)
     func stop()
+}
+
+/// One line of a dialogue to read aloud.
+public struct SpokenLine: Equatable, Sendable {
+    public let text: String
+    public let voice: VoiceOption?
+    public let slow: Bool
+
+    public init(text: String, voice: VoiceOption?, slow: Bool) {
+        self.text = text
+        self.voice = voice
+        self.slow = slow
+    }
 }
 
 public struct Utterance: Equatable, Sendable {
@@ -76,6 +91,13 @@ public final class RecordingSpeechService: SpeechService {
 
     public func speak(_ text: String, voice: VoiceOption?, locale: String, slow: Bool) {
         utterances.append(Utterance(text: text, voiceName: voice?.name, locale: locale, slow: slow))
+    }
+
+    public func speak(lines: [SpokenLine], locale: String) {
+        stopCount += 1
+        for line in lines {
+            utterances.append(Utterance(text: line.text, voiceName: line.voice?.name, locale: locale, slow: line.slow))
+        }
     }
 
     public func stop() {

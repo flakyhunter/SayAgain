@@ -23,16 +23,31 @@ final class SystemSpeechService: SpeechService {
             .map { VoiceOption(id: $0.identifier, name: Self.displayName($0.name), quality: $0.quality.rawValue) }
     }
 
+    /// Pause between dialogue lines, so two voices do not run into each other.
+    static let linePause: TimeInterval = 0.6
+
     func speak(_ text: String, voice: VoiceOption?, locale: String, slow: Bool) {
         synthesizer.stopSpeaking(at: .immediate)
+        enqueue(text, voice: voice, locale: locale, slow: slow, pauseAfter: 0)
+    }
+
+    func speak(lines: [SpokenLine], locale: String) {
+        synthesizer.stopSpeaking(at: .immediate)
+        for line in lines {
+            enqueue(line.text, voice: line.voice, locale: locale, slow: line.slow, pauseAfter: Self.linePause)
+        }
+    }
+
+    private func enqueue(_ text: String, voice: VoiceOption?, locale: String, slow: Bool, pauseAfter: TimeInterval) {
         let systemVoice = voice.flatMap { AVSpeechSynthesisVoice(identifier: $0.id) }
             ?? AVSpeechSynthesisVoice(language: locale)
         let phrases = slow ? SpeechChunker.chunks(text) : [text]
-        for phrase in phrases {
+        for (offset, phrase) in phrases.enumerated() {
             let utterance = AVSpeechUtterance(string: phrase)
             utterance.voice = systemVoice
             utterance.rate = slow ? Self.slowRate : Self.normalRate
-            utterance.postUtteranceDelay = slow ? Self.slowPause : 0
+            let last = offset == phrases.count - 1
+            utterance.postUtteranceDelay = max(slow ? Self.slowPause : 0, last ? pauseAfter : 0)
             synthesizer.speak(utterance)
         }
     }

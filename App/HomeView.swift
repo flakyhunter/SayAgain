@@ -31,6 +31,7 @@ struct HomeView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 28) {
                     HeroCard(phrases: tickerPhrases, animated: motion, canStart: !bank.questions.isEmpty)
+                    if !environment.courses.courses.isEmpty { courses }
                     categories
                 }
                 .padding(.horizontal, 20)
@@ -98,6 +99,28 @@ struct HomeView: View {
     private var tickerPhrases: [String] {
         let phrases = bank.questions.flatMap { $0.phrases.map(\.phrase) }
         return phrases.isEmpty ? ["G'day"] : Array(phrases.prefix(8))
+    }
+
+    private var courses: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text("Courses")
+                .font(.title3.bold())
+                .accessibilityAddTraits(.isHeader)
+            ForEach(environment.courses.courses) { course in
+                let passed = progressVersion >= 0 ? course.passedCount(store: environment.courseStore) : 0
+                NavigationLink {
+                    CourseView(environment: environment, course: course)
+                        .onDisappear { progressVersion += 1 }
+                } label: {
+                    CourseCard(course: course, passed: passed)
+                }
+                .buttonStyle(PressableCardStyle(animated: motion))
+                .accessibilityLabel(course.title)
+                .accessibilityValue(CourseCard.progressText(passed: passed, total: course.lessons.count))
+                .accessibilityHint("Opens the lessons")
+                .accessibilityIdentifier(A11yID.Course.card)
+            }
+        }
     }
 
     @ViewBuilder

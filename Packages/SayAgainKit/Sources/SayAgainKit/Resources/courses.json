@@ -1,0 +1,171 @@
+[
+  {
+    "id": "aged-care-volunteer",
+    "title": "Aged care volunteer",
+    "subtitle": "English for your first shifts",
+    "titleRu": "Английский для волонтера в доме престарелых",
+    "locale": "en-AU",
+    "lessons": [
+      {
+        "id": "acv-01",
+        "number": 1,
+        "title": "Meeting a resident",
+        "titleRu": "Знакомство с жителем",
+        "goalRu": "Поздороваться, представиться волонтером, узнать, как обращаться к жителю, и попрощаться.",
+        "words": [
+          { "text": "G'day!", "translationRu": "Привет! Здравствуйте!", "noteRu": "Австралийское приветствие, его говорят и молодые, и пожилые.", "aussie": true },
+          { "text": "Good morning.", "translationRu": "Доброе утро." },
+          { "text": "My name is Nina.", "translationRu": "Меня зовут Нина.", "noteRu": "Подставьте свое имя." },
+          { "text": "I'm a volunteer.", "translationRu": "Я волонтер." },
+          { "text": "What's your name?", "translationRu": "Как вас зовут?" },
+          { "text": "Nice to meet you.", "translationRu": "Приятно познакомиться." },
+          { "text": "How are you going?", "translationRu": "Как дела?", "noteRu": "Так в Австралии спрашивают \"How are you?\". Это не про то, куда вы идете.", "aussie": true },
+          { "text": "Not bad, thanks. And you?", "translationRu": "Неплохо, спасибо. А у вас?" },
+          { "text": "What would you like me to call you?", "translationRu": "Как мне к вам обращаться?", "noteRu": "Сначала Mr + фамилия (мужчина), Mrs (замужняя женщина), Ms (если не знаете). По имени, только если человек сам разрешил: \"Call me Peggy\"." },
+          { "text": "Pardon? Sorry?", "translationRu": "Простите? (не расслышала)" },
+          { "text": "Can you say that again slowly, please?", "translationRu": "Повторите, пожалуйста, медленнее." },
+          { "text": "love, dear", "translationRu": "дорогая, дорогой", "noteRu": "Так часто обращаются пожилые австралийцы. Это дружелюбно, не грубо.", "aussie": true },
+          { "text": "Ta.", "translationRu": "Спасибо.", "aussie": true },
+          { "text": "See you next time.", "translationRu": "До следующего раза." },
+          { "text": "Have a lovely day!", "translationRu": "Хорошего дня!" },
+          { "text": "I'm a volunteer, I'm not allowed to do that. I'll get someone for you.", "translationRu": "Я волонтер, мне это нельзя. Я позову кого-нибудь.", "noteRu": "Главная фраза курса. Волонтер не водит в туалет, не поднимает и не пересаживает, не кормит и не поит (даже чаем), не фотографирует жителей и не дает свой номер телефона." }
+        ],
+        "dialogue": [
+          { "role": "volunteer", "speaker": "Nina", "text": "Good morning! My name is Nina. I'm a volunteer.", "translationRu": "Доброе утро! Меня зовут Нина. Я волонтер." },
+          { "role": "resident", "speaker": "Mrs Brown", "text": "Pardon, love?", "translationRu": "Простите, дорогая?" },
+          { "role": "volunteer", "speaker": "Nina", "text": "My name is Nina. I'm a volunteer.", "translationRu": "Меня зовут Нина. Я волонтер." },
+          { "role": "resident", "speaker": "Mrs Brown", "text": "Oh, hello, Nina. I'm Mrs Brown. Margaret Brown.", "translationRu": "А, здравствуйте, Нина. Я миссис Браун. Маргарет Браун." },
+          { "role": "volunteer", "speaker": "Nina", "text": "Nice to meet you, Mrs Brown. What would you like me to call you?", "translationRu": "Приятно познакомиться, миссис Браун. Как мне к вам обращаться?" },
+          { "role": "resident", "speaker": "Mrs Brown", "text": "Call me Peggy, dear. Everyone does. Where are you from?", "translationRu": "Зовите меня Пегги, дорогая. Все так зовут. Откуда вы?" },
+          { "role": "volunteer", "speaker": "Nina", "text": "I'm from Russia. I'm new here.", "translationRu": "Я из России. Я здесь новенькая." },
+          { "role": "resident", "speaker": "Mrs Brown", "text": "Russia! That's a long way from home. Welcome, love.", "translationRu": "Из России! Далеко же от дома. Добро пожаловать, дорогая." },
+          { "role": "volunteer", "speaker": "Nina", "text": "Thank you. How are you going today, Peggy?", "translationRu": "Спасибо. Как у вас сегодня дела, Пегги?" },
+          { "role": "resident", "speaker": "Mrs Brown", "text": "Not bad, not bad. A bit tired. Could you take me to the loo?", "translationRu": "Неплохо, неплохо. Немного устала. Можете отвести меня в туалет?" },
+          { "role": "volunteer", "speaker": "Nina", "text": "I'm a volunteer, I'm not allowed to do that. I'll get someone for you.", "translationRu": "Я волонтер, мне это нельзя. Я позову кого-нибудь." },
+          { "role": "resident", "speaker": "Mrs Brown", "text": "No worries. Ta, love.", "translationRu": "Ничего страшного. Спасибо, дорогая." },
+          { "role": "volunteer", "speaker": "Nina", "text": "See you next time, Peggy. Have a lovely day!", "translationRu": "До следующего раза, Пегги. Хорошего дня!" }
+        ],
+        "tip": {
+          "title": "to be: am, is, are",
+          "ruleRu": "I + am (I'm), you / we / they + are (you're), he / she + is (she's). Отрицание: I'm not, she isn't, they aren't. Вопрос: глагол вперед - Are you new here?",
+          "examples": [
+            "I'm a volunteer.",
+            "You're new here.",
+            "She's a resident.",
+            "They're in the lounge.",
+            "I'm not tired.",
+            "Are you a nurse? No, I'm not. I'm a volunteer."
+          ]
+        },
+        "practice": [
+          {
+            "id": "acv-01-p1", "kind": "listen", "say": "Pardon, love?",
+            "situation": "A resident answers you.", "situationRu": "Жительница отвечает вам. Что она имеет в виду?",
+            "answer": "Она не расслышала и просит повторить",
+            "distractors": ["Она просит вас уйти", "Она зовет медсестру"],
+            "explanation": "\"Pardon?\" means \"say it again, please\". \"Love\" is just friendly.",
+            "explanationRu": "\"Pardon?\" значит \"повторите, пожалуйста\". \"Love\" - просто дружелюбное обращение. Повторите медленнее и громче."
+          },
+          {
+            "id": "acv-01-p2", "kind": "listen", "say": "How are you going today?",
+            "situation": "A resident asks you a question.", "situationRu": "Житель задает вам вопрос. О чем он спрашивает?",
+            "answer": "Как у вас сегодня дела?",
+            "distractors": ["Куда вы сегодня идете?", "Как вы сюда добрались?"],
+            "explanation": "\"How are you going?\" is the Aussie \"How are you?\".",
+            "explanationRu": "\"How are you going?\" - австралийское \"Как дела?\". Ответ: \"Good, thanks. And you?\""
+          },
+          {
+            "id": "acv-01-p3", "kind": "reply", "say": null,
+            "situation": "You meet a resident for the first time.", "situationRu": "Вы впервые подходите к жителю. Что сказать?",
+            "answer": "Good morning! My name is Nina. I'm a volunteer.",
+            "distractors": ["Hey you! What's your name?", "Good night! I'm a nurse."],
+            "explanation": "Greet, say your name and that you are a volunteer.",
+            "explanationRu": "Поздоровайтесь, назовите имя и скажите, что вы волонтер. Вы не медсестра, это важно сказать сразу."
+          },
+          {
+            "id": "acv-01-p4", "kind": "slang", "say": "G'day! How are you going?",
+            "situation": "Hear the Aussie way, pick the plain English.", "situationRu": "Послушайте по-австралийски и выберите то же самое обычным английским.",
+            "answer": "Hello! How are you?",
+            "distractors": ["Good day! Where are you going?", "Goodbye! Are you leaving?"],
+            "explanation": "G'day = hello. How are you going = how are you.",
+            "explanationRu": "G'day = hello, How are you going = how are you. Это приветствие, а не прощание."
+          },
+          {
+            "id": "acv-01-p5", "kind": "reply", "say": "Could you take me to the loo, love?",
+            "situation": "A resident asks you to take her to the toilet.", "situationRu": "Жительница просит отвести ее в туалет (the loo). Что сказать?",
+            "answer": "I'm a volunteer, I'm not allowed to do that. I'll get someone for you.",
+            "distractors": ["Sure, let's go.", "No. Ask someone else."],
+            "explanation": "Volunteers don't help in the toilet. Say it kindly and get a staff member.",
+            "explanationRu": "Волонтер не водит в туалет. Откажите вежливо и сразу позовите персонал."
+          },
+          {
+            "id": "acv-01-p6", "kind": "listen", "say": "Where are you from, dear?",
+            "situation": "A resident asks you a question.", "situationRu": "Жительница задает вопрос. О чем она спрашивает?",
+            "answer": "Откуда вы?",
+            "distractors": ["Где вы живете здесь?", "Куда вы идете?"],
+            "explanation": "\"Where are you from?\" asks about your home country.",
+            "explanationRu": "\"Where are you from?\" - про страну, откуда вы. Ответ: \"I'm from Russia\" (или ваша страна)."
+          },
+          {
+            "id": "acv-01-p7", "kind": "reply", "say": null,
+            "situation": "You are leaving the lounge.", "situationRu": "Вы уходите из гостиной. Что сказать жителю на прощание?",
+            "answer": "See you next time. Have a lovely day!",
+            "distractors": ["Nice to meet you!", "Good morning!"],
+            "explanation": "\"See you next time\" is a goodbye. \"Nice to meet you\" is for the first hello.",
+            "explanationRu": "\"See you next time\" - прощание. \"Nice to meet you\" говорят при знакомстве."
+          }
+        ],
+        "check": [
+          {
+            "id": "acv-01-c1", "kind": "listen", "say": "Sorry, love, what was your name again?",
+            "situation": "A resident speaks to you.", "situationRu": "Жительница говорит с вами. Чего она хочет?",
+            "answer": "Она забыла, как вас зовут, и спрашивает снова",
+            "distractors": ["Она извиняется, что опоздала", "Она спрашивает, как зовут медсестру"],
+            "explanation": "\"What was your name again?\" means she forgot your name.",
+            "explanationRu": "\"What was your name again?\" - \"напомните, как вас зовут\". Спокойно назовите имя еще раз."
+          },
+          {
+            "id": "acv-01-c2", "kind": "reply", "say": "Call me Bob.",
+            "situation": "Mr Wilson says: \"Call me Bob.\"", "situationRu": "Мистер Уилсон говорит: \"Call me Bob\". Что ответить?",
+            "answer": "Nice to meet you, Bob.",
+            "distractors": ["Nice to meet you, Mr Bob.", "OK, Mr Wilson."],
+            "explanation": "He said you can use his first name, so just Bob.",
+            "explanationRu": "Он разрешил называть себя по имени, значит просто Bob. \"Mr\" ставят только перед фамилией."
+          },
+          {
+            "id": "acv-01-c3", "kind": "slang", "say": "Not bad, ta.",
+            "situation": "Hear the Aussie way, pick the plain English.", "situationRu": "Послушайте по-австралийски и выберите то же самое обычным английским.",
+            "answer": "Not bad, thanks.",
+            "distractors": ["Not bad, take it.", "Not bad, a cup of tea."],
+            "explanation": "Ta = thanks.",
+            "explanationRu": "Ta = thanks, коротко \"спасибо\"."
+          },
+          {
+            "id": "acv-01-c4", "kind": "reply", "say": "Could you get me a cup of tea, love?",
+            "situation": "A resident asks you for a cup of tea.", "situationRu": "Житель просит принести чай. Что сказать?",
+            "answer": "I'm a volunteer, I'm not allowed to do that. I'll get someone for you.",
+            "distractors": ["Of course! Milk and sugar?", "Make it yourself, please."],
+            "explanation": "Volunteers don't give food or drinks, not even tea.",
+            "explanationRu": "Волонтер не кормит и не поит, даже чаем: у жителя может быть диета или риск подавиться. Позовите персонал."
+          },
+          {
+            "id": "acv-01-c5", "kind": "listen", "say": "I'm a bit tired today, love.",
+            "situation": "A resident tells you something.", "situationRu": "Жительница что-то говорит. Что именно?",
+            "answer": "Она сегодня немного устала",
+            "distractors": ["Она хочет, чтобы вы ушли", "Сегодня у нее день рождения"],
+            "explanation": "\"A bit tired\" means a little tired.",
+            "explanationRu": "\"A bit tired\" - немного устала. Можно ответить: \"Oh, I'm sorry. Have a rest.\""
+          },
+          {
+            "id": "acv-01-c6", "kind": "reply", "say": null,
+            "situation": "A resident speaks fast and you don't understand.", "situationRu": "Житель говорит быстро, вы не поняли. Что сказать?",
+            "answer": "Sorry? Can you say that again slowly, please?",
+            "distractors": ["Yes, yes.", "I don't speak English."],
+            "explanation": "Always ask again. Saying \"yes\" without understanding can be unsafe.",
+            "explanationRu": "Всегда переспрашивайте. Сказать \"yes\", не поняв, бывает опасно: житель мог сказать, что ему плохо."
+          }
+        ]
+      }
+    ]
+  }
+]

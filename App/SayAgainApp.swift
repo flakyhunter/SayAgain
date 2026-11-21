@@ -25,6 +25,9 @@ struct SayAgainApp: App {
 @MainActor
 struct AppEnvironment {
     let bank: QuestionBank
+    /// Step-by-step courses shown above the categories.
+    let courses: CourseLibrary
+    let courseStore: CourseProgressStore
     let isUITesting: Bool
     let speech: SpeechService
     let store: ProgressStore
@@ -49,10 +52,15 @@ struct AppEnvironment {
             let dictation: DictationService = arguments.contains(LaunchArgument.liveDictation)
                 ? SystemDictationService()
                 : ScriptedDictationService()
-            return .testing(bank: bank, feedback: feedback, dictation: dictation)
+            let courses = arguments.contains(LaunchArgument.bundledContent)
+                ? (try? CourseLibrary.bundled()) ?? .fixture
+                : .fixture
+            return .testing(bank: bank, courses: courses, feedback: feedback, dictation: dictation)
         }
         return AppEnvironment(
             bank: (try? QuestionBank.bundled()) ?? QuestionBank(questions: []),
+            courses: (try? CourseLibrary.bundled()) ?? CourseLibrary(courses: []),
+            courseStore: UserDefaultsCourseProgressStore(),
             isUITesting: false,
             speech: SystemSpeechService(),
             store: UserDefaultsProgressStore(),
@@ -66,12 +74,15 @@ struct AppEnvironment {
     /// Deterministic environment: fixture content, silent speech, fresh progress, fixed seed.
     static func testing(
         bank: QuestionBank = .fixture,
+        courses: CourseLibrary = .fixture,
         speech: SpeechService = RecordingSpeechService(),
         feedback: FeedbackService? = ScriptedFeedbackService(),
         dictation: DictationService = ScriptedDictationService()
     ) -> AppEnvironment {
         AppEnvironment(
             bank: bank,
+            courses: courses,
+            courseStore: InMemoryCourseProgressStore(),
             isUITesting: true,
             speech: speech,
             store: InMemoryProgressStore(),
@@ -87,6 +98,13 @@ struct AppEnvironment {
         guard let value = info?["SAFeedbackEndpoint"] as? String, !value.isEmpty,
               let url = URL(string: value), url.scheme != nil else { return nil }
         return RemoteFeedbackService(endpoint: url)
+    }
+
+    func makeLesson(_ lesson: Lesson, in course: Course) -> LessonViewModel {
+        LessonViewModel(
+            course: course, lesson: lesson, speech: speech, store: courseStore,
+            seed: makeSeed(), animated: animated
+        )
     }
 
     func makeSession(category: QuestionCategory?) -> SessionViewModel {
