@@ -100,6 +100,29 @@ public enum A11yID {
         public static let startOverButton = "summary.startOver"
         public static let doneButton = "summary.done"
     }
+
+    public enum Course {
+        public static let card = "course.card"
+        public static let list = "course.list"
+        public static let resetButton = "course.reset"
+        public static func lessonRow(_ number: Int) -> String { "course.lesson.\(number)" }
+    }
+
+    public enum Lesson {
+        public static let step = "lesson.step"
+        public static let continueButton = "lesson.continue"
+        public static let playAllButton = "lesson.playAll"
+        public static let exercisePlay = "lesson.exercise.play"
+        public static let explanation = "lesson.explanation"
+        public static let nextButton = "lesson.next"
+        public static let result = "lesson.result"
+        public static let retryButton = "lesson.retry"
+        public static let nextLessonButton = "lesson.nextLesson"
+        public static let doneButton = "lesson.done"
+        public static func word(_ index: Int) -> String { "lesson.word.\(index)" }
+        public static func line(_ index: Int) -> String { "lesson.line.\(index)" }
+        public static func choice(_ index: Int) -> String { "lesson.choice.\(index)" }
+    }
 }
 
 public extension QuestionBank {
@@ -136,4 +159,42 @@ public extension QuestionBank {
             sampleAnswer: "I listen first, then show the facts and the impact on users."
         )
     ])
+}
+
+public extension CourseLibrary {
+    /// A tiny two-lesson course for UI and snapshot tests, independent of the shipped JSON.
+    static let fixture: CourseLibrary = {
+        func exercise(_ id: String, kind: Exercise.Kind, say: String?, answer: String, distractors: [String]) -> Exercise {
+            Exercise(id: id, kind: kind, say: say, situation: "A resident speaks.", situationRu: "Житель говорит.",
+                     answer: answer, distractors: distractors, explanation: "Because.", explanationRu: "Потому что.")
+        }
+        func lesson(_ number: Int, title: String) -> Lesson {
+            Lesson(
+                id: "fixture-l\(number)", number: number, title: title, titleRu: "Урок \(number)",
+                goalRu: "Цель урока \(number).",
+                words: [
+                    VocabItem(text: "G'day!", translationRu: "Привет!", aussie: true),
+                    VocabItem(text: "I'm a volunteer.", translationRu: "Я волонтер.")
+                ],
+                dialogue: [
+                    DialogueLine(role: .volunteer, speaker: "Nina", text: "Good morning!", translationRu: "Доброе утро!"),
+                    DialogueLine(role: .resident, speaker: "Mrs Brown", text: "Pardon, love?", translationRu: "Простите, дорогая?")
+                ],
+                tip: GrammarTip(title: "to be", ruleRu: "I am, you are, she is.", examples: ["I'm a volunteer."]),
+                practice: [exercise("fixture-l\(number)-p1", kind: .listen, say: "Pardon, love?",
+                                    answer: "Просит повторить", distractors: ["Просит уйти", "Зовет медсестру"])],
+                check: [
+                    exercise("fixture-l\(number)-c1", kind: .reply, say: nil,
+                             answer: "I'm a volunteer, I'm not allowed to do that.", distractors: ["Sure.", "No."]),
+                    exercise("fixture-l\(number)-c2", kind: .slang, say: "Ta.",
+                             answer: "Thanks.", distractors: ["Tea.", "Take it."])
+                ]
+            )
+        }
+        return CourseLibrary(courses: [Course(
+            id: Course.agedCareVolunteerID, title: "Aged care volunteer", subtitle: "English for your first shifts",
+            titleRu: "Английский для волонтера", locale: "en-AU",
+            lessons: [lesson(1, title: "Meeting a resident"), lesson(2, title: "Who's who")]
+        )])
+    }()
 }

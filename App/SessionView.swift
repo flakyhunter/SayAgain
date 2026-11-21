@@ -240,7 +240,7 @@ private struct ListenCard: View {
 
 // MARK: - Choices
 
-private struct ChoiceButton: View {
+struct ChoiceButton: View {
     enum State { case idle, correct, wrong, dimmed }
 
     let text: String
