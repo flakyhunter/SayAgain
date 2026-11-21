@@ -18,8 +18,8 @@
 
   <section>
     <h2>In short</h2>
-    <p>Say Again does not collect, store or share any personal data. There are no accounts, no ads,
-    no analytics and no tracking.</p>
+    <p>Say Again has no accounts, no ads, no analytics and no tracking. The only thing that ever
+    leaves your iPhone is text you choose to send for AI feedback, described below.</p>
   </section>
 
   <section>
@@ -34,20 +34,43 @@
 
   <section>
     <h2>Speech</h2>
-    <p>Questions and answers are read aloud by the voices built into iOS, on your device.
-    The app does not use the microphone and does not record you.</p>
+    <p>Questions and answers are read aloud by the voices built into iOS, on your device.</p>
+    <p>The microphone is used only when you tap the microphone button to dictate your answer.
+    Your speech is turned into text by Apple's speech recognition running on your iPhone; the
+    app requires on-device recognition, so the audio is never sent anywhere and is not saved.
+    The text appears in the box, and it is sent for AI feedback only when you tap Check.</p>
   </section>
 
   <section>
+    <h2>AI feedback (optional)</h2>
+    <p>In practice you can tap "Or say it in your own words" and type what you think the interviewer
+    asked. The app asks for your permission the first time. If you allow it:</p>
+    <ul>
+      <li>Your typed text and the id of the question are sent to the Say Again server
+      (a Cloudflare Worker) and from there to Claude, an AI model by Anthropic, which checks it.</li>
+      <li>Nothing else is sent: no name, no account, no device id, no progress.</li>
+      <li>The Say Again server does not store or log your text. Like any web server, Cloudflare sees
+      your IP address; the server uses it only to limit how many checks one connection can make
+      per minute.</li>
+      <li>Anthropic processes the text under its
+      <a href="https://www.anthropic.com/legal/commercial-terms">commercial terms</a> and
+      <a href="https://www.anthropic.com/legal/privacy">privacy policy</a> and does not use it to
+      train its models.</li>
+    </ul>
+    <p>Please don't type personal details. You can turn AI feedback off at any time in
+    Settings &gt; AI feedback. If you never use it, nothing is sent.</p>
+  </section>
+  <section>
     <h2>Children</h2>
-    <p>The app includes a category for children starting school. It collects no data from anyone, including children.</p>
+    <p>The app includes a category for children starting school. AI feedback is not available in
+    that category, so nothing from it ever leaves the device.</p>
   </section>
 
   <section>
     <h2>Changes and contact</h2>
     <p>If this policy changes, the new version will be published on this page.
     Questions: open an issue on <a href="https://github.com/flakyhunter/SayAgain/issues">GitHub</a>.</p>
-    <p class="muted">Last updated: 13 November 2026.</p>
+    <p class="muted">Last updated: 15 November 2026.</p>
   </section>
 
   <nav><a href="index.html">Support</a> &middot; <a href="https://github.com/flakyhunter/SayAgain">Source code</a></nav>

@@ -32,6 +32,8 @@ public struct PracticeSession: Sendable {
     public private(set) var index = 0
     public private(set) var choices: [String] = []
     public private(set) var selectedChoice: String?
+    /// Set when the learner retold the question in their own words instead of picking a choice.
+    public private(set) var retellVerdict: FeedbackVerdict?
     public private(set) var phase: Phase
     public private(set) var outcomes: [Outcome] = []
     private var generator: SeededGenerator
@@ -79,6 +81,20 @@ public struct PracticeSession: Sendable {
         phase = .revealed(choiceCorrect: choice == current.gist)
     }
 
+    /// Reveals the question after an AI check of the learner's own words.
+    /// Understood and partly count as a correct answer, missed as a wrong one.
+    public mutating func retell(verdict: FeedbackVerdict) {
+        guard phase == .answering else { return }
+        retellVerdict = verdict
+        phase = .revealed(choiceCorrect: verdict != .missed)
+    }
+
+    /// The rating "Next" should give: the retelling verdict if there is one, else the choice.
+    public var suggestedRating: Rating? {
+        guard case let .revealed(choiceCorrect) = phase else { return nil }
+        return retellVerdict?.rating ?? (choiceCorrect ? .gotIt : .missed)
+    }
+
     /// Rates the revealed question and moves on. A wrong choice always counts as missed.
     @discardableResult
     public mutating func rate(_ rating: Rating) -> Outcome? {
@@ -91,6 +107,7 @@ public struct PracticeSession: Sendable {
         outcomes.append(outcome)
         index += 1
         selectedChoice = nil
+        retellVerdict = nil
         phase = index < questions.count ? .answering : .finished
         prepareChoices()
         return outcome

@@ -10,6 +10,12 @@ final class AppSettings {
         static let slowByDefault = "settings.slowByDefault"
         static let categoryOrder = "settings.categoryOrder"
         static let showRussian = "settings.showRussian"
+        static let aiFeedback = "settings.aiFeedback"
+    }
+
+    /// Whether the learner agreed to send their own words for an AI check.
+    enum AIFeedbackConsent: String {
+        case notAsked, allowed, declined
     }
 
     @ObservationIgnored private let defaults: UserDefaults
@@ -29,8 +35,14 @@ final class AppSettings {
         didSet { defaults.set(showRussian, forKey: Key.showRussian) }
     }
 
+    /// Asked once, the first time the learner tries to check their own words. Changeable in Settings.
+    var aiFeedback: AIFeedbackConsent {
+        didSet { defaults.set(aiFeedback.rawValue, forKey: Key.aiFeedback) }
+    }
+
     init(defaults: UserDefaults) {
         self.defaults = defaults
+        aiFeedback = defaults.string(forKey: Key.aiFeedback).flatMap(AIFeedbackConsent.init) ?? .notAsked
         showRussian = defaults.bool(forKey: Key.showRussian)
         slowByDefault = defaults.bool(forKey: Key.slowByDefault)
         categoryOrder = CategoryOrder.resolve(saved: defaults.stringArray(forKey: Key.categoryOrder) ?? [])

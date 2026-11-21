@@ -1,3 +1,4 @@
+import Foundation
 import SayAgainKit
 import SwiftUI
 import UIKit
@@ -28,6 +29,10 @@ struct AppEnvironment {
     let speech: SpeechService
     let store: ProgressStore
     let settings: AppSettings
+    /// Checks the learner's own words. Nil when no Worker is configured for this build.
+    let feedback: FeedbackService?
+    /// Speech to text for the retelling. On the device only.
+    let dictation: DictationService
     /// Fixed in UI-test mode, random otherwise.
     let makeSeed: () -> UInt64
 
@@ -38,7 +43,13 @@ struct AppEnvironment {
             let bank = arguments.contains(LaunchArgument.bundledContent)
                 ? (try? QuestionBank.bundled()) ?? .fixture
                 : .fixture
-            return .testing(bank: bank)
+            let feedback: FeedbackService? = arguments.contains(LaunchArgument.liveFeedback)
+                ? configuredFeedbackService()
+                : ScriptedFeedbackService()
+            let dictation: DictationService = arguments.contains(LaunchArgument.liveDictation)
+                ? SystemDictationService()
+                : ScriptedDictationService()
+            return .testing(bank: bank, feedback: feedback, dictation: dictation)
         }
         return AppEnvironment(
             bank: (try? QuestionBank.bundled()) ?? QuestionBank(questions: []),
@@ -46,6 +57,8 @@ struct AppEnvironment {
             speech: SystemSpeechService(),
             store: UserDefaultsProgressStore(),
             settings: AppSettings(defaults: .standard),
+            feedback: configuredFeedbackService(),
+            dictation: SystemDictationService(),
             makeSeed: { UInt64.random(in: .min ... .max) }
         )
     }
@@ -53,7 +66,9 @@ struct AppEnvironment {
     /// Deterministic environment: fixture content, silent speech, fresh progress, fixed seed.
     static func testing(
         bank: QuestionBank = .fixture,
-        speech: SpeechService = RecordingSpeechService()
+        speech: SpeechService = RecordingSpeechService(),
+        feedback: FeedbackService? = ScriptedFeedbackService(),
+        dictation: DictationService = ScriptedDictationService()
     ) -> AppEnvironment {
         AppEnvironment(
             bank: bank,
@@ -61,8 +76,17 @@ struct AppEnvironment {
             speech: speech,
             store: InMemoryProgressStore(),
             settings: .ephemeral(),
+            feedback: feedback,
+            dictation: dictation,
             makeSeed: { LaunchArgument.uiTestingSeed }
         )
+    }
+
+    /// The Worker URL comes from the `FEEDBACK_ENDPOINT` build setting (see project.yml).
+    static func configuredFeedbackService(info: [String: Any]? = Bundle.main.infoDictionary) -> FeedbackService? {
+        guard let value = info?["SAFeedbackEndpoint"] as? String, !value.isEmpty,
+              let url = URL(string: value), url.scheme != nil else { return nil }
+        return RemoteFeedbackService(endpoint: url)
     }
 
     func makeSession(category: QuestionCategory?) -> SessionViewModel {
@@ -73,7 +97,10 @@ struct AppEnvironment {
             slow: settings.slowByDefault,
             category: category,
             bank: bank,
-            animated: animated
+            animated: animated,
+            feedback: feedback,
+            settings: settings,
+            dictation: dictation
         )
     }
 }

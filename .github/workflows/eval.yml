@@ -1,0 +1,44 @@
+name: LLM eval
+
+# Runs the Promptfoo eval for the retelling checker when the prompt, model or eval cases
+# change, and on demand. Costs about $1 per run, so it does not run on every push.
+on:
+  pull_request:
+    paths:
+      - server/src/prompt.ts
+      - server/src/feedback.ts
+      - server/eval/**
+  workflow_dispatch:
+
+jobs:
+  eval:
+    name: Promptfoo eval (Claude)
+    runs-on: ubuntu-latest
+    env:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      PROMPTFOO_DISABLE_TELEMETRY: "1"
+    defaults:
+      run:
+        working-directory: server
+    steps:
+      - uses: actions/checkout@v5
+      - name: Skip without an API key
+        if: env.ANTHROPIC_API_KEY == ''
+        run: echo "::notice::ANTHROPIC_API_KEY secret is not set, eval skipped"
+      - uses: actions/setup-node@v5
+        if: env.ANTHROPIC_API_KEY != ''
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: server/package-lock.json
+      - if: env.ANTHROPIC_API_KEY != ''
+        run: npm ci
+      - name: Run eval and check thresholds
+        if: env.ANTHROPIC_API_KEY != ''
+        run: npm run eval
+      - uses: actions/upload-artifact@v5
+        if: always() && env.ANTHROPIC_API_KEY != ''
+        with:
+          name: eval-results
+          path: server/eval/output/results.json
+          retention-days: 30

@@ -10,6 +10,25 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  worker-tests:
+    name: Worker tests (TypeScript)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: server
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: server/package-lock.json
+      - run: npm ci
+      - name: Questions in the Worker match the app
+        run: npm run check-questions
+      - run: npm run typecheck
+      - run: npm test
+
   package-tests:
     name: Unit tests (SayAgainKit)
     runs-on: macos-26

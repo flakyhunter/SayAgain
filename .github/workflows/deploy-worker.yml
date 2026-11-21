@@ -1,0 +1,39 @@
+name: Deploy Worker
+
+# Deploys server/ to Cloudflare after the Worker tests pass. Needs the CLOUDFLARE_API_TOKEN
+# and CLOUDFLARE_ACCOUNT_ID secrets. ANTHROPIC_API_KEY is stored in Cloudflare
+# (`wrangler secret put`), not here.
+on:
+  push:
+    branches: [main]
+    paths: [server/**]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-worker
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    defaults:
+      run:
+        working-directory: server
+    steps:
+      - uses: actions/checkout@v5
+      - name: Skip without Cloudflare credentials
+        if: env.CLOUDFLARE_API_TOKEN == ''
+        run: echo "::notice::Cloudflare secrets are not set, deploy skipped"
+      - uses: actions/setup-node@v5
+        if: env.CLOUDFLARE_API_TOKEN != ''
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: server/package-lock.json
+      - if: env.CLOUDFLARE_API_TOKEN != ''
+        run: npm ci && npm run check-questions && npm test
+      - if: env.CLOUDFLARE_API_TOKEN != ''
+        run: npx wrangler deploy

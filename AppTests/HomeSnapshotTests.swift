@@ -52,7 +52,11 @@ struct HomeSnapshotTests {
             }
         }
         .frame(width: 640)
-        assertSnapshot(of: Snapshot.host(grid), as: .image(precision: 0.99, perceptualPrecision: 0.98, size: CGSize(width: 640, height: 640)))
+        // Photo icons are downscaled by the system, and iOS versions resample them a little
+        // differently (local 26.1 vs CI 26.5: 0.17% of pixels differ by more than deltaE 20).
+        // perceptualPrecision 0.8 absorbs that noise; precision 0.995 still fails if a single
+        // icon (0.77% of the image) is missing or wrong.
+        assertSnapshot(of: Snapshot.host(grid), as: .image(precision: 0.995, perceptualPrecision: 0.8, size: CGSize(width: 640, height: 640)))
     }
 
     @Test func emptyState() {

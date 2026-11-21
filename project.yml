@@ -38,9 +38,21 @@ targets:
         UILaunchScreen: {}
         UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
         ITSAppUsesNonExemptEncryption: false
+        SAFeedbackEndpoint: $(FEEDBACK_ENDPOINT)
+        NSMicrophoneUsageDescription: Say Again uses the microphone only while you dictate your answer. The audio stays on your iPhone and is not saved.
+        NSSpeechRecognitionUsageDescription: Your speech is turned into text on your iPhone, so you can say what you heard instead of typing it.
+        NSAppTransportSecurity:
+          NSAllowsLocalNetworking: true
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: dev.flakyhunter.sayagain
+      configs:
+        # Debug talks to `npm run dev` in server/ (wrangler dev on the Mac).
+        Debug:
+          FEEDBACK_ENDPOINT: "http://localhost:8787"
+        # Set to the deployed Worker URL before the release. Empty hides AI feedback.
+        Release:
+          FEEDBACK_ENDPOINT: ""
 
   SayAgainTests:
     type: bundle.unit-test
@@ -56,6 +68,7 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: dev.flakyhunter.sayagain.tests
+        GENERATE_INFOPLIST_FILE: YES
 
   SayAgainUITests:
     type: bundle.ui-testing
@@ -67,6 +80,7 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: dev.flakyhunter.sayagain.uitests
+        GENERATE_INFOPLIST_FILE: YES
 
 schemes:
   SayAgain:

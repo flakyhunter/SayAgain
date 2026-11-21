@@ -421,6 +421,33 @@ struct CategoryIcon: View {
         let shape = RoundedRectangle(cornerRadius: size * 0.3, style: .continuous)
         let colors = category.gradient
         ZStack {
+            if let photo = category.photo {
+                Image(photo)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: size, height: size)
+                    .clipShape(shape)
+                // Light glass sheen on top of the photo.
+                shape.fill(LinearGradient(
+                    colors: [.white.opacity(0.22), .clear],
+                    startPoint: .top, endPoint: .center
+                ))
+            } else {
+                symbolBody(shape: shape, colors: colors)
+            }
+        }
+        .frame(width: size, height: size)
+        .overlay(shape.strokeBorder(
+            LinearGradient(colors: [.white.opacity(0.55), .white.opacity(0.05)], startPoint: .top, endPoint: .bottom),
+            lineWidth: 1
+        ))
+        .shadow(color: colors.last!.opacity(0.4), radius: 10, y: 5)
+        .accessibilityHidden(true)
+    }
+
+    @ViewBuilder
+    private func symbolBody(shape: RoundedRectangle, colors: [Color]) -> some View {
+        ZStack {
             shape.fill(LinearGradient(colors: colors, startPoint: .topLeading, endPoint: .bottomTrailing))
             // Soft light from the top, like glass.
             shape.fill(LinearGradient(
@@ -439,17 +466,23 @@ struct CategoryIcon: View {
                 .shadow(color: .black.opacity(0.22), radius: 2, y: 1.5)
                 .symbolEffect(.bounce, options: .speed(0.8), value: bounce)
         }
-        .frame(width: size, height: size)
-        .overlay(shape.strokeBorder(
-            LinearGradient(colors: [.white.opacity(0.55), .white.opacity(0.05)], startPoint: .top, endPoint: .bottom),
-            lineWidth: 1
-        ))
-        .shadow(color: colors.last!.opacity(0.4), radius: 10, y: 5)
-        .accessibilityHidden(true)
     }
 }
 
 extension QuestionCategory {
+    /// Asset name of a photo shown instead of the symbol, if the category has one.
+    var photo: String? {
+        switch self {
+        case .school: "SchoolKid"
+        case .agedCare: "AgedCare"
+        case .qaIT: "QaIT"
+        case .intro: "Intro"
+        case .behavioural: "Behavioural"
+        case .logistics: "Salary"
+        case .volunteering: "Volunteering"
+        }
+    }
+
     var symbol: String {
         switch self {
         case .intro: "hand.wave.fill"
