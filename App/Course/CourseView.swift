@@ -8,7 +8,7 @@ struct CourseCard: View {
 
     var body: some View {
         HStack(spacing: 16) {
-            CategoryIcon(category: .agedCare)
+            CoursePhoto(name: "AgedCareCourse")
             VStack(alignment: .leading, spacing: 6) {
                 Text(course.title)
                     .font(.headline)
@@ -34,6 +34,29 @@ struct CourseCard: View {
     static func progressText(passed: Int, total: Int) -> String {
         let lessons = "\(total) \(total == 1 ? "lesson" : "lessons")"
         return passed == 0 ? lessons : "\(passed) of \(lessons) passed"
+    }
+}
+
+/// A tall portrait tile: a course is the main thing on the home screen, so its picture is bigger
+/// than the square category icons.
+private struct CoursePhoto: View {
+    let name: String
+    static let size = CGSize(width: 84, height: 112)
+
+    var body: some View {
+        let shape = RoundedRectangle(cornerRadius: 20, style: .continuous)
+        Image(name)
+            .resizable()
+            .scaledToFill()
+            .frame(width: Self.size.width, height: Self.size.height)
+            .clipShape(shape)
+            .overlay(shape.fill(LinearGradient(colors: [.white.opacity(0.2), .clear], startPoint: .top, endPoint: .center)))
+            .overlay(shape.strokeBorder(
+                LinearGradient(colors: [.white.opacity(0.55), .white.opacity(0.05)], startPoint: .top, endPoint: .bottom),
+                lineWidth: 1
+            ))
+            .shadow(color: QuestionCategory.agedCare.tint.opacity(0.35), radius: 10, y: 5)
+            .accessibilityHidden(true)
     }
 }
 
