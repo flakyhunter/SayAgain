@@ -38,6 +38,11 @@ struct AppEnvironment {
     let dictation: DictationService
     /// Fixed in UI-test mode, random otherwise.
     let makeSeed: () -> UInt64
+    /// Interview categories, mixed practice and the phrasebook. Hidden while the app is a volunteer trainer.
+    var interviewPractice = false
+
+    /// Release builds ship as a volunteer trainer. Flip to bring the interview practice back.
+    static let interviewPracticeInRelease = false
 
     var animated: Bool { !isUITesting }
 
@@ -55,7 +60,10 @@ struct AppEnvironment {
             let courses = arguments.contains(LaunchArgument.bundledContent)
                 ? (try? CourseLibrary.bundled()) ?? .fixture
                 : .fixture
-            return .testing(bank: bank, courses: courses, feedback: feedback, dictation: dictation)
+            return .testing(
+                bank: bank, courses: courses, feedback: feedback, dictation: dictation,
+                interviewPractice: arguments.contains(LaunchArgument.interviewPractice)
+            )
         }
         return AppEnvironment(
             bank: (try? QuestionBank.bundled()) ?? QuestionBank(questions: []),
@@ -67,7 +75,8 @@ struct AppEnvironment {
             settings: AppSettings(defaults: .standard),
             feedback: configuredFeedbackService(),
             dictation: SystemDictationService(),
-            makeSeed: { UInt64.random(in: .min ... .max) }
+            makeSeed: { UInt64.random(in: .min ... .max) },
+            interviewPractice: interviewPracticeInRelease
         )
     }
 
@@ -77,7 +86,8 @@ struct AppEnvironment {
         courses: CourseLibrary = .fixture,
         speech: SpeechService = RecordingSpeechService(),
         feedback: FeedbackService? = ScriptedFeedbackService(),
-        dictation: DictationService = ScriptedDictationService()
+        dictation: DictationService = ScriptedDictationService(),
+        interviewPractice: Bool = false
     ) -> AppEnvironment {
         AppEnvironment(
             bank: bank,
@@ -89,7 +99,8 @@ struct AppEnvironment {
             settings: .ephemeral(),
             feedback: feedback,
             dictation: dictation,
-            makeSeed: { LaunchArgument.uiTestingSeed }
+            makeSeed: { LaunchArgument.uiTestingSeed },
+            interviewPractice: interviewPractice
         )
     }
 

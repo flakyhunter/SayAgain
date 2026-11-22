@@ -9,14 +9,14 @@ the accent, the slang, and the way interviewers really ask things
 ("Righto, last one from me...", "Have you had a crack at...").
 
 <p align="center">
-  <img src="AppStore/screenshots/01-home.png" width="200" alt="Home: categories with progress">
-  <img src="AppStore/screenshots/02-listen.png" width="200" alt="Listen to the question">
-  <img src="AppStore/screenshots/03-explanation.png" width="200" alt="What they really asked">
+  <img src="AppStore/screenshots/01-home.png" width="200" alt="Home: three volunteer courses">
+  <img src="AppStore/screenshots/02-lessons.png" width="200" alt="Care skills: lessons that open one by one">
+  <img src="AppStore/screenshots/03-words.png" width="200" alt="Words to hear, with Russian help">
 </p>
 <p align="center">
-  <img src="AppStore/screenshots/04-sample-answer.png" width="200" alt="Sample answer">
-  <img src="AppStore/screenshots/05-summary.png" width="200" alt="Session summary">
-  <img src="AppStore/screenshots/06-phrasebook.png" width="200" alt="Phrasebook">
+  <img src="AppStore/screenshots/04-key-points.png" width="200" alt="Key points of the lesson">
+  <img src="AppStore/screenshots/05-what-do-you-do.png" width="200" alt="What do you do? A scenario task">
+  <img src="AppStore/screenshots/06-lesson-passed.png" width="200" alt="Lesson passed, the next one opens">
 </p>
 <p align="center"><sub>App Store screenshots, captured by a UI test (<code>scripts/screenshots.sh</code>).</sub></p>
 

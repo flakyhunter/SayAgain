@@ -6,7 +6,7 @@ import XCTest
 ///   cd server && npm run dev
 ///   TEST_RUNNER_SAYAGAIN_E2E=1 xcodebuild test ... -only-testing:SayAgainUITests/FeedbackEndToEndUITests
 /// Skipped in normal runs and in CI.
-final class FeedbackEndToEndUITests: SayAgainUITestCase {
+final class FeedbackEndToEndUITests: InterviewPracticeUITestCase {
     func testRetellingRoundTripThroughTheLocalWorker() throws {
         try XCTSkipUnless(ProcessInfo.processInfo.environment["SAYAGAIN_E2E"] == "1",
                           "Start the Worker with `npm run dev` in server/ and set SAYAGAIN_E2E=1")

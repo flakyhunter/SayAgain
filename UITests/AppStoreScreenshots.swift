@@ -1,9 +1,11 @@
 import SayAgainKit
 import XCTest
 
-/// Produces the App Store screenshots. Skipped in normal runs; see scripts/screenshots.sh.
+/// Produces the App Store screenshots of the volunteer trainer. Skipped in normal runs;
+/// see scripts/screenshots.sh.
 final class AppStoreScreenshots: SayAgainUITestCase {
     private func snap(_ app: XCUIApplication, _ name: String) {
+        sleep(1)
         let attachment = XCTAttachment(screenshot: app.screenshot())
         attachment.name = name
         attachment.lifetime = .keepAlways
@@ -13,40 +15,52 @@ final class AppStoreScreenshots: SayAgainUITestCase {
     func testCaptureScreenshots() throws {
         try XCTSkipUnless(ProcessInfo.processInfo.environment["SAYAGAIN_SCREENSHOTS"] == "1",
                           "Run scripts/screenshots.sh to capture App Store screenshots")
-        let bank = try QuestionBank.bundled()
+        let course = try XCTUnwrap(try CourseLibrary.bundled().course(id: Course.careSkillsID))
+        let lesson = course.lessons[0]
+        let seed = LaunchArgument.uiTestingSeed
+
         let app = launchApp(extraArguments: [LaunchArgument.bundledContent])
-        let home = HomeScreen(app: app).waitUntilShown()
+        let screen = CourseScreen(app: app)
+        HomeScreen(app: app).waitUntilShown()
         snap(app, "01-home")
 
-        home.startButton.tap()
-        let session = SessionScreen(app: app).waitUntilShown()
-        snap(app, "02-listen")
+        screen.careSkillsCard.tap()
+        XCTAssertTrue(screen.list.waitForExistence(timeout: 5))
+        snap(app, "02-lessons")
 
-        for step in 1...10 {
-            XCTAssertTrue(session.choices[0].waitForExistence(timeout: 5))
-            let labels = Set(session.choices.map { $0.label })
-            let question = try XCTUnwrap(bank.questions.first { labels.contains($0.gist) })
-            session.choose(question.gist)
-            XCTAssertTrue(session.nextButton.waitForExistence(timeout: 5))
-            if step == 1 {
-                sleep(1)
-                snap(app, "03-explanation")
-                session.sampleAnswerButton.tap()
-                XCTAssertTrue(session.sampleAnswerText.waitForExistence(timeout: 5))
-                sleep(1)
-                snap(app, "04-sample-answer")
-                session.sampleAnswerCloseButton.tap()
-            }
-            session.nextButton.tap()
+        screen.lessonRow(1).tap()
+        XCTAssertTrue(screen.step.waitForExistence(timeout: 5))
+        snap(app, "03-words")
+
+        // Words, dialogue, then the key points.
+        for _ in 0..<2 {
+            XCTAssertTrue(screen.continueButton.waitForExistence(timeout: 5))
+            screen.continueButton.tap()
         }
-        XCTAssertTrue(session.summary.waitForExistence(timeout: 5))
-        snap(app, "05-summary")
+        XCTAssertTrue(screen.step.label.contains("Key points"))
+        snap(app, "04-key-points")
+        screen.continueButton.tap()
 
-        session.doneButton.tap()
-        home.phrasebookButton.tap()
-        XCTAssertTrue(app.buttons[A11yID.Phrasebook.row("arvo")].waitForExistence(timeout: 2)
-                      || app.descendants(matching: .any)[A11yID.Phrasebook.list].waitForExistence(timeout: 5))
-        sleep(1)
-        snap(app, "06-phrasebook")
+        // Practice: right answers, a picture of the first "What do you do?" task.
+        var run = ExerciseRun(exercises: lesson.practice, seed: seed)
+        var snappedScenario = false
+        while let exercise = run.current {
+            let index = try XCTUnwrap(run.choices.firstIndex(of: exercise.answer))
+            XCTAssertTrue(screen.choice(index).waitForExistence(timeout: 5))
+            screen.choice(index).tap()
+            XCTAssertTrue(screen.explanation.waitForExistence(timeout: 5))
+            if exercise.kind == .scenario, !snappedScenario {
+                snap(app, "05-what-do-you-do")
+                snappedScenario = true
+            }
+            run.choose(exercise.answer)
+            run.next()
+            screen.nextButton.tap()
+        }
+        XCTAssertTrue(snappedScenario, "The lesson has no scenario task in practice")
+
+        screen.answer(lesson.check, seed: seed &+ 1, right: true)
+        XCTAssertTrue(screen.result.waitForExistence(timeout: 5))
+        snap(app, "06-lesson-passed")
     }
 }

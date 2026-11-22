@@ -28,10 +28,41 @@ struct HomeSnapshotTests {
     }
 
     @Test func withProgress() {
-        let environment = AppEnvironment.testing()
+        let environment = AppEnvironment.testing(interviewPractice: true)
+        environment.settings.categoriesExpanded = true
         environment.store.setBox(3, for: "fixture-behavioural-1")
         environment.store.setBox(2, for: "fixture-intro-1")
         assertSnapshot(of: Snapshot.host(HomeView(environment: environment)), as: Snapshot.strategy)
+    }
+
+    @Test func categoriesExpandedInDarkMode() {
+        let environment = AppEnvironment.testing(interviewPractice: true)
+        environment.settings.categoriesExpanded = true
+        assertSnapshot(of: Snapshot.host(HomeView(environment: environment), style: .dark), as: Snapshot.strategy)
+    }
+
+    @Test func interviewHomeKeepsTheOldHero() {
+        let environment = AppEnvironment.testing(interviewPractice: true)
+        assertSnapshot(of: Snapshot.host(HomeView(environment: environment)), as: Snapshot.strategy)
+    }
+
+    @Test("Start opens the first course with a lesson still to pass")
+    func startPicksTheFirstUnfinishedCourse() {
+        let environment = AppEnvironment.testing()
+        let courses = environment.courses.courses
+        #expect(HomeView.courseToStart(courses, store: environment.courseStore)?.id == courses[0].id)
+        for lesson in courses[0].lessons { courses[0].record(score: 100, for: lesson, store: environment.courseStore) }
+        #expect(HomeView.courseToStart(courses, store: environment.courseStore)?.id == courses[1].id)
+        for lesson in courses[1].lessons { courses[1].record(score: 100, for: lesson, store: environment.courseStore) }
+        #expect(HomeView.courseToStart(courses, store: environment.courseStore)?.id == courses[0].id, "All done: back to the first")
+    }
+
+    @Test func heroPhrasesComeFromTheLessons() {
+        let environment = AppEnvironment.testing()
+        let phrases = HomeView.volunteerPhrases(environment.courses)
+        #expect(!phrases.isEmpty)
+        let words = Set(environment.courses.courses.flatMap { $0.lessons.flatMap { $0.words.map(\.text) } })
+        #expect(phrases.allSatisfy(words.contains))
     }
 
     @Test func allCategoryIcons() {
@@ -60,7 +91,7 @@ struct HomeSnapshotTests {
     }
 
     @Test func emptyState() {
-        let environment = AppEnvironment.testing(bank: QuestionBank(questions: []))
+        let environment = AppEnvironment.testing(bank: QuestionBank(questions: []), interviewPractice: true)
         assertSnapshot(of: Snapshot.host(HomeView(environment: environment)), as: Snapshot.strategy)
     }
 }
@@ -76,6 +107,8 @@ struct AppEnvironmentTests {
         #expect(environment.speech is RecordingSpeechService)
         #expect(environment.store is InMemoryProgressStore)
         #expect(environment.makeSeed() == LaunchArgument.uiTestingSeed)
+        #expect(!environment.interviewPractice, "Tests see the volunteer app unless they ask for interviews")
+        #expect(AppEnvironment.make(arguments: [LaunchArgument.uiTesting, LaunchArgument.interviewPractice]).interviewPractice)
     }
 
     @Test func normalLaunchUsesBundledContentAndRealServices() throws {
@@ -84,6 +117,7 @@ struct AppEnvironmentTests {
         #expect(environment.bank.questions == (try QuestionBank.bundled()).questions)
         #expect(environment.speech is SystemSpeechService)
         #expect(environment.store is UserDefaultsProgressStore)
+        #expect(!environment.interviewPractice, "The app ships as a volunteer trainer")
     }
 }
 

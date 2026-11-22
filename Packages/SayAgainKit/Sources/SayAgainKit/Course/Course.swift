@@ -4,6 +4,9 @@ import Foundation
 /// Unlike the interview categories, a course teaches from zero, so Russian help is always on.
 public struct Course: Codable, Hashable, Identifiable, Sendable {
     public static let agedCareVolunteerID = "aged-care-volunteer"
+    public static let careSkillsID = "volunteer-care-skills"
+    public static let dementiaID = "volunteer-dementia"
+    public static let defaultTipLabel = "Grammar"
 
     public let id: String
     public let title: String
@@ -12,14 +15,41 @@ public struct Course: Codable, Hashable, Identifiable, Sendable {
     /// BCP 47 voice locale, for example "en-AU".
     public let locale: String
     public let lessons: [Lesson]
+    /// Name of the rule step: "Grammar" in the English course, "Key points" in care skills.
+    public let tipLabel: String
+    /// Attribution for licensed source material, shown under the lesson list.
+    public let credits: String?
 
-    public init(id: String, title: String, subtitle: String, titleRu: String, locale: String, lessons: [Lesson]) {
+    public init(
+        id: String, title: String, subtitle: String, titleRu: String, locale: String, lessons: [Lesson],
+        tipLabel: String = Course.defaultTipLabel, credits: String? = nil
+    ) {
         self.id = id
         self.title = title
         self.subtitle = subtitle
         self.titleRu = titleRu
         self.locale = locale
         self.lessons = lessons
+        self.tipLabel = tipLabel
+        self.credits = credits
+    }
+
+    enum CodingKeys: String, CodingKey {
+        case id, title, subtitle, titleRu, locale, lessons, tipLabel, credits
+    }
+
+    public init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+        try self.init(
+            id: c.decode(String.self, forKey: .id),
+            title: c.decode(String.self, forKey: .title),
+            subtitle: c.decode(String.self, forKey: .subtitle),
+            titleRu: c.decode(String.self, forKey: .titleRu),
+            locale: c.decode(String.self, forKey: .locale),
+            lessons: c.decode([Lesson].self, forKey: .lessons),
+            tipLabel: c.decodeIfPresent(String.self, forKey: .tipLabel) ?? Course.defaultTipLabel,
+            credits: c.decodeIfPresent(String.self, forKey: .credits)
+        )
     }
 
     public func lesson(after lesson: Lesson) -> Lesson? {
@@ -167,13 +197,21 @@ public struct GrammarTip: Codable, Hashable, Sendable {
 
 /// A multiple-choice task: hear a line or read a situation, pick the right option.
 public struct Exercise: Codable, Hashable, Identifiable, Sendable {
-    public enum Kind: String, Codable, Sendable {
+    public enum Kind: String, Codable, CaseIterable, Sendable {
         /// Hear what someone says, pick what they mean.
         case listen
         /// Read the situation (and maybe hear a line), pick what the volunteer says.
         case reply
         /// Hear Aussie slang, pick the plain English.
         case slang
+        /// Read the situation (and maybe hear a line), pick what the volunteer does.
+        case scenario
+
+        /// The task is built around a line read aloud, so `say` is required.
+        public var needsVoice: Bool { self == .listen || self == .slang }
+
+        /// The right answer is English the volunteer can say, so it can be played back.
+        public var answerIsEnglish: Bool { self == .reply || self == .slang }
     }
 
     public let id: String

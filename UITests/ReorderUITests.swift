@@ -1,7 +1,7 @@
 import SayAgainKit
 import XCTest
 
-final class ReorderUITests: SayAgainUITestCase {
+final class ReorderUITests: InterviewPracticeUITestCase {
     private func isAbove(_ first: XCUIElement, _ second: XCUIElement) -> Bool {
         first.frame.midY < second.frame.midY
     }

@@ -15,6 +15,9 @@ struct HomeView: View {
     @State private var progressVersion = 0
     /// The card being dragged to a new place.
     @State private var dragging: QuestionCategory?
+    /// Course opened by the Start button in the volunteer app.
+    @State private var startCourse: Course?
+    private var interviews: Bool { environment.interviewPractice }
     private var summaries: [CategorySummary] { bank.categorySummaries(order: environment.settings.categoryOrder) }
 
     private func shift(_ category: QuestionCategory, by offset: Int) {
@@ -30,9 +33,9 @@ struct HomeView: View {
         NavigationStack(path: $path) {
             ScrollView {
                 VStack(alignment: .leading, spacing: 28) {
-                    HeroCard(phrases: tickerPhrases, animated: motion, canStart: !bank.questions.isEmpty)
+                    hero
                     if !environment.courses.courses.isEmpty { courses }
-                    categories
+                    if interviews { categories }
                 }
                 .padding(.horizontal, 20)
                 .padding(.bottom, 32)
@@ -66,14 +69,16 @@ struct HomeView: View {
                 Text("Progress in this category goes back to zero. Other categories stay as they are.")
             }
             .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    NavigationLink {
-                        PhrasebookView(environment: environment)
-                    } label: {
-                        Image(systemName: "character.book.closed.fill")
+                if interviews {
+                    ToolbarItem(placement: .topBarLeading) {
+                        NavigationLink {
+                            PhrasebookView(environment: environment)
+                        } label: {
+                            Image(systemName: "character.book.closed.fill")
+                        }
+                        .accessibilityLabel("Phrasebook")
+                        .accessibilityIdentifier(A11yID.Home.phrasebookButton)
                     }
-                    .accessibilityLabel("Phrasebook")
-                    .accessibilityIdentifier(A11yID.Home.phrasebookButton)
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     NavigationLink {
@@ -92,6 +97,10 @@ struct HomeView: View {
                 )
                 .navigationTitle(route.category?.title ?? "Mixed practice")
             }
+            .navigationDestination(item: $startCourse) { course in
+                CourseView(environment: environment, course: course)
+                    .onDisappear { progressVersion += 1 }
+            }
         }
         .environment(\.showRussian, environment.settings.showRussian)
     }
@@ -99,6 +108,47 @@ struct HomeView: View {
     private var tickerPhrases: [String] {
         let phrases = bank.questions.flatMap { $0.phrases.map(\.phrase) }
         return phrases.isEmpty ? ["G'day"] : Array(phrases.prefix(8))
+    }
+
+    @ViewBuilder
+    private var hero: some View {
+        if interviews {
+            HeroCard(
+                title: "Understand Aussie interview questions by ear.",
+                subtitle: "Listen first, then check what they really asked.",
+                symbol: "ear.badge.waveform",
+                phrases: tickerPhrases, animated: motion, canStart: !bank.questions.isEmpty,
+                startLabel: "Start mixed practice"
+            ) { path.append(SessionRoute(category: nil)) }
+        } else {
+            let phrases = Self.volunteerPhrases(environment.courses)
+            HeroCard(
+                title: "Learn to volunteer in aged care.",
+                subtitle: "English, care skills and dementia support. Listen, practise, pass a short check.",
+                symbol: "heart.text.square.fill",
+                phrases: phrases.isEmpty ? ["G'day"] : phrases, animated: motion,
+                canStart: !environment.courses.courses.isEmpty,
+                startLabel: "Start the next course"
+            ) {
+                // Reading the version keeps the choice fresh after lessons are passed.
+                if progressVersion >= 0 {
+                    startCourse = Self.courseToStart(environment.courses.courses, store: environment.courseStore)
+                }
+            }
+        }
+    }
+
+    /// The first course with a lesson still to pass. When everything is passed, the first course.
+    static func courseToStart(_ courses: [Course], store: CourseProgressStore) -> Course? {
+        courses.first { $0.passedCount(store: store) < $0.lessons.count } ?? courses.first
+    }
+
+    /// Short phrases from the first lesson of each course, for the ticker on the hero card.
+    static func volunteerPhrases(_ library: CourseLibrary) -> [String] {
+        let phrases = library.courses.flatMap { course in
+            (course.lessons.first?.words ?? []).map(\.text).filter { $0.count <= 24 }.prefix(3)
+        }
+        return Array(phrases.prefix(8))
     }
 
     private var courses: some View {
@@ -118,25 +168,67 @@ struct HomeView: View {
                 .accessibilityLabel(course.title)
                 .accessibilityValue(CourseCard.progressText(passed: passed, total: course.lessons.count))
                 .accessibilityHint("Opens the lessons")
-                .accessibilityIdentifier(A11yID.Course.card)
+                .accessibilityIdentifier(A11yID.Course.card(course.id))
             }
         }
+    }
+
+    private var categoriesExpanded: Bool { environment.settings.categoriesExpanded }
+
+    /// "Interview practice · 7 categories" with a chevron. Folds the whole list.
+    private var categoriesToggle: some View {
+        Button {
+            let toggle = { environment.settings.categoriesExpanded.toggle() }
+            if motion { withAnimation(.spring(duration: 0.35, bounce: 0.15), toggle) } else { toggle() }
+        } label: {
+            HStack(spacing: 12) {
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("Interview practice")
+                        .font(.title3.bold())
+                        .foregroundStyle(.primary)
+                    Text(Self.categoriesCountText(summaries.count))
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                }
+                Spacer()
+                Image(systemName: "chevron.down")
+                    .font(.subheadline.weight(.bold))
+                    .foregroundStyle(Theme.accent)
+                    .frame(width: 32, height: 32)
+                    .background(Theme.accent.opacity(0.14), in: .circle)
+                    .rotationEffect(.degrees(categoriesExpanded ? 180 : 0))
+            }
+            .contentShape(.rect)
+        }
+        .buttonStyle(.plain)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("Interview practice, \(Self.categoriesCountText(summaries.count))")
+        .accessibilityValue(categoriesExpanded ? "Expanded" : "Collapsed")
+        .accessibilityHint(categoriesExpanded ? "Hides the categories" : "Shows the categories")
+        .accessibilityAddTraits(.isHeader)
+        .accessibilityIdentifier(A11yID.Home.categoriesToggle)
+    }
+
+    static func categoriesCountText(_ count: Int) -> String {
+        "\(count) \(count == 1 ? "category" : "categories")"
     }
 
     @ViewBuilder
     private var categories: some View {
         VStack(alignment: .leading, spacing: 12) {
-            HStack(alignment: .firstTextBaseline) {
-                Text("Categories")
-                    .font(.title3.bold())
-                    .accessibilityAddTraits(.isHeader)
-                Spacer()
-                if summaries.count > 1 {
-                    Label("Hold and drag to reorder", systemImage: "hand.draw")
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                        .accessibilityHidden(true)
-                }
+            categoriesToggle
+            if categoriesExpanded || summaries.isEmpty { categoryList }
+        }
+    }
+
+    @ViewBuilder
+    private var categoryList: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            if summaries.count > 1 {
+                Label("Hold and drag to reorder", systemImage: "hand.draw")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                    .accessibilityHidden(true)
             }
 
             if summaries.isEmpty {
@@ -249,9 +341,15 @@ private struct PressableCardStyle: ButtonStyle {
 // MARK: - Hero
 
 private struct HeroCard: View {
+    let title: String
+    let subtitle: String
+    let symbol: String
     let phrases: [String]
     let animated: Bool
     let canStart: Bool
+    /// What Start does, for VoiceOver.
+    let startLabel: String
+    let onStart: () -> Void
 
     @State private var phraseIndex = 0
 
@@ -259,14 +357,14 @@ private struct HeroCard: View {
         VStack(alignment: .leading, spacing: 18) {
             HStack(alignment: .top) {
                 VStack(alignment: .leading, spacing: 6) {
-                    Text("Understand Aussie interview questions by ear.")
+                    Text(title)
                         .font(.title3.bold())
-                    Text("Listen first, then check what they really asked.")
+                    Text(subtitle)
                         .font(.subheadline)
                         .opacity(0.85)
                 }
                 Spacer(minLength: 12)
-                Image(systemName: "ear.badge.waveform")
+                Image(systemName: symbol)
                     .font(.system(size: 34, weight: .semibold))
                     .symbolEffect(.pulse, isActive: animated)
             }
@@ -291,7 +389,7 @@ private struct HeroCard: View {
     }
 
     private var startButton: some View {
-        NavigationLink(value: SessionRoute(category: nil)) {
+        Button(action: onStart) {
             Label("Start", systemImage: "play.fill")
                 .font(.headline)
                 .foregroundStyle(Theme.ocean)
@@ -300,7 +398,7 @@ private struct HeroCard: View {
                 .background(.white, in: .capsule)
         }
         .buttonStyle(.plain)
-        .accessibilityLabel("Start mixed practice")
+        .accessibilityLabel(startLabel)
         .accessibilityIdentifier(A11yID.Home.startButton)
     }
 

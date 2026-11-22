@@ -53,7 +53,7 @@ public struct CourseLibrary: Sendable {
 
         for course in courses {
             unique(course.id)
-            issues += textIssues(id: course.id, [course.title, course.subtitle, course.titleRu])
+            issues += textIssues(id: course.id, [course.title, course.subtitle, course.titleRu, course.tipLabel, course.credits ?? ""])
 
             for (offset, lesson) in course.lessons.enumerated() {
                 unique(lesson.id)
@@ -83,8 +83,7 @@ public struct CourseLibrary: Sendable {
 
     private func exerciseIssues(_ exercise: Exercise) -> [CourseIssue] {
         var issues: [CourseIssue] = []
-        let needsVoice = exercise.kind != .reply
-        if needsVoice, (exercise.say ?? "").trimmingCharacters(in: .whitespaces).isEmpty {
+        if exercise.kind.needsVoice, (exercise.say ?? "").trimmingCharacters(in: .whitespaces).isEmpty {
             issues.append(.emptyField(id: exercise.id, field: "say"))
         }
         for (name, value) in [("answer", exercise.answer), ("situationRu", exercise.situationRu)]

@@ -11,6 +11,7 @@ final class AppSettings {
         static let categoryOrder = "settings.categoryOrder"
         static let showRussian = "settings.showRussian"
         static let aiFeedback = "settings.aiFeedback"
+        static let categoriesExpanded = "settings.categoriesExpanded"
     }
 
     /// Whether the learner agreed to send their own words for an AI check.
@@ -35,6 +36,11 @@ final class AppSettings {
         didSet { defaults.set(showRussian, forKey: Key.showRussian) }
     }
 
+    /// Interview categories on Home are folded under one row until the learner opens them.
+    var categoriesExpanded: Bool {
+        didSet { defaults.set(categoriesExpanded, forKey: Key.categoriesExpanded) }
+    }
+
     /// Asked once, the first time the learner tries to check their own words. Changeable in Settings.
     var aiFeedback: AIFeedbackConsent {
         didSet { defaults.set(aiFeedback.rawValue, forKey: Key.aiFeedback) }
@@ -44,6 +50,7 @@ final class AppSettings {
         self.defaults = defaults
         aiFeedback = defaults.string(forKey: Key.aiFeedback).flatMap(AIFeedbackConsent.init) ?? .notAsked
         showRussian = defaults.bool(forKey: Key.showRussian)
+        categoriesExpanded = defaults.bool(forKey: Key.categoriesExpanded)
         slowByDefault = defaults.bool(forKey: Key.slowByDefault)
         categoryOrder = CategoryOrder.resolve(saved: defaults.stringArray(forKey: Key.categoryOrder) ?? [])
     }

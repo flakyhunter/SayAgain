@@ -1,7 +1,7 @@
 import SayAgainKit
 import XCTest
 
-final class PhrasebookUITests: SayAgainUITestCase {
+final class PhrasebookUITests: InterviewPracticeUITestCase {
     private func row(_ app: XCUIApplication, _ phrase: String) -> XCUIElement {
         app.buttons[A11yID.Phrasebook.row(phrase)]
     }

@@ -86,6 +86,49 @@ struct ShippedCourseTests {
         }
     }
 
+    @Test("The courses read as one series")
+    func courseTitles() throws {
+        let library = try CourseLibrary.bundled()
+        #expect(library.courses.map(\.id) == [Course.agedCareVolunteerID, Course.careSkillsID, Course.dementiaID])
+        #expect(library.courses.map(\.title) == [
+            "Aged care volunteer: English", "Aged care volunteer: Care skills", "Aged care volunteer: Dementia"
+        ])
+    }
+
+    @Test("Dementia: five lessons with key points and scenarios, a long final test")
+    func dementiaShape() throws {
+        let course = try #require(try CourseLibrary.bundled().course(id: Course.dementiaID))
+        #expect(course.lessons.map(\.number) == Array(1...5))
+        #expect(course.tipLabel == "Key points")
+        for lesson in course.lessons {
+            #expect((lesson.practice + lesson.check).count { $0.kind == .scenario } >= 2, "\(lesson.id)")
+            #expect(lesson.tip != nil, "\(lesson.id) has no key points")
+        }
+        #expect(course.lessons.last?.check.count ?? 0 >= 10)
+    }
+
+    @Test("Care skills: six lessons, a scenario in each, a long final test, strict boundaries lesson")
+    func careSkillsShape() throws {
+        let course = try #require(try CourseLibrary.bundled().course(id: Course.careSkillsID))
+        #expect(course.lessons.map(\.number) == Array(1...6))
+        #expect(course.tipLabel == "Key points")
+        for lesson in course.lessons {
+            let scenarios = (lesson.practice + lesson.check).filter { $0.kind == .scenario }
+            #expect(scenarios.count >= 2, "\(lesson.id) needs \"what do you do\" tasks")
+            #expect(lesson.tip != nil, "\(lesson.id) has no key points")
+        }
+        #expect(course.lessons.first { $0.title.hasPrefix("Boundaries") }?.passPercent == 100)
+        #expect(course.lessons.last?.check.count ?? 0 >= 10)
+    }
+
+    @Test("Material under CC BY is credited as the licence asks")
+    func careSkillsCredits() throws {
+        let course = try #require(try CourseLibrary.bundled().course(id: Course.careSkillsID))
+        let credits = try #require(course.credits)
+        #expect(credits.contains("Aged Care Quality and Safety Commission"))
+        #expect(credits.contains("CC BY 4.0"))
+    }
+
     @Test("Aussie slang appears from the first lesson")
     func slangFromLessonOne() throws {
         let course = try #require(try CourseLibrary.bundled().course(id: Course.agedCareVolunteerID))
@@ -134,6 +177,31 @@ struct CourseValidationTests {
         let bad = exercise(id: "x", kind: .listen, say: nil)
         let issues = CourseLibrary(courses: [course([lesson(number: 1, check: [bad])])]).validate()
         #expect(issues == [.emptyField(id: "x", field: "say")])
+    }
+
+    @Test("A scenario reads the situation; a line to hear is optional")
+    func scenarioNeedsNoVoice() {
+        let silent = exercise(id: "x", kind: .scenario, say: nil)
+        let heard = exercise(id: "y", kind: .scenario, say: "I keep having bad dreams.")
+        #expect(CourseLibrary(courses: [course([lesson(number: 1, check: [silent, heard])])]).validate() == [])
+    }
+
+    @Test("Only spoken English answers can be played back")
+    func whichKindsNeedVoiceAndHaveEnglishAnswers() {
+        #expect(Exercise.Kind.allCases.filter(\.needsVoice) == [.listen, .slang])
+        #expect(Exercise.Kind.allCases.filter(\.answerIsEnglish) == [.reply, .slang])
+    }
+
+    @Test("Tip label defaults to Grammar and can be set per course")
+    func tipLabelDecoding() throws {
+        let plain = #"[{"id":"a","title":"A","subtitle":"S","titleRu":"А","locale":"en-AU","lessons":[]}]"#
+        let custom = #"[{"id":"b","title":"B","subtitle":"S","titleRu":"Б","locale":"en-AU","lessons":[],"tipLabel":"Key points","credits":"Source"}]"#
+        let a = try CourseLibrary.decode(Data(plain.utf8)).courses[0]
+        let b = try CourseLibrary.decode(Data(custom.utf8)).courses[0]
+        #expect(a.tipLabel == "Grammar")
+        #expect(a.credits == nil)
+        #expect(b.tipLabel == "Key points")
+        #expect(b.credits == "Source")
     }
 
     @Test func lessonWithoutCheck() {

@@ -9,6 +9,9 @@ public enum LaunchArgument {
     public static let liveFeedback = "-liveFeedback"
     /// With `uiTesting`: use the real on-device speech recogniser instead of the scripted one.
     public static let liveDictation = "-liveDictation"
+    /// With `uiTesting`: show the interview practice (categories, mixed practice, phrasebook).
+    /// The app ships as a volunteer trainer with it hidden; its tests switch it back on.
+    public static let interviewPractice = "-interviewPractice"
     /// Seed used in UI-test mode, so tests know the order of questions and answers.
     public static let uiTestingSeed: UInt64 = 42
 }
@@ -24,6 +27,8 @@ public enum A11yID {
         public static let phrasebookButton = "home.phrasebook"
         public static let emptyState = "home.emptyState"
         public static let startOverConfirmButton = "home.startOverConfirm"
+        /// Folds and unfolds the interview categories. Value: "Expanded" or "Collapsed".
+        public static let categoriesToggle = "home.categoriesToggle"
         public static func startOverButton(_ category: QuestionCategory) -> String {
             "home.category.\(category.rawValue).startOver"
         }
@@ -102,7 +107,8 @@ public enum A11yID {
     }
 
     public enum Course {
-        public static let card = "course.card"
+        public static func card(_ courseID: String) -> String { "course.card.\(courseID)" }
+        public static let credits = "course.credits"
         public static let list = "course.list"
         public static let resetButton = "course.reset"
         public static func lessonRow(_ number: Int) -> String { "course.lesson.\(number)" }
@@ -191,10 +197,36 @@ public extension CourseLibrary {
                 ]
             )
         }
-        return CourseLibrary(courses: [Course(
-            id: Course.agedCareVolunteerID, title: "Aged care volunteer", subtitle: "English for your first shifts",
-            titleRu: "Английский для волонтера", locale: "en-AU",
-            lessons: [lesson(1, title: "Meeting a resident"), lesson(2, title: "Who's who")]
-        )])
+        let careSkills = Lesson(
+            id: "fixture-cs1", number: 1, title: "Meaningful conversations", titleRu: "Разговор",
+            goalRu: "Слушать больше, чем говорить.",
+            words: [VocabItem(text: "Take your time.", translationRu: "Не торопитесь.")],
+            dialogue: [
+                DialogueLine(role: .resident, speaker: "Mrs Brown", text: "What's the word...", translationRu: "Как же это..."),
+                DialogueLine(role: .volunteer, speaker: "Nina", text: "Take your time.", translationRu: "Не торопитесь.")
+            ],
+            tip: GrammarTip(title: "Good conversation habits", ruleRu: "Слушайте больше, чем говорите.",
+                            examples: ["Listen more than you speak."]),
+            practice: [exercise("fixture-cs1-p1", kind: .scenario, say: nil,
+                                answer: "Задать открытый вопрос и слушать", distractors: ["Рассказать о себе", "Уйти"])],
+            check: [
+                exercise("fixture-cs1-c1", kind: .scenario, say: "I keep having bad dreams.",
+                         answer: "Выслушать и сказать координатору", distractors: ["Дать снотворное", "Промолчать"]),
+                exercise("fixture-cs1-c2", kind: .reply, say: nil,
+                         answer: "I'm a volunteer, I'm not allowed to do that.", distractors: ["Sure.", "No."])
+            ]
+        )
+        return CourseLibrary(courses: [
+            Course(
+                id: Course.agedCareVolunteerID, title: "Aged care volunteer: English", subtitle: "English for your first shifts",
+                titleRu: "Английский для волонтера", locale: "en-AU",
+                lessons: [lesson(1, title: "Meeting a resident"), lesson(2, title: "Who's who")]
+            ),
+            Course(
+                id: Course.careSkillsID, title: "Aged care volunteer: Care skills", subtitle: "Talk, support and keep residents safe",
+                titleRu: "Как общаться и поддержать жителя", locale: "en-AU", lessons: [careSkills],
+                tipLabel: "Key points", credits: "Fixture credits, CC BY 4.0."
+            )
+        ])
     }()
 }

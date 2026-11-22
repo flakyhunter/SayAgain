@@ -8,7 +8,7 @@ struct CourseCard: View {
 
     var body: some View {
         HStack(spacing: 16) {
-            CoursePhoto(name: "AgedCareCourse")
+            CoursePhoto(name: course.photo, symbol: course.symbol, colors: course.gradient)
             VStack(alignment: .leading, spacing: 6) {
                 Text(course.title)
                     .font(.headline)
@@ -40,14 +40,15 @@ struct CourseCard: View {
 /// A tall portrait tile: a course is the main thing on the home screen, so its picture is bigger
 /// than the square category icons.
 private struct CoursePhoto: View {
-    let name: String
+    /// Asset name. Without a photo the tile shows the symbol on a gradient.
+    let name: String?
+    let symbol: String
+    let colors: [Color]
     static let size = CGSize(width: 84, height: 112)
 
     var body: some View {
         let shape = RoundedRectangle(cornerRadius: 20, style: .continuous)
-        Image(name)
-            .resizable()
-            .scaledToFill()
+        picture
             .frame(width: Self.size.width, height: Self.size.height)
             .clipShape(shape)
             .overlay(shape.fill(LinearGradient(colors: [.white.opacity(0.2), .clear], startPoint: .top, endPoint: .center)))
@@ -57,6 +58,50 @@ private struct CoursePhoto: View {
             ))
             .shadow(color: QuestionCategory.agedCare.tint.opacity(0.35), radius: 10, y: 5)
             .accessibilityHidden(true)
+    }
+
+    @ViewBuilder
+    private var picture: some View {
+        if let name {
+            Image(name).resizable().scaledToFill()
+        } else {
+            ZStack {
+                LinearGradient(colors: colors, startPoint: .topLeading, endPoint: .bottomTrailing)
+                Image(systemName: symbol)
+                    .font(.system(size: 38, weight: .semibold))
+                    .symbolRenderingMode(.palette)
+                    .foregroundStyle(.white, .white.opacity(0.65))
+                    .shadow(color: .black.opacity(0.2), radius: 2, y: 1.5)
+            }
+        }
+    }
+}
+
+extension Course {
+    /// Photo for the course card, if the course has one.
+    var photo: String? {
+        switch id {
+        case Course.agedCareVolunteerID: "AgedCareCourse"
+        case Course.careSkillsID: "CareSkillsCourse"
+        case Course.dementiaID: "DementiaCourse"
+        default: nil
+        }
+    }
+
+    var symbol: String {
+        switch id {
+        case Course.careSkillsID: "hands.and.sparkles.fill"
+        case Course.dementiaID: "brain.head.profile"
+        default: "book.fill"
+        }
+    }
+
+    /// Tile colours for courses without a photo, light top-left to deep bottom-right.
+    var gradient: [Color] {
+        switch id {
+        case Course.dementiaID: [Color(red: 0.70, green: 0.56, blue: 0.98), Color(red: 0.38, green: 0.24, blue: 0.72)]
+        default: [Color(red: 0.36, green: 0.80, blue: 0.72), Color(red: 0.05, green: 0.45, blue: 0.50)]
+        }
     }
 }
 
@@ -79,6 +124,13 @@ struct CourseView: View {
                     ForEach(course.lessons) { lesson in
                         row(lesson)
                     }
+                }
+                if let credits = course.credits {
+                    Text(credits)
+                        .font(.footnote)
+                        .foregroundStyle(.secondary)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .accessibilityIdentifier(A11yID.Course.credits)
                 }
             }
             .padding(20)

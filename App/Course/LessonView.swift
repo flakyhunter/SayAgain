@@ -59,7 +59,8 @@ struct LessonView: View {
 
     private var stepHeader: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text(Self.stepText(model.step, index: model.stepIndex, count: model.steps.count, run: model.run))
+            Text(Self.stepText(model.step, index: model.stepIndex, count: model.steps.count, run: model.run,
+                               tipLabel: model.course.tipLabel))
                 .font(.subheadline.weight(.semibold))
                 .foregroundStyle(.secondary)
             ProgressView(value: Double(model.stepIndex), total: Double(max(model.steps.count, 1)))
@@ -73,11 +74,13 @@ struct LessonView: View {
         .accessibilityIdentifier(A11yID.Lesson.step)
     }
 
-    static func stepText(_ step: Lesson.Step?, index: Int, count: Int, run: ExerciseRun?) -> String {
+    static func stepText(
+        _ step: Lesson.Step?, index: Int, count: Int, run: ExerciseRun?, tipLabel: String = Course.defaultTipLabel
+    ) -> String {
         let name = switch step {
         case .words: "Words"
         case .dialogue: "Dialogue"
-        case .tip: "Grammar"
+        case .tip: tipLabel
         case .practice: "Practice"
         case .check: "Check"
         case nil: ""
@@ -170,6 +173,19 @@ struct AussieBadge: View {
             .foregroundStyle(.white)
             .background(Theme.sunset, in: .capsule)
             .accessibilityLabel("Australian slang")
+    }
+}
+
+/// Marks a "what do you do" task, so it is not mistaken for a language question.
+struct ScenarioBadge: View {
+    var body: some View {
+        Text("What do you do?")
+            .font(.caption2.weight(.bold))
+            .textCase(.uppercase)
+            .padding(.horizontal, 7)
+            .padding(.vertical, 3)
+            .foregroundStyle(.white)
+            .background(Theme.ocean, in: .capsule)
     }
 }
 
@@ -311,6 +327,7 @@ private struct ExerciseStep: View {
             }
             VStack(alignment: .leading, spacing: 6) {
                 if exercise.kind == .slang { AussieBadge() }
+                if exercise.kind == .scenario { ScenarioBadge() }
                 Text(exercise.situationRu)
                     .font(.headline)
                     .fixedSize(horizontal: false, vertical: true)
@@ -319,7 +336,7 @@ private struct ExerciseStep: View {
                         .font(.subheadline.italic())
                         .foregroundStyle(.secondary)
                 } else if exercise.say != nil {
-                    Text(exercise.kind == .reply ? "Listen, then choose your reply." : "Listen. The text is hidden on purpose.")
+                    Text(Self.listenHint(exercise.kind))
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                 }
@@ -328,6 +345,14 @@ private struct ExerciseStep: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(18)
         .background(Color(.secondarySystemGroupedBackground), in: .rect(cornerRadius: 22))
+    }
+
+    static func listenHint(_ kind: Exercise.Kind) -> String {
+        switch kind {
+        case .reply: "Listen, then choose your reply."
+        case .scenario: "Listen, then choose what you do."
+        case .listen, .slang: "Listen. The text is hidden on purpose."
+        }
     }
 
     private func state(_ choice: String, run: ExerciseRun, exercise: Exercise) -> ChoiceButton.State {
@@ -345,7 +370,7 @@ private struct ExerciseStep: View {
             Text(exercise.explanationRu)
                 .font(.body)
                 .fixedSize(horizontal: false, vertical: true)
-            if exercise.kind != .listen {
+            if exercise.kind.answerIsEnglish {
                 Button(action: model.playAnswer) {
                     Label("Hear the right answer", systemImage: "speaker.wave.2.fill")
                         .font(.subheadline.weight(.semibold))
