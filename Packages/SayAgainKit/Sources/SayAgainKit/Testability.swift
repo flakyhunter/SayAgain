@@ -24,6 +24,8 @@ public enum A11yID {
         public static let phrasebookButton = "home.phrasebook"
         public static let emptyState = "home.emptyState"
         public static let startOverConfirmButton = "home.startOverConfirm"
+        /// Folds and unfolds the interview categories. Value: "Expanded" or "Collapsed".
+        public static let categoriesToggle = "home.categoriesToggle"
         public static func startOverButton(_ category: QuestionCategory) -> String {
             "home.category.\(category.rawValue).startOver"
         }

@@ -42,6 +42,15 @@ struct SettingsTests {
         #expect(AppSettings(defaults: defaults).showRussian)
     }
 
+    @Test func interviewCategoriesAreCollapsedByDefaultAndRemembered() throws {
+        let name = "SettingsTests.collapse.\(UUID().uuidString)"
+        let defaults = try #require(UserDefaults(suiteName: name))
+        defer { defaults.removePersistentDomain(forName: name) }
+        #expect(!AppSettings(defaults: defaults).categoriesExpanded, "Courses come first, categories wait folded")
+        AppSettings(defaults: defaults).categoriesExpanded = true
+        #expect(AppSettings(defaults: defaults).categoriesExpanded, "Survives a restart")
+    }
+
     @Test func phrasebookSnapshotWithRussian() {
         // Only the list: the system search and navigation bars render differently on each iOS version.
         let environment = AppEnvironment.testing()

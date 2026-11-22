@@ -29,9 +29,16 @@ struct HomeSnapshotTests {
 
     @Test func withProgress() {
         let environment = AppEnvironment.testing()
+        environment.settings.categoriesExpanded = true
         environment.store.setBox(3, for: "fixture-behavioural-1")
         environment.store.setBox(2, for: "fixture-intro-1")
         assertSnapshot(of: Snapshot.host(HomeView(environment: environment)), as: Snapshot.strategy)
+    }
+
+    @Test func categoriesExpandedInDarkMode() {
+        let environment = AppEnvironment.testing()
+        environment.settings.categoriesExpanded = true
+        assertSnapshot(of: Snapshot.host(HomeView(environment: environment), style: .dark), as: Snapshot.strategy)
     }
 
     @Test func allCategoryIcons() {

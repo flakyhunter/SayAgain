@@ -23,8 +23,14 @@ struct HomeScreen {
         categoryRow(category).value as? String ?? ""
     }
 
+    var categoriesToggle: XCUIElement { app.descendants(matching: .any)[A11yID.Home.categoriesToggle] }
+
+    var categoriesExpanded: Bool { categoriesToggle.value as? String == "Expanded" }
+
+    /// Interview categories start folded. Every test that goes to a category unfolds them first.
     func categoryRow(_ category: QuestionCategory) -> XCUIElement {
-        app.descendants(matching: .any)[A11yID.Home.categoryRow(category)]
+        if categoriesToggle.exists, !categoriesExpanded { categoriesToggle.tap() }
+        return app.descendants(matching: .any)[A11yID.Home.categoryRow(category)]
     }
 
     @discardableResult

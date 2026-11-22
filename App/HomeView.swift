@@ -123,20 +123,62 @@ struct HomeView: View {
         }
     }
 
+    private var categoriesExpanded: Bool { environment.settings.categoriesExpanded }
+
+    /// "Interview practice · 7 categories" with a chevron. Folds the whole list.
+    private var categoriesToggle: some View {
+        Button {
+            let toggle = { environment.settings.categoriesExpanded.toggle() }
+            if motion { withAnimation(.spring(duration: 0.35, bounce: 0.15), toggle) } else { toggle() }
+        } label: {
+            HStack(spacing: 12) {
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("Interview practice")
+                        .font(.title3.bold())
+                        .foregroundStyle(.primary)
+                    Text(Self.categoriesCountText(summaries.count))
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                }
+                Spacer()
+                Image(systemName: "chevron.down")
+                    .font(.subheadline.weight(.bold))
+                    .foregroundStyle(Theme.accent)
+                    .frame(width: 32, height: 32)
+                    .background(Theme.accent.opacity(0.14), in: .circle)
+                    .rotationEffect(.degrees(categoriesExpanded ? 180 : 0))
+            }
+            .contentShape(.rect)
+        }
+        .buttonStyle(.plain)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("Interview practice, \(Self.categoriesCountText(summaries.count))")
+        .accessibilityValue(categoriesExpanded ? "Expanded" : "Collapsed")
+        .accessibilityHint(categoriesExpanded ? "Hides the categories" : "Shows the categories")
+        .accessibilityAddTraits(.isHeader)
+        .accessibilityIdentifier(A11yID.Home.categoriesToggle)
+    }
+
+    static func categoriesCountText(_ count: Int) -> String {
+        "\(count) \(count == 1 ? "category" : "categories")"
+    }
+
     @ViewBuilder
     private var categories: some View {
         VStack(alignment: .leading, spacing: 12) {
-            HStack(alignment: .firstTextBaseline) {
-                Text("Categories")
-                    .font(.title3.bold())
-                    .accessibilityAddTraits(.isHeader)
-                Spacer()
-                if summaries.count > 1 {
-                    Label("Hold and drag to reorder", systemImage: "hand.draw")
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                        .accessibilityHidden(true)
-                }
+            categoriesToggle
+            if categoriesExpanded || summaries.isEmpty { categoryList }
+        }
+    }
+
+    @ViewBuilder
+    private var categoryList: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            if summaries.count > 1 {
+                Label("Hold and drag to reorder", systemImage: "hand.draw")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                    .accessibilityHidden(true)
             }
 
             if summaries.isEmpty {
