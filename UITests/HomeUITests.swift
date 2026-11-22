@@ -14,7 +14,15 @@ class SayAgainUITestCase: XCTestCase {
     }
 }
 
-final class HomeUITests: SayAgainUITestCase {
+/// Tests of the interview practice, which the app hides by default. They launch with it switched on.
+@MainActor
+class InterviewPracticeUITestCase: SayAgainUITestCase {
+    override func launchApp(extraArguments: [String] = []) -> XCUIApplication {
+        super.launchApp(extraArguments: [LaunchArgument.interviewPractice] + extraArguments)
+    }
+}
+
+final class HomeUITests: InterviewPracticeUITestCase {
     func testHomeShowsFixtureCategoriesWithCounts() {
         let home = HomeScreen(app: launchApp()).waitUntilShown()
 

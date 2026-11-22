@@ -2,7 +2,7 @@ import SayAgainKit
 import XCTest
 
 /// Produces the App Store screenshots. Skipped in normal runs; see scripts/screenshots.sh.
-final class AppStoreScreenshots: SayAgainUITestCase {
+final class AppStoreScreenshots: InterviewPracticeUITestCase {
     private func snap(_ app: XCUIApplication, _ name: String) {
         let attachment = XCTAttachment(screenshot: app.screenshot())
         attachment.name = name

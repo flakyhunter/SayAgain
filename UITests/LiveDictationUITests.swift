@@ -5,7 +5,7 @@ import XCTest
 /// the permission and recognition callbacks arrive on background queues.
 /// Opt-in, because it needs a microphone and permission dialogs:
 ///   TEST_RUNNER_SAYAGAIN_LIVE_DICTATION=1 xcodebuild test ... -only-testing:SayAgainUITests/LiveDictationUITests
-final class LiveDictationUITests: SayAgainUITestCase {
+final class LiveDictationUITests: InterviewPracticeUITestCase {
     func testMicStartsAndStopsWithoutCrashing() throws {
         try XCTSkipUnless(ProcessInfo.processInfo.environment["SAYAGAIN_LIVE_DICTATION"] == "1",
                           "Needs a microphone; set SAYAGAIN_LIVE_DICTATION=1")

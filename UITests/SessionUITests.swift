@@ -1,7 +1,7 @@
 import SayAgainKit
 import XCTest
 
-final class SessionUITests: SayAgainUITestCase {
+final class SessionUITests: InterviewPracticeUITestCase {
     private let behavioural = QuestionBank.fixture.questions(in: .behavioural)
 
     /// Full run through a category: one right answer, one wrong, summary, back home.

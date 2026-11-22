@@ -46,6 +46,21 @@ final class CourseUITests: SayAgainUITestCase {
     private let course = CourseLibrary.fixture.courses[0]
     private let seed = LaunchArgument.uiTestingSeed
 
+    func testVolunteerHomeHidesInterviewsAndStartOpensACourse() {
+        let app = launchApp()
+        let home = HomeScreen(app: app).waitUntilShown()
+        let screen = CourseScreen(app: app)
+
+        XCTAssertTrue(screen.card.exists)
+        XCTAssertFalse(home.categoriesToggle.exists, "No interview categories in the volunteer app")
+        XCTAssertFalse(home.phrasebookButton.exists, "The phrasebook is made of interview phrases")
+        XCTAssertTrue(home.header.label.contains("volunteer"))
+
+        home.startButton.tap()
+        XCTAssertTrue(screen.list.waitForExistence(timeout: 5))
+        XCTAssertTrue(app.navigationBars["Aged care volunteer: English"].exists)
+    }
+
     func testOnlyTheFirstLessonIsOpenAtStart() {
         let app = launchApp()
         let screen = CourseScreen(app: app)

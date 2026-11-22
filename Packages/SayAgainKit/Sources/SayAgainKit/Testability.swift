@@ -9,6 +9,9 @@ public enum LaunchArgument {
     public static let liveFeedback = "-liveFeedback"
     /// With `uiTesting`: use the real on-device speech recogniser instead of the scripted one.
     public static let liveDictation = "-liveDictation"
+    /// With `uiTesting`: show the interview practice (categories, mixed practice, phrasebook).
+    /// The app ships as a volunteer trainer with it hidden; its tests switch it back on.
+    public static let interviewPractice = "-interviewPractice"
     /// Seed used in UI-test mode, so tests know the order of questions and answers.
     public static let uiTestingSeed: UInt64 = 42
 }

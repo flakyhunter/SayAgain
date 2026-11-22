@@ -3,7 +3,7 @@ import XCTest
 
 /// Regression for a user report: 10 right answers, summary showed 3 missed.
 /// A fast user answers each question right away, while the screen may still be moving.
-final class FastAnswerUITests: SayAgainUITestCase {
+final class FastAnswerUITests: InterviewPracticeUITestCase {
     func testTenFastRightAnswersAreAllCountedAsGotIt() throws {
         let bank = try QuestionBank.bundled()
         let app = launchApp(extraArguments: [LaunchArgument.bundledContent])

@@ -1,7 +1,7 @@
 import SayAgainKit
 import XCTest
 
-final class SettingsUITests: SayAgainUITestCase {
+final class SettingsUITests: InterviewPracticeUITestCase {
     func testResetProgressAsksForConfirmation() {
         let app = launchApp()
         HomeScreen(app: app).waitUntilShown().settingsButton.tap()

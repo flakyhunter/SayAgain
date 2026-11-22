@@ -2,7 +2,7 @@ import SayAgainKit
 import XCTest
 
 /// "Say it in your own words" against the scripted feedback service (no network in UI tests).
-final class RetellUITests: SayAgainUITestCase {
+final class RetellUITests: InterviewPracticeUITestCase {
     /// First use: consent, retell, partly verdict, reveal shows the AI feedback, summary counts it.
     func testRetellPartlyRevealsWithAIFeedbackAndCountsAsUnderstood() {
         let app = launchApp()

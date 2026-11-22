@@ -1,7 +1,7 @@
 import SayAgainKit
 import XCTest
 
-final class MasteryUITests: SayAgainUITestCase {
+final class MasteryUITests: InterviewPracticeUITestCase {
     private let intro = QuestionBank.fixture.questions(in: .intro)[0]
 
     private func masterIntro(_ app: XCUIApplication, home: HomeScreen) -> SessionScreen {
