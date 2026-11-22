@@ -1,7 +1,7 @@
 [
   {
     "id": "aged-care-volunteer",
-    "title": "Aged care volunteer",
+    "title": "Aged care volunteer: English",
     "subtitle": "English for your first shifts",
     "titleRu": "Английский для волонтера в доме престарелых",
     "locale": "en-AU",
@@ -2799,6 +2799,1612 @@
             ],
             "explanation": "",
             "explanationRu": "Даже чай - нельзя."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "volunteer-care-skills",
+    "title": "Aged care volunteer: Care skills",
+    "subtitle": "Talk, support and keep residents safe",
+    "titleRu": "Как общаться, поддержать и защитить жителя",
+    "locale": "en-AU",
+    "tipLabel": "Key points",
+    "credits": "Lesson 5 is adapted from \"Restrictive practices in aged care\" by the Aged Care Quality and Safety Commission, © Commonwealth of Australia, licensed under CC BY 4.0.",
+    "lessons": [
+      {
+        "id": "vcs-01",
+        "number": 1,
+        "title": "Meaningful conversations",
+        "titleRu": "Содержательный разговор",
+        "goalRu": "Начать разговор не про погоду, слушать больше, чем говорить, говорить простыми словами и давать время на ответ.",
+        "words": [
+          {
+            "text": "What activities or hobbies do you enjoy?",
+            "translationRu": "Чем вы любите заниматься? Какие у вас хобби?",
+            "noteRu": "Хороший первый вопрос вместо погоды и обеда."
+          },
+          {
+            "text": "Is there something you used to love doing?",
+            "translationRu": "Есть что-то, что вы раньше очень любили делать?"
+          },
+          {
+            "text": "Have you travelled to different places?",
+            "translationRu": "Вы много путешествовали?"
+          },
+          {
+            "text": "What was your favourite place, and why?",
+            "translationRu": "Какое место вам понравилось больше всего и почему?"
+          },
+          {
+            "text": "Can you tell me about something you're proud of?",
+            "translationRu": "Расскажите, чем вы гордитесь?"
+          },
+          {
+            "text": "What advice would you give a young person?",
+            "translationRu": "Какой совет вы бы дали молодому человеку?"
+          },
+          {
+            "text": "Take your time.",
+            "translationRu": "Не торопитесь.",
+            "noteRu": "Многим нужно больше времени, чтобы вспомнить слово. Не торопите и не подсказывайте сразу."
+          },
+          {
+            "text": "Did I get that right?",
+            "translationRu": "Я правильно поняла?",
+            "noteRu": "Проверяйте, что вы поняли друг друга."
+          },
+          {
+            "text": "So you mean...?",
+            "translationRu": "То есть вы имеете в виду...?"
+          },
+          {
+            "text": "I can imagine this must be tough for you.",
+            "translationRu": "Представляю, как вам сейчас тяжело."
+          },
+          {
+            "text": "It sounds like you're going through a difficult time.",
+            "translationRu": "Похоже, вам сейчас нелегко."
+          },
+          {
+            "text": "Fancy a yarn?",
+            "translationRu": "Поболтаем?",
+            "noteRu": "Yarn - это не только пряжа, но и разговор, болтовня.",
+            "aussie": true
+          }
+        ],
+        "dialogue": [
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Good morning, Mrs Brown. Would you like to have a chat?",
+            "translationRu": "Доброе утро, миссис Браун. Хотите поболтать?"
+          },
+          {
+            "role": "resident",
+            "speaker": "Mrs Brown",
+            "text": "Oh, yes, love. Nobody's been in all day.",
+            "translationRu": "Ой, да, дорогая. Ко мне сегодня никто не заходил."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "What did you love doing when you were younger?",
+            "translationRu": "Что вы любили делать, когда были моложе?"
+          },
+          {
+            "role": "resident",
+            "speaker": "Mrs Brown",
+            "text": "I used to... um... what's the word... grow things. In the garden.",
+            "translationRu": "Я раньше... э-э... как же это... выращивала. В саду."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Take your time.",
+            "translationRu": "Не торопитесь."
+          },
+          {
+            "role": "resident",
+            "speaker": "Mrs Brown",
+            "text": "Roses! I grew roses. I won a prize once.",
+            "translationRu": "Розы! Я выращивала розы. Однажды даже получила приз."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "A prize for your roses? So you mean you were the best in town?",
+            "translationRu": "Приз за розы? То есть вы были лучшей в городе?"
+          },
+          {
+            "role": "resident",
+            "speaker": "Mrs Brown",
+            "text": "Well, the best in our street, love. I could talk about my roses all day.",
+            "translationRu": "Ну, лучшей на нашей улице, дорогая. Я могу говорить о своих розах весь день."
+          }
+        ],
+        "tip": {
+          "title": "Good conversation habits",
+          "ruleRu": "1. Слушайте больше, чем говорите, и не перебивайте: для многих пожилых людей это редкий шанс быть услышанными. 2. Говорите самыми простыми словами: без жаргона, сленга и сокращений. 3. Тон голоса, лицо и жесты должны совпадать со словами. 4. Давайте время на ответ: спешка вызывает тревогу. 5. Проверяйте, что вас поняли, и задавайте вопросы. 6. Решение предлагать не обязательно: часто достаточно просто быть рядом и слушать.",
+          "examples": [
+            "Listen more than you speak.",
+            "Use the simplest words possible.",
+            "Allow time for responses.",
+            "You don't have to offer solutions."
+          ]
+        },
+        "practice": [
+          {
+            "id": "vcs-01-p1",
+            "kind": "listen",
+            "say": "Hang on, love, what's the word... it's on the tip of my tongue.",
+            "situation": "A resident stops in the middle of a story.",
+            "situationRu": "Жительница рассказывает историю и вдруг останавливается. Что происходит?",
+            "answer": "Она не может вспомнить слово",
+            "distractors": [
+              "Она просит вас уйти",
+              "Она хочет пить"
+            ],
+            "explanation": "\"On the tip of my tongue\" means she can't find the word.",
+            "explanationRu": "\"On the tip of my tongue\" - слово вертится на языке. Подождите и скажите \"Take your time\"."
+          },
+          {
+            "id": "vcs-01-p2",
+            "kind": "reply",
+            "situation": "A resident is searching for a word.",
+            "situationRu": "Житель долго подбирает слово. Что вы скажете?",
+            "answer": "Take your time.",
+            "distractors": [
+              "Hurry up, please.",
+              "I don't have time for this."
+            ],
+            "explanation": "Give people time to find the word. Rushing them makes them anxious.",
+            "explanationRu": "Дайте человеку время. Спешка вызывает тревогу."
+          },
+          {
+            "id": "vcs-01-p3",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Житель рассказывает о брате, который умер, и замолкает. Вы не знаете, что сказать. Что делать?",
+            "answer": "Побыть рядом и сказать: It sounds like a difficult time",
+            "distractors": [
+              "Быстро сменить тему на погоду",
+              "Дать совет, как перестать грустить"
+            ],
+            "explanation": "You don't have to fix it. Being there and listening is often enough.",
+            "explanationRu": "Решать ничего не нужно. Часто достаточно быть рядом и выслушать."
+          },
+          {
+            "id": "vcs-01-p4",
+            "kind": "slang",
+            "say": "Fancy a yarn, love?",
+            "situation": "A volunteer shift.",
+            "situationRu": "Жительница предлагает вам что-то. Что она имеет в виду?",
+            "answer": "Do you want to have a chat?",
+            "distractors": [
+              "Do you want some wool?",
+              "Do you want to go for a walk?"
+            ],
+            "explanation": "A yarn is a chat in Australia.",
+            "explanationRu": "Yarn - разговор, болтовня. Хороший повод присесть и послушать."
+          },
+          {
+            "id": "vcs-01-p5",
+            "kind": "reply",
+            "situation": "Mrs Brown: \"Can you help me to the toilet, love?\"",
+            "situationRu": "Жительница просит отвести ее в туалет. Что ответить?",
+            "answer": "I'm a volunteer, I'm not allowed to do that. I'll get someone for you.",
+            "distractors": [
+              "Sure, hold my arm.",
+              "No, I can't."
+            ],
+            "explanation": "Volunteers don't do personal care. Get a staff member.",
+            "explanationRu": "Волонтер не помогает с туалетом. Позовите персонал."
+          }
+        ],
+        "check": [
+          {
+            "id": "vcs-01-c1",
+            "kind": "listen",
+            "say": "I used to love dancing. Haven't done it in years.",
+            "situation": "A volunteer shift.",
+            "situationRu": "Что рассказывает жительница?",
+            "answer": "Раньше она любила танцевать, но давно не танцевала",
+            "distractors": [
+              "Она танцует каждый день",
+              "Она никогда не любила танцы"
+            ],
+            "explanation": "\"I used to love...\" is about the past. \"Haven't done it in years\" means not for a long time.",
+            "explanationRu": "\"I used to love\" - раньше любила. \"Haven't done it in years\" - давно не делала. Хорошая тема для разговора."
+          },
+          {
+            "id": "vcs-01-c2",
+            "kind": "reply",
+            "situation": "A volunteer shift.",
+            "situationRu": "Вы хотите начать разговор с жителем. Какой вопрос лучше?",
+            "answer": "What activities or hobbies do you enjoy?",
+            "distractors": [
+              "How's the weather today?",
+              "Did you eat your lunch?"
+            ],
+            "explanation": "Talk about the weather and meals quickly goes in circles. Ask about their life.",
+            "explanationRu": "Разговоры о погоде и обеде быстро повторяются. Спросите о жизни и увлечениях."
+          },
+          {
+            "id": "vcs-01-c3",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Вы десять минут рассказываете жителю о себе. Он молчит. Что лучше сделать?",
+            "answer": "Задать ему открытый вопрос и слушать",
+            "distractors": [
+              "Рассказать еще одну историю",
+              "Уйти, раз ему неинтересно"
+            ],
+            "explanation": "Listen more than you speak.",
+            "explanationRu": "Слушайте больше, чем говорите. Задайте вопрос о нем самом."
+          },
+          {
+            "id": "vcs-01-c4",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Вы не уверены, что поняли жительницу. Что делать?",
+            "answer": "Переспросить: So you mean...? Did I get that right?",
+            "distractors": [
+              "Кивнуть, как будто все поняли",
+              "Перевести разговор на другую тему"
+            ],
+            "explanation": "Check that you both understand the same thing.",
+            "explanationRu": "Проверьте, что вы поняли друг друга. Кивать без понимания нельзя."
+          },
+          {
+            "id": "vcs-01-c5",
+            "kind": "reply",
+            "situation": "Mr Wilson: \"Be a dear and pass me those pills on the table.\"",
+            "situationRu": "Житель просит подать ему таблетки со стола. Что ответить?",
+            "answer": "I'm a volunteer, I'm not allowed to do that. I'll get the nurse.",
+            "distractors": [
+              "Here you go.",
+              "How many do you need?"
+            ],
+            "explanation": "Volunteers never handle medication.",
+            "explanationRu": "Волонтер не трогает лекарства. Позовите медсестру."
+          }
+        ]
+      },
+      {
+        "id": "vcs-02",
+        "number": 2,
+        "title": "Hearing loss",
+        "titleRu": "Если человек плохо слышит",
+        "goalRu": "Заметить, что человек плохо слышит, привлечь внимание, убрать шум и говорить так, чтобы вас поняли.",
+        "words": [
+          {
+            "text": "hearing aid",
+            "translationRu": "слуховой аппарат"
+          },
+          {
+            "text": "Have you got your hearing aids in?",
+            "translationRu": "Вы надели слуховые аппараты?",
+            "noteRu": "Напоминайте мягко, если человек их носит."
+          },
+          {
+            "text": "hard of hearing",
+            "translationRu": "плохо слышит"
+          },
+          {
+            "text": "Pardon? What was that?",
+            "translationRu": "Что-что? Простите?"
+          },
+          {
+            "text": "Can I turn the TV down?",
+            "translationRu": "Можно я сделаю телевизор потише?"
+          },
+          {
+            "text": "Shall we close the window?",
+            "translationRu": "Закроем окно?"
+          },
+          {
+            "text": "Let me say that another way.",
+            "translationRu": "Скажу по-другому.",
+            "noteRu": "Если вас не поняли, не повторяйте те же слова громче. Скажите иначе."
+          },
+          {
+            "text": "background noise",
+            "translationRu": "фоновый шум"
+          },
+          {
+            "text": "Can you see my face OK?",
+            "translationRu": "Вам видно мое лицо?",
+            "noteRu": "Многие помогают себе губами и лицом: садитесь напротив, на свет."
+          },
+          {
+            "text": "telly",
+            "translationRu": "телевизор",
+            "noteRu": "Разговорное слово: turn the telly down - сделай телевизор тише.",
+            "aussie": true
+          },
+          {
+            "text": "I'm deaf as a post.",
+            "translationRu": "Я глухой как пень.",
+            "noteRu": "Так шутят о себе пожилые австралийцы. Отвечайте спокойно и дружелюбно.",
+            "aussie": true
+          }
+        ],
+        "dialogue": [
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Hello, Mr Wilson! It's Nina.",
+            "translationRu": "Здравствуйте, мистер Уилсон! Это Нина."
+          },
+          {
+            "role": "resident",
+            "speaker": "Mr Wilson",
+            "text": "Eh? Who's that?",
+            "translationRu": "А? Кто это?"
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "It's Nina, the volunteer. Have you got your hearing aids in?",
+            "translationRu": "Это Нина, волонтер. Вы надели слуховые аппараты?"
+          },
+          {
+            "role": "resident",
+            "speaker": "Mr Wilson",
+            "text": "Oh, hang on... There we go. Sorry, love, I'm deaf as a post without them.",
+            "translationRu": "Ой, погоди... Вот так. Прости, дорогая, без них я глухой как пень."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "That's OK. Can I turn the telly down so we can talk?",
+            "translationRu": "Ничего. Можно я сделаю телевизор тише, чтобы мы поговорили?"
+          },
+          {
+            "role": "resident",
+            "speaker": "Mr Wilson",
+            "text": "Go for it.",
+            "translationRu": "Давай."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Would you like to go to the garden this afternoon?",
+            "translationRu": "Хотите сегодня днем пойти в сад?"
+          },
+          {
+            "role": "resident",
+            "speaker": "Mr Wilson",
+            "text": "The garbage?",
+            "translationRu": "К мусору?"
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Let me say that another way. Shall we go outside and sit with the flowers?",
+            "translationRu": "Скажу по-другому. Пойдем на улицу посидим у цветов?"
+          },
+          {
+            "role": "resident",
+            "speaker": "Mr Wilson",
+            "text": "Oh, outside! Yes, lovely.",
+            "translationRu": "А, на улицу! Да, с удовольствием."
+          }
+        ],
+        "tip": {
+          "title": "Talking with someone who is hard of hearing",
+          "ruleRu": "Признаки: человек часто переспрашивает \"What?\", плохо понимает в шуме, в группе и на улице, очень громко включает телевизор или радио, начинает избегать компаний. Как говорить: 1. Сначала привлеките внимание: зрительный контакт или легкий взмах рукой. Убедитесь, что человек готов слушать. 2. Мягко напомните про слуховой аппарат. 3. Уберите шум: выключите телевизор, закройте окно. 4. Не поняли - скажите другими словами, а не повторяйте громче. 5. Будьте терпеливы: дайте время понять и ответить.",
+          "examples": [
+            "Make eye contact or give a small wave.",
+            "Turn off the TV.",
+            "Try rephrasing your words rather than simply repeating them.",
+            "Be patient."
+          ]
+        },
+        "practice": [
+          {
+            "id": "vcs-02-p1",
+            "kind": "listen",
+            "say": "Speak up, love, I can't hear a thing with that telly on.",
+            "situation": "A volunteer shift.",
+            "situationRu": "Что просит жительница?",
+            "answer": "Говорить громче: из-за телевизора ничего не слышно",
+            "distractors": [
+              "Выключить свет, он мешает",
+              "Включить телевизор погромче"
+            ],
+            "explanation": "\"Speak up\" means talk louder. The telly is the TV.",
+            "explanationRu": "\"Speak up\" - говорите громче. Лучше спросите, можно ли сделать телевизор тише."
+          },
+          {
+            "id": "vcs-02-p2",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Жительница сидит спиной к вам, вы хотите поговорить. Что сделать сначала?",
+            "answer": "Подойти так, чтобы она вас видела, и помахать рукой",
+            "distractors": [
+              "Тронуть ее за плечо сзади",
+              "Громко позвать ее из коридора"
+            ],
+            "explanation": "Get attention first: eye contact or a small wave.",
+            "explanationRu": "Сначала привлеките внимание спереди: взгляд или жест. Прикосновение сзади пугает."
+          },
+          {
+            "id": "vcs-02-p3",
+            "kind": "reply",
+            "situation": "A volunteer shift.",
+            "situationRu": "Вы задали вопрос, житель не понял. Что сказать?",
+            "answer": "Let me say that another way.",
+            "distractors": [
+              "I SAID, DO YOU WANT TEA?",
+              "Never mind."
+            ],
+            "explanation": "Rephrase instead of repeating louder.",
+            "explanationRu": "Скажите другими словами, а не громче."
+          },
+          {
+            "id": "vcs-02-p4",
+            "kind": "slang",
+            "say": "Turn the telly down, would ya?",
+            "situation": "A volunteer shift.",
+            "situationRu": "Что просит житель?",
+            "answer": "Please make the TV quieter.",
+            "distractors": [
+              "Please turn the TV off forever.",
+              "Please move the TV."
+            ],
+            "explanation": "\"Turn the telly down\" means make it quieter.",
+            "explanationRu": "\"Turn the telly down\" - сделай телевизор тише."
+          },
+          {
+            "id": "vcs-02-p5",
+            "kind": "reply",
+            "situation": "Mr Wilson: \"Pop my hearing aid in for me, love.\"",
+            "situationRu": "Житель просит вставить ему слуховой аппарат. Что ответить?",
+            "answer": "I'm a volunteer, I'm not allowed to do that. I'll get someone for you.",
+            "distractors": [
+              "Sure, turn your head.",
+              "Do it yourself."
+            ],
+            "explanation": "Putting in hearing aids is personal care. Get a staff member.",
+            "explanationRu": "Вставлять слуховой аппарат - это уход за телом. Позовите персонал."
+          }
+        ],
+        "check": [
+          {
+            "id": "vcs-02-c1",
+            "kind": "listen",
+            "say": "Eh? What was that?",
+            "situation": "A volunteer shift.",
+            "situationRu": "Что говорит житель?",
+            "answer": "Он не расслышал",
+            "distractors": [
+              "Он спрашивает, что это за вещь",
+              "Он сердится на вас"
+            ],
+            "explanation": "\"Eh? What was that?\" means he didn't hear you.",
+            "explanationRu": "\"Eh? What was that?\" - \"А? Что-что?\". Он не расслышал."
+          },
+          {
+            "id": "vcs-02-c2",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "В комнате громко работает телевизор, жительница плохо слышит. Что сделать?",
+            "answer": "Спросить разрешения и сделать телевизор тише",
+            "distractors": [
+              "Говорить громче телевизора",
+              "Сразу выключить телевизор, не спрашивая"
+            ],
+            "explanation": "Remove the noise, but it's her room: ask first.",
+            "explanationRu": "Уберите шум, но это ее комната: сначала спросите."
+          },
+          {
+            "id": "vcs-02-c3",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Вы повторили фразу два раза, житель все равно не понял. Что делать?",
+            "answer": "Сказать по-другому, проще, и дать время",
+            "distractors": [
+              "Повторить в третий раз громче",
+              "Сказать \"It doesn't matter\" и уйти"
+            ],
+            "explanation": "Rephrase and be patient.",
+            "explanationRu": "Скажите иначе и будьте терпеливы."
+          },
+          {
+            "id": "vcs-02-c4",
+            "kind": "reply",
+            "situation": "A volunteer shift.",
+            "situationRu": "Житель носит слуховые аппараты, но сейчас их нет. Что сказать?",
+            "answer": "Have you got your hearing aids in?",
+            "distractors": [
+              "Why can't you hear me?",
+              "You're deaf, aren't you?"
+            ],
+            "explanation": "Remind gently.",
+            "explanationRu": "Напомните мягко и с уважением."
+          },
+          {
+            "id": "vcs-02-c5",
+            "kind": "reply",
+            "situation": "Mrs Brown: \"Can you cut my toenails, love?\"",
+            "situationRu": "Жительница просит подстричь ей ногти на ногах. Что ответить?",
+            "answer": "I'm a volunteer, I'm not allowed to do that. I'll get someone for you.",
+            "distractors": [
+              "Sure, where are the scissors?",
+              "Maybe next week."
+            ],
+            "explanation": "Nail care is personal care. Volunteers don't do it.",
+            "explanationRu": "Стрижка ногтей - уход за телом. Волонтеру нельзя."
+          }
+        ]
+      },
+      {
+        "id": "vcs-03",
+        "number": 3,
+        "title": "Trauma-informed support",
+        "titleRu": "Поддержка после тяжелого опыта",
+        "goalRu": "Понять, что тяжелое прошлое влияет на человека, дать чувство безопасности, заметить тревожные признаки и сообщить координатору.",
+        "words": [
+          {
+            "text": "trauma",
+            "translationRu": "травма (след тяжелых событий)"
+          },
+          {
+            "text": "You're safe here.",
+            "translationRu": "Здесь вы в безопасности."
+          },
+          {
+            "text": "That sounds very difficult.",
+            "translationRu": "Звучит очень тяжело."
+          },
+          {
+            "text": "It's okay to feel sad about that.",
+            "translationRu": "Грустить об этом нормально."
+          },
+          {
+            "text": "You don't have to talk about it.",
+            "translationRu": "Можно об этом не говорить."
+          },
+          {
+            "text": "I'm here to listen.",
+            "translationRu": "Я здесь, чтобы выслушать."
+          },
+          {
+            "text": "I'll be back on Tuesday, like I said.",
+            "translationRu": "Я приду во вторник, как обещала.",
+            "noteRu": "Доверие строится на надежности: выполняйте обещания."
+          },
+          {
+            "text": "You gave me a fright.",
+            "translationRu": "Вы меня напугали."
+          },
+          {
+            "text": "nightmares, bad dreams",
+            "translationRu": "кошмары"
+          },
+          {
+            "text": "I'm a bit worried about Mrs Brown.",
+            "translationRu": "Я немного беспокоюсь о миссис Браун.",
+            "noteRu": "Так можно начать разговор с координатором."
+          },
+          {
+            "text": "a bit crook",
+            "translationRu": "приболел, плохо себя чувствует",
+            "noteRu": "I'm feeling a bit crook today - мне сегодня нехорошо.",
+            "aussie": true
+          }
+        ],
+        "dialogue": [
+          {
+            "role": "resident",
+            "speaker": "Mrs Brown",
+            "text": "Who's there? Oh! You gave me a fright.",
+            "translationRu": "Кто там? Ой! Вы меня напугали."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Sorry, Mrs Brown. It's Nina. I'll knock louder next time.",
+            "translationRu": "Простите, миссис Браун. Это Нина. В следующий раз постучу громче."
+          },
+          {
+            "role": "resident",
+            "speaker": "Mrs Brown",
+            "text": "I don't sleep well, love. I keep having bad dreams about the war.",
+            "translationRu": "Я плохо сплю, дорогая. Мне все снится война."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "That sounds very difficult.",
+            "translationRu": "Звучит очень тяжело."
+          },
+          {
+            "role": "resident",
+            "speaker": "Mrs Brown",
+            "text": "I don't like to talk about it.",
+            "translationRu": "Я не люблю об этом говорить."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "That's OK. You don't have to talk about it. I'm here to listen whenever you want.",
+            "translationRu": "Ничего. Можно об этом не говорить. Я выслушаю, когда захотите."
+          },
+          {
+            "role": "resident",
+            "speaker": "Mrs Brown",
+            "text": "Will you come back?",
+            "translationRu": "Ты еще придешь?"
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Yes, I'll be back on Tuesday, like I said.",
+            "translationRu": "Да, я приду во вторник, как обещала."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Sam, I'm a bit worried about Mrs Brown. She isn't sleeping and she has bad dreams.",
+            "translationRu": "Сэм, я немного беспокоюсь о миссис Браун. Она не спит, ей снятся кошмары."
+          },
+          {
+            "role": "staff",
+            "speaker": "Sam",
+            "text": "Thanks for telling me. I'll let the nurse know.",
+            "translationRu": "Спасибо, что сказала. Я передам медсестре."
+          }
+        ],
+        "tip": {
+          "title": "Trauma-informed care",
+          "ruleRu": "Травма - след тяжелых событий: насилия, пренебрежения, войны, потери близких, катастроф. Иногда ей десятки лет, но она до сих пор влияет на чувства и поведение. Принципы: 1. Безопасность: тихое место для разговора, мягкий голос, без резких движений. 2. Доверие: будьте надежны, выполняйте обещания, объясните, кто вы и что делаете. 3. Сильные стороны: напоминайте человеку о его стойкости, хвалите искренне, давайте надежду. 4. Выбор: спрашивайте мнение и уважайте решения. 5. Культура и поколение влияют на отношение к травме: не делайте выводов, слушайте. Признаки: легко пугается, сильно тревожится, грусть не проходит, раздражительность и вспышки гнева, потеря интереса, одиночество, кошмары, плохой сон. Ваша роль - слушать, а не решать. Беспокоитесь за человека - сообщите координатору.",
+          "examples": [
+            "That sounds very difficult.",
+            "It's okay to feel sad about that.",
+            "Your role is not to offer solutions but to actively listen."
+          ]
+        },
+        "practice": [
+          {
+            "id": "vcs-03-p1",
+            "kind": "listen",
+            "say": "I don't want to go in that room. Not with the door shut.",
+            "situation": "A volunteer shift.",
+            "situationRu": "Что говорит жительница?",
+            "answer": "Она боится заходить в комнату с закрытой дверью",
+            "distractors": [
+              "Ей холодно в той комнате",
+              "Она хочет, чтобы вы закрыли дверь"
+            ],
+            "explanation": "A shut door frightens her. Respect that and keep it open.",
+            "explanationRu": "Ее пугает закрытая дверь. Не спорьте, оставьте дверь открытой."
+          },
+          {
+            "id": "vcs-03-p2",
+            "kind": "reply",
+            "situation": "A volunteer shift.",
+            "situationRu": "Жительница плачет, вспоминая мужа. Что сказать?",
+            "answer": "It's okay to feel sad about that.",
+            "distractors": [
+              "Don't cry, cheer up!",
+              "Let's talk about something happy."
+            ],
+            "explanation": "Accept the feeling. Don't push it away.",
+            "explanationRu": "Примите чувство, не отталкивайте его."
+          },
+          {
+            "id": "vcs-03-p3",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Житель вздрагивает и кричит, когда вы входите без стука. Что делать?",
+            "answer": "Извиниться спокойным голосом и дальше всегда стучать и представляться",
+            "distractors": [
+              "Посмеяться, чтобы разрядить обстановку",
+              "Быстро подойти и обнять его"
+            ],
+            "explanation": "Calm and predictable is safe.",
+            "explanationRu": "Спокойствие и предсказуемость дают чувство безопасности."
+          },
+          {
+            "id": "vcs-03-p4",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Жительница третью неделю не спит из-за кошмаров и перестала ходить на занятия. Что делать?",
+            "answer": "Выслушать и сообщить координатору волонтеров",
+            "distractors": [
+              "Посоветовать ей снотворное",
+              "Никому не говорить, это ее личное дело"
+            ],
+            "explanation": "These are signs of trauma. Listen and report your concern.",
+            "explanationRu": "Это признаки травмы. Выслушайте и сообщите координатору."
+          },
+          {
+            "id": "vcs-03-p5",
+            "kind": "slang",
+            "say": "I'm feeling a bit crook today, love.",
+            "situation": "A volunteer shift.",
+            "situationRu": "Что говорит жительница?",
+            "answer": "I'm feeling a bit sick today.",
+            "distractors": [
+              "I'm feeling a bit dishonest today.",
+              "I'm feeling a bit hungry today."
+            ],
+            "explanation": "\"Crook\" means sick or unwell.",
+            "explanationRu": "\"Crook\" - приболел, нехорошо."
+          },
+          {
+            "id": "vcs-03-p6",
+            "kind": "reply",
+            "situation": "Mr Wilson: \"Can you give me something to help me sleep?\"",
+            "situationRu": "Житель просит дать ему что-нибудь, чтобы уснуть. Что ответить?",
+            "answer": "I'm a volunteer, I'm not allowed to do that. I'll tell the nurse.",
+            "distractors": [
+              "Here's a tablet from my bag.",
+              "Have a glass of wine."
+            ],
+            "explanation": "Never give medicine or alcohol. Tell the nurse.",
+            "explanationRu": "Никаких лекарств и алкоголя. Скажите медсестре."
+          }
+        ],
+        "check": [
+          {
+            "id": "vcs-03-c1",
+            "kind": "listen",
+            "say": "I don't like to talk about the war, love.",
+            "situation": "A volunteer shift.",
+            "situationRu": "Что говорит житель?",
+            "answer": "Он не хочет говорить о войне",
+            "distractors": [
+              "Он хочет рассказать о войне",
+              "Он спрашивает, была ли у вас война"
+            ],
+            "explanation": "He doesn't want to talk about it. Don't push.",
+            "explanationRu": "Он не хочет об этом говорить. Не настаивайте."
+          },
+          {
+            "id": "vcs-03-c2",
+            "kind": "reply",
+            "situation": "A volunteer shift.",
+            "situationRu": "Житель не хочет рассказывать о тяжелом прошлом. Что сказать?",
+            "answer": "That's OK. You don't have to talk about it.",
+            "distractors": [
+              "Come on, it will help you.",
+              "Why not? Just tell me."
+            ],
+            "explanation": "No pressure to share.",
+            "explanationRu": "Никакого давления: человек расскажет, когда будет готов."
+          },
+          {
+            "id": "vcs-03-c3",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Вы обещали прийти во вторник, но заболели. Что делать?",
+            "answer": "Предупредить координатора, чтобы жительнице сказали заранее",
+            "distractors": [
+              "Просто не прийти, она забудет",
+              "Прийти больной, раз обещали"
+            ],
+            "explanation": "Being reliable builds trust. Never visit when sick.",
+            "explanationRu": "Надежность строит доверие. Приходить больной к пожилым нельзя."
+          },
+          {
+            "id": "vcs-03-c4",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Жительница вдруг сердится и кричит на вас без видимой причины. Что делать?",
+            "answer": "Сохранить спокойствие, не спорить и потом рассказать координатору",
+            "distractors": [
+              "Накричать в ответ",
+              "Больше к ней не приходить"
+            ],
+            "explanation": "Sudden anger can be a sign of trauma. Stay calm and tell the coordinator.",
+            "explanationRu": "Вспышки гнева бывают признаком травмы. Спокойствие и сообщение координатору."
+          },
+          {
+            "id": "vcs-03-c5",
+            "kind": "reply",
+            "situation": "Mr Wilson: \"I've had chest pain all week. Don't tell anyone, love.\"",
+            "situationRu": "Житель просит пообещать, что вы никому не скажете о его плохом самочувствии. Что ответить?",
+            "answer": "I'm a volunteer, I'm not allowed to keep that secret. I need to tell the nurse.",
+            "distractors": [
+              "I promise I won't tell.",
+              "OK, it's between us."
+            ],
+            "explanation": "Health and safety worries are always reported.",
+            "explanationRu": "О здоровье и безопасности всегда сообщают. Тайну обещать нельзя."
+          }
+        ]
+      },
+      {
+        "id": "vcs-04",
+        "number": 4,
+        "title": "Boundaries, privacy and reporting",
+        "titleRu": "Границы, приватность и сообщения о проблемах",
+        "goalRu": "Знать, где заканчивается роль волонтера, беречь чужие личные данные и правильно сообщать о тревожных случаях.",
+        "passPercent": 100,
+        "words": [
+          {
+            "text": "boundaries",
+            "translationRu": "границы"
+          },
+          {
+            "text": "my role as a volunteer",
+            "translationRu": "моя роль волонтера"
+          },
+          {
+            "text": "Is it OK if I touch your shoulder?",
+            "translationRu": "Можно я коснусь вашего плеча?",
+            "noteRu": "Перед любым прикосновением спрашивайте разрешения."
+          },
+          {
+            "text": "I'm not allowed to give you my phone number.",
+            "translationRu": "Мне нельзя давать свой номер телефона."
+          },
+          {
+            "text": "I'm not allowed to take money.",
+            "translationRu": "Мне нельзя брать деньги."
+          },
+          {
+            "text": "I can't keep that a secret. I need to tell the coordinator.",
+            "translationRu": "Я не могу держать это в секрете. Я должна сказать координатору.",
+            "noteRu": "Если речь о безопасности, тайну обещать нельзя."
+          },
+          {
+            "text": "That's private.",
+            "translationRu": "Это личное."
+          },
+          {
+            "text": "confidential",
+            "translationRu": "конфиденциальный"
+          },
+          {
+            "text": "I need to report this.",
+            "translationRu": "Мне нужно сообщить об этом."
+          },
+          {
+            "text": "abuse",
+            "translationRu": "жестокое обращение"
+          },
+          {
+            "text": "neglect",
+            "translationRu": "пренебрежение, плохой уход"
+          },
+          {
+            "text": "dob in",
+            "translationRu": "донести, сообщить о ком-то",
+            "noteRu": "\"I'm not one to dob anyone in\" - я не из тех, кто доносит. Сообщить о плохом обращении - ваша обязанность, а не донос.",
+            "aussie": true
+          }
+        ],
+        "dialogue": [
+          {
+            "role": "resident",
+            "speaker": "Mr Wilson",
+            "text": "You're a lovely girl. Give me your phone number, I'll ring you.",
+            "translationRu": "Ты чудесная девушка. Дай мне свой номер, я позвоню."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "That's kind, but I'm not allowed to give you my phone number.",
+            "translationRu": "Спасибо, но мне нельзя давать свой номер телефона."
+          },
+          {
+            "role": "resident",
+            "speaker": "Mr Wilson",
+            "text": "Fair enough. Listen, can you keep a secret? Someone took money from my wallet.",
+            "translationRu": "Ну ладно. Слушай, умеешь хранить секреты? Кто-то взял деньги из моего кошелька."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "I'm sorry to hear that. I can't keep that a secret. I need to tell the coordinator.",
+            "translationRu": "Мне очень жаль. Я не могу держать это в секрете. Я должна сказать координатору."
+          },
+          {
+            "role": "resident",
+            "speaker": "Mr Wilson",
+            "text": "Oh, alright then.",
+            "translationRu": "Ну, ладно."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Sam, I need to report something. Mr Wilson says money was taken from his wallet. He told me at ten this morning.",
+            "translationRu": "Сэм, мне нужно кое о чем сообщить. Мистер Уилсон говорит, что у него из кошелька взяли деньги. Он сказал мне в десять утра."
+          },
+          {
+            "role": "staff",
+            "speaker": "Sam",
+            "text": "Thank you. Did you write it down?",
+            "translationRu": "Спасибо. Ты записала?"
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Yes, the date, the time and his words.",
+            "translationRu": "Да, дату, время и его слова."
+          }
+        ],
+        "tip": {
+          "title": "Boundaries, privacy and reporting",
+          "ruleRu": "Границы: 1. Знайте свою роль и где она заканчивается. Не уверены - спросите координатора. 2. Будьте дружелюбны, но без личных отношений: никаких сделок, денег, романов, не стремитесь стать близким другом. 3. Осторожно рассказывайте о себе. 4. Перед любым прикосновением спрашивайте разрешения: в разных культурах к нему относятся по-разному. Приватность: берите только ту информацию, которая нужна для работы, и только с разрешения; храните ее надежно; делитесь только с теми, кому это необходимо; следуйте правилам организации. Сообщение о проблеме: подозреваете жестокое обращение, пренебрежение или эксплуатацию - запишите дату, время, детали и кто участвовал, и сразу сообщите руководителю или координатору. Не ждите.",
+          "examples": [
+            "Always ask permission before any kind of touch.",
+            "Only share information with the people who need to know.",
+            "Write it down: dates, times and details.",
+            "Report it straight away. Don't wait."
+          ]
+        },
+        "practice": [
+          {
+            "id": "vcs-04-p1",
+            "kind": "listen",
+            "say": "Here, take this twenty dollars, love. Buy yourself something nice.",
+            "situation": "A volunteer shift.",
+            "situationRu": "Что делает житель?",
+            "answer": "Дает вам 20 долларов в подарок",
+            "distractors": [
+              "Просит купить ему что-то за 20 долларов",
+              "Говорит, что потерял 20 долларов"
+            ],
+            "explanation": "\"Buy yourself something nice\" means it's a gift for you.",
+            "explanationRu": "\"Buy yourself something nice\" - купи себе что-нибудь. Это подарок, брать его нельзя."
+          },
+          {
+            "id": "vcs-04-p2",
+            "kind": "reply",
+            "situation": "A volunteer shift.",
+            "situationRu": "Житель дает вам 20 долларов. Что ответить?",
+            "answer": "Thank you, but I'm not allowed to take money.",
+            "distractors": [
+              "Thanks, that's very kind!",
+              "Make it fifty."
+            ],
+            "explanation": "No money or gifts.",
+            "explanationRu": "Деньги и подарки брать нельзя. Поблагодарите и откажитесь."
+          },
+          {
+            "id": "vcs-04-p3",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Жительница говорит, что сосед толкнул ее и забрал печенье. Она просит никому не говорить. Что делать?",
+            "answer": "Записать, что она сказала, и сразу сообщить координатору",
+            "distractors": [
+              "Пообещать молчать, раз она просит",
+              "Самой поговорить с соседом"
+            ],
+            "explanation": "Possible abuse is always reported, even if they ask you not to.",
+            "explanationRu": "О возможном насилии сообщают всегда, даже если просят молчать. Разбираться самой не нужно."
+          },
+          {
+            "id": "vcs-04-p4",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Жительница расстроена, и вы хотите взять ее за руку. Что сделать?",
+            "answer": "Сначала спросить, можно ли",
+            "distractors": [
+              "Просто взять за руку, это же поддержка",
+              "Обнять ее покрепче"
+            ],
+            "explanation": "Ask permission before any touch.",
+            "explanationRu": "Перед любым прикосновением спросите разрешения."
+          },
+          {
+            "id": "vcs-04-p5",
+            "kind": "slang",
+            "say": "I'm not one to dob anyone in, but...",
+            "situation": "A volunteer shift.",
+            "situationRu": "Что говорит жительница?",
+            "answer": "I don't like to report people, but...",
+            "distractors": [
+              "I don't like to call people, but...",
+              "I don't like to help people, but..."
+            ],
+            "explanation": "To dob someone in is to report them.",
+            "explanationRu": "\"Dob in\" - сообщить о ком-то. Дальше, скорее всего, будет важное: слушайте."
+          }
+        ],
+        "check": [
+          {
+            "id": "vcs-04-c1",
+            "kind": "listen",
+            "say": "Can I have your number, love? Then I can ring you when I'm lonely.",
+            "situation": "A volunteer shift.",
+            "situationRu": "Что просит житель?",
+            "answer": "Ваш номер телефона",
+            "distractors": [
+              "Сказать, сколько вам лет",
+              "Позвонить его дочери"
+            ],
+            "explanation": "\"Your number\" is your phone number.",
+            "explanationRu": "\"Your number\" - номер телефона. Давать его нельзя."
+          },
+          {
+            "id": "vcs-04-c2",
+            "kind": "reply",
+            "situation": "A volunteer shift.",
+            "situationRu": "Житель просит ваш номер телефона. Что ответить?",
+            "answer": "That's kind, but I'm not allowed to give you my phone number.",
+            "distractors": [
+              "Sure, it's oh four one two...",
+              "No way."
+            ],
+            "explanation": "Keep a professional distance, kindly.",
+            "explanationRu": "Держите дистанцию, но вежливо."
+          },
+          {
+            "id": "vcs-04-c3",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Другая волонтерка спрашивает, чем болеет миссис Браун. Что делать?",
+            "answer": "Не рассказывать: это личная информация",
+            "distractors": [
+              "Рассказать, она ведь тоже волонтер",
+              "Показать записи о жительнице"
+            ],
+            "explanation": "Share only with people who need to know.",
+            "explanationRu": "Делитесь только с теми, кому это необходимо для работы."
+          },
+          {
+            "id": "vcs-04-c4",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "У жителя синяки на руках, и он вздрагивает, когда подходит один из сотрудников. Что делать?",
+            "answer": "Записать, что видели, и сразу сообщить координатору",
+            "distractors": [
+              "Спросить у сотрудника, бьет ли он жителя",
+              "Подождать следующей смены и посмотреть еще раз"
+            ],
+            "explanation": "Write it down and report straight away.",
+            "explanationRu": "Запишите и сообщите сразу. Не ждите и не расследуйте сами."
+          },
+          {
+            "id": "vcs-04-c5",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Вы не уверены, можно ли вам вывести жительницу на прогулку за территорию. Что делать?",
+            "answer": "Спросить координатора волонтеров",
+            "distractors": [
+              "Вывести, раз она хочет",
+              "Спросить у другого жителя"
+            ],
+            "explanation": "Not sure about your role? Ask the coordinator.",
+            "explanationRu": "Не уверены в своей роли - спросите координатора."
+          }
+        ]
+      },
+      {
+        "id": "vcs-05",
+        "number": 5,
+        "title": "Rights and restrictive practices",
+        "titleRu": "Права жителя и ограничения",
+        "goalRu": "Знать права жителя и пять видов ограничительных мер, замечать их и сообщать.",
+        "words": [
+          {
+            "text": "safety, dignity, respect and choice",
+            "translationRu": "безопасность, достоинство, уважение и выбор",
+            "noteRu": "Права каждого, кто получает уход."
+          },
+          {
+            "text": "restrictive practice",
+            "translationRu": "ограничительная мера"
+          },
+          {
+            "text": "last resort",
+            "translationRu": "крайняя мера"
+          },
+          {
+            "text": "chemical restraint",
+            "translationRu": "химическое ограничение",
+            "noteRu": "Лекарство, чтобы повлиять на поведение или настроение."
+          },
+          {
+            "text": "environmental restraint",
+            "translationRu": "ограничение среды",
+            "noteRu": "Нет свободного доступа к местам и вещам: закрытый двор, ходунки вне досягаемости."
+          },
+          {
+            "text": "mechanical restraint",
+            "translationRu": "механическое ограничение",
+            "noteRu": "Устройство мешает двигаться: например, кровать опущена так низко, что не встать."
+          },
+          {
+            "text": "physical restraint",
+            "translationRu": "физическое ограничение",
+            "noteRu": "Удерживать силой: например, держать руки во время ухода."
+          },
+          {
+            "text": "seclusion",
+            "translationRu": "изоляция",
+            "noteRu": "Человека оставляют одного в комнате, откуда он не может или думает, что не может выйти."
+          },
+          {
+            "text": "informed consent",
+            "translationRu": "информированное согласие"
+          },
+          {
+            "text": "I can't reach my walking frame.",
+            "translationRu": "Я не могу дотянуться до ходунков."
+          },
+          {
+            "text": "a fair go",
+            "translationRu": "справедливое отношение",
+            "noteRu": "Everyone deserves a fair go - каждый заслуживает справедливого отношения.",
+            "aussie": true
+          }
+        ],
+        "dialogue": [
+          {
+            "role": "resident",
+            "speaker": "Mrs Brown",
+            "text": "Love, I can't reach my walking frame. Someone put it over there.",
+            "translationRu": "Дорогая, я не могу дотянуться до ходунков. Кто-то поставил их туда."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "I'll get someone for you right now.",
+            "translationRu": "Я сейчас позову кого-нибудь."
+          },
+          {
+            "role": "resident",
+            "speaker": "Mrs Brown",
+            "text": "And they've locked the garden door again. I just want some fresh air.",
+            "translationRu": "И дверь в сад опять заперли. Я просто хочу подышать."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "I understand. I'll tell the coordinator.",
+            "translationRu": "Понимаю. Я скажу координатору."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Sam, Mrs Brown's walking frame was out of reach, and she says the garden door is locked. She wants to go outside.",
+            "translationRu": "Сэм, ходунки миссис Браун стояли так, что она не могла их взять, и она говорит, что дверь в сад заперта. Она хочет выйти."
+          },
+          {
+            "role": "staff",
+            "speaker": "Sam",
+            "text": "Thanks for telling me. I'll check with the registered nurse.",
+            "translationRu": "Спасибо, что сказала. Я уточню у дипломированной медсестры."
+          }
+        ],
+        "tip": {
+          "title": "Restrictive practices",
+          "ruleRu": "Каждый, кто получает уход, имеет право на безопасность, достоинство, уважение и выбор. Ограничительная мера - любое действие, которое ограничивает права или свободу движения человека. Ее можно применять только как крайнюю меру, чтобы предотвратить вред, самым мягким способом и на самое короткое время. Пять видов: химическое (лекарство, чтобы влиять на поведение), ограничение среды (нет свободного доступа к местам, вещам и занятиям), механическое (устройство мешает двигаться), физическое (удержание силой), изоляция (человек один в комнате и не может выйти). До применения: оценка специалиста (например, registered nurse), обсуждение с человеком, сначала другие способы, информированное согласие, индивидуальный план поддержки поведения. Потом - наблюдение за здоровьем и отмена как можно скорее. Есть вопросы к уходу - можно говорить с организацией, с Older Persons Advocacy Network или с Aged Care Quality and Safety Commission. Волонтер ограничения не применяет и не снимает сам: заметили - сообщите координатору.",
+          "examples": [
+            "Everyone receiving aged care services has the right to safety, dignity, respect and choice.",
+            "Providers can only use a restrictive practice as a last resort to prevent harm.",
+            "For example, putting your walking frame out of reach."
+          ]
+        },
+        "practice": [
+          {
+            "id": "vcs-05-p1",
+            "kind": "listen",
+            "say": "They've put my walker where I can't get it.",
+            "situation": "A volunteer shift.",
+            "situationRu": "Что говорит жительница?",
+            "answer": "Ее ходунки поставили так, что она не может их взять",
+            "distractors": [
+              "Она потеряла свою сумку",
+              "Она хочет новые ходунки"
+            ],
+            "explanation": "A walker is a walking frame.",
+            "explanationRu": "\"Walker\" - ходунки. Ходунки вне досягаемости - ограничение среды."
+          },
+          {
+            "id": "vcs-05-p2",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Жительница не может дотянуться до ходунков, их поставили у стены. Что делать?",
+            "answer": "Сообщить персоналу или координатору",
+            "distractors": [
+              "Ничего не делать, так безопаснее",
+              "Помочь ей встать и пойти без ходунков"
+            ],
+            "explanation": "This is an environmental restraint. Report it.",
+            "explanationRu": "Это ограничение среды. Сообщите, не решайте сами."
+          },
+          {
+            "id": "vcs-05-p3",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Житель жалуется, что кровать опустили так низко, что он не может встать. Какой это вид ограничения?",
+            "answer": "Механическое",
+            "distractors": [
+              "Химическое",
+              "Изоляция"
+            ],
+            "explanation": "A device used to stop movement is mechanical.",
+            "explanationRu": "Устройство, которое мешает двигаться, - механическое ограничение."
+          },
+          {
+            "id": "vcs-05-p4",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Жительнице дают лекарство, после которого она все время спит. Родственница говорит: это чтобы она не бродила. Что это?",
+            "answer": "Химическое ограничение: сообщить координатору",
+            "distractors": [
+              "Обычный уход, ничего не делать",
+              "Посоветовать ей не пить таблетки"
+            ],
+            "explanation": "Medication used mainly to change behaviour is a chemical restraint.",
+            "explanationRu": "Лекарство, чтобы менять поведение, - химическое ограничение. Сообщите, но не советуйте ничего про лекарства."
+          },
+          {
+            "id": "vcs-05-p5",
+            "kind": "reply",
+            "situation": "Mr Wilson: \"Unlock the garden door for me, love. I want some fresh air.\"",
+            "situationRu": "Житель просит открыть дверь в сад. Что ответить?",
+            "answer": "I'm a volunteer, I'm not allowed to do that. I'll ask the staff.",
+            "distractors": [
+              "Sure, where's the key?",
+              "No, stay inside."
+            ],
+            "explanation": "Don't add or remove a restriction yourself. Ask the staff.",
+            "explanationRu": "Не вводите и не снимайте ограничения сами. Спросите персонал."
+          }
+        ],
+        "check": [
+          {
+            "id": "vcs-05-c1",
+            "kind": "listen",
+            "say": "Everyone receiving aged care services has the right to safety, dignity, respect and choice.",
+            "situation": "A volunteer shift.",
+            "situationRu": "О чем это предложение?",
+            "answer": "У каждого, кто получает уход, есть право на безопасность, достоинство, уважение и выбор",
+            "distractors": [
+              "Каждый житель должен соблюдать правила безопасности",
+              "Персонал выбирает, что лучше для жителя"
+            ],
+            "explanation": "These are the rights of everyone in aged care.",
+            "explanationRu": "Это права каждого, кто получает уход."
+          },
+          {
+            "id": "vcs-05-c2",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Житель возбужден, сотрудник отводит его одного в комнату и закрывает дверь. Какой это вид ограничения?",
+            "answer": "Изоляция",
+            "distractors": [
+              "Физическое",
+              "Химическое"
+            ],
+            "explanation": "Alone in a room you can't leave is seclusion.",
+            "explanationRu": "Один в комнате, откуда нельзя выйти, - изоляция."
+          },
+          {
+            "id": "vcs-05-c3",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Когда можно применять ограничительную меру?",
+            "answer": "Только как крайнюю меру, чтобы предотвратить вред, и на самое короткое время",
+            "distractors": [
+              "Когда персоналу так удобнее",
+              "Всегда, если об этом просит семья"
+            ],
+            "explanation": "Last resort, least restrictive, shortest time.",
+            "explanationRu": "Крайняя мера, самый мягкий способ, самое короткое время."
+          },
+          {
+            "id": "vcs-05-c4",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Во время мытья сотрудник держит руки жителя, чтобы он не двигался. Какой это вид ограничения?",
+            "answer": "Физическое",
+            "distractors": [
+              "Механическое",
+              "Ограничение среды"
+            ],
+            "explanation": "Using force to stop movement is physical.",
+            "explanationRu": "Удержание силой - физическое ограничение."
+          },
+          {
+            "id": "vcs-05-c5",
+            "kind": "reply",
+            "situation": "Mrs Brown: \"Who can I talk to about my care?\"",
+            "situationRu": "Жительница спрашивает, к кому обратиться, если ей не нравится уход. Что ответить?",
+            "answer": "You can speak with the staff, or the Older Persons Advocacy Network.",
+            "distractors": [
+              "Nobody, that's the rules.",
+              "Just put up with it."
+            ],
+            "explanation": "Residents can raise concerns with the provider, an advocate or the Commission.",
+            "explanationRu": "Можно говорить с организацией, с адвокатской сетью для пожилых или с Комиссией по качеству ухода."
+          }
+        ]
+      },
+      {
+        "id": "vcs-06",
+        "number": 6,
+        "title": "Final test",
+        "titleRu": "Итоговый тест",
+        "goalRu": "Проверить все пять уроков: разговор, слух, тяжелый опыт, границы и права.",
+        "words": [
+          {
+            "text": "Take your time.",
+            "translationRu": "Не торопитесь."
+          },
+          {
+            "text": "Did I get that right?",
+            "translationRu": "Я правильно поняла?"
+          },
+          {
+            "text": "Let me say that another way.",
+            "translationRu": "Скажу по-другому."
+          },
+          {
+            "text": "Have you got your hearing aids in?",
+            "translationRu": "Вы надели слуховые аппараты?"
+          },
+          {
+            "text": "That sounds very difficult.",
+            "translationRu": "Звучит очень тяжело."
+          },
+          {
+            "text": "You don't have to talk about it.",
+            "translationRu": "Можно об этом не говорить."
+          },
+          {
+            "text": "Is it OK if I touch your shoulder?",
+            "translationRu": "Можно я коснусь вашего плеча?"
+          },
+          {
+            "text": "I need to report this.",
+            "translationRu": "Мне нужно сообщить об этом."
+          },
+          {
+            "text": "I'm a volunteer, I'm not allowed to do that. I'll get someone for you.",
+            "translationRu": "Я волонтер, мне это нельзя. Я позову кого-нибудь."
+          }
+        ],
+        "dialogue": [
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Hello, Mr Wilson! It's Nina, the volunteer. Is now a good time for a chat?",
+            "translationRu": "Здравствуйте, мистер Уилсон! Это Нина, волонтер. Сейчас удобно поговорить?"
+          },
+          {
+            "role": "resident",
+            "speaker": "Mr Wilson",
+            "text": "Eh? Hang on, let me put my hearing aids in. Right, go on.",
+            "translationRu": "А? Погоди, надену слуховые аппараты. Так, давай."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "What did you love doing when you were young?",
+            "translationRu": "Что вы любили делать в молодости?"
+          },
+          {
+            "role": "resident",
+            "speaker": "Mr Wilson",
+            "text": "Fishing with my brother. He died last year.",
+            "translationRu": "Рыбачить с братом. Он умер в прошлом году."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "That sounds very difficult. I'm sorry.",
+            "translationRu": "Это очень тяжело. Мне жаль."
+          },
+          {
+            "role": "resident",
+            "speaker": "Mr Wilson",
+            "text": "Ta, love. Can you keep a secret? Nobody's been bringing my lunch tray.",
+            "translationRu": "Спасибо, дорогая. Умеешь хранить секреты? Мне перестали приносить обед."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Thank you for telling me. I can't keep that a secret. I need to tell the coordinator, so you get your meals.",
+            "translationRu": "Спасибо, что сказали. Я не могу держать это в секрете. Я скажу координатору, чтобы вам приносили еду."
+          }
+        ],
+        "tip": {
+          "title": "Five rules for every shift",
+          "ruleRu": "1. Слушайте больше, чем говорите. 2. Говорите просто и давайте время на ответ. 3. Плохо слышит - привлеките внимание, уберите шум, скажите иначе. 4. Тяжелые воспоминания - не решайте, а слушайте. Беспокоитесь - сообщите. 5. Границы и права: спрашивайте разрешения, не берите деньги, не храните опасные секреты; об ограничениях и признаках плохого обращения - сразу координатору.",
+          "examples": [
+            "Listen more than you speak.",
+            "Write it down and report it straight away.",
+            "I'm a volunteer, I'm not allowed to do that. I'll get someone for you."
+          ]
+        },
+        "practice": [
+          {
+            "id": "vcs-06-p1",
+            "kind": "listen",
+            "say": "My hearing's not the best, love. Can you come round this side?",
+            "situation": "A volunteer shift.",
+            "situationRu": "Что просит житель?",
+            "answer": "Пересесть с другой стороны: этим ухом он слышит лучше",
+            "distractors": [
+              "Уйти, он устал",
+              "Помочь ему пересесть"
+            ],
+            "explanation": "\"Come round this side\" means move to his other side.",
+            "explanationRu": "\"Come round this side\" - перейдите на эту сторону."
+          },
+          {
+            "id": "vcs-06-p2",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Жительница не может вспомнить слово и нервничает. Что делать?",
+            "answer": "Сказать \"Take your time\" и спокойно подождать",
+            "distractors": [
+              "Сразу закончить фразу за нее",
+              "Сменить тему"
+            ],
+            "explanation": "Give time.",
+            "explanationRu": "Дайте время, не торопите."
+          },
+          {
+            "id": "vcs-06-p3",
+            "kind": "reply",
+            "situation": "Mr Wilson: \"Give me a hand to stand up, love.\"",
+            "situationRu": "Житель просит помочь ему встать. Что ответить?",
+            "answer": "I'm a volunteer, I'm not allowed to do that. I'll get someone for you.",
+            "distractors": [
+              "OK, hold on to me.",
+              "You can do it yourself."
+            ],
+            "explanation": "Volunteers don't lift or move residents.",
+            "explanationRu": "Волонтер не поднимает и не пересаживает жителей."
+          },
+          {
+            "id": "vcs-06-p4",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Житель говорит, что дочь забирает его пенсию и не дает ему денег. Что делать?",
+            "answer": "Записать и сразу сообщить координатору",
+            "distractors": [
+              "Поговорить с дочерью",
+              "Не вмешиваться, это семейное дело"
+            ],
+            "explanation": "Possible financial abuse is reported.",
+            "explanationRu": "Это может быть финансовое злоупотребление. Сообщите."
+          }
+        ],
+        "check": [
+          {
+            "id": "vcs-06-c1",
+            "kind": "listen",
+            "say": "I'm a bit crook today, love. Didn't sleep a wink.",
+            "situation": "A volunteer shift.",
+            "situationRu": "Что говорит жительница?",
+            "answer": "Ей нехорошо, она совсем не спала",
+            "distractors": [
+              "Она весь день проспала",
+              "Она злится на вас"
+            ],
+            "explanation": "\"Crook\" is unwell, \"didn't sleep a wink\" is no sleep at all.",
+            "explanationRu": "\"Crook\" - нехорошо, \"didn't sleep a wink\" - глаз не сомкнула."
+          },
+          {
+            "id": "vcs-06-c2",
+            "kind": "reply",
+            "situation": "A volunteer shift.",
+            "situationRu": "Житель долго подбирает слова. Что сказать?",
+            "answer": "Take your time.",
+            "distractors": [
+              "Come on, quickly.",
+              "Let me say it for you."
+            ],
+            "explanation": "Give time.",
+            "explanationRu": "Дайте время."
+          },
+          {
+            "id": "vcs-06-c3",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Жительница смотрит телевизор и не замечает вас. Как начать разговор?",
+            "answer": "Встать так, чтобы она вас видела, помахать и спросить, можно ли сделать тише",
+            "distractors": [
+              "Выключить телевизор",
+              "Громко позвать ее от двери"
+            ],
+            "explanation": "Get attention from the front, then remove the noise with permission.",
+            "explanationRu": "Привлеките внимание спереди, шум убирайте с разрешения."
+          },
+          {
+            "id": "vcs-06-c4",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Житель второй раз не понял ваш вопрос. Что делать?",
+            "answer": "Сказать по-другому, проще",
+            "distractors": [
+              "Повторить громче",
+              "Забыть про этот вопрос"
+            ],
+            "explanation": "Rephrase.",
+            "explanationRu": "Скажите другими словами."
+          },
+          {
+            "id": "vcs-06-c5",
+            "kind": "reply",
+            "situation": "A volunteer shift.",
+            "situationRu": "Жительница рассказала о смерти сына. Что сказать?",
+            "answer": "That sounds very difficult.",
+            "distractors": [
+              "Cheer up, it was long ago.",
+              "At least you have other children."
+            ],
+            "explanation": "Acknowledge the feeling.",
+            "explanationRu": "Признайте чувство, не обесценивайте."
+          },
+          {
+            "id": "vcs-06-c6",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Жительница пугается, когда вы резко встаете. Что делать?",
+            "answer": "Двигаться медленно и говорить мягким голосом",
+            "distractors": [
+              "Объяснить, что бояться нечего, и продолжать",
+              "Больше к ней не подходить"
+            ],
+            "explanation": "Calm movements and a soft voice feel safe.",
+            "explanationRu": "Плавные движения и мягкий голос дают чувство безопасности."
+          },
+          {
+            "id": "vcs-06-c7",
+            "kind": "reply",
+            "situation": "Mrs Brown: \"Here's fifty dollars, love, for all your help.\"",
+            "situationRu": "Жительница дает вам 50 долларов за помощь. Что ответить?",
+            "answer": "Thank you, but I'm not allowed to take money.",
+            "distractors": [
+              "Thanks, you're so kind!",
+              "Maybe just twenty."
+            ],
+            "explanation": "No money or gifts.",
+            "explanationRu": "Деньги брать нельзя."
+          },
+          {
+            "id": "vcs-06-c8",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Жителя на час оставили одного в комнате с запертой дверью. Что делать?",
+            "answer": "Записать время и сразу сообщить координатору",
+            "distractors": [
+              "Открыть дверь самой",
+              "Подождать, вдруг так надо"
+            ],
+            "explanation": "This may be seclusion. Report it straight away.",
+            "explanationRu": "Это может быть изоляция. Сообщите сразу."
+          },
+          {
+            "id": "vcs-06-c9",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Знакомый в кафе спрашивает, кто живет в вашем доме престарелых и чем болеет. Что делать?",
+            "answer": "Ничего не рассказывать: это конфиденциально",
+            "distractors": [
+              "Рассказать, но без фамилий",
+              "Показать фотографии жителей"
+            ],
+            "explanation": "Residents' information is confidential.",
+            "explanationRu": "Информация о жителях конфиденциальна."
+          },
+          {
+            "id": "vcs-06-c10",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Ходунки жительницы снова поставили так, что она их не достает. Что делать?",
+            "answer": "Сообщить персоналу: это ограничение среды",
+            "distractors": [
+              "Ничего, так она не упадет",
+              "Попросить ее не вставать"
+            ],
+            "explanation": "Out-of-reach walking frame is an environmental restraint.",
+            "explanationRu": "Ходунки вне досягаемости - ограничение среды."
           }
         ]
       }

@@ -8,7 +8,7 @@ struct CourseCard: View {
 
     var body: some View {
         HStack(spacing: 16) {
-            CoursePhoto(name: "AgedCareCourse")
+            CoursePhoto(name: course.photo, symbol: course.symbol)
             VStack(alignment: .leading, spacing: 6) {
                 Text(course.title)
                     .font(.headline)
@@ -40,14 +40,14 @@ struct CourseCard: View {
 /// A tall portrait tile: a course is the main thing on the home screen, so its picture is bigger
 /// than the square category icons.
 private struct CoursePhoto: View {
-    let name: String
+    /// Asset name. Without a photo the tile shows the symbol on a gradient.
+    let name: String?
+    let symbol: String
     static let size = CGSize(width: 84, height: 112)
 
     var body: some View {
         let shape = RoundedRectangle(cornerRadius: 20, style: .continuous)
-        Image(name)
-            .resizable()
-            .scaledToFill()
+        picture
             .frame(width: Self.size.width, height: Self.size.height)
             .clipShape(shape)
             .overlay(shape.fill(LinearGradient(colors: [.white.opacity(0.2), .clear], startPoint: .top, endPoint: .center)))
@@ -58,6 +58,30 @@ private struct CoursePhoto: View {
             .shadow(color: QuestionCategory.agedCare.tint.opacity(0.35), radius: 10, y: 5)
             .accessibilityHidden(true)
     }
+
+    @ViewBuilder
+    private var picture: some View {
+        if let name {
+            Image(name).resizable().scaledToFill()
+        } else {
+            ZStack {
+                LinearGradient(colors: [Color(red: 0.36, green: 0.80, blue: 0.72), Color(red: 0.05, green: 0.45, blue: 0.50)],
+                               startPoint: .topLeading, endPoint: .bottomTrailing)
+                Image(systemName: symbol)
+                    .font(.system(size: 38, weight: .semibold))
+                    .symbolRenderingMode(.palette)
+                    .foregroundStyle(.white, .white.opacity(0.65))
+                    .shadow(color: .black.opacity(0.2), radius: 2, y: 1.5)
+            }
+        }
+    }
+}
+
+extension Course {
+    /// Photo for the course card, if the course has one.
+    var photo: String? { id == Course.agedCareVolunteerID ? "AgedCareCourse" : nil }
+
+    var symbol: String { id == Course.careSkillsID ? "hands.and.sparkles.fill" : "book.fill" }
 }
 
 /// The list of lessons. A lesson opens when the previous check is passed.
@@ -79,6 +103,13 @@ struct CourseView: View {
                     ForEach(course.lessons) { lesson in
                         row(lesson)
                     }
+                }
+                if let credits = course.credits {
+                    Text(credits)
+                        .font(.footnote)
+                        .foregroundStyle(.secondary)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .accessibilityIdentifier(A11yID.Course.credits)
                 }
             }
             .padding(20)

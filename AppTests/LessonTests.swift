@@ -99,6 +99,24 @@ struct LessonViewModelTests {
         #expect(speech.utterances.isEmpty, "A listen answer is Russian; the English voice must not read it")
     }
 
+    @Test func scenarioAnswerIsNeverReadAloud() {
+        let care = CourseLibrary.fixture.courses[1]
+        let model = LessonViewModel(
+            course: care, lesson: care.lessons[0], speech: speech, store: store,
+            seed: LaunchArgument.uiTestingSeed, animated: false
+        )
+        for _ in 0..<3 { model.advance() }
+        #expect(model.run?.current?.kind == .scenario)
+        model.choose(care.lessons[0].practice[0].answer)
+        model.playAnswer()
+        #expect(speech.utterances.isEmpty, "A scenario answer is an action in Russian")
+    }
+
+    @Test func tipStepIsNamedByTheCourse() {
+        #expect(LessonView.stepText(.tip, index: 2, count: 5, run: nil) == "Step 3 of 5: Grammar")
+        #expect(LessonView.stepText(.tip, index: 2, count: 5, run: nil, tipLabel: "Key points") == "Step 3 of 5: Key points")
+    }
+
     @Test func stepTextShowsTheExercisePosition() {
         let model = model()
         for _ in 0..<3 { model.advance() }
@@ -116,6 +134,22 @@ struct CourseSnapshotTests {
         course.record(score: 50, for: course.lessons[0], store: environment.courseStore)
         let view = NavigationStack { CourseView(environment: environment, course: course) }
         assertSnapshot(of: Snapshot.host(view), as: Snapshot.strategy)
+    }
+
+    @Test func careSkillsListShowsCredits() {
+        let environment = AppEnvironment.testing()
+        let view = NavigationStack { CourseView(environment: environment, course: environment.courses.courses[1]) }
+        assertSnapshot(of: Snapshot.host(view), as: Snapshot.strategy)
+    }
+
+    @Test func scenarioExerciseRevealedInDarkMode() {
+        let environment = AppEnvironment.testing()
+        let care = environment.courses.courses[1]
+        let model = environment.makeLesson(care.lessons[0], in: care)
+        for _ in 0..<3 { model.advance() }
+        model.choose(care.lessons[0].practice[0].distractors[0])
+        let view = NavigationStack { LessonView(model: model) }
+        assertSnapshot(of: Snapshot.host(view, style: .dark), as: Snapshot.strategy)
     }
 
     @Test func wordsStep() throws {

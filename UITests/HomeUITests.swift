@@ -29,17 +29,25 @@ final class HomeUITests: SayAgainUITestCase {
         let home = HomeScreen(app: launchApp()).waitUntilShown()
         let introID = A11yID.Home.categoryRow(.intro)
 
+        home.scroll(until: home.categoriesToggle)
         XCTAssertEqual(home.categoriesToggle.value as? String, "Collapsed")
         XCTAssertFalse(app(home).descendants(matching: .any)[introID].exists, "Folded at start")
 
         home.categoriesToggle.tap()
-        XCTAssertEqual(home.categoriesToggle.value as? String, "Expanded")
-        XCTAssertTrue(app(home).descendants(matching: .any)[introID].waitForExistence(timeout: 5))
+        waitForValue("Expanded", of: home.categoriesToggle)
+        home.scroll(until: app(home).descendants(matching: .any)[introID])
+        XCTAssertTrue(app(home).descendants(matching: .any)[introID].exists)
+        home.scroll(until: home.categoriesToggle)
 
         home.categoriesToggle.tap()
-        XCTAssertEqual(home.categoriesToggle.value as? String, "Collapsed")
+        waitForValue("Collapsed", of: home.categoriesToggle)
         XCTAssertFalse(app(home).descendants(matching: .any)[introID].exists)
     }
 
     private func app(_ home: HomeScreen) -> XCUIApplication { home.app }
+
+    private func waitForValue(_ value: String, of element: XCUIElement) {
+        let changed = expectation(for: NSPredicate(format: "value == %@", value), evaluatedWith: element)
+        wait(for: [changed], timeout: 5)
+    }
 }

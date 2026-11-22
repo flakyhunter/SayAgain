@@ -118,7 +118,7 @@ struct HomeView: View {
                 .accessibilityLabel(course.title)
                 .accessibilityValue(CourseCard.progressText(passed: passed, total: course.lessons.count))
                 .accessibilityHint("Opens the lessons")
-                .accessibilityIdentifier(A11yID.Course.card)
+                .accessibilityIdentifier(A11yID.Course.card(course.id))
             }
         }
     }

@@ -152,7 +152,7 @@ final class LessonViewModel {
 
     /// What the volunteer should say, read in the volunteer's voice. Only for English answers.
     func playAnswer() {
-        guard let exercise = run?.current, exercise.kind != .listen else { return }
+        guard let exercise = run?.current, exercise.kind.answerIsEnglish else { return }
         speech.speak(exercise.answer, voice: voice(for: .volunteer), locale: course.locale, slow: false)
     }
 }

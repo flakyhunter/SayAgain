@@ -10,7 +10,9 @@ struct CourseScreen {
         app.descendants(matching: .any)[id]
     }
 
-    var card: XCUIElement { element(A11yID.Course.card) }
+    var card: XCUIElement { element(A11yID.Course.card(Course.agedCareVolunteerID)) }
+    var careSkillsCard: XCUIElement { element(A11yID.Course.card(Course.careSkillsID)) }
+    var credits: XCUIElement { element(A11yID.Course.credits) }
     var list: XCUIElement { element(A11yID.Course.list) }
     var step: XCUIElement { element(A11yID.Lesson.step) }
     var continueButton: XCUIElement { app.buttons[A11yID.Lesson.continueButton] }
@@ -53,6 +55,31 @@ final class CourseUITests: SayAgainUITestCase {
         XCTAssertTrue(screen.list.waitForExistence(timeout: 5))
         XCTAssertEqual(screen.lessonRow(1).value as? String, "Not started")
         XCTAssertEqual(screen.lessonRow(2).value as? String, "Locked")
+    }
+
+    func testCareSkillsIsASeparateCourseWithItsOwnProgressAndCredits() {
+        let app = launchApp()
+        let screen = CourseScreen(app: app)
+        HomeScreen(app: app).waitUntilShown()
+
+        XCTAssertEqual(screen.card.label, "Aged care volunteer: English")
+        XCTAssertEqual(screen.careSkillsCard.label, "Aged care volunteer: Care skills")
+        screen.careSkillsCard.tap()
+        XCTAssertTrue(screen.list.waitForExistence(timeout: 5))
+        XCTAssertEqual(screen.lessonRow(1).value as? String, "Not started", "Open without the English course")
+        XCTAssertTrue(screen.credits.exists)
+
+        screen.lessonRow(1).tap()
+        for name in ["Words", "Dialogue", "Key points"] {
+            XCTAssertTrue(screen.step.waitForExistence(timeout: 5))
+            XCTAssertTrue(screen.step.label.contains(name), "Expected \(name) in \(screen.step.label)")
+            screen.continueButton.tap()
+        }
+        let lesson = CourseLibrary.fixture.courses[1].lessons[0]
+        screen.answer(lesson.practice, seed: seed, right: true)
+        screen.answer(lesson.check, seed: seed &+ 1, right: true)
+        XCTAssertTrue(screen.result.waitForExistence(timeout: 5))
+        XCTAssertTrue(screen.result.label.contains("Lesson 1 passed"))
     }
 
     func testPassingLessonOneOpensLessonTwo() {

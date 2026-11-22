@@ -27,10 +27,21 @@ struct HomeScreen {
 
     var categoriesExpanded: Bool { categoriesToggle.value as? String == "Expanded" }
 
-    /// Interview categories start folded. Every test that goes to a category unfolds them first.
+    /// Interview categories start folded below the courses. Every test that goes to a category
+    /// scrolls to the toggle, unfolds the list and scrolls until the row is built (the list is lazy).
     func categoryRow(_ category: QuestionCategory) -> XCUIElement {
+        let row = app.descendants(matching: .any)[A11yID.Home.categoryRow(category)]
+        scroll(until: categoriesToggle)
         if categoriesToggle.exists, !categoriesExpanded { categoriesToggle.tap() }
-        return app.descendants(matching: .any)[A11yID.Home.categoryRow(category)]
+        scroll(until: row)
+        return row
+    }
+
+    /// Swipes the home list up until the element is on screen, a few times at most.
+    func scroll(until element: XCUIElement, attempts: Int = 4) {
+        for _ in 0..<attempts where !(element.exists && element.isHittable) {
+            list.swipeUp()
+        }
     }
 
     @discardableResult
