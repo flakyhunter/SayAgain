@@ -79,7 +79,14 @@ private struct CoursePhoto: View {
 
 extension Course {
     /// Photo for the course card, if the course has one.
-    var photo: String? { id == Course.agedCareVolunteerID ? "AgedCareCourse" : nil }
+    var photo: String? {
+        switch id {
+        case Course.agedCareVolunteerID: "AgedCareCourse"
+        case Course.careSkillsID: "CareSkillsCourse"
+        case Course.dementiaID: "DementiaCourse"
+        default: nil
+        }
+    }
 
     var symbol: String {
         switch id {
