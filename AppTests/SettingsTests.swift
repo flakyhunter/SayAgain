@@ -37,9 +37,20 @@ struct SettingsTests {
         let name = "SettingsTests.ru.\(UUID().uuidString)"
         let defaults = try #require(UserDefaults(suiteName: name))
         defer { defaults.removePersistentDomain(forName: name) }
-        #expect(!AppSettings(defaults: defaults).showRussian)
-        AppSettings(defaults: defaults).showRussian = true
-        #expect(AppSettings(defaults: defaults).showRussian)
+        #expect(!AppSettings(defaults: defaults, preferredLanguages: ["en-AU"]).showRussian)
+        AppSettings(defaults: defaults, preferredLanguages: ["en-AU"]).showRussian = true
+        #expect(AppSettings(defaults: defaults, preferredLanguages: ["en-AU"]).showRussian)
+    }
+
+    @Test("Russian is on by default when the phone speaks Russian, and the learner's choice wins")
+    func russianFollowsThePhoneLanguageUntilChosen() throws {
+        let name = "SettingsTests.ru-phone.\(UUID().uuidString)"
+        let defaults = try #require(UserDefaults(suiteName: name))
+        defer { defaults.removePersistentDomain(forName: name) }
+        #expect(AppSettings(defaults: defaults, preferredLanguages: ["ru-AU", "en-AU"]).showRussian)
+        #expect(!AppSettings(defaults: defaults, preferredLanguages: ["en-AU", "ru-RU"]).showRussian, "Only the first language counts")
+        AppSettings(defaults: defaults, preferredLanguages: ["ru-AU"]).showRussian = false
+        #expect(!AppSettings(defaults: defaults, preferredLanguages: ["ru-AU"]).showRussian)
     }
 
     @Test func interviewCategoriesAreCollapsedByDefaultAndRemembered() throws {

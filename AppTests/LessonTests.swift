@@ -152,6 +152,19 @@ struct CourseSnapshotTests {
         assertSnapshot(of: Snapshot.host(view, style: .dark), as: Snapshot.strategy)
     }
 
+    @Test("Russian help under the task, every choice and the explanation")
+    func scenarioExerciseWithRussian() {
+        let environment = AppEnvironment.testing()
+        environment.settings.showRussian = true
+        let care = environment.courses.courses[1]
+        let model = environment.makeLesson(care.lessons[0], in: care)
+        for _ in 0..<3 { model.advance() }
+        model.choose(care.lessons[0].practice[0].answer)
+        let view = NavigationStack { LessonView(model: model) }
+            .environment(\.showRussian, environment.settings.showRussian)
+        assertSnapshot(of: Snapshot.host(view), as: Snapshot.strategy)
+    }
+
     @Test func wordsStep() throws {
         let environment = AppEnvironment.testing(courses: try CourseLibrary.bundled())
         let course = environment.courses.courses[0]

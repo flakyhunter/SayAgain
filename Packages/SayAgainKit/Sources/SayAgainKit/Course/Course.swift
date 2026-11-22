@@ -1,7 +1,7 @@
 import Foundation
 
 /// A step-by-step course: lessons that open one after another.
-/// Unlike the interview categories, a course teaches from zero, so Russian help is always on.
+/// English comes first; Russian help sits in the `...Ru` fields and shows when translation is on.
 public struct Course: Codable, Hashable, Identifiable, Sendable {
     public static let agedCareVolunteerID = "aged-care-volunteer"
     public static let careSkillsID = "volunteer-care-skills"
@@ -71,6 +71,8 @@ public struct Lesson: Codable, Hashable, Identifiable, Sendable {
     public let number: Int
     public let title: String
     public let titleRu: String
+    /// What the learner can do after the lesson. English, with a Russian translation.
+    public let goal: String
     public let goalRu: String
     public let words: [VocabItem]
     public let dialogue: [DialogueLine]
@@ -81,7 +83,7 @@ public struct Lesson: Codable, Hashable, Identifiable, Sendable {
     public let passPercent: Int
 
     public init(
-        id: String, number: Int, title: String, titleRu: String, goalRu: String,
+        id: String, number: Int, title: String, titleRu: String, goal: String, goalRu: String,
         words: [VocabItem], dialogue: [DialogueLine], tip: GrammarTip?,
         practice: [Exercise], check: [Exercise], passPercent: Int = Lesson.defaultPassPercent
     ) {
@@ -89,6 +91,7 @@ public struct Lesson: Codable, Hashable, Identifiable, Sendable {
         self.number = number
         self.title = title
         self.titleRu = titleRu
+        self.goal = goal
         self.goalRu = goalRu
         self.words = words
         self.dialogue = dialogue
@@ -99,7 +102,7 @@ public struct Lesson: Codable, Hashable, Identifiable, Sendable {
     }
 
     enum CodingKeys: String, CodingKey {
-        case id, number, title, titleRu, goalRu, words, dialogue, tip, practice, check, passPercent
+        case id, number, title, titleRu, goal, goalRu, words, dialogue, tip, practice, check, passPercent
     }
 
     public init(from decoder: Decoder) throws {
@@ -109,6 +112,7 @@ public struct Lesson: Codable, Hashable, Identifiable, Sendable {
             number: c.decode(Int.self, forKey: .number),
             title: c.decode(String.self, forKey: .title),
             titleRu: c.decode(String.self, forKey: .titleRu),
+            goal: c.decode(String.self, forKey: .goal),
             goalRu: c.decode(String.self, forKey: .goalRu),
             words: c.decodeIfPresent([VocabItem].self, forKey: .words) ?? [],
             dialogue: c.decodeIfPresent([DialogueLine].self, forKey: .dialogue) ?? [],
@@ -135,24 +139,27 @@ public struct Lesson: Codable, Hashable, Identifiable, Sendable {
 public struct VocabItem: Codable, Hashable, Sendable {
     public let text: String
     public let translationRu: String
-    /// A usage hint, for example "older Aussies say this to be friendly".
+    /// A usage hint in English, for example "older Aussies say this to be friendly".
+    public let note: String?
     public let noteRu: String?
     /// Australian slang or a typically Australian way to say it.
     public let aussie: Bool
 
-    public init(text: String, translationRu: String, noteRu: String? = nil, aussie: Bool = false) {
+    public init(text: String, translationRu: String, note: String? = nil, noteRu: String? = nil, aussie: Bool = false) {
         self.text = text
         self.translationRu = translationRu
+        self.note = note
         self.noteRu = noteRu
         self.aussie = aussie
     }
 
-    enum CodingKeys: String, CodingKey { case text, translationRu, noteRu, aussie }
+    enum CodingKeys: String, CodingKey { case text, translationRu, note, noteRu, aussie }
 
     public init(from decoder: Decoder) throws {
         let c = try decoder.container(keyedBy: CodingKeys.self)
         text = try c.decode(String.self, forKey: .text)
         translationRu = try c.decode(String.self, forKey: .translationRu)
+        note = try c.decodeIfPresent(String.self, forKey: .note)
         noteRu = try c.decodeIfPresent(String.self, forKey: .noteRu)
         aussie = try c.decodeIfPresent(Bool.self, forKey: .aussie) ?? false
     }
@@ -185,11 +192,14 @@ public struct DialogueLine: Codable, Hashable, Sendable {
 /// One short grammar rule with examples. No written exercises: the app trains listening.
 public struct GrammarTip: Codable, Hashable, Sendable {
     public let title: String
+    /// The rule in English, with a Russian translation.
+    public let rule: String
     public let ruleRu: String
     public let examples: [String]
 
-    public init(title: String, ruleRu: String, examples: [String]) {
+    public init(title: String, rule: String, ruleRu: String, examples: [String]) {
         self.title = title
+        self.rule = rule
         self.ruleRu = ruleRu
         self.examples = examples
     }
@@ -218,16 +228,21 @@ public struct Exercise: Codable, Hashable, Identifiable, Sendable {
     public let kind: Kind
     /// Read aloud by the device voice. Required for listen and slang.
     public let say: String?
+    /// The task in English; `situationRu` is its translation.
     public let situation: String
     public let situationRu: String
+    /// Choices are English. Their Russian translations come in the same order.
     public let answer: String
+    public let answerRu: String
     public let distractors: [String]
+    public let distractorsRu: [String]
     public let explanation: String
     public let explanationRu: String
 
     public init(
         id: String, kind: Kind, say: String?, situation: String, situationRu: String,
-        answer: String, distractors: [String], explanation: String, explanationRu: String
+        answer: String, answerRu: String, distractors: [String], distractorsRu: [String],
+        explanation: String, explanationRu: String
     ) {
         self.id = id
         self.kind = kind
@@ -235,8 +250,17 @@ public struct Exercise: Codable, Hashable, Identifiable, Sendable {
         self.situation = situation
         self.situationRu = situationRu
         self.answer = answer
+        self.answerRu = answerRu
         self.distractors = distractors
+        self.distractorsRu = distractorsRu
         self.explanation = explanation
         self.explanationRu = explanationRu
+    }
+
+    /// Russian for one of the choices, or nil for a string that is not a choice.
+    public func translationRu(of choice: String) -> String? {
+        if choice == answer { return answerRu }
+        guard let index = distractors.firstIndex(of: choice), distractorsRu.indices.contains(index) else { return nil }
+        return distractorsRu[index]
     }
 }

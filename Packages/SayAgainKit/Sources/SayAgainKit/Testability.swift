@@ -170,50 +170,61 @@ public extension QuestionBank {
 public extension CourseLibrary {
     /// A tiny two-lesson course for UI and snapshot tests, independent of the shipped JSON.
     static let fixture: CourseLibrary = {
-        func exercise(_ id: String, kind: Exercise.Kind, say: String?, answer: String, distractors: [String]) -> Exercise {
+        /// Choices are English; each comes with its Russian translation.
+        func exercise(_ id: String, kind: Exercise.Kind, say: String?, answer: (String, String),
+                      distractors: [(String, String)]) -> Exercise {
             Exercise(id: id, kind: kind, say: say, situation: "A resident speaks.", situationRu: "Житель говорит.",
-                     answer: answer, distractors: distractors, explanation: "Because.", explanationRu: "Потому что.")
+                     answer: answer.0, answerRu: answer.1,
+                     distractors: distractors.map(\.0), distractorsRu: distractors.map(\.1),
+                     explanation: "Because.", explanationRu: "Потому что.")
         }
+        let rule = ("I'm a volunteer, I'm not allowed to do that.", "Я волонтер, мне это нельзя.")
         func lesson(_ number: Int, title: String) -> Lesson {
             Lesson(
                 id: "fixture-l\(number)", number: number, title: title, titleRu: "Урок \(number)",
-                goalRu: "Цель урока \(number).",
+                goal: "Goal of lesson \(number).", goalRu: "Цель урока \(number).",
                 words: [
-                    VocabItem(text: "G'day!", translationRu: "Привет!", aussie: true),
+                    VocabItem(text: "G'day!", translationRu: "Привет!", note: "The Aussie hello.",
+                              noteRu: "Австралийское приветствие.", aussie: true),
                     VocabItem(text: "I'm a volunteer.", translationRu: "Я волонтер.")
                 ],
                 dialogue: [
                     DialogueLine(role: .volunteer, speaker: "Nina", text: "Good morning!", translationRu: "Доброе утро!"),
                     DialogueLine(role: .resident, speaker: "Mrs Brown", text: "Pardon, love?", translationRu: "Простите, дорогая?")
                 ],
-                tip: GrammarTip(title: "to be", ruleRu: "I am, you are, she is.", examples: ["I'm a volunteer."]),
+                tip: GrammarTip(title: "to be", rule: "I am, you are, she is.", ruleRu: "I am, you are, she is.",
+                                examples: ["I'm a volunteer."]),
                 practice: [exercise("fixture-l\(number)-p1", kind: .listen, say: "Pardon, love?",
-                                    answer: "Просит повторить", distractors: ["Просит уйти", "Зовет медсестру"])],
+                                    answer: ("She wants you to say it again", "Просит повторить"),
+                                    distractors: [("She wants you to leave", "Просит уйти"),
+                                                  ("She is calling the nurse", "Зовет медсестру")])],
                 check: [
-                    exercise("fixture-l\(number)-c1", kind: .reply, say: nil,
-                             answer: "I'm a volunteer, I'm not allowed to do that.", distractors: ["Sure.", "No."]),
-                    exercise("fixture-l\(number)-c2", kind: .slang, say: "Ta.",
-                             answer: "Thanks.", distractors: ["Tea.", "Take it."])
+                    exercise("fixture-l\(number)-c1", kind: .reply, say: nil, answer: rule,
+                             distractors: [("Sure.", "Конечно."), ("No.", "Нет.")]),
+                    exercise("fixture-l\(number)-c2", kind: .slang, say: "Ta.", answer: ("Thanks.", "Спасибо."),
+                             distractors: [("Tea.", "Чай."), ("Take it.", "Возьмите.")])
                 ]
             )
         }
         let careSkills = Lesson(
             id: "fixture-cs1", number: 1, title: "Meaningful conversations", titleRu: "Разговор",
-            goalRu: "Слушать больше, чем говорить.",
+            goal: "Listen more than you talk.", goalRu: "Слушать больше, чем говорить.",
             words: [VocabItem(text: "Take your time.", translationRu: "Не торопитесь.")],
             dialogue: [
                 DialogueLine(role: .resident, speaker: "Mrs Brown", text: "What's the word...", translationRu: "Как же это..."),
                 DialogueLine(role: .volunteer, speaker: "Nina", text: "Take your time.", translationRu: "Не торопитесь.")
             ],
-            tip: GrammarTip(title: "Good conversation habits", ruleRu: "Слушайте больше, чем говорите.",
-                            examples: ["Listen more than you speak."]),
+            tip: GrammarTip(title: "Good conversation habits", rule: "Listen more than you speak.",
+                            ruleRu: "Слушайте больше, чем говорите.", examples: ["Listen more than you speak."]),
             practice: [exercise("fixture-cs1-p1", kind: .scenario, say: nil,
-                                answer: "Задать открытый вопрос и слушать", distractors: ["Рассказать о себе", "Уйти"])],
+                                answer: ("Ask an open question and listen", "Задать открытый вопрос и слушать"),
+                                distractors: [("Talk about yourself", "Рассказать о себе"), ("Leave", "Уйти")])],
             check: [
                 exercise("fixture-cs1-c1", kind: .scenario, say: "I keep having bad dreams.",
-                         answer: "Выслушать и сказать координатору", distractors: ["Дать снотворное", "Промолчать"]),
-                exercise("fixture-cs1-c2", kind: .reply, say: nil,
-                         answer: "I'm a volunteer, I'm not allowed to do that.", distractors: ["Sure.", "No."])
+                         answer: ("Listen and tell the coordinator", "Выслушать и сказать координатору"),
+                         distractors: [("Give a sleeping pill", "Дать снотворное"), ("Say nothing", "Промолчать")]),
+                exercise("fixture-cs1-c2", kind: .reply, say: nil, answer: rule,
+                         distractors: [("Sure.", "Конечно."), ("No.", "Нет.")])
             ]
         )
         return CourseLibrary(courses: [
