@@ -86,11 +86,25 @@ struct ShippedCourseTests {
         }
     }
 
-    @Test("The two courses read as one series")
+    @Test("The courses read as one series")
     func courseTitles() throws {
         let library = try CourseLibrary.bundled()
-        #expect(library.courses.map(\.id) == [Course.agedCareVolunteerID, Course.careSkillsID])
-        #expect(library.courses.map(\.title) == ["Aged care volunteer: English", "Aged care volunteer: Care skills"])
+        #expect(library.courses.map(\.id) == [Course.agedCareVolunteerID, Course.careSkillsID, Course.dementiaID])
+        #expect(library.courses.map(\.title) == [
+            "Aged care volunteer: English", "Aged care volunteer: Care skills", "Aged care volunteer: Dementia"
+        ])
+    }
+
+    @Test("Dementia: five lessons with key points and scenarios, a long final test")
+    func dementiaShape() throws {
+        let course = try #require(try CourseLibrary.bundled().course(id: Course.dementiaID))
+        #expect(course.lessons.map(\.number) == Array(1...5))
+        #expect(course.tipLabel == "Key points")
+        for lesson in course.lessons {
+            #expect((lesson.practice + lesson.check).count { $0.kind == .scenario } >= 2, "\(lesson.id)")
+            #expect(lesson.tip != nil, "\(lesson.id) has no key points")
+        }
+        #expect(course.lessons.last?.check.count ?? 0 >= 10)
     }
 
     @Test("Care skills: six lessons, a scenario in each, a long final test, strict boundaries lesson")

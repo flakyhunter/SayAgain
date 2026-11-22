@@ -5,6 +5,7 @@ import Foundation
 public struct Course: Codable, Hashable, Identifiable, Sendable {
     public static let agedCareVolunteerID = "aged-care-volunteer"
     public static let careSkillsID = "volunteer-care-skills"
+    public static let dementiaID = "volunteer-dementia"
     public static let defaultTipLabel = "Grammar"
 
     public let id: String

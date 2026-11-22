@@ -4409,5 +4409,1288 @@
         ]
       }
     ]
+  },
+  {
+    "id": "volunteer-dementia",
+    "title": "Aged care volunteer: Dementia",
+    "subtitle": "Talk with people living with dementia",
+    "titleRu": "Как общаться с человеком с деменцией",
+    "locale": "en-AU",
+    "tipLabel": "Key points",
+    "lessons": [
+      {
+        "id": "vdm-01",
+        "number": 1,
+        "title": "What dementia changes",
+        "titleRu": "Что меняет деменция",
+        "goalRu": "Понять, почему человеку с деменцией трудно понимать и отвечать, и помнить, что болезнь не определяет человека.",
+        "words": [
+          {
+            "text": "dementia",
+            "translationRu": "деменция"
+          },
+          {
+            "text": "memory loss",
+            "translationRu": "потеря памяти"
+          },
+          {
+            "text": "He can't find the word.",
+            "translationRu": "Он не может подобрать слово."
+          },
+          {
+            "text": "She has good days and bad days.",
+            "translationRu": "У нее бывают хорошие и плохие дни.",
+            "noteRu": "Способность общаться меняется день ото дня. Вчера получилось, сегодня нет: это нормально."
+          },
+          {
+            "text": "It takes him longer to answer.",
+            "translationRu": "Ему нужно больше времени, чтобы ответить."
+          },
+          {
+            "text": "confused",
+            "translationRu": "растерянный, сбитый с толку"
+          },
+          {
+            "text": "Where am I?",
+            "translationRu": "Где я?"
+          },
+          {
+            "text": "You're at home here. I'm Nina, I'm here to visit you.",
+            "translationRu": "Вы здесь дома. Я Нина, я пришла вас навестить.",
+            "noteRu": "Спокойно объясните, кто вы. Не спорьте и не проверяйте память."
+          },
+          {
+            "text": "She used to be a teacher.",
+            "translationRu": "Она раньше была учительницей.",
+            "noteRu": "Человек больше, чем его болезнь: узнайте его историю."
+          },
+          {
+            "text": "a bit off today",
+            "translationRu": "сегодня не в форме",
+            "noteRu": "He's a bit off today - он сегодня неважно себя чувствует или не в духе.",
+            "aussie": true
+          }
+        ],
+        "dialogue": [
+          {
+            "role": "resident",
+            "speaker": "Mrs Green",
+            "text": "Who are you? Where am I?",
+            "translationRu": "Кто вы? Где я?"
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Hello, Mrs Green. I'm Nina, I'm a volunteer. You're at home here.",
+            "translationRu": "Здравствуйте, миссис Грин. Я Нина, волонтер. Вы здесь дома."
+          },
+          {
+            "role": "resident",
+            "speaker": "Mrs Green",
+            "text": "Oh. I thought... I thought I had a class to teach.",
+            "translationRu": "А. Я думала... думала, что у меня урок."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "You were a teacher, weren't you? English, I think.",
+            "translationRu": "Вы ведь были учительницей? Английского, кажется."
+          },
+          {
+            "role": "resident",
+            "speaker": "Mrs Green",
+            "text": "Forty years! The children loved my... my... the word games.",
+            "translationRu": "Сорок лет! Дети любили мои... мои... игры со словами."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Word games. Would you like to play Scrabble with me?",
+            "translationRu": "Игры со словами. Хотите сыграть со мной в Скрэббл?"
+          },
+          {
+            "role": "resident",
+            "speaker": "Mrs Green",
+            "text": "Oh, I'd beat you, love.",
+            "translationRu": "Ой, я тебя обыграю, дорогая."
+          }
+        ],
+        "tip": {
+          "title": "What dementia changes",
+          "ruleRu": "При деменции человеку бывает трудно понять ваши слова и трудно найти свои. С развитием болезни это становится сложнее, ответ занимает больше времени. Способность общаться меняется: бывают хорошие и плохие дни, и то, что сработало вчера, сегодня может не сработать. Иногда дело не только в памяти: человек может плохо слышать или видеть, а шум и много людей вокруг сбивают его. Главное: человек больше, чем его болезнь. Узнайте, кем он был и что любил. Это лучшая тема для разговора.",
+          "examples": [
+            "Some days he understands me, other days he doesn't.",
+            "Give him time to find the words.",
+            "She is more than her dementia."
+          ]
+        },
+        "practice": [
+          {
+            "id": "vdm-01-p1",
+            "kind": "listen",
+            "say": "Where am I? This isn't my house.",
+            "situation": "A volunteer shift.",
+            "situationRu": "Что говорит жительница?",
+            "answer": "Она не понимает, где находится",
+            "distractors": [
+              "Она просит вас уйти",
+              "Она ищет свои очки"
+            ],
+            "explanation": "\"Where am I?\" means she is confused about the place.",
+            "explanationRu": "\"Where am I?\" - она растеряна. Спокойно объясните, кто вы и где она."
+          },
+          {
+            "id": "vdm-01-p2",
+            "kind": "reply",
+            "situation": "A volunteer shift.",
+            "situationRu": "Жительница не понимает, где она. Что сказать?",
+            "answer": "You're at home here. I'm Nina, I'm here to visit you.",
+            "distractors": [
+              "You live here, don't you remember?",
+              "You've asked me that three times."
+            ],
+            "explanation": "Reassure calmly. Don't test her memory.",
+            "explanationRu": "Успокойте. Не говорите \"don't you remember\" и не считайте повторы."
+          },
+          {
+            "id": "vdm-01-p3",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Вчера жилец с удовольствием говорил с вами о рыбалке, а сегодня почти не отвечает. Что это значит?",
+            "answer": "У людей с деменцией бывают хорошие и плохие дни",
+            "distractors": [
+              "Вы его обидели вчера",
+              "Ему больше не интересно с вами"
+            ],
+            "explanation": "Ability to communicate goes up and down.",
+            "explanationRu": "Способность общаться меняется. Это не про вас."
+          },
+          {
+            "id": "vdm-01-p4",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Вы хотите поговорить с жительницей, но о ней ничего не знаете. С чего начать?",
+            "answer": "Узнать у персонала или по ее вещам, кем она была и что любит",
+            "distractors": [
+              "Спросить, сколько ей лет и как зовут детей",
+              "Говорить о погоде весь визит"
+            ],
+            "explanation": "Her life story gives the best topics.",
+            "explanationRu": "История жизни дает лучшие темы. Фото и вещи в комнате подсказывают."
+          },
+          {
+            "id": "vdm-01-p5",
+            "kind": "reply",
+            "situation": "Mrs Green: \"Let me out, love. I need to get home.\"",
+            "situationRu": "Жительница с деменцией просит выпустить ее на улицу: ей надо домой. Что ответить?",
+            "answer": "I'm a volunteer, I'm not allowed to do that. I'll get someone for you.",
+            "distractors": [
+              "Sure, the door's this way.",
+              "You can't go, you live here now."
+            ],
+            "explanation": "Never let a resident leave on your own. Get staff.",
+            "explanationRu": "Никогда не выпускайте жителя сами. Позовите персонал."
+          }
+        ],
+        "check": [
+          {
+            "id": "vdm-01-c1",
+            "kind": "listen",
+            "say": "It's the thing... the thing you sit on... oh, what's it called?",
+            "situation": "A volunteer shift.",
+            "situationRu": "Что говорит жилец?",
+            "answer": "Он не может вспомнить слово",
+            "distractors": [
+              "Он хочет уйти домой",
+              "Он не хочет с вами говорить"
+            ],
+            "explanation": "He is looking for a word. Wait.",
+            "explanationRu": "Он ищет слово. Подождите, не торопите."
+          },
+          {
+            "id": "vdm-01-c2",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Жилец ищет слово и злится на себя. Что делать?",
+            "answer": "Спокойно подождать, а если просит, мягко подсказать",
+            "distractors": [
+              "Сразу сменить тему",
+              "Сказать, что он опять все забыл"
+            ],
+            "explanation": "Give time, help gently.",
+            "explanationRu": "Дайте время, помогайте мягко, без упреков."
+          },
+          {
+            "id": "vdm-01-c3",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "За общим столом шумно, жилец не следит за разговором. Что лучше?",
+            "answer": "Предложить поговорить в тихом углу или в его комнате",
+            "distractors": [
+              "Говорить громче всех",
+              "Оставить его, раз ему неинтересно"
+            ],
+            "explanation": "Noise and many voices make it harder.",
+            "explanationRu": "Шум и много голосов мешают. Найдите тихое место."
+          },
+          {
+            "id": "vdm-01-c4",
+            "kind": "slang",
+            "say": "He's a bit off today, so keep it short.",
+            "situation": "A volunteer shift.",
+            "situationRu": "Что говорит медсестра о жильце?",
+            "answer": "He's not quite himself today.",
+            "distractors": [
+              "He has left today.",
+              "He is turned off today."
+            ],
+            "explanation": "\"A bit off\" means not well or not himself.",
+            "explanationRu": "\"A bit off\" - не в форме, не в духе."
+          },
+          {
+            "id": "vdm-01-c5",
+            "kind": "reply",
+            "situation": "A volunteer shift.",
+            "situationRu": "Жилец просит вас дать ему его таблетки из тумбочки. Что ответить?",
+            "answer": "I'm a volunteer, I'm not allowed to do that. I'll get the nurse.",
+            "distractors": [
+              "Here they are.",
+              "You've already had them."
+            ],
+            "explanation": "Volunteers never handle medication.",
+            "explanationRu": "Волонтер не трогает лекарства."
+          }
+        ]
+      },
+      {
+        "id": "vdm-02",
+        "number": 2,
+        "title": "Good communication tips",
+        "titleRu": "Как говорить, чтобы вас поняли",
+        "goalRu": "Говорить короткими фразами по одной мысли, найти тихое место, следить за тоном и жестами и не говорить свысока.",
+        "words": [
+          {
+            "text": "one thing at a time",
+            "translationRu": "по одному делу за раз"
+          },
+          {
+            "text": "short sentences",
+            "translationRu": "короткие предложения"
+          },
+          {
+            "text": "Let's find a quiet spot.",
+            "translationRu": "Давайте найдем тихое место."
+          },
+          {
+            "text": "body language",
+            "translationRu": "язык тела"
+          },
+          {
+            "text": "tone of voice",
+            "translationRu": "тон голоса"
+          },
+          {
+            "text": "Don't talk down to people.",
+            "translationRu": "Не говорите свысока.",
+            "noteRu": "Не сюсюкайте и не говорите как с ребенком: человек взрослый."
+          },
+          {
+            "text": "Here's your cardigan. Now, let's put it on.",
+            "translationRu": "Вот ваша кофта. Теперь давайте ее наденем.",
+            "noteRu": "Одна мысль, пауза, следующая."
+          },
+          {
+            "text": "Would you like tea or coffee?",
+            "translationRu": "Хотите чай или кофе?",
+            "noteRu": "Простой выбор из двух лучше открытого вопроса \"Что вы хотите?\"."
+          },
+          {
+            "text": "I'm happy to sit with you.",
+            "translationRu": "Я с удовольствием посижу с вами."
+          },
+          {
+            "text": "having a yak",
+            "translationRu": "болтать",
+            "noteRu": "Everyone's having a yak - все болтают.",
+            "aussie": true
+          }
+        ],
+        "dialogue": [
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Hello, Mr Wilson. It's Nina. Shall we sit somewhere quiet?",
+            "translationRu": "Здравствуйте, мистер Уилсон. Это Нина. Посидим где-нибудь в тишине?"
+          },
+          {
+            "role": "resident",
+            "speaker": "Mr Wilson",
+            "text": "Too much noise here. Everyone's having a yak.",
+            "translationRu": "Тут слишком шумно. Все болтают."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Let's go to your room.",
+            "translationRu": "Пойдемте в вашу комнату."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Would you like tea or coffee?",
+            "translationRu": "Хотите чай или кофе?"
+          },
+          {
+            "role": "resident",
+            "speaker": "Mr Wilson",
+            "text": "Tea.",
+            "translationRu": "Чай."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Tea. Good. The staff will bring it.",
+            "translationRu": "Чай. Хорошо. Персонал принесет."
+          },
+          {
+            "role": "resident",
+            "speaker": "Mr Wilson",
+            "text": "You're a good listener, you know.",
+            "translationRu": "А ты хорошо слушаешь, знаешь."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "I'm happy to sit with you.",
+            "translationRu": "Я с удовольствием посижу с вами."
+          }
+        ],
+        "tip": {
+          "title": "Good communication tips",
+          "ruleRu": "1. Найдите тихое место: шум, телевизор и несколько собеседников сбивают. 2. Короткие предложения, одна-две мысли за раз. Дождитесь ответа, потом следующая мысль. 3. Дайте время понять и найти слова. 4. Общение не только словами: язык тела, тон и высота голоса важны. Улыбка и спокойствие говорят много. 5. Не говорите свысока и не сюсюкайте. Уважение и достоинство. 6. Покажите, что вам приятно быть рядом. Даже когда слов все меньше, можно просто быть вместе и делать привычные вещи.",
+          "examples": [
+            "Give information in small chunks.",
+            "Allow time to understand and find words.",
+            "Don't patronise. Show dignity and respect."
+          ]
+        },
+        "practice": [
+          {
+            "id": "vdm-02-p1",
+            "kind": "reply",
+            "situation": "A volunteer shift.",
+            "situationRu": "Как лучше предложить жительнице напиток?",
+            "answer": "Would you like tea or coffee?",
+            "distractors": [
+              "What would you like to drink today, there's tea, coffee, juice, water or milk?",
+              "Drink?"
+            ],
+            "explanation": "A choice of two is easier than a long list.",
+            "explanationRu": "Выбор из двух легче длинного списка."
+          },
+          {
+            "id": "vdm-02-p2",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Вы собираетесь на прогулку. Как сказать жильцу, что нужно взять?",
+            "answer": "По одной вещи: сначала шляпа, когда надел, потом трость",
+            "distractors": [
+              "Сразу перечислить все: шляпу, трость, кофту и очки",
+              "Собрать все самой и ничего не говорить"
+            ],
+            "explanation": "One thing at a time.",
+            "explanationRu": "По одной вещи за раз: так легче понять и запомнить."
+          },
+          {
+            "id": "vdm-02-p3",
+            "kind": "listen",
+            "say": "Too much noise in here, love. Everyone's having a yak.",
+            "situation": "A volunteer shift.",
+            "situationRu": "Что говорит жилец?",
+            "answer": "Здесь слишком шумно, все болтают",
+            "distractors": [
+              "Он хочет поболтать со всеми",
+              "Он просит включить музыку"
+            ],
+            "explanation": "\"Having a yak\" is chatting.",
+            "explanationRu": "\"Having a yak\" - болтать. Шум мешает: найдите тихое место."
+          },
+          {
+            "id": "vdm-02-p4",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Коллега говорит жильцу: \"Who's a good boy? Did we eat our lunchie?\" Почему это плохо?",
+            "answer": "Так говорят с ребенком, а не со взрослым: это неуважение",
+            "distractors": [
+              "Слишком тихо",
+              "Слишком много вопросов про еду"
+            ],
+            "explanation": "Don't patronise.",
+            "explanationRu": "Не говорите свысока и не сюсюкайте."
+          },
+          {
+            "id": "vdm-02-p5",
+            "kind": "reply",
+            "situation": "Mr Wilson: \"Help me get this jumper off, love.\"",
+            "situationRu": "Жилец просит вас помочь ему переодеться. Что ответить?",
+            "answer": "I'm a volunteer, I'm not allowed to do that. I'll get someone for you.",
+            "distractors": [
+              "Sure, arms up.",
+              "Do it yourself, you can."
+            ],
+            "explanation": "Dressing is personal care.",
+            "explanationRu": "Одевание - уход за телом. Позовите персонал."
+          }
+        ],
+        "check": [
+          {
+            "id": "vdm-02-c1",
+            "kind": "listen",
+            "say": "Slow down, love, you're going too fast for me.",
+            "situation": "A volunteer shift.",
+            "situationRu": "Что говорит жительница?",
+            "answer": "Вы говорите слишком быстро, она не успевает",
+            "distractors": [
+              "Вы опаздываете",
+              "Ей нужно быстрее уйти"
+            ],
+            "explanation": "\"Slow down\" means talk slower.",
+            "explanationRu": "\"Slow down\" - помедленнее. Короткие фразы и паузы."
+          },
+          {
+            "id": "vdm-02-c2",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Вы говорите правильные слова, но торопитесь и хмуритесь. Что увидит человек с деменцией?",
+            "answer": "Тревогу и спешку: тон и лицо значат больше слов",
+            "distractors": [
+              "Ничего: важны только слова",
+              "Что вы очень заняты важным делом"
+            ],
+            "explanation": "Body language and tone carry meaning.",
+            "explanationRu": "Язык тела и тон несут смысл. Когда слова понимаются хуже, они становятся главными."
+          },
+          {
+            "id": "vdm-02-c3",
+            "kind": "reply",
+            "situation": "A volunteer shift.",
+            "situationRu": "Жилец устал говорить, но вы хотите показать, что вам с ним хорошо. Что сказать?",
+            "answer": "I'm happy to sit with you.",
+            "distractors": [
+              "OK, I'll go then.",
+              "Why are you so quiet today?"
+            ],
+            "explanation": "Being together is enough.",
+            "explanationRu": "Быть рядом уже достаточно."
+          },
+          {
+            "id": "vdm-02-c4",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "В общей комнате работает телевизор и играет музыка. Жилец не понимает ваш вопрос. Что делать?",
+            "answer": "Предложить перейти в тихое место",
+            "distractors": [
+              "Повторить вопрос громче",
+              "Выключить все, ни у кого не спросив"
+            ],
+            "explanation": "Minimise distractions.",
+            "explanationRu": "Уберите отвлекающее: лучше перейти в тихое место."
+          },
+          {
+            "id": "vdm-02-c5",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Жилец долго отвечает на простой вопрос. Что делать?",
+            "answer": "Подождать, не перебивая",
+            "distractors": [
+              "Ответить за него",
+              "Задать следующий вопрос"
+            ],
+            "explanation": "Allow time.",
+            "explanationRu": "Дайте время."
+          }
+        ]
+      },
+      {
+        "id": "vdm-03",
+        "number": 3,
+        "title": "A conversation that works",
+        "titleRu": "Разговор, который получается",
+        "goalRu": "Сесть на уровне глаз, выбрать знакомую тему, использовать фото и вещи, не проверять память и замечать, когда человек устал.",
+        "words": [
+          {
+            "text": "at eye level",
+            "translationRu": "на уровне глаз"
+          },
+          {
+            "text": "a familiar topic",
+            "translationRu": "знакомая тема"
+          },
+          {
+            "text": "Is this your family in the photo?",
+            "translationRu": "Это ваша семья на фото?",
+            "noteRu": "Фото, шарф любимой команды, альбом помогают начать разговор."
+          },
+          {
+            "text": "You played footy, didn't you?",
+            "translationRu": "Вы ведь играли в футбол?",
+            "noteRu": "Вопрос, на который легко ответить, лучше вопроса на память.",
+            "aussie": true
+          },
+          {
+            "text": "I think you usually have toast.",
+            "translationRu": "По-моему, вы обычно едите тост.",
+            "noteRu": "Если человек не помнит, подскажите, а не говорите \"You don't know\"."
+          },
+          {
+            "text": "Mm-hmm. Go on.",
+            "translationRu": "Ага. Продолжайте."
+          },
+          {
+            "text": "Your daughter came in?",
+            "translationRu": "Ваша дочь приходила?",
+            "noteRu": "Повторите слова человека, чтобы он продолжил."
+          },
+          {
+            "text": "Have you had enough for today?",
+            "translationRu": "На сегодня хватит?"
+          },
+          {
+            "text": "I've had enough.",
+            "translationRu": "С меня хватит."
+          },
+          {
+            "text": "cranky",
+            "translationRu": "раздраженный, не в духе",
+            "noteRu": "I'm just cranky - я просто не в духе.",
+            "aussie": true
+          }
+        ],
+        "dialogue": [
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Hello, Mr Wilson. Is this your footy scarf? Your favourite team?",
+            "translationRu": "Здравствуйте, мистер Уилсон. Это ваш футбольный шарф? Любимая команда?"
+          },
+          {
+            "role": "resident",
+            "speaker": "Mr Wilson",
+            "text": "Yeah. I played for them. Two seasons.",
+            "translationRu": "Да. Я играл за них. Два сезона."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "You played for them? Wow.",
+            "translationRu": "Вы играли за них? Ого."
+          },
+          {
+            "role": "resident",
+            "speaker": "Mr Wilson",
+            "text": "Country team. The city team didn't like us. They hurt my leg.",
+            "translationRu": "За команду из провинции. Городские нас не любили. Ногу мне повредили."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "They hurt your leg? Did you beat them?",
+            "translationRu": "Повредили ногу? А вы их обыграли?"
+          },
+          {
+            "role": "resident",
+            "speaker": "Mr Wilson",
+            "text": "Oh, yeah.",
+            "translationRu": "О, да."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Well, that's the main thing, isn't it?",
+            "translationRu": "Ну, это главное, правда?"
+          }
+        ],
+        "tip": {
+          "title": "A conversation that works",
+          "ruleRu": "Привлеките внимание: сядьте на уровне глаз, смотрите в глаза, не ходите по комнате во время разговора. Выберите знакомую тему: интересы, работа, семья. Фото и вещи (например, шарф любимой команды) помогают. Не проверяйте память: вопрос \"What did you have for breakfast?\" трудный. Если человек не помнит, подскажите: \"I think you usually have toast\". Не говорите \"You don't know\" и \"don't you remember\". Один вопрос за раз и пауза. Не повторяйте вопрос, на который уже ответили. Принимайте ответ, даже неожиданный: важен сам разговор. Повторяйте слова человека и говорите \"mm-hmm\", чтобы он продолжал. Без \"darling\" и \"sweetie\" от незнакомого человека: это звучит снисходительно. Следите за сигналами: если человек устал или раздражен, закончите разговор.",
+          "examples": [
+            "Sit at eye level and keep eye contact.",
+            "Choose a topic they know well.",
+            "Reflect their words back.",
+            "Notice when they have had enough."
+          ]
+        },
+        "practice": [
+          {
+            "id": "vdm-03-p1",
+            "kind": "reply",
+            "situation": "A volunteer shift.",
+            "situationRu": "Жилец не может вспомнить, что ел на завтрак. Что сказать?",
+            "answer": "I think you usually have toast.",
+            "distractors": [
+              "You don't know? You just had it!",
+              "Try harder, think."
+            ],
+            "explanation": "Help out instead of pointing at the memory problem.",
+            "explanationRu": "Подскажите, а не указывайте на забывчивость."
+          },
+          {
+            "id": "vdm-03-p2",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "В комнате жильца висит шарф футбольной команды. Как начать разговор?",
+            "answer": "Показать на шарф и спросить про команду",
+            "distractors": [
+              "Спросить, что он делал вчера",
+              "Спросить, помнит ли он ваше имя"
+            ],
+            "explanation": "Visual aids and familiar topics help.",
+            "explanationRu": "Вещи и знакомые темы помогают начать."
+          },
+          {
+            "id": "vdm-03-p3",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Жилец говорит, что играл за известную команду. Вы знаете, что это не так. Что делать?",
+            "answer": "Принять его рассказ и продолжить разговор",
+            "distractors": [
+              "Поправить его: это неправда",
+              "Спросить у персонала при нем"
+            ],
+            "explanation": "Accept their contribution. The conversation matters, not the facts.",
+            "explanationRu": "Примите рассказ. Важен разговор, а не факты."
+          },
+          {
+            "id": "vdm-03-p4",
+            "kind": "listen",
+            "say": "No, no. Not this. Not today.",
+            "situation": "A volunteer shift.",
+            "situationRu": "Что говорит жилец?",
+            "answer": "Он раздражен и не хочет продолжать разговор",
+            "distractors": [
+              "Он хочет поиграть в карты",
+              "Он просит позвать врача"
+            ],
+            "explanation": "\"Not today\" means he has had enough.",
+            "explanationRu": "\"Not this, not today\" - с него хватит. Закончите разговор."
+          },
+          {
+            "id": "vdm-03-p5",
+            "kind": "slang",
+            "say": "I'm fine. Just cranky.",
+            "situation": "A volunteer shift.",
+            "situationRu": "Что говорит жилец?",
+            "answer": "I'm just in a bad mood.",
+            "distractors": [
+              "I'm just very tired of walking.",
+              "I'm just broken."
+            ],
+            "explanation": "\"Cranky\" means grumpy.",
+            "explanationRu": "\"Cranky\" - не в духе, раздражен."
+          }
+        ],
+        "check": [
+          {
+            "id": "vdm-03-c1",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Как лучше расположиться для разговора с жильцом в кресле?",
+            "answer": "Сесть рядом на уровне его глаз",
+            "distractors": [
+              "Стоять над ним, чтобы он видел вас целиком",
+              "Ходить по комнате и прибираться, пока говорите"
+            ],
+            "explanation": "Eye level, eye contact, stay still.",
+            "explanationRu": "На уровне глаз, со зрительным контактом, не двигаясь по комнате."
+          },
+          {
+            "id": "vdm-03-c2",
+            "kind": "reply",
+            "situation": "A volunteer shift.",
+            "situationRu": "Жилец сказал: \"My daughter came in.\" Как поддержать разговор?",
+            "answer": "Your daughter came in? That's lovely.",
+            "distractors": [
+              "Which daughter? What's her name? When?",
+              "No, she didn't, that was last week."
+            ],
+            "explanation": "Reflect their words back, one easy step.",
+            "explanationRu": "Повторите его слова. Не засыпайте вопросами и не поправляйте."
+          },
+          {
+            "id": "vdm-03-c3",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Вы задали вопрос, жилец начал отвечать, а вы уже задаете следующий. Что не так?",
+            "answer": "Нужно дать договорить и задавать по одному вопросу",
+            "distractors": [
+              "Все правильно, так разговор живее",
+              "Вопросы должны быть длиннее"
+            ],
+            "explanation": "One question, then wait.",
+            "explanationRu": "Один вопрос и пауза."
+          },
+          {
+            "id": "vdm-03-c4",
+            "kind": "listen",
+            "say": "Yeah... my daughter. She came in.",
+            "situation": "A volunteer shift.",
+            "situationRu": "Что говорит жительница?",
+            "answer": "Ее дочь приходила ее навестить",
+            "distractors": [
+              "Она хочет позвонить дочери",
+              "Ее дочь заболела"
+            ],
+            "explanation": "\"Came in\" means visited.",
+            "explanationRu": "\"Came in\" - приходила, навещала."
+          },
+          {
+            "id": "vdm-03-c5",
+            "kind": "reply",
+            "situation": "Mr Wilson: \"Take me for a shower, would you?\"",
+            "situationRu": "Жилец просит отвести его в душ. Что ответить?",
+            "answer": "I'm a volunteer, I'm not allowed to do that. I'll get someone for you.",
+            "distractors": [
+              "OK, let's go.",
+              "Later, maybe."
+            ],
+            "explanation": "Showering is personal care.",
+            "explanationRu": "Душ - уход за телом. Волонтеру нельзя."
+          }
+        ]
+      },
+      {
+        "id": "vdm-04",
+        "number": 4,
+        "title": "When someone is upset",
+        "titleRu": "Если человек встревожен или агрессивен",
+        "passPercent": 100,
+        "goalRu": "Понимать, что за тревогой и агрессией стоит причина, сохранять спокойствие, беречь себя и звать персонал.",
+        "words": [
+          {
+            "text": "agitated",
+            "translationRu": "возбужденный, взволнованный"
+          },
+          {
+            "text": "aggressive",
+            "translationRu": "агрессивный"
+          },
+          {
+            "text": "lashing out",
+            "translationRu": "кидается, бьет"
+          },
+          {
+            "text": "unmet need",
+            "translationRu": "неудовлетворенная потребность",
+            "noteRu": "Боль, голод, жажда, туалет, страх, скука: причина часто в этом."
+          },
+          {
+            "text": "My leg hurts.",
+            "translationRu": "У меня болит нога."
+          },
+          {
+            "text": "Get out of my room!",
+            "translationRu": "Уходите из моей комнаты!"
+          },
+          {
+            "text": "Sorry, I'll go now. I'll get someone for you.",
+            "translationRu": "Простите, я ухожу. Я позову кого-нибудь.",
+            "noteRu": "Если вам небезопасно, уйдите и позовите персонал."
+          },
+          {
+            "text": "You seem upset. Is something bothering you?",
+            "translationRu": "Вы, кажется, расстроены. Что-то беспокоит?"
+          },
+          {
+            "text": "I feel unsafe.",
+            "translationRu": "Мне небезопасно."
+          },
+          {
+            "text": "having a go at me",
+            "translationRu": "наезжает на меня",
+            "noteRu": "He was having a go at me - он на меня ругался.",
+            "aussie": true
+          }
+        ],
+        "dialogue": [
+          {
+            "role": "resident",
+            "speaker": "Mrs Green",
+            "text": "What are you doing in my room? Get out!",
+            "translationRu": "Что вы делаете в моей комнате? Вон!"
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Sorry, Mrs Green. I'm Nina, the volunteer. I'll go now.",
+            "translationRu": "Простите, миссис Грин. Я Нина, волонтер. Я ухожу."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Sam, Mrs Green is very upset. She shouted at me to get out.",
+            "translationRu": "Сэм, миссис Грин очень расстроена. Она кричала, чтобы я ушла."
+          },
+          {
+            "role": "staff",
+            "speaker": "Sam",
+            "text": "Thanks. Was she rubbing her leg? She's had a sore leg.",
+            "translationRu": "Спасибо. Она терла ногу? У нее болела нога."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Yes, she was holding her leg.",
+            "translationRu": "Да, она держалась за ногу."
+          },
+          {
+            "role": "staff",
+            "speaker": "Sam",
+            "text": "Good spotting. I'll check her leg and let the nurse know.",
+            "translationRu": "Хорошо заметила. Я посмотрю ногу и скажу медсестре."
+          }
+        ],
+        "tip": {
+          "title": "When someone is upset",
+          "ruleRu": "Агрессия и тревога у человека с деменцией почти всегда имеют причину: боль, инфекция (например, мочевыводящих путей), страх, незнакомый человек, шум, голод, туалет. Ищите потребность, а не \"плохой характер\". Человек - не его поведение: за ним целая жизнь. Ваша безопасность важнее всего: если вам страшно или небезопасно, спокойно уйдите и позовите персонал. Говорите мягко, двигайтесь медленно, не спорьте и не настаивайте. Спросите, что беспокоит, и примите чувства человека. То, что сработало вчера, сегодня может не сработать. Расскажите координатору или персоналу, что видели: когда, что было до этого, что человек говорил.",
+          "examples": [
+            "There may be an unmet need behind the behaviour.",
+            "If you feel unsafe, leave and get help.",
+            "Keep your body language calm."
+          ]
+        },
+        "practice": [
+          {
+            "id": "vdm-04-p1",
+            "kind": "listen",
+            "say": "What are you doing in my room? Get out!",
+            "situation": "A volunteer shift.",
+            "situationRu": "Что кричит жительница?",
+            "answer": "Чтобы вы ушли из ее комнаты",
+            "distractors": [
+              "Чтобы вы закрыли окно",
+              "Чтобы вы принесли воды"
+            ],
+            "explanation": "\"Get out of my room\" means leave.",
+            "explanationRu": "\"Get out of my room\" - уходите. Не спорьте."
+          },
+          {
+            "id": "vdm-04-p2",
+            "kind": "reply",
+            "situation": "A volunteer shift.",
+            "situationRu": "Жительница кричит, чтобы вы ушли. Что сказать?",
+            "answer": "Sorry, I'll go now. I'll get someone for you.",
+            "distractors": [
+              "Calm down, I'm only trying to help!",
+              "This is my job, I'm staying."
+            ],
+            "explanation": "Don't argue. Leave calmly and get staff.",
+            "explanationRu": "Не спорьте. Спокойно уйдите и позовите персонал."
+          },
+          {
+            "id": "vdm-04-p3",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Жилец замахивается на вас. Что делать?",
+            "answer": "Отойти на безопасное расстояние, уйти и позвать персонал",
+            "distractors": [
+              "Схватить его за руки",
+              "Остаться и объяснять, что вы хотите помочь"
+            ],
+            "explanation": "Your safety first. Never restrain.",
+            "explanationRu": "Ваша безопасность прежде всего. Удерживать нельзя."
+          },
+          {
+            "id": "vdm-04-p4",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Жительница кричит и все время трет колено. Что сказать персоналу?",
+            "answer": "Что она кричала и терла колено: может быть, ей больно",
+            "distractors": [
+              "Что у нее плохой характер",
+              "Ничего, это обычное поведение при деменции"
+            ],
+            "explanation": "Look for the need behind the behaviour.",
+            "explanationRu": "Ищите причину: боль часто стоит за агрессией."
+          },
+          {
+            "id": "vdm-04-p5",
+            "kind": "slang",
+            "say": "Mr Wilson was having a go at me this morning.",
+            "situation": "A volunteer shift.",
+            "situationRu": "Что рассказывает волонтер?",
+            "answer": "He was shouting at me.",
+            "distractors": [
+              "He was leaving me.",
+              "He was trying me on."
+            ],
+            "explanation": "\"Having a go at someone\" is attacking them with words.",
+            "explanationRu": "\"Having a go at me\" - ругался на меня, нападал."
+          },
+          {
+            "id": "vdm-04-p6",
+            "kind": "reply",
+            "situation": "Mr Wilson: \"Give me something for my nerves, love.\"",
+            "situationRu": "Расстроенный жилец просит вас дать ему что-нибудь успокоительное. Что ответить?",
+            "answer": "I'm a volunteer, I'm not allowed to do that. I'll get someone for you.",
+            "distractors": [
+              "Here, take one of mine.",
+              "Just have a nap."
+            ],
+            "explanation": "Never give medication.",
+            "explanationRu": "Никаких лекарств. Позовите персонал."
+          }
+        ],
+        "check": [
+          {
+            "id": "vdm-04-c1",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Почему человек с деменцией может стать агрессивным без видимой причины?",
+            "answer": "У него может быть неудовлетворенная потребность: боль, страх, инфекция",
+            "distractors": [
+              "Он просто злой человек",
+              "Он хочет, чтобы вы ушли навсегда"
+            ],
+            "explanation": "There is often an unmet need.",
+            "explanationRu": "Часто за этим стоит неудовлетворенная потребность."
+          },
+          {
+            "id": "vdm-04-c2",
+            "kind": "reply",
+            "situation": "A volunteer shift.",
+            "situationRu": "Жительница выглядит встревоженной. Как начать?",
+            "answer": "You seem upset. Is something bothering you?",
+            "distractors": [
+              "What's wrong with you today?",
+              "Stop it, everyone's looking."
+            ],
+            "explanation": "Ask gently and accept the feeling.",
+            "explanationRu": "Спросите мягко и примите чувство."
+          },
+          {
+            "id": "vdm-04-c3",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Вам стало страшно рядом с агрессивным жильцом. Что делать?",
+            "answer": "Спокойно уйти и позвать персонал",
+            "distractors": [
+              "Остаться, чтобы не обидеть его",
+              "Закрыть его в комнате, чтобы он успокоился"
+            ],
+            "explanation": "Leave if you feel unsafe. Locking someone in is seclusion.",
+            "explanationRu": "Если небезопасно, уходите. Закрыть человека нельзя: это изоляция."
+          },
+          {
+            "id": "vdm-04-c4",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Вчера жилец успокоился, когда вы включили его любимую музыку. Сегодня это не помогает. Почему?",
+            "answer": "Бывают хорошие и плохие дни: что сработало раз, может не сработать снова",
+            "distractors": [
+              "Музыка надоела ему навсегда",
+              "Вы что-то сделали не так"
+            ],
+            "explanation": "What works once may not work next time.",
+            "explanationRu": "Что сработало один раз, может не сработать в другой."
+          },
+          {
+            "id": "vdm-04-c5",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "После инцидента вы рассказываете координатору. Что важно сообщить?",
+            "answer": "Когда это было, что было до этого и что человек говорил и делал",
+            "distractors": [
+              "Что жилец плохой",
+              "Только то, что вы испугались"
+            ],
+            "explanation": "Facts help staff find the cause.",
+            "explanationRu": "Факты помогают персоналу найти причину."
+          }
+        ]
+      },
+      {
+        "id": "vdm-05",
+        "number": 5,
+        "title": "Final test",
+        "titleRu": "Итоговый тест",
+        "goalRu": "Проверить все четыре урока о деменции.",
+        "words": [
+          {
+            "text": "She has good days and bad days.",
+            "translationRu": "У нее бывают хорошие и плохие дни."
+          },
+          {
+            "text": "one thing at a time",
+            "translationRu": "по одному делу за раз"
+          },
+          {
+            "text": "Let's find a quiet spot.",
+            "translationRu": "Давайте найдем тихое место."
+          },
+          {
+            "text": "I think you usually have toast.",
+            "translationRu": "По-моему, вы обычно едите тост."
+          },
+          {
+            "text": "Mm-hmm. Go on.",
+            "translationRu": "Ага. Продолжайте."
+          },
+          {
+            "text": "You seem upset. Is something bothering you?",
+            "translationRu": "Вы, кажется, расстроены. Что-то беспокоит?"
+          },
+          {
+            "text": "Sorry, I'll go now. I'll get someone for you.",
+            "translationRu": "Простите, я ухожу. Я позову кого-нибудь."
+          },
+          {
+            "text": "I'm a volunteer, I'm not allowed to do that. I'll get someone for you.",
+            "translationRu": "Я волонтер, мне это нельзя. Я позову кого-нибудь."
+          }
+        ],
+        "dialogue": [
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Hello, Mrs Green. I'm Nina. Shall we sit by the window? It's quieter.",
+            "translationRu": "Здравствуйте, миссис Грин. Я Нина. Сядем у окна? Там тише."
+          },
+          {
+            "role": "resident",
+            "speaker": "Mrs Green",
+            "text": "Who? Oh... yes.",
+            "translationRu": "Кто? А... да."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Is this you in the photo? With your class?",
+            "translationRu": "Это вы на фото? С вашим классом?"
+          },
+          {
+            "role": "resident",
+            "speaker": "Mrs Green",
+            "text": "My students. Forty years.",
+            "translationRu": "Мои ученики. Сорок лет."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "Forty years. Mm-hmm.",
+            "translationRu": "Сорок лет. Ага."
+          },
+          {
+            "role": "resident",
+            "speaker": "Mrs Green",
+            "text": "I'm tired now.",
+            "translationRu": "Я устала."
+          },
+          {
+            "role": "volunteer",
+            "speaker": "Nina",
+            "text": "OK. I'm happy I sat with you. See you on Tuesday.",
+            "translationRu": "Хорошо. Я рада, что посидела с вами. До вторника."
+          }
+        ],
+        "tip": {
+          "title": "Remember",
+          "ruleRu": "1. Человек больше, чем его болезнь: узнайте его историю. 2. Тихое место, короткие фразы, по одной мысли, время на ответ. 3. Уровень глаз, знакомая тема, фото и вещи. Не проверяйте память, подсказывайте. 4. За тревогой и агрессией ищите причину. Небезопасно - уходите и зовите персонал. 5. Волонтер не делает уход за телом, не дает лекарства и не выпускает жителя на улицу.",
+          "examples": [
+            "Give information in small chunks.",
+            "Reflect their words back.",
+            "If you feel unsafe, leave and get help."
+          ]
+        },
+        "practice": [
+          {
+            "id": "vdm-05-p1",
+            "kind": "listen",
+            "say": "I'm tired now, love.",
+            "situation": "A volunteer shift.",
+            "situationRu": "Что говорит жительница?",
+            "answer": "Она устала",
+            "distractors": [
+              "Она хочет есть",
+              "Она хочет на прогулку"
+            ],
+            "explanation": "\"I'm tired\" is a signal to finish.",
+            "explanationRu": "\"I'm tired\" - пора заканчивать."
+          },
+          {
+            "id": "vdm-05-p2",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Жительница устала через пять минут разговора. Что делать?",
+            "answer": "Тепло попрощаться и сказать, когда придете снова",
+            "distractors": [
+              "Продолжить, вы ведь пришли на час",
+              "Уйти молча"
+            ],
+            "explanation": "Notice when they've had enough.",
+            "explanationRu": "Замечайте, когда с человека хватит."
+          },
+          {
+            "id": "vdm-05-p3",
+            "kind": "reply",
+            "situation": "A volunteer shift.",
+            "situationRu": "Жилец с деменцией просит открыть ему входную дверь. Что ответить?",
+            "answer": "I'm a volunteer, I'm not allowed to do that. I'll get someone for you.",
+            "distractors": [
+              "Sure, off you go.",
+              "No, you can't go out."
+            ],
+            "explanation": "Never let a resident out yourself.",
+            "explanationRu": "Не выпускайте жителя сами."
+          },
+          {
+            "id": "vdm-05-p4",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Жилец рассказывает одну и ту же историю третий раз за визит. Что делать?",
+            "answer": "Слушать с интересом, как в первый раз",
+            "distractors": [
+              "Сказать, что он это уже рассказывал",
+              "Перебить и сменить тему"
+            ],
+            "explanation": "Don't point out the repetition.",
+            "explanationRu": "Не указывайте на повторы."
+          }
+        ],
+        "check": [
+          {
+            "id": "vdm-05-c1",
+            "kind": "listen",
+            "say": "The... the thing. You know. Oh, I can't think of it.",
+            "situation": "A volunteer shift.",
+            "situationRu": "Что говорит жилец?",
+            "answer": "Он не может найти слово",
+            "distractors": [
+              "Он хочет сесть",
+              "Он ищет свой стул"
+            ],
+            "explanation": "He is searching for a word.",
+            "explanationRu": "Он ищет слово. Подождите."
+          },
+          {
+            "id": "vdm-05-c2",
+            "kind": "reply",
+            "situation": "A volunteer shift.",
+            "situationRu": "Жилец не помнит, ел ли он. Что сказать?",
+            "answer": "I think you had lunch with everyone.",
+            "distractors": [
+              "Don't you remember?",
+              "You just ate, five minutes ago!"
+            ],
+            "explanation": "Help out gently.",
+            "explanationRu": "Мягко подскажите."
+          },
+          {
+            "id": "vdm-05-c3",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Сегодня жилец почти не говорит, хотя на прошлой неделе болтал без остановки. Что думать?",
+            "answer": "Это нормально: бывают хорошие и плохие дни",
+            "distractors": [
+              "Он на вас обиделся",
+              "Надо заставить его говорить"
+            ],
+            "explanation": "Good days and bad days.",
+            "explanationRu": "Хорошие и плохие дни."
+          },
+          {
+            "id": "vdm-05-c4",
+            "kind": "reply",
+            "situation": "A volunteer shift.",
+            "situationRu": "Как предложить жительнице занятие?",
+            "answer": "Would you like to look at photos or listen to music?",
+            "distractors": [
+              "What do you want to do today?",
+              "Let's do photos, then music, then a walk, then cards."
+            ],
+            "explanation": "A simple choice of two.",
+            "explanationRu": "Простой выбор из двух."
+          },
+          {
+            "id": "vdm-05-c5",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Вы стоите над жильцом в кресле и говорите сверху вниз. Как лучше?",
+            "answer": "Сесть на уровне его глаз",
+            "distractors": [
+              "Говорить громче",
+              "Наклониться к самому уху"
+            ],
+            "explanation": "Eye level.",
+            "explanationRu": "На уровне глаз."
+          },
+          {
+            "id": "vdm-05-c6",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Жилец рассказывает о своей молодости что-то явно неправдоподобное. Что делать?",
+            "answer": "Принять рассказ и поддержать разговор",
+            "distractors": [
+              "Поправить его",
+              "Сказать, что это неправда"
+            ],
+            "explanation": "The conversation matters more than the facts.",
+            "explanationRu": "Разговор важнее фактов."
+          },
+          {
+            "id": "vdm-05-c7",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Жительница кричит и прижимает руку к животу. Что сделать?",
+            "answer": "Сообщить персоналу: ей может быть больно",
+            "distractors": [
+              "Попросить ее не кричать",
+              "Уйти и никому не говорить"
+            ],
+            "explanation": "Pain often sits behind distress.",
+            "explanationRu": "За криком часто стоит боль."
+          },
+          {
+            "id": "vdm-05-c8",
+            "kind": "scenario",
+            "situation": "A volunteer shift.",
+            "situationRu": "Жилец толкнул вас. Что делать?",
+            "answer": "Отойти, уйти в безопасное место и позвать персонал",
+            "distractors": [
+              "Толкнуть в ответ",
+              "Держать его, пока не придет персонал"
+            ],
+            "explanation": "Your safety first. Never restrain.",
+            "explanationRu": "Безопасность прежде всего. Не удерживайте."
+          },
+          {
+            "id": "vdm-05-c9",
+            "kind": "reply",
+            "situation": "A volunteer shift.",
+            "situationRu": "Коллега-волонтер называет жильцов \"sweetie\" и \"darling\". Как правильно обращаться?",
+            "answer": "Good morning, Mr Wilson.",
+            "distractors": [
+              "Morning, sweetie!",
+              "Hey, darling, how are we?"
+            ],
+            "explanation": "Use the name they prefer. Avoid pet names.",
+            "explanationRu": "По имени, как человек предпочитает. Без \"sweetie\" и \"darling\"."
+          },
+          {
+            "id": "vdm-05-c10",
+            "kind": "listen",
+            "say": "Leave me be. I'm cranky today.",
+            "situation": "A volunteer shift.",
+            "situationRu": "Что говорит жилец?",
+            "answer": "Он сегодня не в духе",
+            "distractors": [
+              "Он сегодня уезжает",
+              "Он сегодня болен гриппом"
+            ],
+            "explanation": "\"Cranky\" is grumpy.",
+            "explanationRu": "\"Cranky\" - не в духе. Будьте мягче и короче."
+          }
+        ]
+      }
+    ]
   }
 ]
