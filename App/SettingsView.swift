@@ -118,7 +118,7 @@ struct SettingsView: View {
             } header: {
                 Text("Translation")
             } footer: {
-                Text("Adds Russian under every phrase, in the phrasebook and for the kids' school questions. Показывать перевод на русский.")
+                Text("Adds Russian under the English in every lesson. On by default when your phone is in Russian. Показывать перевод на русский.")
             }
 
             Section {

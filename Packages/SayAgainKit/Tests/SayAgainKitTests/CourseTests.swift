@@ -13,7 +13,9 @@ private func exercise(
 ) -> Exercise {
     Exercise(
         id: id, kind: kind, say: say, situation: "A resident speaks.", situationRu: "Житель говорит.",
-        answer: answer, distractors: distractors, explanation: "Why.", explanationRu: "Почему."
+        answer: answer, answerRu: "Ответ", distractors: distractors,
+        distractorsRu: distractors.map { "Перевод \($0)" },
+        explanation: "Why.", explanationRu: "Почему."
     )
 }
 
@@ -26,7 +28,7 @@ private func lesson(
 ) -> Lesson {
     Lesson(
         id: "l\(number)", number: number, title: "Lesson \(number)", titleRu: "Урок \(number)",
-        goalRu: "Цель", words: words,
+        goal: "Goal", goalRu: "Цель", words: words,
         dialogue: [DialogueLine(role: .resident, speaker: "Mrs Brown", text: "Hello, dear.", translationRu: "Здравствуй, дорогая.")],
         tip: nil,
         practice: practice ?? [exercise(id: "l\(number)-p1")],
@@ -204,6 +206,31 @@ struct CourseValidationTests {
         #expect(b.credits == "Source")
     }
 
+    @Test("Choices are English; Russian lives only in the translation fields")
+    func russianInAnEnglishChoice() {
+        let bad = exercise(id: "x", answer: "Она просит повторить")
+        let issues = CourseLibrary(courses: [course([lesson(number: 1, check: [bad])])]).validate()
+        #expect(issues == [.russianInEnglishField(id: "x", field: "answer")])
+    }
+
+    @Test func everyDistractorHasATranslation() {
+        let good = exercise(id: "x")
+        let bad = Exercise(
+            id: "x", kind: good.kind, say: good.say, situation: good.situation, situationRu: good.situationRu,
+            answer: good.answer, answerRu: good.answerRu, distractors: good.distractors, distractorsRu: ["Один"],
+            explanation: good.explanation, explanationRu: good.explanationRu
+        )
+        let issues = CourseLibrary(courses: [course([lesson(number: 1, check: [bad])])]).validate()
+        #expect(issues == [.missingTranslation(id: "x", field: "distractorsRu")])
+    }
+
+    @Test func eachChoiceKnowsItsRussian() {
+        let e = exercise(answer: "Right", distractors: ["Wrong 1", "Wrong 2"])
+        #expect(e.translationRu(of: "Right") == "Ответ")
+        #expect(e.translationRu(of: "Wrong 2") == "Перевод Wrong 2")
+        #expect(e.translationRu(of: "Something else") == nil)
+    }
+
     @Test func lessonWithoutCheck() {
         let issues = CourseLibrary(courses: [course([lesson(number: 1, check: [])])]).validate()
         #expect(issues == [.emptyField(id: "l1", field: "check")])
@@ -243,9 +270,9 @@ struct LessonStepTests {
     @Test func fullLessonGoesWordsDialogueTipPracticeCheck() {
         var full = lesson(number: 1)
         full = Lesson(
-            id: full.id, number: 1, title: full.title, titleRu: full.titleRu, goalRu: full.goalRu,
+            id: full.id, number: 1, title: full.title, titleRu: full.titleRu, goal: full.goal, goalRu: full.goalRu,
             words: full.words, dialogue: full.dialogue,
-            tip: GrammarTip(title: "to be", ruleRu: "Правило", examples: ["I am a volunteer."]),
+            tip: GrammarTip(title: "to be", rule: "Rule", ruleRu: "Правило", examples: ["I am a volunteer."]),
             practice: full.practice, check: full.check, passPercent: 80
         )
         #expect(full.steps == [.words, .dialogue, .tip, .practice, .check])

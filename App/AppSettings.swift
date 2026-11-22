@@ -31,7 +31,8 @@ final class AppSettings {
         didSet { defaults.set(categoryOrder.map(\.rawValue), forKey: Key.categoryOrder) }
     }
 
-    /// Russian translation under phrases and for the kids' questions.
+    /// Russian under the English: in lessons, phrases and the kids' questions.
+    /// Until the learner chooses, it follows the phone: on when the first language is Russian.
     var showRussian: Bool {
         didSet { defaults.set(showRussian, forKey: Key.showRussian) }
     }
@@ -46,10 +47,11 @@ final class AppSettings {
         didSet { defaults.set(aiFeedback.rawValue, forKey: Key.aiFeedback) }
     }
 
-    init(defaults: UserDefaults) {
+    init(defaults: UserDefaults, preferredLanguages: [String] = Locale.preferredLanguages) {
         self.defaults = defaults
         aiFeedback = defaults.string(forKey: Key.aiFeedback).flatMap(AIFeedbackConsent.init) ?? .notAsked
-        showRussian = defaults.bool(forKey: Key.showRussian)
+        showRussian = defaults.object(forKey: Key.showRussian) as? Bool
+            ?? (preferredLanguages.first?.hasPrefix("ru") ?? false)
         categoriesExpanded = defaults.bool(forKey: Key.categoriesExpanded)
         slowByDefault = defaults.bool(forKey: Key.slowByDefault)
         categoryOrder = CategoryOrder.resolve(saved: defaults.stringArray(forKey: Key.categoryOrder) ?? [])
@@ -63,6 +65,6 @@ final class AppSettings {
     static func ephemeral(_ name: String = "SayAgain.ephemeral.\(UUID().uuidString)") -> AppSettings {
         let defaults = UserDefaults(suiteName: name)!
         defaults.removePersistentDomain(forName: name)
-        return AppSettings(defaults: defaults)
+        return AppSettings(defaults: defaults, preferredLanguages: ["en"])
     }
 }

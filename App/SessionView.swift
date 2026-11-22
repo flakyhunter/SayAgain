@@ -244,16 +244,21 @@ struct ChoiceButton: View {
     enum State { case idle, correct, wrong, dimmed }
 
     let text: String
+    /// Russian under the choice, shown only while translation is on.
+    var translation: String? = nil
     let state: State
     let action: () -> Void
 
     var body: some View {
         Button(action: action) {
             HStack(alignment: .firstTextBaseline, spacing: 12) {
-                Text(text)
-                    .font(.body.weight(.medium))
-                    .multilineTextAlignment(.leading)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                VStack(alignment: .leading, spacing: 3) {
+                    Text(text)
+                        .font(.body.weight(.medium))
+                    if let translation { RussianLine(text: translation) }
+                }
+                .multilineTextAlignment(.leading)
+                .frame(maxWidth: .infinity, alignment: .leading)
                 if let icon {
                     Image(systemName: icon).font(.headline)
                 }

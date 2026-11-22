@@ -67,6 +67,9 @@ struct LessonView: View {
                 .tint(Theme.accent)
             if model.stepIndex == 0 {
                 Text(model.lesson.title).font(.title2.bold())
+                Text(model.lesson.goal)
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
                 RussianLine(text: model.lesson.goalRu)
             }
         }
@@ -139,11 +142,15 @@ private struct WordsStep: View {
                                 if word.aussie { AussieBadge() }
                             }
                             RussianLine(text: word.translationRu)
-                            if let note = word.noteRu {
+                            if let note = word.note {
                                 Text(note)
                                     .font(.footnote)
                                     .foregroundStyle(.secondary)
                                     .fixedSize(horizontal: false, vertical: true)
+                            }
+                            if let noteRu = word.noteRu {
+                                RussianLine(text: noteRu)
+                                    .font(.footnote)
                             }
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -193,6 +200,7 @@ struct ScenarioBadge: View {
 
 private struct DialogueStep: View {
     let model: LessonViewModel
+    @Environment(\.showRussian) private var showRussian
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -221,10 +229,12 @@ private struct DialogueStep: View {
                         Text(line.text)
                             .font(.body.weight(.medium))
                             .foregroundStyle(mine ? .white : .primary)
-                        Text(line.translationRu)
-                            .font(.subheadline)
-                            .italic()
-                            .foregroundStyle(mine ? .white.opacity(0.8) : .secondary)
+                        if showRussian {
+                            Text(line.translationRu)
+                                .font(.subheadline)
+                                .italic()
+                                .foregroundStyle(mine ? .white.opacity(0.8) : .secondary)
+                        }
                     }
                     .multilineTextAlignment(.leading)
                     .padding(12)
@@ -254,8 +264,10 @@ private struct TipStep: View {
             Label(tip.title, systemImage: "lightbulb.fill")
                 .font(.title3.bold())
                 .foregroundStyle(Theme.accent)
-            Text(tip.ruleRu)
+            Text(tip.rule)
                 .font(.body)
+                .fixedSize(horizontal: false, vertical: true)
+            RussianLine(text: tip.ruleRu)
                 .fixedSize(horizontal: false, vertical: true)
             VStack(alignment: .leading, spacing: 8) {
                 ForEach(tip.examples, id: \.self) { example in
@@ -288,7 +300,8 @@ private struct ExerciseStep: View {
                 prompt(exercise)
                 VStack(spacing: 10) {
                     ForEach(Array(run.choices.enumerated()), id: \.element) { index, choice in
-                        ChoiceButton(text: choice, state: state(choice, run: run, exercise: exercise)) {
+                        ChoiceButton(text: choice, translation: exercise.translationRu(of: choice),
+                                     state: state(choice, run: run, exercise: exercise)) {
                             if model.animated {
                                 withAnimation(.spring(duration: 0.4)) { model.choose(choice) } completion: {
                                     withAnimation { proxy.scrollTo("explanation", anchor: .bottom) }
@@ -328,8 +341,10 @@ private struct ExerciseStep: View {
             VStack(alignment: .leading, spacing: 6) {
                 if exercise.kind == .slang { AussieBadge() }
                 if exercise.kind == .scenario { ScenarioBadge() }
-                Text(exercise.situationRu)
+                Text(exercise.situation)
                     .font(.headline)
+                    .fixedSize(horizontal: false, vertical: true)
+                RussianLine(text: exercise.situationRu)
                     .fixedSize(horizontal: false, vertical: true)
                 if model.isRevealed, let say = exercise.say {
                     Text("\u{201C}\(say)\u{201D}")
@@ -367,8 +382,10 @@ private struct ExerciseStep: View {
             Label(correct ? "Right!" : "Not quite", systemImage: correct ? "checkmark.circle.fill" : "xmark.circle.fill")
                 .font(.headline)
                 .foregroundStyle(correct ? Theme.success : Theme.danger)
-            Text(exercise.explanationRu)
+            Text(exercise.explanation)
                 .font(.body)
+                .fixedSize(horizontal: false, vertical: true)
+            RussianLine(text: exercise.explanationRu)
                 .fixedSize(horizontal: false, vertical: true)
             if exercise.kind.answerIsEnglish {
                 Button(action: model.playAnswer) {

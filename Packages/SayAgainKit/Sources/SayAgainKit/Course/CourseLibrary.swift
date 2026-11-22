@@ -10,6 +10,10 @@ public enum CourseIssue: Hashable, Sendable {
     case forbiddenCharacter(id: String, character: String)
     case bannedName(id: String, name: String)
     case invalidPassPercent(id: String, value: Int)
+    /// English is the main language: Russian belongs only in the `...Ru` fields.
+    case russianInEnglishField(id: String, field: String)
+    /// Every English line the learner reads has a Russian translation, and the other way round.
+    case missingTranslation(id: String, field: String)
 }
 
 /// All courses shipped with the app.
@@ -66,11 +70,26 @@ public struct CourseLibrary: Sendable {
                 if !(1...100).contains(lesson.passPercent) {
                     issues.append(.invalidPassPercent(id: lesson.id, value: lesson.passPercent))
                 }
-                var texts = [lesson.title, lesson.titleRu, lesson.goalRu]
-                texts += lesson.words.flatMap { [$0.text, $0.translationRu, $0.noteRu ?? ""] }
+                var texts = [lesson.title, lesson.titleRu, lesson.goal, lesson.goalRu]
+                texts += lesson.words.flatMap { [$0.text, $0.translationRu, $0.note ?? "", $0.noteRu ?? ""] }
                 texts += lesson.dialogue.flatMap { [$0.speaker, $0.text, $0.translationRu] }
-                if let tip = lesson.tip { texts += [tip.title, tip.ruleRu] + tip.examples }
+                if let tip = lesson.tip { texts += [tip.title, tip.rule, tip.ruleRu] + tip.examples }
                 issues += textIssues(id: lesson.id, texts)
+
+                var english = [("title", lesson.title), ("goal", lesson.goal)]
+                english += lesson.words.flatMap { [("words.text", $0.text), ("words.note", $0.note ?? "")] }
+                english += lesson.dialogue.map { ("dialogue.text", $0.text) }
+                if let tip = lesson.tip { english += [("tip.rule", tip.rule)] + tip.examples.map { ("tip.examples", $0) } }
+                issues += englishIssues(id: lesson.id, english)
+                if lesson.goal.trimmingCharacters(in: .whitespaces).isEmpty || lesson.goalRu.isEmpty {
+                    issues.append(.missingTranslation(id: lesson.id, field: "goal"))
+                }
+                if let tip = lesson.tip, tip.rule.isEmpty || tip.ruleRu.isEmpty {
+                    issues.append(.missingTranslation(id: lesson.id, field: "tip.rule"))
+                }
+                if lesson.words.contains(where: { ($0.note == nil) != ($0.noteRu == nil) }) {
+                    issues.append(.missingTranslation(id: lesson.id, field: "words.note"))
+                }
 
                 for exercise in lesson.practice + lesson.check {
                     unique(exercise.id)
@@ -96,9 +115,28 @@ public struct CourseLibrary: Sendable {
         if exercise.distractors.contains(where: { $0.caseInsensitiveCompare(exercise.answer) == .orderedSame }) {
             issues.append(.distractorMatchesAnswer(id: exercise.id))
         }
-        let texts = [exercise.say ?? "", exercise.situation, exercise.situationRu, exercise.answer,
-                     exercise.explanation, exercise.explanationRu] + exercise.distractors
+        if exercise.answerRu.trimmingCharacters(in: .whitespaces).isEmpty {
+            issues.append(.missingTranslation(id: exercise.id, field: "answerRu"))
+        }
+        if exercise.distractorsRu.count != exercise.distractors.count {
+            issues.append(.missingTranslation(id: exercise.id, field: "distractorsRu"))
+        }
+        issues += englishIssues(id: exercise.id, [
+            ("say", exercise.say ?? ""), ("situation", exercise.situation), ("answer", exercise.answer),
+            ("explanation", exercise.explanation)
+        ] + exercise.distractors.map { ("distractors", $0) })
+        let texts = [exercise.say ?? "", exercise.situation, exercise.situationRu, exercise.answer, exercise.answerRu,
+                     exercise.explanation, exercise.explanationRu] + exercise.distractors + exercise.distractorsRu
         return issues + textIssues(id: exercise.id, texts)
+    }
+
+    private func englishIssues(id: String, _ fields: [(String, String)]) -> [CourseIssue] {
+        var reported = Set<String>()
+        return fields.compactMap { field, text in
+            guard text.range(of: "\\p{Cyrillic}", options: .regularExpression) != nil,
+                  reported.insert(field).inserted else { return nil }
+            return .russianInEnglishField(id: id, field: field)
+        }
     }
 
     private func textIssues(id: String, _ texts: [String]) -> [CourseIssue] {

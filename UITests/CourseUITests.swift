@@ -61,6 +61,30 @@ final class CourseUITests: SayAgainUITestCase {
         XCTAssertTrue(app.navigationBars["Aged care volunteer: English"].exists)
     }
 
+    func testRussianHelpAppearsOnlyWhenTurnedOn() {
+        let app = launchApp()
+        let home = HomeScreen(app: app).waitUntilShown()
+        let screen = CourseScreen(app: app)
+        let russian = app.descendants(matching: .any).matching(identifier: "ru")
+
+        screen.card.tap()
+        screen.lessonRow(1).tap()
+        XCTAssertTrue(screen.step.waitForExistence(timeout: 5))
+        XCTAssertEqual(russian.count, 0, "English only by default on an English phone")
+
+        app.navigationBars.buttons.element(boundBy: 0).tap()
+        app.navigationBars.buttons.element(boundBy: 0).tap()
+        home.settingsButton.tap()
+        let settings = SettingsScreen(app: app).waitUntilShown()
+        settings.russianToggle.switches.firstMatch.tap()
+        app.navigationBars.buttons.element(boundBy: 0).tap()
+
+        screen.card.tap()
+        screen.lessonRow(1).tap()
+        XCTAssertTrue(screen.step.waitForExistence(timeout: 5))
+        XCTAssertGreaterThan(russian.count, 0, "Russian lines under the English")
+    }
+
     func testOnlyTheFirstLessonIsOpenAtStart() {
         let app = launchApp()
         let screen = CourseScreen(app: app)
